@@ -51,9 +51,9 @@ function SegmentedGauge({ climate, usage, care }: { climate: number; usage: numb
   ];
 
   const stats = [
-    { label: "기후 점수", value: climate, color: "#FF7A7A", glow: "rgba(255,122,122,0.22)" },
-    { label: "사용 횟수", value: usage,   color: "#FFE89A", glow: "rgba(255,232,154,0.30)" },
-    { label: "관리 횟수", value: care,    color: "#48D6A6", glow: "rgba(72,214,166,0.22)" },
+    { label: "기후", value: climate, color: "#FF7A7A", glow: "rgba(255,122,122,0.22)" },
+    { label: "사용", value: usage,   color: "#FFE89A", glow: "rgba(255,232,154,0.30)" },
+    { label: "관리", value: care,    color: "#48D6A6", glow: "rgba(72,214,166,0.22)" },
   ];
 
   return (
@@ -177,10 +177,10 @@ export function Home() {
 
         {/* 헤더 */}
         <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111] mb-[6px]" style={{ paddingLeft: "5px" }}>
-          Care Shot
+          Care Vision
         </p>
         <p className="font-['Pretendard:SemiBold','Noto_Sans_Devanagari:SemiBold',sans-serif] text-[22px] tracking-[-0.36px] text-[#111] mb-[20px]" style={{ paddingLeft: "5px" }}>
-          नमस्ते तनीषा जी! 👋
+          환영합니다. तनीषा जी! 👋
         </p>
 
         {/* ── AI 추천 관리 카드 ── */}
@@ -282,9 +282,9 @@ export function Home() {
                 <Wind size={16} className="text-[#2aaa8a]" />
               </div>
               <div>
-                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">건조기</p>
+                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">대기질</p>
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111] leading-tight">
-                  1:19 <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">남음</span>
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">AQI</span> 10
                 </p>
               </div>
             </div>
@@ -299,9 +299,9 @@ export function Home() {
                 <Droplets size={16} className="text-[#8080c0]" />
               </div>
               <div>
-                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">세탁기</p>
+                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">미세 먼지</p>
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111] leading-tight">
-                  1:30 <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">남음</span>
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">pm</span> 10
                 </p>
               </div>
             </div>

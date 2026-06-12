@@ -346,7 +346,7 @@ export function Chat() {
             <ChevronLeft size={20} className="text-black cursor-pointer" strokeWidth={2} />
           </button>
           <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-[15px]">
-            LG Chat
+            Chat
           </p>
         </div>
       </div>

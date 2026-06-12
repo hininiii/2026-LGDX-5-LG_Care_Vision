@@ -42,9 +42,9 @@ export function SignUp() {
 
         <div className="relative z-10 px-[24px] pt-[56px] pb-[40px]">
           {/* 로고 */}
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Shot</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Vision</p>
           <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#888] mb-8">
-            가전 기기 케어 관리 서비스
+            인도 가전 Care 및 A/S 서비스
           </p>
 
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-6">회원가입</p>
