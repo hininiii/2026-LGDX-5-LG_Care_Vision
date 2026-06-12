@@ -1,0 +1,2504 @@
+[
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_001.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-450X450_1.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_002.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/ts-q19kwze_anlg_eail_in_c/gallery/TS-Q19KWZE-split-ac-front-view-D-01.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_003.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-2010X1334_1.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_004.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-450X450_1.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_005.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-2010X1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_006.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-02.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_007.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-03.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_008.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-04.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_009.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-05.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_010.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-06.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_011.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-07.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_012.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-350X350_1.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_013.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-350X350.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_014.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-02.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_015.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-03.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_016.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-04.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_017.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-05.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_018.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-06.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_019.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-07.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_020.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-2010X1334_1.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_021.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-2010X1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_022.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-02.jpeg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_023.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-03.jpeg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_024.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-04.jpeg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_025.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-05.jpeg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_026.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-06.jpeg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_027.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-07.jpeg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_028.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-1044X1334_1.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_029.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-1044X1334.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_030.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-02.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_031.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-03.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_032.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-04.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_033.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-05.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_034.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-06.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_035.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-07.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_036.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-1044X1334_1.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_037.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/ts-q19kwze_anlg_eail_in_c/gallery/TS-Q19KWZE-split-ac-front-view-D-01.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_039.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-350X350_1.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_041.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-2010X1334_1.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_045.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-350X350.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_047.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-1044X1334.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_048.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-2010X1334.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_052.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-02.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_054.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-02.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_055.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-02.jpeg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_059.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-03.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_061.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-03.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_062.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-03.jpeg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_066.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-04.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_068.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-04.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_069.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-04.jpeg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_073.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-05.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_075.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-05.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_076.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-05.jpeg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_080.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-06.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_082.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-06.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_083.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-06.jpeg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_087.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/350/US-Q19KWZE-Split-AC-S-07.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_089.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/1044/US-Q19KWZE-Split-AC-MZ-07.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_090.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-07.jpeg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_095.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-2010X1334_1.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_096.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-2010X1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_097.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-02.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_098.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-03.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_099.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-04.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_100.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-05.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_101.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-06.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_102.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/split-ac/gallery/us-q19kwze/2010/US-Q19KWZE-Split-AC-DZ-07.jpeg/jcr:content/renditions/thum-1600x1062.jpeg?w=800\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_103.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/US-H19VNXE-450X450.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_104.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-2010X1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_105.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/US-H19VNXE-450X450.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_106.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-2-2010X1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_107.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-0111.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_108.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-03333.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_109.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-05555.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_110.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-06666.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_111.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-0888.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_112.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-0000.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_113.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-350X350.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_114.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-2-350X350.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_121.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-2010X1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_122.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-2-2010X1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_123.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-0111.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_124.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-03333.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_125.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-05555.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_126.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-06666.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_127.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-0888.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_128.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-0000.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_129.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-1044X1334.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_130.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-2-1044X1334.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_131.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/11.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_132.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-0444444.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_133.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-044.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_134.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-055.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_135.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-066666.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_136.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/split-ac-right-open-door-view-S-0eeee.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_137.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/updatedgallery/new/US-H19VNXE.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_142.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-1044X1334.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_143.webp",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/ts-h19vnxe_anlg_eail_in_c/gallery/TS-H19VNXE-split-ac-front-view-D-01.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "wall_split_ac",
+    "local_path": "raw/wall_split_ac/wall_split_ac_145.jpg",
+    "source_page": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/split-ac/gallery/updated-1-2-gallery/No.1-US-H19VNXE-350X350.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_002.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/M02_single-split-floor-standing-01-M.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_003.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D02_single-split-floor-standing-01-D.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_004.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/M03_single-split-floor-standing-02-M.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_005.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D03_single-split-floor-standing-02-D.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_006.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D04-01_single-split-floor-standing-03-D.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_007.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D05-01_single-split-floor-standing-04-D.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_008.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/M06_single-split-floor-standing-m.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_009.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D06_single-split-floor-standing-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_010.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/M07_single-split-floor-standing-05-M.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_011.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D07_single-split-floor-standing-05-D.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_012.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D02_single-split-floor-standing-01-D.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_013.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/M02_single-split-floor-standing-01-M.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_014.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D03_single-split-floor-standing-02-D.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_015.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D04-01_single-split-floor-standing-03-D.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_016.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D05-01_single-split-floor-standing-04-D.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_017.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D06_single-split-floor-standing-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_018.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/M06_single-split-floor-standing-m.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_019.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/D07_single-split-floor-standing-05-D.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_020.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/M07_single-split-floor-standing-05-M.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_021.jpg",
+    "source_page": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/in/business/air-solution/single-split-air-solution/single-split-floor-standing/M03_single-split-floor-standing-02-M.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_022.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-hero-1-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_023.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-hero-1-m.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_025.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-pdp-1-m.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_026.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-pdp-1-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_027.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-img1to3-1-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_028.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-img1to3-2-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_029.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-hero-1-m.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_030.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-hero-1-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_031.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-pdp-1-m.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_032.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-pdp-1-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_033.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-img1to3-1-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_034.jpg",
+    "source_page": "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/eg_en/images/air-solution/single-split/egen-singlesplit-floorstanding-img1to3-2-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_036.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-kv-ideal-for-modern-interiors-m.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_037.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-kv-ideal-for-modern-interiors-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_038.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-stylish-design-m.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_039.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-stylish-design-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_040.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-quick-response-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_041.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-powerful-airflow-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_042.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-inquire-to-buy-m.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_043.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-inquire-to-buy-d.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_044.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-kv-ideal-for-modern-interiors-m.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_045.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-kv-ideal-for-modern-interiors-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_046.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-stylish-design-m.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_047.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-stylish-design-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_048.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-quick-response-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_049.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-single-split-floor-standing-powerful-airflow-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_050.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-inquire-to-buy-m.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_051.jpg",
+    "source_page": "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/ph/images/business/air-solution/single-split-floor-standing/lg-hvac-inquire-to-buy-d.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_052.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/M01_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_054.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop01_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_055.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop02_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_056.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop03_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_057.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop04_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_058.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop05_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_059.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop06_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_060.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop07_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_061.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop08_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_068.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Small07_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_069.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Small08_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_070.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/ZM01_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_071.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/ZM02_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_072.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/ZM03_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_073.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/ZM04_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_074.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/ZM06_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_075.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/ZM07_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_076.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/ZM08_APNQ55GT3E0.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_077.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/APNQ55GT3E0_ANWBIBR_EMGF_SA_EN_B-450x450.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_078.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/M01_APNQ55GT3E0.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_079.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Small01_APNQ55GT3E0.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "floor_standing_ac",
+    "local_path": "raw/floor_standing_ac/floor_standing_ac_080.jpg",
+    "source_page": "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+    "source_url": "https://www.lg.com/content/dam/channelbtb/lgcom/sa_en/images/cac-air-conditioners/apnq55gt3e0_anwbibr_emgf_sa_en_b/gallery/Destop01_APNQ55GT3E0.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_001.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/f9f985dd-45f4-44a9-9cea-0e876e286cfc/Air-Conditioner_LW2422IVSM_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_002.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/ba6c0992-0154-401e-97e6-27a19332b324/Air-Conditioner_LW6023R_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_003.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/a336c99d-d2cd-4c38-8e23-69e44cf5f34c/Air-Conditioner_LW1025R_gallery_01_new_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_004.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/56fe67a3-5a84-439f-a8b5-dc5448996f16/Air-Conditioner_LW1025RSMX_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_005.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/e3c677c9-d270-41a3-8425-f23440408fb7/Air-Conditioner_LW5024X_gallery_01_1600x1062",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_006.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/e3512f37-8ba5-4a7c-8fe2-9c3305ea7cca/Air-conditioner_LW1522FVSM_thumbnail_01_350x350",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_007.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/90a3ff7a-e656-445b-8409-11a69ee7d131/Air-conditioner-LW1024RD-gallery-01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_008.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/05880dc3-62dd-477b-bb13-905aa3be1547/Air-Conditioner_LW6024RSMX_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_009.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/b79c9c9d-4555-4123-a792-a79d57a4c660/Air-conditioner-LW1224IVSM-gallery-new-01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_010.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/9ac448a6-c840-4f69-8b1e-4c0500a4b187/Air-conditioner_LW8024RSMX_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_011.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/50be2ae2-b4cf-4244-976e-5fd238e2fb6b/Air-Conditioner_LW5024_gallery_01_1600x1062",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_012.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/11b0181e-fcf1-4a9b-aa2d-7eea0d936579/Air-Conditioner_LW5023_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_013.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/b300901b-1961-4985-8be3-c69067c3c771/LW1224RSMX_gallery_1_1600x1062",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_014.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/27a11d5c-3c4c-4e93-8ede-e24d58d03867/Air-Conditioner_LW1025RSMY_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_015.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/9454f38a-fd29-4c88-9ff0-e32f7664b131/Air-Conditioner_LW1025RSM_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_016.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/dfa3f236-9bbe-43d9-96e9-0c3877260568/Air-conditioner_LW8024RSMY_Gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_017.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/c8072f4f-2268-4908-a71f-08b1484cf0c3/Air-conditioner_LW8023HRSM_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_018.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/39c529fe-e336-41f6-9a05-fc64c8321a66/Air-Conditioner_LW1223ERSM_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_019.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/ce307a9d-65b2-4773-a49b-64b844bf924f/Air-Conditioner_LW1521ERSM_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_020.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/5c5fbb69-fadb-4ac0-945d-d06d9460af60/Air-Conditioner_LW1016ER_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_021.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/6aea48f2-6d51-4bc2-b381-73914853801b/Air-Conditioner_LW6017R_gallery_01_5000x5000",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_022.png",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/m/210af7b862aad496/thul-OBS_PLP_window_air_conditioners_herobanner_1600x600.png",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_023.png",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/m/210af7b862aad496/webimage-OBS_PLP_window_air_conditioners_herobanner_1600x600.png",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_025.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryZoom-1600x1062/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_026.png",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_027.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-MediaBreaker-M-768x1200/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_028.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-HeroBanner-MediaText-MediaAccordian-900x600/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_029.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PromoCard-MediaGallery-MediaCallout-780x438/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_030.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_031.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-MediaCallout-1296x729/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_032.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-MediaBreaker-D-1600x600/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_033.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/a8e59f68-6a77-48e5-a2a4-14e00172003a/OBS_PLP_window_air_conditioners_herobanner_1600x600",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_034.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/m/420b35a517abf078/thul-OBS_PLP_window_air_conditioners_herobanner_768x1200.png",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_035.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/m/420b35a517abf078/webimage-OBS_PLP_window_air_conditioners_herobanner_768x1200.png",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_037.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryZoom-1600x1062/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_038.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_039.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-MediaBreaker-M-768x1200/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_040.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-HeroBanner-MediaText-MediaAccordian-900x600/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_041.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PromoCard-MediaGallery-MediaCallout-780x438/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_042.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_043.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-MediaCallout-1296x729/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_044.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-MediaBreaker-D-1600x600/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "window_ac",
+    "local_path": "raw/window_ac/window_ac_045.jpg",
+    "source_page": "https://www.lg.com/us/window-air-conditioners",
+    "source_url": "https://media.us.lg.com/transform/ecomm-PDPGalleryThumbnail-350x350/9a00f0f4-03b1-4d8f-8ddf-dbde8140e51b/OBS_PLP_window_air_conditioners_herobanner_768x1200",
+    "source_domain": "media.us.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_001.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-450x450.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_002.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gl-x257amcx_dmczebn_eail_in_c/gallery/GL-X257AMCX-Refrigerators-Front-Light-On-Food-D-01.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_003.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-2010x1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_006.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/rf/side-by-side-refrigerators/features/new/Video-Banner.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_011.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-450x450.jpg\\",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_012.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/promotions/banners/may/tvGNB-Tile.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_013.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-2010x1334_1.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_014.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-3.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_015.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-4.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_016.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-5.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_017.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-6.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_018.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-7.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_019.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-8.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_020.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-9.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_021.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-10.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_022.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-11.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_023.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-12.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_024.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-13.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_025.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-14.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_026.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-15.jpg/jcr:content/renditions/thum-1600x1062.jpeg?w=800",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_027.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-350x350.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_028.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-350x350_1.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_029.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-3.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_030.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-4.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_031.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-5.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_032.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-6.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_033.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-7.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_034.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-8.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_035.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-9.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_036.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-10.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_037.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-11.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_038.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-12.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_039.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-13.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_040.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-14.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_041.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-S-15.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_042.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-2010x1334.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_043.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-2010x1334_1.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_044.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-3.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_045.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-4.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_046.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-5.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_047.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-6.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_048.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-7.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_049.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-8.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_050.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-9.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_051.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-10.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_052.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-11.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_053.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-12.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_054.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-13.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_055.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-14.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_056.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-DZ-15.jpg/jcr:content/renditions/thum-1600x1062.jpeg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_057.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-1044x1334.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_058.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/basic-images/GV-K25FFGFB-1044x1334_1.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_059.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-3.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_060.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-4.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_061.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-5.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_062.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-6.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_063.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-7.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_064.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-8.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_065.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-9.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_066.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-10.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_067.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-11.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_068.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-12.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_069.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-13.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_070.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-14.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  },
+  {
+    "class": "not_ac",
+    "local_path": "raw/not_ac/not_ac_071.jpg",
+    "source_page": "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+    "source_url": "https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gv-k25ffgfb_abmqebn_eail_in_c/gallery/GV-K25FFGFB-MZ-15.jpg",
+    "source_domain": "www.lg.com",
+    "official_source": "LG official website",
+    "usage_note": "For CareShot MVP product classifier dataset; verify license before external redistribution."
+  }
+]

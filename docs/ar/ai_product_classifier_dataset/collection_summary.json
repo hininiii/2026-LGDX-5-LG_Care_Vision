@@ -1,0 +1,77 @@
+{
+  "dataset_root": "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\07_개발단계\\06_AR 가전케어 AI\\04_AR가이드\\ai_product_classifier_dataset",
+  "counts": [
+    {
+      "class": "floor_standing_ac",
+      "count": 70
+    },
+    {
+      "class": "not_ac",
+      "count": 65
+    },
+    {
+      "class": "wall_split_ac",
+      "count": 100
+    },
+    {
+      "class": "window_ac",
+      "count": 43
+    }
+  ],
+  "manual_count": 4,
+  "image_manifest": "official_image_manifest.json",
+  "manual_manifest": "official_manual_manifest.json",
+  "error_count": 58,
+  "seed_pages": {
+    "wall_split_ac": [
+      "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19kwze/",
+      "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+      "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19ynze1/",
+      "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19cnze/",
+      "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19bnze/",
+      "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19ynze3-p/"
+    ],
+    "floor_standing_ac": [
+      "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+      "https://www.lg.com/eastafrica/business/single-split-floor-standing",
+      "https://www.lg.com/levant_en/business/single-split-floor-standing",
+      "https://www.lg.com/eg_en/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+      "https://www.lg.com/ph/business/hvac/commercial-solutions/single-split/floor-standing/",
+      "https://www.lg.com/ae/business/single-split/lg-AP-Q50LT3E0",
+      "https://www.lg.com/africa/residential-air-conditioners/lg-f4-q25q2yb0",
+      "https://www.lg.com/sa_en/business/comercial-ac/cac-floor-standing-air-conditioners/apnq55gt3e0/",
+      "https://www.lg.com/levant_en/package-air-conditioning/lg-apuw24gs1s1",
+      "https://www.lg.com/levant_en/package-air-conditioning/lg-apuw54gt3e5"
+    ],
+    "window_ac": [
+      "https://www.lg.com/us/window-air-conditioners",
+      "https://www.lg.com/us/air-conditioners/lg-lw8024rd-window-air-conditioner",
+      "https://www.lg.com/us/air-conditioners/lg-lw1024rd-window-air-conditioner",
+      "https://www.lg.com/us/air-conditioners/lg-lw1224rd-window-air-conditioner",
+      "https://www.lg.com/us/air-conditioners/lg-lw1523ersm-window-air-conditioner",
+      "https://www.lg.com/us/air-conditioners/lg-lw1824rd-window-air-conditioner",
+      "https://www.lg.com/us/air-conditioners/lg-lw2424rd-window-air-conditioner"
+    ],
+    "not_ac": [
+      "https://www.lg.com/in/refrigerators/french-door-refrigerators/gv-k25ffgfb/",
+      "https://www.lg.com/in/refrigerators/double-door-refrigerators/gl-b382dpzx/",
+      "https://www.lg.com/in/refrigerators/double-door-refrigerators/gn-h702hlhm/",
+      "https://www.lg.com/in/microwave-ovens/convertible-oven/mjen286ufwf/",
+      "https://www.lg.com/in/microwave-ovens/convection-microwave/mc2146bg/",
+      "https://www.lg.com/in/microwave-ovens/charcoal-convection-microwave/mjen326sf/",
+      "https://www.lg.com/in/refrigerators/single-door-refrigerators/gld2256zapz/",
+      "https://www.lg.com/us/tvs/"
+    ]
+  },
+  "manual_seed_pages": [
+    "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT20150063-20152544608551/",
+    "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT52006833-20153181971685/",
+    "https://www.lg.com/us/support/help-library/lg-airconditioner-filter-how-to-clean-and-replace-airconditioner-filter--20154844424480",
+    "https://www.lg.com/in/air-conditioners/lg-article-air-conditioner-energy/"
+  ],
+  "total_image_count": 278,
+  "post_cleanup_validation": {
+    "bad_image_header_count": 0,
+    "note": "Removed 5 MP4 downloads from not_ac and fixed 4 image extension mismatches."
+  }
+}

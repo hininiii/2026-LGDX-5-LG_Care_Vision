@@ -1,0 +1,30 @@
+﻿[
+    {
+        "local_path":  "raw/manuals/filter_manual_01.txt",
+        "source_page":  "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT20150063-20152544608551/",
+        "source_domain":  "www.lg.com",
+        "official_source":  "LG official website",
+        "procedure_type":  "filter_cleaning"
+    },
+    {
+        "local_path":  "raw/manuals/filter_manual_02.txt",
+        "source_page":  "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT52006833-20153181971685/",
+        "source_domain":  "www.lg.com",
+        "official_source":  "LG official website",
+        "procedure_type":  "filter_cleaning"
+    },
+    {
+        "local_path":  "raw/manuals/filter_manual_03.txt",
+        "source_page":  "https://www.lg.com/us/support/help-library/lg-airconditioner-filter-how-to-clean-and-replace-airconditioner-filter--20154844424480",
+        "source_domain":  "www.lg.com",
+        "official_source":  "LG official website",
+        "procedure_type":  "filter_cleaning"
+    },
+    {
+        "local_path":  "raw/manuals/filter_manual_04.txt",
+        "source_page":  "https://www.lg.com/in/air-conditioners/lg-article-air-conditioner-energy/",
+        "source_domain":  "www.lg.com",
+        "official_source":  "LG official website",
+        "procedure_type":  "filter_cleaning"
+    }
+]
