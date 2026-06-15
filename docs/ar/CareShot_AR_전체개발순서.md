@@ -901,7 +901,7 @@ intent/risk 평가셋: 0건, 현 단계 미수행
 15.3 PostgreSQL FK migration 적용 - 수행됨 / FK 후보 103개 중 101개 적용, reference image asset 미연결 2개 보류
 16. EnvironmentDataAdapter 구현 - 수행됨 / cache hit, external refresh, fallback, fetch log, Care Risk 전달 검증
 16.2 EnvironmentDataAdapter 운영 보완 실행 - 수행됨 / provider adapter, API key manager, hard water source, fallback live 검증
-17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / usage log + 환경 데이터 기반 self care 추천 조건 계산 검증
+17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / usage log + 환경 데이터 기반 self care 추천 조건 계산 검증, AQI 가중치 보정 완료
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 수행됨 / self_care, self_as, expert_as 용어 통일
 17.1-A GuideOptionSet 및 Guide 완료 API 재정리 - 수행됨 / options API, 완료 이력 저장 API 검증
 17.2 Product Code Registry 및 제품 등록 흐름 설계/DB 반영 - 수행됨 / 검증 완료
@@ -1101,6 +1101,8 @@ python -m pytest tests -q
    - 산출물: `CareRiskScoreEngine`, `PreventiveCareRecommendationEngine`, `/care/risk/evaluate`, `/guides/options`, `/guides/{guide_id}/complete`
    - 완료 기준: 사용자 문의 없이도 usage log + 환경 API/cache 데이터만으로 self care 추천 조건이 계산되고, Manual Guide와 AR Guide가 함께 제공됨
    - 검증 결과: `/care/risk/evaluate` Guide 옵션 반환, `/guides/options` 옵션 세트 조회, `/guides/{guide_id}/complete` 완료 이력 저장 검증 완료
+   - 2026-06-15 보정: 에어컨/공기청정기 AQI 가중치를 공식 AQI health category 기반 CRS 내부 가중치로 조정했다. AQI 100~149는 +10, 150~199는 +20, 200~299는 +30, 300 이상은 +35를 부여한다.
+   - 2026-06-15 검증: AQI 223/일평균 6시간/습도 40% 에어컨 케이스가 `20 + 15 + 30 = 65`, `risk_band=medium`으로 산출됨을 확인했다. live 환경 API smoke에서는 AQI 227 기준 score 65, risk_level medium, factor_scores `[daily_runtime_hours +15, aqi +30]` 확인.
 
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 문서/DB 설계 반영 및 API endpoint 재정리 완료
    - 서비스 명칭을 `self_care`, `self_as`, `expert_as`로 통일했다.
@@ -1252,7 +1254,7 @@ FastAPI 응답으로 Home, Chat, AR Guide Session, 회원가입/프로필 흐름
 | 22.3 기본 fetch 전환 | 수행됨 | user, device, chat API client가 FastAPI 호출 |
 | 22.4 Home/Chat/ARGuide API 연결 | 수행됨 | Care Risk, 환경, guide options, AR plan/session 호출 연결 |
 | 22.5 챗봇 응답 분기 | 부분 수행 | `service_flow_type`, `risk_level`, `needs_clarification`, `guide_options` 기반 카드 분기 연결 |
-| 22.6 회원가입/로그인/프로필 DB 연동 | 수행됨 | `USER` 저장/조회/수정, 로그인, `currentUserEmail` 세션 저장 |
+| 22.6 회원가입/로그인/프로필 DB 연동 | 수행됨 | `USER` 저장/조회/수정, 로그인, `currentUserEmail` 세션 저장, FastAPI 8791 실제 연결 및 DB row 검증 |
 | 22.7 가입 후 demo ThinQ seed | 수행됨 | `USER_PRODUCT`, `APPLIANCE_USAGE_LOG`, `SMART_DIAGNOSIS_RESULT`, `SELF_MANAGEMENT_HISTORY` 자동 생성 |
 | 22.8 환경/Care Risk 주소 연동 | 수행됨 | 회원가입/프로필의 region/city 기준 환경 API와 Care Risk 계산 연결 |
 | 22.9 프론트 원본 UI 보호 | 수행 중 | 임의 버튼/문구 추가 제거, 원본 카드 구조 유지, 데이터 주입부만 제한 수정 |
@@ -1286,6 +1288,10 @@ PATCH /api/v1/ar/sessions/{session_id}
 회귀 테스트: tests/test_frontend_compat_api.py, tests/test_care_risk_engine.py,
 tests/test_repositories_sqlalchemy.py 등 관련 범위 통과
 프론트 원본 보호 확인: 임의 추가 버튼/문구 제거 후 build 성공
+2026-06-15 추가 검증: 프론트 5173은 200, 초기 백엔드 8791 미기동으로 회원가입 API 실패 재현
+2026-06-15 보강: FastAPI 8791 기동 후 `POST /api/users/register`, `POST /api/users/login`, `GET /api/users/me` 실제 성공 확인
+2026-06-15 DB 검증: `USER`, `USER_PRODUCT`, `APPLIANCE_USAGE_LOG`, `SMART_DIAGNOSIS_RESULT`, `SELF_MANAGEMENT_HISTORY`에 신규 user_email 기준 row 1건씩 생성 확인
+2026-06-15 프론트 검증: `npm run build` -> success, Vite chunk size warning만 있음
 ```
 
 남은 작업:
@@ -2228,7 +2234,7 @@ online manual 36건, help library 773건 기준이었다.
 15.2 PostgreSQL 운영 안정화 및 Alembic migration 관리 전환 - named volume 적용 완료 / Alembic baseline은 18단계 시작 전 수행
 16. EnvironmentDataAdapter 구현 - 수행됨 / cache hit, 외부 API refresh, fallback cache, fetch log, Care Risk 전달 검증 완료
 16.2 EnvironmentDataAdapter 운영 보완 실행 - 수행됨 / provider adapter, API key manager, 실제 OpenWeather/WAQI key 연결 검증 완료
-17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / Care Risk 계산 및 Guide 옵션 반환 검증 완료
+17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / Care Risk 계산 및 Guide 옵션 반환 검증 완료, AQI 가중치 보정 완료
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 문서/DB 설계 반영 및 API endpoint 재정리 완료
 17.1-A GuideOptionSet 및 Guide 완료 API 재정리 - 수행됨 / 검증 완료
 17.2 Product Code Registry 및 제품 등록 흐름 설계/DB 반영 - 수행됨 / 검증 완료

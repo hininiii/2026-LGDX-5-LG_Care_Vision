@@ -112,8 +112,15 @@ class CareRiskScoreEngine:
                     "reason": f"현재 습도는 {humidity:.0f}%로 높습니다.",
                 }
             )
-        if product_type in {"air_conditioner", "air_purifier"} and aqi >= 150:
-            delta = 15 if aqi < 250 else 20
+        if product_type in {"air_conditioner", "air_purifier"} and aqi >= 100:
+            if aqi < 150:
+                delta = 10
+            elif aqi < 200:
+                delta = 20
+            elif aqi < 300:
+                delta = 30
+            else:
+                delta = 35
             score += delta
             factors.append(
                 {
