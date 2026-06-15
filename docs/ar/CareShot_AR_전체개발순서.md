@@ -927,7 +927,7 @@ intent/risk 평가셋: 0건, 현 단계 미수행
 22.5 프론트 원본 UI 보호 및 데이터 주입 정리 - 수행됨 / UI 구조 변경 금지, 승인된 데이터 치환만 유지
 22.6 제품 코드 등록 시연 흐름 - 후속 필요 / `PRODUCT` master 조회 -> `USER_PRODUCT` 연결 흐름 미구현
 22.7 AR reference image 정적 서빙 및 part map 좌표 seed - 후속 필요
-23. 프론트 챗봇 UI를 multi-turn + 공식근거 카드 구조로 변경 - 수행 중 / 자유입력 추가 질문, API 기반 YouTube+단계 가이드 표시 구현
+23. 프론트 챗봇 UI를 multi-turn + 공식근거 카드 구조로 변경 - 수행 중 / 자유입력 추가 질문, API 기반 YouTube+단계 가이드 표시, 전원 문의 risk/detail 분리 검증
 23-1. self care 예방 알림 UI 구현 - 부분 수행 / Care Risk API 연결, 문구/근거 정합성 보강 중
 24. 안전 차단 카드 / expert A/S 연결 카드 / AR 시작 카드 정리 - 부분 수행 / expert_as 차단 및 AR 시작 분기 연결, 화면 QA 후속
 25. RAG 연결 후 intent/risk 평가 기준 확정 - 수행됨 / 2026-06-12 검증 완료
@@ -1324,6 +1324,9 @@ tests/test_repositories_sqlalchemy.py 등 관련 범위 통과
    - 2026-06-15 보정: 추가 질문 순서를 `위험 신호 확인`과 `증상 상황 설명`으로 분리했다. `risk_signal`이 남아 있으면 연기/스파크/타는 냄새/감전/냉매 냄새 여부만 먼저 묻고, 부정 답변 후 procedure별 위치/상황 질문으로 넘어간다.
    - 2026-06-15 보정: `guide_options`가 있으면 `ar_guides`가 비어 있어도 `AR 가이드` 버튼을 함께 표시한다. 사용자가 AR 버튼을 눌렀을 때 해당 procedure의 AR 템플릿이 없으면 화면 이동 대신 AR 제공 불가 안내 말풍선을 표시한다.
    - 2026-06-15 보정: 공식근거 영상/단계 카드와 기존 비디오/매뉴얼 카드 폭을 대화 말풍선 및 완료 확인 카드 기준인 `max-w-[290px]`로 맞췄다. 영상은 고정 높이 대신 `aspect-video`로 렌더링해 카드 폭 변경 시 비율이 유지되도록 했다.
+   - 2026-06-15 보정: `매뉴얼 가이드`/`AR 가이드` 버튼 묶음도 가이드 카드 기준 폭 `max-w-[290px]`에 맞추고 각 버튼을 균등 폭으로 정렬했다. AR 미지원 안내가 마지막 메시지로 추가되어도 `관리를 완료하셨나요?` 확인 버튼이 유지되도록 `showDoneAsk`를 함께 내려준다.
+   - 2026-06-15 보정: 전원 문의(`전원이 불안정하고 자주 꺼져요`)는 첫 턴에서 위험 신호만 묻고, 사용자가 `아니요`라고 답한 뒤에 플러그/콘센트/차단기/표시장/리모컨 상태를 묻도록 `/api/ai/chat` 실제 호출 smoke로 검증했다.
+   - 검증: `npm run build` -> success, `python -m pytest -q tests/test_frontend_compat_api.py tests/test_conversation_state_multiturn.py -vv` -> 20 passed, `/api/ai/chat` TestClient smoke -> 전원 문의 1턴 risk-only / 2턴 power detail 응답 확인.
    - 산출물: `src/app/api/chat.ts`, `src/app/types/chat.ts`, `src/app/pages/Chat.tsx`
    - 구현 메모: 기존 UI 보존 조건 때문에 이번 차수에서는 `ChatPanel`, `EvidenceCard`, `ClarificationPrompt` 파일 분리 대신 `Chat.tsx` 내부 렌더링으로 연결했다. 별도 컴포넌트 분리는 UI QA 후 필요 시 진행한다.
    - 완료 기준: 모호 문의에서 추가 질문이 나오고, 고객 자유입력 답변 후 공식 근거 기반 영상/단계 카드 또는 차단/서비스센터 분기가 표시됨
@@ -2250,7 +2253,7 @@ online manual 36건, help library 773건 기준이었다.
 22.4 회원가입/로그인/프로필 DB 연동 - 수행됨
 22.5 제품 코드 등록 시연 흐름 - 후속 필요
 22.6 AR reference image 정적 서빙 및 part map 좌표 seed - 후속 필요
-23. 프론트 챗봇 UI를 multi-turn + 공식근거 카드 구조로 변경 - 수행 중 / 자유입력 추가 질문, API 기반 YouTube+단계 가이드 표시 구현
+23. 프론트 챗봇 UI를 multi-turn + 공식근거 카드 구조로 변경 - 수행 중 / 자유입력 추가 질문, API 기반 YouTube+단계 가이드 표시, 전원 문의 risk/detail 분리 검증
 23-1. self care 추천 UI 구현 - 부분 수행 / Care Risk API 연결, 화면 문구 QA 후속
 24. 안전 차단 카드 / expert A/S 연결 카드 / AR 시작 카드 정리 - 부분 수행 / 화면 QA 후속
 25. RAG 연결 후 intent/risk 평가 기준 확정 - 수행됨 / 2026-06-12 검증 완료

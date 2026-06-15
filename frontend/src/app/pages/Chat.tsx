@@ -274,6 +274,7 @@ export function Chat() {
         content: "현재 이 증상은 공식 매뉴얼 가이드는 제공되지만 AR 가이드 템플릿은 아직 준비되지 않았어요. 먼저 영상과 단계별 매뉴얼로 확인해주세요.",
         time: now(),
         status: "blocked",
+        showDoneAsk: true,
       },
     ]);
   };
@@ -542,13 +543,13 @@ export function Chat() {
 
                 {/* 가이드 버튼 */}
                 {message.guideButtons && (
-                  <div className="flex gap-2 mt-3 pl-1">
+                  <div className="flex gap-2 mt-3 pl-1 max-w-[290px]">
                     {message.guideButtons.includes("manual") && (
                       <button
                         onClick={() => {
                           if (!message.guideOptions) handleOptionClick("매뉴얼 가이드");
                         }}
-                        className="bg-[#ff4c49] text-white rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#e63d3a] transition-colors shadow-sm"
+                        className="flex-1 bg-[#ff4c49] text-white rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#e63d3a] transition-colors shadow-sm"
                       >
                         매뉴얼 가이드
                       </button>
@@ -556,7 +557,7 @@ export function Chat() {
                     {message.guideButtons.includes("ar") && (
                       <button
                         onClick={() => handleArGuideClick(message)}
-                        className="bg-white border border-[#ff4c49] text-[#ff4c49] rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#fff5f5] transition-colors shadow-sm"
+                        className="flex-1 bg-white border border-[#ff4c49] text-[#ff4c49] rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#fff5f5] transition-colors shadow-sm"
                       >
                         AR 가이드
                       </button>
@@ -564,7 +565,7 @@ export function Chat() {
                     {message.guideButtons.includes("service") && (
                       <button
                         onClick={() => handleOptionClick("서비스 센터 연결")}
-                        className="bg-white border border-[#ff4c49] text-[#ff4c49] rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#fff5f5] transition-colors shadow-sm"
+                        className="flex-1 bg-white border border-[#ff4c49] text-[#ff4c49] rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#fff5f5] transition-colors shadow-sm"
                       >
                         서비스 센터 연결
                       </button>

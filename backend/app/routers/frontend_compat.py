@@ -74,7 +74,7 @@ def _symptom_location_question(procedure: str | None) -> str:
     return {
         "noise_self_check": "소음이나 진동이 어디에서 느껴지나요? 실내기 본체, 송풍구, 앞 커버, 배수부, 전원부 중 가까운 위치를 알려주세요.",
         "no_cooling_self_check": "냉방이 잘 안 되는 상황을 조금 더 알려주세요. 바람은 나오는지, 바람이 약한지, 송풍구 쪽 문제인지 알려주세요.",
-        "power_troubleshooting": "전원 문제가 어디에서 보이나요? 플러그, 콘센트, 차단기, 표시창, 리모컨 중 가까운 위치를 알려주세요.",
+        "power_troubleshooting": "전원이 꺼지는 상황을 조금 더 알려주세요. 플러그, 콘센트, 차단기, 표시창, 리모컨 중 어디에서 이상이 보이나요?",
         "odor_self_check": "냄새가 어디에서 주로 나나요? 송풍구, 필터, 실내기 본체, 배수부 중 가까운 위치를 알려주세요.",
         "water_leak_monsoon": "물이 어디에서 새나요? 실내기 본체, 송풍구, 배수 호스, 실외기 주변 중 가까운 위치를 알려주세요.",
     }.get(str(procedure), "증상이 나타나는 위치나 상황을 조금 더 알려주세요.")
@@ -97,7 +97,7 @@ def _localized_chat_message(raw: dict[str, Any], fallback: str) -> str:
         if first_missing == "environment_context":
             return "현재 실내가 습하거나 먼지가 많거나 비/장마 영향을 받고 있나요?"
         if first_missing == "recent_diagnosis":
-            return "ThinQ 진단이나 표시창에 에러, 전원 꺼짐, 차단기 관련 신호가 보이나요?"
+            return "ThinQ 진단이나 표시창에 에러 코드가 보이나요? 차단기가 내려가거나 전원이 반복해서 꺼지는 신호가 있으면 함께 알려주세요."
         return "안전한 안내를 위해 증상을 한 가지만 더 알려주세요."
 
     if decision.get("service_flow_type") == "expert_as" or decision.get("risk_level") == "high":

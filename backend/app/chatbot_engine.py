@@ -86,8 +86,12 @@ class ChatbotEngine:
             "power",
             "turns off",
             "no power",
+            "unstable",
             "꺼",
+            "꺼져",
+            "자주 꺼",
             "전원",
+            "불안정",
         ],
     }
 

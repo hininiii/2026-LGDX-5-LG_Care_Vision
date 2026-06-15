@@ -273,6 +273,113 @@ def test_frontend_ai_chat_uses_procedure_specific_symptom_detail_copy_after_risk
         app.dependency_overrides.clear()
 
 
+def test_frontend_ai_chat_power_issue_asks_risk_only_first() -> None:
+    class PowerClarificationService(FrontendCompatService):
+        def process_chat_message(self, payload: dict) -> dict:
+            self.last_chat_payload = payload
+            return {
+                "chat_session": {"session_id": "CHAT_TEST_POWER"},
+                "analysis": {
+                    "procedure": {"procedure_type": "power_troubleshooting"},
+                    "decision_result": {
+                        "service_flow_type": "self_as",
+                        "risk_level": "medium",
+                        "decision_action": "ask_clarification",
+                        "missing_slots": ["risk_signal", "symptom_location", "recent_diagnosis"],
+                    },
+                },
+                "chatbot_engine": {
+                    "ai_message": {
+                        "message_type": "text",
+                        "message_content": "Do you see any smoke?",
+                    },
+                    "conversation_state": {
+                        "session_id": "CHAT_TEST_POWER",
+                        "missing_slots": ["risk_signal", "symptom_location", "recent_diagnosis"],
+                        "state_status": "collecting",
+                    },
+                    "guide_options": None,
+                },
+            }
+
+    service = PowerClarificationService()
+    app.dependency_overrides[get_service] = lambda: service
+    client = TestClient(app)
+
+    try:
+        response = client.post(
+            "/api/ai/chat",
+            json={
+                "message": "전원이 불안정하고 자주 꺼져요",
+                "context": {"deviceId": "D001", "session_id": "CHAT_TEST_POWER"},
+            },
+        )
+        assert response.status_code == 200
+        payload = response.json()
+        assert payload["needs_clarification"] is True
+        assert payload["procedure_type"] == "power_troubleshooting"
+        assert "위험 신호" in payload["message"]
+        assert "아니요" in payload["message"]
+        assert "전원부" not in payload["message"]
+        assert "플러그" not in payload["message"]
+        assert "차단기" not in payload["message"]
+        assert "표시장" not in payload["message"]
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_frontend_ai_chat_power_issue_asks_detail_after_negative_risk() -> None:
+    class PowerDetailService(FrontendCompatService):
+        def process_chat_message(self, payload: dict) -> dict:
+            self.last_chat_payload = payload
+            return {
+                "chat_session": {"session_id": "CHAT_TEST_POWER_DETAIL"},
+                "analysis": {
+                    "procedure": {"procedure_type": "power_troubleshooting"},
+                    "decision_result": {
+                        "service_flow_type": "self_as",
+                        "risk_level": "medium",
+                        "decision_action": "ask_clarification",
+                        "missing_slots": ["symptom_location", "recent_diagnosis"],
+                    },
+                },
+                "chatbot_engine": {
+                    "ai_message": {
+                        "message_type": "text",
+                        "message_content": "Where do you notice it?",
+                    },
+                    "conversation_state": {
+                        "session_id": "CHAT_TEST_POWER_DETAIL",
+                        "missing_slots": ["symptom_location", "recent_diagnosis"],
+                        "state_status": "collecting",
+                    },
+                    "guide_options": None,
+                },
+            }
+
+    service = PowerDetailService()
+    app.dependency_overrides[get_service] = lambda: service
+    client = TestClient(app)
+
+    try:
+        response = client.post(
+            "/api/ai/chat",
+            json={
+                "message": "아니요",
+                "context": {"deviceId": "D001", "session_id": "CHAT_TEST_POWER_DETAIL"},
+            },
+        )
+        assert response.status_code == 200
+        payload = response.json()
+        assert payload["needs_clarification"] is True
+        assert payload["procedure_type"] == "power_troubleshooting"
+        assert "전원이 꺼지는 상황" in payload["message"]
+        assert "플러그" in payload["message"]
+        assert "위험 신호" not in payload["message"]
+    finally:
+        app.dependency_overrides.clear()
+
+
 def test_frontend_ai_chat_requires_message() -> None:
     app.dependency_overrides[get_service] = lambda: FrontendCompatService()
     client = TestClient(app)
