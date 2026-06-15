@@ -1,0 +1,38 @@
+[
+  {
+    "observation_id": "ENVOBS_AHMEDABAD_20260604_001",
+    "provider_id": "ENV_PROVIDER_OPENWEATHER",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Ahmedabad",
+    "observed_at": "2026-06-04T09:30:00+05:30",
+    "temperature_c": 38.2,
+    "humidity_percent": 66.0,
+    "aqi": 154,
+    "pm25": 62.0,
+    "pm10": 128.0,
+    "water_hardness_level": "high",
+    "payload": {
+      "basis": "development cache row based on existing India environment dataset",
+      "care_risk_factors": ["high_temperature", "humidity", "poor_air_quality"]
+    }
+  },
+  {
+    "observation_id": "ENVOBS_BENGALURU_20260604_001",
+    "provider_id": "ENV_PROVIDER_OPENWEATHER",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Bengaluru",
+    "observed_at": "2026-06-04T09:30:00+05:30",
+    "temperature_c": 29.4,
+    "humidity_percent": 78.0,
+    "aqi": 92,
+    "pm25": 32.0,
+    "pm10": 78.0,
+    "water_hardness_level": "medium",
+    "payload": {
+      "basis": "development cache row based on existing India environment dataset",
+      "care_risk_factors": ["humidity", "washing_machine_mildew_risk"]
+    }
+  }
+]

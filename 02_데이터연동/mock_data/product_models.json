@@ -1,0 +1,53 @@
+[
+  {
+    "model_id": "PM_AC_ASQ24ENXE_001",
+    "model_name": "AS-Q24ENXE",
+    "product_type": "air_conditioner",
+    "structure_type": "wall_ac_type_a",
+    "reference_image": "/static/assets/reference/as_q24enxe_reference_cover_open_filter_visible.png",
+    "reference_image_role": "ar_overlay_alignment",
+    "product_image_asset_id": "OA_AC_ASQ24ENXE_IMAGE_001",
+    "supported_guide_ids": [
+      "GUIDE_AC_FILTER_CARE_AR_V1",
+      "GUIDE_AC_WEAK_AIRFLOW_ODOR_SELF_CHECK_AR_V1"
+    ],
+    "recognition_mode": "reference_image_overlay",
+    "demo_scope": "final_presentation_air_conditioner_single_structure",
+    "created_at": "2026-06-03T12:10:00+09:00",
+    "updated_at": "2026-06-03T12:10:00+09:00"
+  },
+  {
+    "model_id": "PM_AC_WALL_COMMON_A_001",
+    "model_name": null,
+    "product_type": "air_conditioner",
+    "structure_type": "wall_ac_type_a",
+    "reference_image": "mock://assets/ar/reference/LG_wall_ac_front_common_type_a.jpg",
+    "reference_image_role": "fallback_ar_overlay_alignment",
+    "product_image_asset_id": null,
+    "supported_guide_ids": [
+      "GUIDE_AC_FILTER_CARE_AR_V1",
+      "GUIDE_AC_WEAK_AIRFLOW_ODOR_SELF_CHECK_AR_V1"
+    ],
+    "recognition_mode": "reference_image_overlay",
+    "demo_scope": "structure_type_common_fallback",
+    "created_at": "2026-06-03T12:10:00+09:00",
+    "updated_at": "2026-06-03T12:10:00+09:00"
+  },
+  {
+    "model_id": "PM_AC_AWQ24WWXA_001",
+    "model_name": "AW-Q24WWXA",
+    "product_type": "air_conditioner",
+    "structure_type": "window_ac_type_a",
+    "reference_image": "mock://assets/ar/reference/LG_window_ac_front_open_filter_type_a.jpg",
+    "reference_image_role": "ar_overlay_alignment_seed_required",
+    "product_image_asset_id": null,
+    "supported_guide_ids": [
+      "GUIDE_AC_FILTER_CARE_AR_V1",
+      "GUIDE_AC_WEAK_AIRFLOW_ODOR_SELF_CHECK_AR_V1"
+    ],
+    "recognition_mode": "reference_image_overlay",
+    "demo_scope": "final_demo_window_ac_verified_product_code_reference_image_pending",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "updated_at": "2026-06-05T12:48:00+09:00"
+  }
+]

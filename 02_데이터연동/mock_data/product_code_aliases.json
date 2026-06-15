@@ -1,0 +1,35 @@
+[
+  {
+    "alias_id": "PCA_LGIN_AC_AS_Q24ENXE",
+    "product_code_id": "PCR_LGIN_AC_AS_Q24ENXE",
+    "alias_code": "ASQ24ENXE",
+    "normalized_alias_code": "ASQ24ENXE",
+    "alias_type": "hyphen_removed",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/as-q24enxe/",
+    "verification_status": "verified",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "updated_at": "2026-06-05T12:48:00+09:00"
+  },
+  {
+    "alias_id": "PCA_LGIN_AC_AW_Q24WWXA",
+    "product_code_id": "PCR_LGIN_AC_AW_Q24WWXA",
+    "alias_code": "AWQ24WWXA",
+    "normalized_alias_code": "AWQ24WWXA",
+    "alias_type": "hyphen_removed",
+    "source_url": "https://www.lg.com/in/air-conditioners/window-air-conditioners/aw-q24wwxa/",
+    "verification_status": "verified",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "updated_at": "2026-06-05T12:48:00+09:00"
+  },
+  {
+    "alias_id": "PCA_LGIN_AC_STANDING_OFFICIAL_CATEGORY_ONLY",
+    "product_code_id": "PCR_LGIN_AC_STANDING_OFFICIAL_CATEGORY_ONLY",
+    "alias_code": "LGINSTANDINGACCATEGORYONLY",
+    "normalized_alias_code": "LGINSTANDINGACCATEGORYONLY",
+    "alias_type": "hyphen_removed",
+    "source_url": "https://www.lg.com/in/business/air-solution/single-split-air-solution/single-split-floor-standing/",
+    "verification_status": "unverified",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "updated_at": "2026-06-05T12:48:00+09:00"
+  }
+]

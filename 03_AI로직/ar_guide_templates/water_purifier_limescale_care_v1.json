@@ -1,0 +1,172 @@
+{
+  "template_id": "water_purifier_limescale_care_v1",
+  "version": 1,
+  "product_type": "water_purifier",
+  "procedure_type": "limescale_care",
+  "risk_ceiling": "medium",
+  "reuse_category": "care_video_reusable",
+  "allowed_match_scope": ["exact_model", "official_alias", "official_series", "product_type_common"],
+  "required_official_sources": ["official_faq", "online_manual", "support_page"],
+  "parts": [
+    {
+      "tag": "water_purifier.body",
+      "display_name": "Water purifier body",
+      "user_accessible": true
+    },
+    {
+      "tag": "water_purifier.water_outlet",
+      "display_name": "Water outlet",
+      "user_accessible": true
+    },
+    {
+      "tag": "water_purifier.drip_tray",
+      "display_name": "Drip tray",
+      "user_accessible": true
+    },
+    {
+      "tag": "water_purifier.control_panel",
+      "display_name": "Control panel",
+      "user_accessible": true
+    },
+    {
+      "tag": "water_purifier.filter_indicator",
+      "display_name": "Filter indicator",
+      "user_accessible": true
+    },
+    {
+      "tag": "water_purifier.external_filter_cover",
+      "display_name": "External filter cover",
+      "user_accessible": true,
+      "position_variant_required": true
+    }
+  ],
+  "allowed_actions": [
+    "wipe_water_outlet_exterior",
+    "remove_and_wash_drip_tray_if_detachable",
+    "check_filter_indicator",
+    "run_cleaning_mode_if_officially_supported",
+    "request_service_for_internal_scale"
+  ],
+  "conditional_actions": [
+    "replace_user_accessible_filter",
+    "clean_nozzle_cap"
+  ],
+  "forbidden_actions": [
+    "open_internal_water_line",
+    "descale_internal_tank",
+    "repair_hot_water_system",
+    "open_electrical_panel",
+    "use_chemical_descaler_without_official_instruction",
+    "disassemble_filter_head"
+  ],
+  "camera_rules": [
+    "front_wide",
+    "outlet_close",
+    "drip_tray_close",
+    "control_panel_close",
+    "service_branch_card"
+  ],
+  "highlight_rules": [
+    "outlet_outline",
+    "drip_tray_removal_arrow",
+    "filter_indicator_highlight",
+    "internal_limescale_service_warning"
+  ],
+  "forbidden_generation_notes": [
+    "Do not show internal tank, cooling unit, hot water system, PCB, or internal piping.",
+    "Do not show chemical descaling unless official source explicitly permits it.",
+    "If customer asks about internal scale, route to service or admin review rather than giving internal cleaning steps."
+  ],
+  "scene_steps": [
+    {
+      "step_id": "wp_scale_01_scope",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 7,
+      "camera": "front_wide",
+      "parts": ["water_purifier.body"],
+      "action": "explain_external_care_scope",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "water_purifier.body",
+        "text_template_id": "water_purifier_external_scope_only"
+      },
+      "subtitle_template_id": "water_purifier_scope",
+      "tts_template_id": "water_purifier_scope"
+    },
+    {
+      "step_id": "wp_scale_02_outlet",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 9,
+      "camera": "outlet_close",
+      "parts": ["water_purifier.water_outlet"],
+      "action": "wipe_water_outlet_exterior",
+      "highlight": {
+        "type": "outline",
+        "target_part": "water_purifier.water_outlet",
+        "text_template_id": "water_purifier_wipe_outlet"
+      },
+      "subtitle_template_id": "water_purifier_wipe_outlet",
+      "tts_template_id": "water_purifier_wipe_outlet"
+    },
+    {
+      "step_id": "wp_scale_03_drip_tray",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 9,
+      "camera": "drip_tray_close",
+      "parts": ["water_purifier.drip_tray"],
+      "action": "remove_and_wash_drip_tray_if_detachable",
+      "highlight": {
+        "type": "arrow",
+        "target_part": "water_purifier.drip_tray",
+        "text_template_id": "water_purifier_drip_tray"
+      },
+      "subtitle_template_id": "water_purifier_clean_drip_tray",
+      "tts_template_id": "water_purifier_clean_drip_tray"
+    },
+    {
+      "step_id": "wp_scale_04_filter_indicator",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 8,
+      "camera": "control_panel_close",
+      "parts": ["water_purifier.filter_indicator", "water_purifier.control_panel"],
+      "action": "check_filter_indicator",
+      "highlight": {
+        "type": "outline",
+        "target_part": "water_purifier.filter_indicator",
+        "text_template_id": "water_purifier_check_filter_indicator"
+      },
+      "subtitle_template_id": "water_purifier_filter_indicator",
+      "tts_template_id": "water_purifier_filter_indicator"
+    },
+    {
+      "step_id": "wp_scale_05_cleaning_mode",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 9,
+      "camera": "control_panel_close",
+      "parts": ["water_purifier.control_panel"],
+      "action": "run_cleaning_mode_if_officially_supported",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "water_purifier.control_panel",
+        "text_template_id": "water_purifier_cleaning_mode_official_only"
+      },
+      "subtitle_template_id": "water_purifier_cleaning_mode",
+      "tts_template_id": "water_purifier_cleaning_mode"
+    },
+    {
+      "step_id": "wp_scale_06_service_branch",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 10,
+      "camera": "service_branch_card",
+      "parts": ["water_purifier.body"],
+      "action": "request_service_for_internal_scale",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "water_purifier.body",
+        "text_template_id": "safety_service_required_for_internal_scale"
+      },
+      "subtitle_template_id": "water_purifier_internal_scale_service",
+      "tts_template_id": "water_purifier_internal_scale_service"
+    }
+  ]
+}

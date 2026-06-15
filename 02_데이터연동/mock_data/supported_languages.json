@@ -1,0 +1,162 @@
+[
+  {
+    "language_code": "en",
+    "display_name": "English",
+    "native_name": "English",
+    "region_scope": "global_india_default",
+    "web_supported": true,
+    "tts_supported": true,
+    "fallback_language_code": null,
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "raw_json": {
+      "language_code": "en",
+      "display_name": "English",
+      "native_name": "English",
+      "region_scope": "global_india_default",
+      "web_supported": true,
+      "tts_supported": true,
+      "fallback_language_code": null,
+      "created_at": "2026-06-05T12:48:00+09:00"
+    }
+  },
+  {
+    "language_code": "hi",
+    "display_name": "Hindi",
+    "native_name": "??????",
+    "region_scope": "north_central_india",
+    "web_supported": true,
+    "tts_supported": true,
+    "fallback_language_code": "en",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "raw_json": {
+      "language_code": "hi",
+      "display_name": "Hindi",
+      "native_name": "??????",
+      "region_scope": "north_central_india",
+      "web_supported": true,
+      "tts_supported": true,
+      "fallback_language_code": "en",
+      "created_at": "2026-06-05T12:48:00+09:00"
+    }
+  },
+  {
+    "language_code": "ta",
+    "display_name": "Tamil",
+    "native_name": "?????",
+    "region_scope": "tamil_nadu",
+    "web_supported": true,
+    "tts_supported": true,
+    "fallback_language_code": "en",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "raw_json": {
+      "language_code": "ta",
+      "display_name": "Tamil",
+      "native_name": "?????",
+      "region_scope": "tamil_nadu",
+      "web_supported": true,
+      "tts_supported": true,
+      "fallback_language_code": "en",
+      "created_at": "2026-06-05T12:48:00+09:00"
+    }
+  },
+  {
+    "language_code": "te",
+    "display_name": "Telugu",
+    "native_name": "??????",
+    "region_scope": "andhra_pradesh_telangana",
+    "web_supported": true,
+    "tts_supported": true,
+    "fallback_language_code": "en",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "raw_json": {
+      "language_code": "te",
+      "display_name": "Telugu",
+      "native_name": "??????",
+      "region_scope": "andhra_pradesh_telangana",
+      "web_supported": true,
+      "tts_supported": true,
+      "fallback_language_code": "en",
+      "created_at": "2026-06-05T12:48:00+09:00"
+    }
+  },
+  {
+    "language_code": "bn",
+    "display_name": "Bengali",
+    "native_name": "?????",
+    "region_scope": "west_bengal",
+    "web_supported": true,
+    "tts_supported": true,
+    "fallback_language_code": "en",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "raw_json": {
+      "language_code": "bn",
+      "display_name": "Bengali",
+      "native_name": "?????",
+      "region_scope": "west_bengal",
+      "web_supported": true,
+      "tts_supported": true,
+      "fallback_language_code": "en",
+      "created_at": "2026-06-05T12:48:00+09:00"
+    }
+  },
+  {
+    "language_code": "mr",
+    "display_name": "Marathi",
+    "native_name": "?????",
+    "region_scope": "maharashtra",
+    "web_supported": true,
+    "tts_supported": true,
+    "fallback_language_code": "hi",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "raw_json": {
+      "language_code": "mr",
+      "display_name": "Marathi",
+      "native_name": "?????",
+      "region_scope": "maharashtra",
+      "web_supported": true,
+      "tts_supported": true,
+      "fallback_language_code": "hi",
+      "created_at": "2026-06-05T12:48:00+09:00"
+    }
+  },
+  {
+    "language_code": "kn",
+    "display_name": "Kannada",
+    "native_name": "?????",
+    "region_scope": "karnataka",
+    "web_supported": true,
+    "tts_supported": true,
+    "fallback_language_code": "en",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "raw_json": {
+      "language_code": "kn",
+      "display_name": "Kannada",
+      "native_name": "?????",
+      "region_scope": "karnataka",
+      "web_supported": true,
+      "tts_supported": true,
+      "fallback_language_code": "en",
+      "created_at": "2026-06-05T12:48:00+09:00"
+    }
+  },
+  {
+    "language_code": "ml",
+    "display_name": "Malayalam",
+    "native_name": "??????",
+    "region_scope": "kerala",
+    "web_supported": true,
+    "tts_supported": true,
+    "fallback_language_code": "en",
+    "created_at": "2026-06-05T12:48:00+09:00",
+    "raw_json": {
+      "language_code": "ml",
+      "display_name": "Malayalam",
+      "native_name": "??????",
+      "region_scope": "kerala",
+      "web_supported": true,
+      "tts_supported": true,
+      "fallback_language_code": "en",
+      "created_at": "2026-06-05T12:48:00+09:00"
+    }
+  }
+]

@@ -6,7 +6,8 @@ import {
   PRODUCT_TYPES,
   TIME_SLOTS,
 } from "../data/mockChat";
-import type { ChatContext, Message, ScheduleDateOption } from "../types/chat";
+import { apiPost } from "./client";
+import type { AiChatResponse, ChatContext, Message, ScheduleDateOption } from "../types/chat";
 
 export function getInitialChatMessages(): Message[] {
   return initialMessages;
@@ -37,14 +38,16 @@ export function getTimeSlots(): string[] {
 }
 
 export async function saveChatMessage(message: string, context: ChatContext): Promise<void> {
-  void message;
-  void context;
-  // TODO: Replace with POST /api/chat-messages when backend is ready.
+  await apiPost<{ saved: boolean }, { message: string; context: ChatContext }>(
+    "/chat-messages",
+    { message, context },
+  );
 }
 
-export async function requestAiChat(message: string, context: ChatContext): Promise<string> {
-  void context;
-  // TODO: Replace with POST /api/ai/chat when LLM backend is ready.
-  return message;
+export async function requestAiChat(message: string, context: ChatContext): Promise<AiChatResponse> {
+  return apiPost<AiChatResponse, { message: string; context: ChatContext; include_rag_evidence: boolean }>(
+    "/ai/chat",
+    { message, context, include_rag_evidence: true },
+  );
 }
 

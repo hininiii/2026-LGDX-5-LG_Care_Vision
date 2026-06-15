@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Eye, EyeOff } from "lucide-react";
+import { loginUser } from "../api/user";
+import { setCurrentUserEmail } from "../utils/authSession";
 
 const airbrushBg = [
   "radial-gradient(ellipse 120% 55% at 50% -5%, rgba(255,190,140,0.22) 0%, transparent 70%)",
@@ -22,15 +24,21 @@ export function Login() {
   const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.email || !form.password) {
       setError("이메일과 비밀번호를 입력해주세요.");
       return;
     }
-    localStorage.setItem("isLoggedIn", "true");
-    const langSet = localStorage.getItem("appLanguage");
-    if (!langSet) navigate("/setup/language");
-    else navigate("/");
+    try {
+      const response = await loginUser({ user_email: form.email, password: form.password });
+      setCurrentUserEmail(response.user.user_email ?? form.email);
+      localStorage.setItem("isLoggedIn", "true");
+      const langSet = localStorage.getItem("appLanguage");
+      if (!langSet) navigate("/setup/language");
+      else navigate("/");
+    } catch {
+      setError("이메일 또는 비밀번호를 확인해주세요.");
+    }
   };
 
   return (
@@ -39,9 +47,9 @@ export function Login() {
 
         <div className="relative z-10 px-[24px] pt-[80px] pb-[40px]">
           {/* 로고 */}
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Shot</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Vision</p>
           <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#888] mb-12">
-            가전 기기 케어 관리 서비스
+            인도 가전 Care 및 A/S 서비스
           </p>
 
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-6">로그인</p>

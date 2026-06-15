@@ -1,0 +1,17 @@
+[
+  {
+    "validation_id": "ARVAL_ASQ24_FILTER_001",
+    "reference_image_id": "REF_ASQ24_OPEN_FILTER_V1",
+    "part_map_version_id": "PMV_WALL_AC_A_OPEN_FILTER_V1",
+    "structure_type": "wall_ac_type_a",
+    "validation_type": "manual_visual_check",
+    "status": "needs_final_qa",
+    "accuracy_score": 0.82,
+    "issues": [
+      "Development reference aligned for demo only.",
+      "Final camera alignment QA still required on physical device."
+    ],
+    "validated_by": "codex",
+    "validated_at": "2026-06-04T10:08:00+09:00"
+  }
+]

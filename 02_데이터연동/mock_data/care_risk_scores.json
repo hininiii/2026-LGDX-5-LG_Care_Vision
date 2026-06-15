@@ -1,0 +1,19 @@
+[
+  {
+    "score_id": "SCORE_AC_FILTER_001",
+    "user_id": "U001",
+    "device_id": "D001",
+    "product_type": "air_conditioner",
+    "procedure_type": "filter_cleaning",
+    "score": 74.0,
+    "risk_level": "medium",
+    "reasons": [
+      "Ahmedabad humidity is above AC filter mildew risk threshold.",
+      "AQI is poor enough to increase dust filter care priority.",
+      "Recent AC runtime indicates preventive filter care should be offered."
+    ],
+    "usage_log_id": "UL0001",
+    "environment_observation_id": "ENVOBS_AHMEDABAD_20260604_001",
+    "computed_at": "2026-06-04T10:02:00+09:00"
+  }
+]

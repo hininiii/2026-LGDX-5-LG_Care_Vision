@@ -1,0 +1,42 @@
+[
+  {
+    "structure_type": "wall_ac_type_a",
+    "product_type": "air_conditioner",
+    "display_name": "Wall-mounted air conditioner",
+    "description": "Front panel opens upward and mesh filter is visible behind the cover.",
+    "demo_priority": 1,
+    "active": true,
+    "created_at": "2026-06-04T10:00:00+09:00",
+    "updated_at": "2026-06-04T10:00:00+09:00"
+  },
+  {
+    "structure_type": "standing_ac_type_a",
+    "product_type": "air_conditioner",
+    "display_name": "Standing air conditioner",
+    "description": "Vertical floor-standing AC structure for final presentation expansion.",
+    "demo_priority": 2,
+    "active": true,
+    "created_at": "2026-06-04T10:00:00+09:00",
+    "updated_at": "2026-06-04T10:00:00+09:00"
+  },
+  {
+    "structure_type": "window_ac_type_a",
+    "product_type": "air_conditioner",
+    "display_name": "Window air conditioner",
+    "description": "Window-mounted AC structure for final presentation expansion.",
+    "demo_priority": 3,
+    "active": true,
+    "created_at": "2026-06-04T10:00:00+09:00",
+    "updated_at": "2026-06-04T10:00:00+09:00"
+  },
+  {
+    "structure_type": "top_load_washer_type_a",
+    "product_type": "washing_machine",
+    "display_name": "Top-load washing machine",
+    "description": "Top-load washer structure for tub-clean preventive care.",
+    "demo_priority": 10,
+    "active": true,
+    "created_at": "2026-06-04T10:00:00+09:00",
+    "updated_at": "2026-06-04T10:00:00+09:00"
+  }
+]

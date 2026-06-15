@@ -1,0 +1,12 @@
+[
+  {
+    "route_log_id": "ROUTE_HIGH_RISK_001",
+    "session_id": "CHAT_AR_003",
+    "user_id": "U001",
+    "device_id": "D001",
+    "route_type": "service_center_or_agent",
+    "reason": "High risk symptom blocks AR guide and routes to service support.",
+    "status": "created",
+    "created_at": "2026-06-04T10:07:00+09:00"
+  }
+]

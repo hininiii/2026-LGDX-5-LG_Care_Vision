@@ -10,10 +10,12 @@ import {
   getProductCategories,
   getProductTypes,
   getTimeSlots,
+  requestAiChat,
+  saveChatMessage,
 } from "../api/chat";
 import { getRegisteredDevices } from "../api/devices";
 import { getUserProfile } from "../api/user";
-import type { ChatContext, FlowType, Message, ServiceInfo, ServiceStep } from "../types/chat";
+import type { AiChatResponse, ChatContext, ChatGuideOptions, ChatManualGuide, FlowType, Message, ServiceInfo, ServiceStep } from "../types/chat";
 import type { ChatDeviceOption } from "../types/device";
 
 const LEGACY_CHAT_STORAGE_KEYS = ["chat_messages"];
@@ -26,6 +28,86 @@ const now = () =>
 const PRODUCTS = getProductCategories();
 const AVAILABLE_DATES = getAvailableDates();
 const TIME_SLOTS = getTimeSlots();
+
+const PROCEDURE_LABELS: Record<string, string> = {
+  filter_cleaning: "필터 청소",
+  noise_self_check: "소음/진동 자가점검",
+  no_cooling_self_check: "냉방/바람 약함 자가점검",
+  odor_self_check: "냄새 자가점검",
+  water_leak_monsoon: "누수 자가점검",
+  power_troubleshooting: "전원 자가점검",
+  remote_operation: "리모컨/기능 사용 안내",
+};
+
+const FILTER_CLEANING_STEPS = [
+  "전원을 끄고 플러그를 뽑으세요.",
+  "필터 커버를 천천히 들어 올리세요.",
+  "잠금을 풀고 필터를 분리하세요.",
+  "흐르는 물로 헹군 후 그늘에 말리세요.",
+  "필터를 재장착하고 커버를 닫으세요.",
+];
+
+const KNOWN_GUIDE_STEPS: Record<string, string[]> = {
+  filter_cleaning: FILTER_CLEANING_STEPS,
+  noise_self_check: [
+    "금속성 소리, 타는 냄새, 심한 진동이 있으면 사용을 멈추고 서비스센터로 연결하세요.",
+    "앞 커버나 보이는 패널이 완전히 닫혀 있는지 확인하세요.",
+    "커튼, 가구, 느슨한 물건이 바람 때문에 떨리는지 확인하세요.",
+    "안전한 거리에서 제품이 기울어져 있지 않은지 확인하세요.",
+    "낮은 풍량으로 다시 켜서 소음이 줄어드는지 확인하세요.",
+    "내부 커버, 팬, 모터 부위는 직접 분해하거나 만지지 마세요.",
+    "소음이 계속되면 전문 A/S를 신청하세요.",
+  ],
+  no_cooling_self_check: [
+    "희망 온도를 현재 실내 온도보다 낮게 설정했는지 확인하세요.",
+    "필터에 먼지가 많으면 필터를 청소한 뒤 다시 작동해보세요.",
+    "실외기 주변 통풍을 막는 물건이 없는지 확인하세요.",
+    "문과 창문이 열려 있거나 햇빛이 강하게 들어오는지 확인하세요.",
+    "냉방이 계속 약하면 전문 A/S를 신청하세요.",
+  ],
+  power_troubleshooting: [
+    "타는 냄새, 연기, 스파크가 있으면 전원을 끄고 바로 서비스센터로 연결하세요.",
+    "리모컨 배터리와 표시창 상태를 확인하세요.",
+    "전원 플러그가 안전하게 연결되어 있는지 눈으로만 확인하세요.",
+    "차단기가 내려갔는지 확인하되, 젖은 손으로 만지지 마세요.",
+    "같은 증상이 반복되면 내부 분해 없이 전문 A/S를 신청하세요.",
+  ],
+};
+
+const getProcedureLabel = (procedure?: string) =>
+  (procedure && PROCEDURE_LABELS[procedure]) || "가이드";
+
+const youtubeEmbedUrl = (url?: string, videoId?: string) => {
+  if (videoId) return `https://www.youtube.com/embed/${videoId}`;
+  if (!url) return null;
+  const watchMatch = url.match(/[?&]v=([^&]+)/);
+  if (watchMatch?.[1]) return `https://www.youtube.com/embed/${watchMatch[1]}`;
+  const shortMatch = url.match(/youtu\.be\/([^?&]+)/);
+  if (shortMatch?.[1]) return `https://www.youtube.com/embed/${shortMatch[1]}`;
+  return null;
+};
+
+const extractGuideSteps = (guide?: ChatManualGuide, procedureType?: string) => {
+  if (procedureType && KNOWN_GUIDE_STEPS[procedureType]) return KNOWN_GUIDE_STEPS[procedureType];
+  const text = guide?.guide_text || guide?.summary || "";
+  const steps = text
+    .split(/\n+/)
+    .map((line) => line.replace(/^\s*(?:\d+[\).\s-]*|[①-⑳]\s*)/, "").trim())
+    .filter((line) => line.length > 0);
+  return steps.length > 0 ? steps : ["공식 가이드 내용을 확인한 뒤 안전한 범위에서 단계대로 진행하세요."];
+};
+
+const guideVideo = (guideOptions?: ChatGuideOptions) => {
+  const youtube = guideOptions?.youtube_recommendations?.[0];
+  const manual = guideOptions?.manual_guides?.[0];
+  const embedUrl = youtubeEmbedUrl(youtube?.source_url, youtube?.video_id) || youtubeEmbedUrl(manual?.video_url || undefined);
+  return {
+    title: youtube?.title || manual?.title || "LG 공식 영상 가이드",
+    embedUrl,
+    videoUrl: manual?.video_url || youtube?.source_url || null,
+    channel: youtube?.channel_name,
+  };
+};
 
 export function Chat() {
   const navigate = useNavigate();
@@ -105,6 +187,97 @@ export function Chat() {
     }, 600);
   };
 
+  const statusFromAiResponse = (response: AiChatResponse): Message["status"] => {
+    if (response.needs_clarification) return "needs_clarification";
+    if (response.service_flow_type === "expert_as" || response.risk_level === "high") return "blocked";
+    if ((response.guide_options?.ar_guides?.length ?? 0) > 0) return "ar_ready";
+    if (response.guide_options) return "evidence_found";
+    return "sent";
+  };
+
+  const guideButtonsFromAiResponse = (response: AiChatResponse): Message["guideButtons"] | undefined => {
+    if (response.service_flow_type === "expert_as" || response.risk_level === "high") return ["service"];
+    if (!response.guide_options || response.needs_clarification) return undefined;
+    return ["manual", "ar"];
+  };
+
+  const submitAiMessage = async (text: string, options?: { resetSession?: boolean }) => {
+    const analyzingId = `analyzing-${Date.now()}`;
+    const contextForRequest = {
+      ...chatContext,
+      symptom: text,
+      ...(options?.resetSession ? { session_id: undefined } : {}),
+    };
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: analyzingId,
+        type: "bot",
+        content: "증상을 분석하고 있어요.",
+        time: now(),
+        status: "analyzing",
+      },
+    ]);
+
+    try {
+      await saveChatMessage(text, contextForRequest);
+      const response = await requestAiChat(text, contextForRequest);
+      if (response.session_id) {
+        setChatContext((prev) => ({
+          ...prev,
+          session_id: response.session_id,
+          symptom: text,
+          recommendedActions: response.needs_clarification ? ["llm"] : prev.recommendedActions,
+        }));
+      }
+
+      setMessages((prev) =>
+        prev.map((message) =>
+          message.id === analyzingId
+            ? {
+                ...message,
+                content: response.message,
+                status: statusFromAiResponse(response),
+                guideButtons: guideButtonsFromAiResponse(response),
+                guideOptions: response.needs_clarification ? undefined : response.guide_options ?? undefined,
+              }
+            : message,
+        ),
+      );
+    } catch {
+      setMessages((prev) =>
+        prev.map((message) =>
+          message.id === analyzingId
+            ? {
+                ...message,
+                content: "API 연결을 확인하지 못했어요. 잠시 후 다시 시도해주세요.",
+                status: "blocked",
+              }
+            : message,
+        ),
+      );
+    }
+  };
+
+  const handleArGuideClick = (message: Message) => {
+    if (!message.guideOptions || (message.guideOptions.ar_guides?.length ?? 0) > 0) {
+      navigate("/ar-guide", { state: { from: "/chat" } });
+      return;
+    }
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: Date.now().toString(),
+        type: "bot",
+        content: "현재 이 증상은 공식 매뉴얼 가이드는 제공되지만 AR 가이드 템플릿은 아직 준비되지 않았어요. 먼저 영상과 단계별 매뉴얼로 확인해주세요.",
+        time: now(),
+        status: "blocked",
+      },
+    ]);
+  };
+
   // 서비스센터 정보 수집 단계별 안내
   const nextServiceStep = (step: ServiceStep) => {
     setServiceStep(step);
@@ -123,7 +296,7 @@ export function Chat() {
     }
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
     const text = inputValue.trim();
     setInputValue("");
@@ -147,19 +320,7 @@ export function Chat() {
       return;
     }
 
-    // 일반 키워드 감지
-    if (text.includes("필터") && text.includes("먼지")) {
-      setChatContext((prev) => ({
-        ...prev,
-        symptom: text,
-        recommendedActions: ["manual", "ar"],
-      }));
-      addBotMessage("🔍 증상을 분석한 결과 셀프 케어로 해결 가능한 문제입니다.\n원하시는 가이드를 선택해주세요.", {
-        guideButtons: ["manual", "ar"],
-      });
-    } else {
-      addBotMessage("감사합니다. 문의사항을 확인하고 있습니다.");
-    }
+    await submitAiMessage(text);
   };
 
   const handleOptionClick = (option: string) => {
@@ -169,19 +330,19 @@ export function Chat() {
       // ── 최상위 메뉴 ──
       if (option === "제품 문제 해결") {
         setFlow("trouble");
-        setChatContext({ intent: "trouble" });
+        setChatContext({ intent: "trouble", session_id: undefined });
         setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "어떤 제품에 문제가 생겼나요?", time: now(), options: PRODUCTS }]);
         return;
       }
       if (option === "가전 관리 방법") {
         setFlow("care");
-        setChatContext({ intent: "care" });
+        setChatContext({ intent: "care", session_id: undefined });
         setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "관리 방법이 필요한 제품을 선택해주세요.", time: now(), options: PRODUCTS }]);
         return;
       }
       if (option === "서비스 센터 연결") {
         setFlow("service");
-        setChatContext({ intent: "service" });
+        setChatContext({ intent: "service", session_id: undefined });
         setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "서비스를 신청할 제품을 선택해주세요.", time: now(), options: PRODUCTS }]);
         return;
       }
@@ -228,33 +389,14 @@ export function Chat() {
       }
 
       // ── 증상 선택 ──
-      if (option === "필터에 먼지가 많이 쌓여 있어요") {
+      if (getProblemOptions().includes(option) && option !== "그 외 다른 문제") {
         setChatContext((prev) => ({
           ...prev,
+          session_id: undefined,
           symptom: option,
-          recommendedActions: ["manual", "ar"],
+          recommendedActions: ["llm"],
         }));
-        setMessages((prev) => [...prev, {
-          id: (Date.now() + 1).toString(), type: "bot",
-          content: "🔍 셀프 케어로 해결 가능한 문제예요!\n원하시는 가이드를 선택해주세요.",
-          time: now(),
-          guideButtons: ["manual", "ar"],
-        }]);
-        return;
-      }
-      if (["전원이 불안정하거나 자주 꺼져요", "냉방/기능이 잘 작동하지 않아요", "소음이나 진동이 심해요"].includes(option)) {
-        setChatContext((prev) => ({
-          ...prev,
-          symptom: option,
-          recommendedActions: ["video", "manual", "ar", "service"],
-        }));
-        setMessages((prev) => [...prev, {
-          id: (Date.now() + 1).toString(), type: "bot",
-          content: "🔍 증상을 분석했어요.\n먼저 영상 가이드로 확인해보시고, 해결되지 않으면 서비스 센터를 연결해드릴게요.",
-          time: now(),
-          showVideo: true,
-          guideButtons: ["manual", "ar"],
-        }]);
+        await submitAiMessage(option, { resetSession: true });
         return;
       }
       if (option === "그 외 다른 문제") {
@@ -346,7 +488,7 @@ export function Chat() {
             <ChevronLeft size={20} className="text-black cursor-pointer" strokeWidth={2} />
           </button>
           <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-[15px]">
-            LG Chat
+            Chat
           </p>
         </div>
       </div>
@@ -403,7 +545,9 @@ export function Chat() {
                   <div className="flex gap-2 mt-3 pl-1">
                     {message.guideButtons.includes("manual") && (
                       <button
-                        onClick={() => handleOptionClick("매뉴얼 가이드")}
+                        onClick={() => {
+                          if (!message.guideOptions) handleOptionClick("매뉴얼 가이드");
+                        }}
                         className="bg-[#ff4c49] text-white rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#e63d3a] transition-colors shadow-sm"
                       >
                         매뉴얼 가이드
@@ -411,24 +555,79 @@ export function Chat() {
                     )}
                     {message.guideButtons.includes("ar") && (
                       <button
-                        onClick={() => navigate("/ar-guide", { state: { from: "/chat" } })}
+                        onClick={() => handleArGuideClick(message)}
                         className="bg-white border border-[#ff4c49] text-[#ff4c49] rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#fff5f5] transition-colors shadow-sm"
                       >
                         AR 가이드
                       </button>
                     )}
+                    {message.guideButtons.includes("service") && (
+                      <button
+                        onClick={() => handleOptionClick("서비스 센터 연결")}
+                        className="bg-white border border-[#ff4c49] text-[#ff4c49] rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#fff5f5] transition-colors shadow-sm"
+                      >
+                        서비스 센터 연결
+                      </button>
+                    )}
+                  </div>
+                )}
+
+                {/* 공식근거 기반 영상 + 단계별 가이드 */}
+                {message.guideOptions && (
+                  <div className="mt-3 pl-1 space-y-2 max-w-[290px]">
+                    {(() => {
+                      const video = guideVideo(message.guideOptions);
+                      const manual = message.guideOptions.manual_guides?.[0];
+                      const procedureType = message.guideOptions.procedure_type;
+                      const procedureLabel = getProcedureLabel(procedureType);
+                      const steps = extractGuideSteps(manual, procedureType);
+                      return (
+                        <>
+                          {(video.embedUrl || video.videoUrl) && (
+                            <div className="bg-gray-900 w-full aspect-video rounded-[15px] overflow-hidden shadow-sm">
+                              {video.embedUrl ? (
+                                <iframe
+                                  title={video.title}
+                                  src={video.embedUrl}
+                                  className="w-full h-full"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                />
+                              ) : (
+                                <video controls className="w-full h-full object-cover" src={video.videoUrl || undefined} controlsList="nodownload">
+                                  브라우저가 비디오 태그를 지원하지 않습니다.
+                                </video>
+                              )}
+                            </div>
+                          )}
+                          <div className="bg-white rounded-[15px] px-4 py-3 w-full shadow-sm border border-[#f0f0f0]">
+                            <div className="flex items-center justify-between gap-2 mb-2">
+                              <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-black">📋 {procedureLabel} 순서</p>
+                              <span className="font-['Pretendard:Medium',sans-serif] text-[9px] text-[#2d9b69] bg-[#eaf8f1] rounded-full px-2 py-[2px] whitespace-nowrap">
+                                LG 공식 기준
+                              </span>
+                            </div>
+                            {steps.map((step, i) => (
+                              <p key={i} className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#444] leading-[18px]">
+                                {`${i + 1}. ${step}`}
+                              </p>
+                            ))}
+                          </div>
+                        </>
+                      );
+                    })()}
                   </div>
                 )}
 
                 {/* 비디오 + 매뉴얼 */}
                 {message.showVideo && (
-                  <div className="mt-3 pl-1 space-y-2">
-                    <div className="bg-gray-900 h-[120px] w-[240px] rounded-[15px] overflow-hidden shadow-sm">
+                  <div className="mt-3 pl-1 space-y-2 max-w-[290px]">
+                    <div className="bg-gray-900 w-full aspect-video rounded-[15px] overflow-hidden shadow-sm">
                       <video controls className="w-full h-full object-cover" src={aiAlertVideo} controlsList="nodownload">
                         브라우저가 비디오 태그를 지원하지 않습니다.
                       </video>
                     </div>
-                    <div className="bg-white rounded-[15px] px-4 py-3 w-[240px] shadow-sm border border-[#f0f0f0]">
+                    <div className="bg-white rounded-[15px] px-4 py-3 w-full shadow-sm border border-[#f0f0f0]">
                       <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-black mb-2">📋 필터 청소 순서</p>
                       {["① 전원을 끄고 플러그를 뽑으세요.", "② 필터 커버를 천천히 들어 올리세요.", "③ 잠금을 풀고 필터를 분리하세요.", "④ 흐르는 물로 헹군 후 그늘에 말리세요.", "⑤ 필터를 재장착하고 커버를 닫으세요."].map((step, i) => (
                         <p key={i} className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#444] leading-[18px]">{step}</p>
@@ -438,7 +637,7 @@ export function Chat() {
                 )}
 
                 {/* 완료 확인 버튼 */}
-                {message.showDoneAsk && index === messages.length - 1 && (
+                {(message.showDoneAsk || message.guideOptions) && index === messages.length - 1 && (
                   <div className="mt-3 pl-1">
                     <div className="bg-white rounded-[15px] px-4 py-4 max-w-[290px] shadow-sm border border-[#f0ecec]">
                       <p className="font-['Pretendard:SemiBold',sans-serif] text-[14px] text-black mb-3">관리를 완료하셨나요?</p>

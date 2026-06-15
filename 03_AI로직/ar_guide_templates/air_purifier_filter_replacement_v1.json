@@ -1,0 +1,188 @@
+{
+  "template_id": "air_purifier_filter_replacement_v1",
+  "version": 1,
+  "product_type": "air_purifier",
+  "procedure_type": "filter_replacement",
+  "risk_ceiling": "low",
+  "reuse_category": "care_video_reusable",
+  "allowed_match_scope": ["exact_model", "official_alias", "official_series"],
+  "required_official_sources": ["product_image", "owners_manual", "official_faq"],
+  "parts": [
+    {
+      "tag": "air_purifier.body",
+      "display_name": "Air purifier body",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_purifier.rear_cover",
+      "display_name": "Rear cover",
+      "user_accessible": true,
+      "position_variant_required": true
+    },
+    {
+      "tag": "air_purifier.front_cover",
+      "display_name": "Front cover",
+      "user_accessible": true,
+      "position_variant_required": true
+    },
+    {
+      "tag": "air_purifier.filter.pre_filter",
+      "display_name": "Pre-filter",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_purifier.filter.hepa_filter",
+      "display_name": "HEPA filter",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_purifier.filter.deodorization_filter",
+      "display_name": "Deodorization filter",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_purifier.filter_slot",
+      "display_name": "Filter slot",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_purifier.filter_reset_button",
+      "display_name": "Filter reset button",
+      "user_accessible": true,
+      "position_variant_required": true
+    }
+  ],
+  "allowed_actions": [
+    "power_off",
+    "open_filter_cover",
+    "remove_old_filter",
+    "insert_new_filter",
+    "close_filter_cover",
+    "reset_filter_indicator_if_officially_supported"
+  ],
+  "conditional_actions": [
+    "vacuum_pre_filter",
+    "wash_pre_filter"
+  ],
+  "forbidden_actions": [
+    "wash_hepa_filter_unless_officially_washable",
+    "open_motor_area",
+    "inspect_sensor_board",
+    "repair_power_board",
+    "bypass_filter_sensor"
+  ],
+  "camera_rules": [
+    "front_or_rear_wide_by_model",
+    "cover_close",
+    "filter_stack_exploded_safe",
+    "slot_close",
+    "indicator_close"
+  ],
+  "highlight_rules": [
+    "filter_type_color_outline",
+    "filter_insert_direction_arrow",
+    "packaging_removal_check_icon",
+    "filter_reset_button_highlight"
+  ],
+  "forbidden_generation_notes": [
+    "Do not show fan motor internals, sensor board, PCB, or internal wiring.",
+    "Do not change filter count or order.",
+    "Do not show water washing for HEPA filter unless official source confirms it."
+  ],
+  "scene_steps": [
+    {
+      "step_id": "ap_filter_01_power_off",
+      "duration_sec_shortform": 3,
+      "duration_sec_manual": 5,
+      "camera": "front_or_rear_wide_by_model",
+      "parts": ["air_purifier.body"],
+      "action": "power_off",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "air_purifier.body",
+        "text_template_id": "safety_power_off"
+      },
+      "subtitle_template_id": "air_purifier_power_off",
+      "tts_template_id": "air_purifier_power_off"
+    },
+    {
+      "step_id": "ap_filter_02_open_cover",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 8,
+      "camera": "cover_close",
+      "parts": ["air_purifier.rear_cover", "air_purifier.front_cover"],
+      "action": "open_filter_cover",
+      "highlight": {
+        "type": "arrow",
+        "target_part": "air_purifier.rear_cover",
+        "text_template_id": "air_purifier_open_filter_cover"
+      },
+      "subtitle_template_id": "air_purifier_open_cover",
+      "tts_template_id": "air_purifier_open_cover"
+    },
+    {
+      "step_id": "ap_filter_03_remove_old_filter",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 9,
+      "camera": "filter_stack_exploded_safe",
+      "parts": [
+        "air_purifier.filter.pre_filter",
+        "air_purifier.filter.hepa_filter",
+        "air_purifier.filter.deodorization_filter"
+      ],
+      "action": "remove_old_filter",
+      "highlight": {
+        "type": "outline",
+        "target_part": "air_purifier.filter.hepa_filter",
+        "text_template_id": "air_purifier_remove_old_filter"
+      },
+      "subtitle_template_id": "air_purifier_remove_old_filter",
+      "tts_template_id": "air_purifier_remove_old_filter"
+    },
+    {
+      "step_id": "ap_filter_04_insert_new_filter",
+      "duration_sec_shortform": 6,
+      "duration_sec_manual": 10,
+      "camera": "slot_close",
+      "parts": ["air_purifier.filter_slot", "air_purifier.filter.hepa_filter"],
+      "action": "insert_new_filter",
+      "highlight": {
+        "type": "arrow",
+        "target_part": "air_purifier.filter.hepa_filter",
+        "text_template_id": "air_purifier_insert_direction"
+      },
+      "subtitle_template_id": "air_purifier_insert_new_filter",
+      "tts_template_id": "air_purifier_insert_new_filter"
+    },
+    {
+      "step_id": "ap_filter_05_close_cover",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 6,
+      "camera": "cover_close",
+      "parts": ["air_purifier.rear_cover", "air_purifier.front_cover"],
+      "action": "close_filter_cover",
+      "highlight": {
+        "type": "outline",
+        "target_part": "air_purifier.rear_cover",
+        "text_template_id": "air_purifier_close_cover"
+      },
+      "subtitle_template_id": "air_purifier_close_cover",
+      "tts_template_id": "air_purifier_close_cover"
+    },
+    {
+      "step_id": "ap_filter_06_reset_indicator",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 8,
+      "camera": "indicator_close",
+      "parts": ["air_purifier.filter_reset_button"],
+      "action": "reset_filter_indicator_if_officially_supported",
+      "highlight": {
+        "type": "outline",
+        "target_part": "air_purifier.filter_reset_button",
+        "text_template_id": "air_purifier_reset_indicator"
+      },
+      "subtitle_template_id": "air_purifier_reset_indicator",
+      "tts_template_id": "air_purifier_reset_indicator"
+    }
+  ]
+}

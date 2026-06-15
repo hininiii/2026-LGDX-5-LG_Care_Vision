@@ -1,0 +1,191 @@
+{
+  "template_id": "aircon_power_troubleshooting_safe_check_v1",
+  "version": 1,
+  "product_type": "air_conditioner",
+  "procedure_type": "power_troubleshooting",
+  "risk_ceiling": "medium",
+  "reuse_category": "self_as_external_safe_check",
+  "ar_scope": "external_safe_check_only",
+  "allowed_match_scope": ["exact_model", "official_alias", "official_series", "product_type_common"],
+  "required_official_sources": ["owners_manual", "official_youtube", "official_faq"],
+  "parts": [
+    {
+      "tag": "air_conditioner.remote_controller",
+      "display_name": "Remote controller",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_conditioner.power_button",
+      "display_name": "Power button",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_conditioner.power_indicator",
+      "display_name": "Power indicator or display",
+      "user_accessible": true
+    },
+    {
+      "tag": "home.accessible_power_plug_or_outlet",
+      "display_name": "Accessible plug or wall outlet",
+      "user_accessible": true
+    },
+    {
+      "tag": "home.circuit_breaker_panel",
+      "display_name": "Home circuit breaker panel",
+      "user_accessible": true
+    }
+  ],
+  "allowed_actions": [
+    "stop_if_high_risk_signal",
+    "turn_off_unit",
+    "check_remote_display_or_battery",
+    "check_visible_power_indicator",
+    "confirm_accessible_plug_is_firmly_connected",
+    "check_circuit_breaker_once_if_safe",
+    "request_expert_service_if_power_not_restored"
+  ],
+  "conditional_actions": [
+    "replace_remote_battery",
+    "reset_breaker_once_if_safe"
+  ],
+  "forbidden_actions": [
+    "open_internal_cover",
+    "touch_pcb",
+    "repair_wiring",
+    "inspect_compressor",
+    "check_refrigerant",
+    "remove_indoor_unit_panel_for_electrical_access",
+    "touch_damaged_cord",
+    "touch_wet_outlet",
+    "reset_breaker_repeatedly"
+  ],
+  "camera_rules": [
+    "remote_close_up",
+    "front_wide",
+    "power_indicator_close_up",
+    "outlet_safe_distance",
+    "breaker_panel_safe_distance",
+    "service_request_card"
+  ],
+  "highlight_rules": [
+    "safety_stop_icon",
+    "power_button_outline",
+    "power_indicator_box",
+    "plug_connection_checkmark",
+    "breaker_status_box",
+    "expert_as_cta"
+  ],
+  "forbidden_generation_notes": [
+    "Do not show opened covers, PCB, compressor, refrigerant pipe, fan motor internals, or wiring repair.",
+    "Do not instruct the user to touch damaged cords, wet outlets, exposed wires, or internal electrical parts.",
+    "Do not suggest repeated breaker resets. If the breaker trips again, route to expert A/S.",
+    "Keep the AR guide limited to external visible checks and service routing."
+  ],
+  "scene_steps": [
+    {
+      "step_id": "ac_power_01_stop_high_risk",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 6,
+      "camera": "front_wide",
+      "parts": ["air_conditioner.power_button", "air_conditioner.power_indicator"],
+      "action": "stop_if_high_risk_signal",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "air_conditioner.power_indicator",
+        "text_template_id": "power_stop_high_risk"
+      },
+      "subtitle_template_id": "aircon_power_stop_if_smoke_burning_spark",
+      "tts_template_id": "aircon_power_stop_if_smoke_burning_spark"
+    },
+    {
+      "step_id": "ac_power_02_turn_off",
+      "duration_sec_shortform": 3,
+      "duration_sec_manual": 5,
+      "camera": "remote_close_up",
+      "parts": ["air_conditioner.remote_controller", "air_conditioner.power_button"],
+      "action": "turn_off_unit",
+      "highlight": {
+        "type": "outline",
+        "target_part": "air_conditioner.remote_controller",
+        "text_template_id": "power_turn_off_unit"
+      },
+      "subtitle_template_id": "aircon_power_turn_off_unit",
+      "tts_template_id": "aircon_power_turn_off_unit"
+    },
+    {
+      "step_id": "ac_power_03_remote",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 6,
+      "camera": "remote_close_up",
+      "parts": ["air_conditioner.remote_controller"],
+      "action": "check_remote_display_or_battery",
+      "highlight": {
+        "type": "step_number",
+        "target_part": "air_conditioner.remote_controller",
+        "text_template_id": "power_check_remote"
+      },
+      "subtitle_template_id": "aircon_power_check_remote_display",
+      "tts_template_id": "aircon_power_check_remote_display"
+    },
+    {
+      "step_id": "ac_power_04_indicator",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 6,
+      "camera": "power_indicator_close_up",
+      "parts": ["air_conditioner.power_indicator"],
+      "action": "check_visible_power_indicator",
+      "highlight": {
+        "type": "outline",
+        "target_part": "air_conditioner.power_indicator",
+        "text_template_id": "power_indicator_status"
+      },
+      "subtitle_template_id": "aircon_power_check_indicator",
+      "tts_template_id": "aircon_power_check_indicator"
+    },
+    {
+      "step_id": "ac_power_05_plug",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 7,
+      "camera": "outlet_safe_distance",
+      "parts": ["home.accessible_power_plug_or_outlet"],
+      "action": "confirm_accessible_plug_is_firmly_connected",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "home.accessible_power_plug_or_outlet",
+        "text_template_id": "power_plug_safe_check"
+      },
+      "subtitle_template_id": "aircon_power_check_accessible_plug",
+      "tts_template_id": "aircon_power_check_accessible_plug"
+    },
+    {
+      "step_id": "ac_power_06_breaker",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 8,
+      "camera": "breaker_panel_safe_distance",
+      "parts": ["home.circuit_breaker_panel"],
+      "action": "check_circuit_breaker_once_if_safe",
+      "highlight": {
+        "type": "warning_box",
+        "target_part": "home.circuit_breaker_panel",
+        "text_template_id": "power_breaker_once_only"
+      },
+      "subtitle_template_id": "aircon_power_check_breaker_once",
+      "tts_template_id": "aircon_power_check_breaker_once"
+    },
+    {
+      "step_id": "ac_power_07_service",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 6,
+      "camera": "service_request_card",
+      "parts": ["air_conditioner.power_indicator"],
+      "action": "request_expert_service_if_power_not_restored",
+      "highlight": {
+        "type": "cta",
+        "target_part": "air_conditioner.power_indicator",
+        "text_template_id": "power_request_expert_as"
+      },
+      "subtitle_template_id": "aircon_power_request_service",
+      "tts_template_id": "aircon_power_request_service"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "search_id": "RAG_SEARCH_001",
+    "session_id": "CHAT_AR_001",
+    "query": "AS-Q24ENXE AC filter cleaning user accessible filter",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "filter_cleaning",
+    "strict_filter": {"match_type": "exact_model", "language": "en"},
+    "matched_chunk_ids": ["CHUNK_ASQ24_FILTER_001"],
+    "score": {"CHUNK_ASQ24_FILTER_001": 0.94},
+    "no_match_reason": null,
+    "created_at": "2026-06-03T10:00:15+05:30"
+  },
+  {
+    "search_id": "RAG_SEARCH_002",
+    "session_id": "CHAT_AR_003",
+    "query": "AS-Q24ENXE smoke burning smell safety",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "service_route",
+    "strict_filter": {"match_type": "exact_model", "language": "en"},
+    "matched_chunk_ids": ["CHUNK_AC_HIGH_RISK_001"],
+    "score": {"CHUNK_AC_HIGH_RISK_001": 0.98},
+    "no_match_reason": null,
+    "created_at": "2026-06-03T10:20:15+05:30"
+  }
+]

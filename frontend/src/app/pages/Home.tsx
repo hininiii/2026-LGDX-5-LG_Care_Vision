@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { PieChart, Pie, Cell } from "recharts";
 import { Cloud, CloudRain, Sun, Droplets, Wind, Thermometer, AirVent, RotateCcw, Tv, Refrigerator } from "lucide-react";
+import { evaluateCareRisk, type CareRiskFactor, type CareRiskResponse } from "../api/care";
+import { getCurrentEnvironment, type EnvironmentCurrentResponse } from "../api/environment";
+import { getUserProfile } from "../api/user";
 import chatbotGif from "../../imports/LG______.gif";
 import acImage from "../../imports/제품페이지관리/47f735f974d0900368394246ff236d4a45df2a58.png";
 
@@ -22,6 +25,39 @@ function getRiskComment(score: number) {
   if (score >= 75) return "일부 기기의 케어가 필요합니다.";
   if (score >= 50) return "기기 관리 상태가 양호합니다.";
   return "기기 관리가 잘 되고 있습니다~!";
+}
+
+function sumFactorDelta(factors: CareRiskFactor[], factorNames: string[]) {
+  return factors
+    .filter((factor) => factorNames.includes(factor.factor))
+    .reduce((total, factor) => total + Math.round(factor.score_delta), 0);
+}
+
+const triggerReasonPriority: Record<string, number> = {
+  humidity_percent: 0,
+  aqi: 1,
+  particulate_matter: 2,
+  rain_monsoon_intensity: 3,
+  days_since_last_care: 4,
+  daily_runtime_hours: 5,
+};
+
+function selectPrimaryTriggerReason(factors: CareRiskFactor[], fallback?: string) {
+  if (!factors.length) {
+    return fallback ?? "오늘 대기질 나쁨 · 에어컨 필터 점검을 권장합니다.";
+  }
+
+  const primaryFactor = factors.reduce((selected, candidate) => {
+    if (candidate.score_delta !== selected.score_delta) {
+      return candidate.score_delta > selected.score_delta ? candidate : selected;
+    }
+
+    const selectedPriority = triggerReasonPriority[selected.factor] ?? Number.MAX_SAFE_INTEGER;
+    const candidatePriority = triggerReasonPriority[candidate.factor] ?? Number.MAX_SAFE_INTEGER;
+    return candidatePriority < selectedPriority ? candidate : selected;
+  });
+
+  return primaryFactor.reason || fallback || "오늘 대기질 나쁨 · 에어컨 필터 점검을 권장합니다.";
 }
 
 const glassCard: React.CSSProperties = {
@@ -51,9 +87,9 @@ function SegmentedGauge({ climate, usage, care }: { climate: number; usage: numb
   ];
 
   const stats = [
-    { label: "기후 점수", value: climate, color: "#FF7A7A", glow: "rgba(255,122,122,0.22)" },
-    { label: "사용 횟수", value: usage,   color: "#FFE89A", glow: "rgba(255,232,154,0.30)" },
-    { label: "관리 횟수", value: care,    color: "#48D6A6", glow: "rgba(72,214,166,0.22)" },
+    { label: "기후", value: climate, color: "#FF7A7A", glow: "rgba(255,122,122,0.22)" },
+    { label: "사용", value: usage,   color: "#FFE89A", glow: "rgba(255,232,154,0.30)" },
+    { label: "관리", value: care,    color: "#48D6A6", glow: "rgba(72,214,166,0.22)" },
   ];
 
   return (
@@ -154,6 +190,35 @@ export function Home() {
   const [aiAlertVisible] = useState(
     (location.state as { aiDismissed?: boolean } | null)?.aiDismissed !== true
   );
+  const [careRisk, setCareRisk] = useState<CareRiskResponse | null>(null);
+  const [environment, setEnvironment] = useState<EnvironmentCurrentResponse | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadHomeData() {
+      try {
+        const profile = await getUserProfile();
+        const region = profile.region ?? "Delhi";
+        const city = profile.city ?? "Delhi";
+        const [careRiskResponse, environmentResponse] = await Promise.all([
+          evaluateCareRisk({ region, city, userEmail: profile.user_email ?? profile.email }),
+          getCurrentEnvironment(region, city),
+        ]);
+        if (!active) return;
+        setCareRisk(careRiskResponse);
+        setEnvironment(environmentResponse);
+      } catch (error) {
+        console.error("Failed to load home dashboard data", error);
+      }
+    }
+
+    loadHomeData();
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const hourly = [
     { time: "지금", temp: 23, Icon: Sun },
@@ -162,6 +227,30 @@ export function Home() {
     { time: "15시", temp: 25, Icon: Cloud },
     { time: "16시", temp: 24, Icon: CloudRain },
   ];
+  const observation = environment?.observation;
+  const factors = careRisk?.care_risk_decision.factor_scores ?? [];
+  const topScore = Math.round(careRisk?.care_risk_score.score ?? devices[0].score);
+  const climateScore = sumFactorDelta(factors, [
+    "humidity_percent",
+    "aqi",
+    "particulate_matter",
+    "rain_monsoon_intensity",
+  ]);
+  const usageScore = sumFactorDelta(factors, ["daily_runtime_hours"]);
+  const careScore = Math.max(0, topScore - climateScore - usageScore);
+  const topDevice = {
+    ...devices[0],
+    score: topScore,
+    climate: climateScore || devices[0].climate,
+    usage: usageScore || devices[0].usage,
+    care: careScore || devices[0].care,
+  };
+  const triggerReason = selectPrimaryTriggerReason(factors, careRisk?.care_risk_score.trigger_reason?.[0]);
+  const temperature = Math.round(observation?.temperature_c ?? 24);
+  const humidity = Math.round(observation?.humidity_percent ?? 56);
+  const aqi = Math.round(observation?.aqi ?? 10);
+  const pmValue = Math.round(observation?.pm25 ?? observation?.pm10 ?? 10);
+  const locationLabel = observation?.region === "Gujarat" ? "아메다바드 · 오늘" : "뉴델리 · 오늘";
 
   return (
     <div className="relative min-h-full w-full overflow-x-hidden bg-[#f7f9f8]">
@@ -177,10 +266,10 @@ export function Home() {
 
         {/* 헤더 */}
         <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111] mb-[6px]" style={{ paddingLeft: "5px" }}>
-          Care Shot
+          Care Vision
         </p>
         <p className="font-['Pretendard:SemiBold','Noto_Sans_Devanagari:SemiBold',sans-serif] text-[22px] tracking-[-0.36px] text-[#111] mb-[20px]" style={{ paddingLeft: "5px" }}>
-          नमस्ते तनीषा जी! 👋
+          환영합니다. तनीषा जी! 👋
         </p>
 
         {/* ── AI 추천 관리 카드 ── */}
@@ -216,7 +305,7 @@ export function Home() {
                 </span>
               </div>
               <p className="font-['Pretendard:Medium',sans-serif] text-[13px] text-[#333] leading-[18px]">
-                오늘 대기질 나쁨 · 에어컨 필터 점검을 권장합니다.
+                {triggerReason}
               </p>
             </div>
           </div>
@@ -229,13 +318,13 @@ export function Home() {
         >
           {/* 헤더 */}
           <div className="flex items-center justify-between mb-[12px]">
-            <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#555]">뉴델리 · 오늘</p>
+            <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#555]">{locationLabel}</p>
             <div
               className="flex items-center gap-[5px] rounded-full px-[9px] py-[4px]"
               style={{ background: "rgba(61,220,151,0.08)", border: "1px solid rgba(61,220,151,0.22)" }}
             >
               <Cloud size={13} className="text-[#3DDC97]" />
-              <p className="font-['Pretendard:SemiBold',sans-serif] text-[12px] text-[#111]">26°</p>
+              <p className="font-['Pretendard:SemiBold',sans-serif] text-[12px] text-[#111]">{temperature}°</p>
               <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">흐림</p>
             </div>
           </div>
@@ -253,7 +342,7 @@ export function Home() {
               </div>
               <div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">온도</p>
-                <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] text-[#111] leading-tight">24°</p>
+                <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] text-[#111] leading-tight">{temperature}°</p>
               </div>
             </div>
 
@@ -268,7 +357,7 @@ export function Home() {
               </div>
               <div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">습도</p>
-                <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] text-[#111] leading-tight">56%</p>
+                <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] text-[#111] leading-tight">{humidity}%</p>
               </div>
             </div>
 
@@ -282,9 +371,9 @@ export function Home() {
                 <Wind size={16} className="text-[#2aaa8a]" />
               </div>
               <div>
-                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">건조기</p>
+                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">대기질</p>
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111] leading-tight">
-                  1:19 <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">남음</span>
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">AQI</span> {aqi}
                 </p>
               </div>
             </div>
@@ -299,9 +388,9 @@ export function Home() {
                 <Droplets size={16} className="text-[#8080c0]" />
               </div>
               <div>
-                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">세탁기</p>
+                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">미세 먼지</p>
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111] leading-tight">
-                  1:30 <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">남음</span>
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">pm</span> {pmValue}
                 </p>
               </div>
             </div>
@@ -311,10 +400,8 @@ export function Home() {
         {/* ── Care Risk Score ── */}
         <p className="font-['Pretendard:Bold',sans-serif] text-[16px] text-[#000] mb-[10px]" style={{ paddingLeft: "5px" }}>Care Risk Score</p>
         {(() => {
-          const topScore = devices[0].score;
           const { text, label, hex } = getRiskColor(topScore);
           const comment = getRiskComment(topScore);
-          const topDevice = devices[0];
           return (
             <div
               className="relative overflow-hidden rounded-[20px] px-[16px] pt-[15px] pb-[16px] mb-[14px]"

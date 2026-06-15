@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { ChevronLeft } from "lucide-react";
+import { getUserProfile, updateUserProfile } from "../api/user";
+import { getCurrentUserEmail, setCurrentUserEmail } from "../utils/authSession";
 
 const glass = {
   background: "rgba(255,255,255,0.55)",
@@ -13,12 +15,35 @@ const glass = {
 export function ProfileEdit() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    email: "tanisha@example.com",
+    email: getCurrentUserEmail(),
     password: "",
-    name: "तनीषा",
-    phone: "+91-9876543210",
-    address: "뉴델리 뉴델리구 코넛 플레이스 12",
+    name: "",
+    phone: "",
+    address: "",
   });
+
+  useEffect(() => {
+    let active = true;
+    async function loadProfile() {
+      try {
+        const profile = await getUserProfile();
+        if (!active) return;
+        setForm({
+          email: profile.user_email ?? profile.email ?? getCurrentUserEmail(),
+          password: "",
+          name: profile.name,
+          phone: profile.phone,
+          address: profile.address,
+        });
+      } catch {
+        // Keep current form values if the profile API is unavailable.
+      }
+    }
+    loadProfile();
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const update = (key: keyof typeof form, value: string) =>
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -70,7 +95,18 @@ export function ProfileEdit() {
         </p>
 
         <button
-          onClick={() => navigate("/settings")}
+          onClick={() => {
+            updateUserProfile({
+              user_email: form.email,
+              ...(form.password ? { password: form.password } : {}),
+              name: form.name,
+              phone: form.phone,
+              address: form.address,
+            }).then((response) => {
+              setCurrentUserEmail(response.user.user_email ?? form.email);
+              navigate("/settings");
+            });
+          }}
           className="w-full text-white rounded-[15px] py-4 font-['Pretendard:SemiBold',sans-serif] text-[15px]"
           style={{ background: "#FF6B6B" }}
         >

@@ -1,0 +1,14 @@
+[
+  {
+    "alert_id": "ALERT_AC_FILTER_001",
+    "score_id": "SCORE_AC_FILTER_001",
+    "user_id": "U001",
+    "device_id": "D001",
+    "procedure_type": "filter_cleaning",
+    "title": "AC filter care recommended",
+    "message": "High humidity, poor air quality, and recent AC usage indicate that filter care should be offered before a failure occurs.",
+    "status": "shown",
+    "created_at": "2026-06-04T10:03:00+09:00",
+    "shown_at": "2026-06-04T10:03:05+09:00"
+  }
+]

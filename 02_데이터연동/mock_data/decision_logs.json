@@ -1,0 +1,16 @@
+[
+  {
+    "decision_log_id": "DECISION_AC_FILTER_001",
+    "session_id": "CHAT_AR_001",
+    "user_id": "U001",
+    "device_id": "D001",
+    "request_id": "REQ_SEED_AC_FILTER_001",
+    "intent_type": "care",
+    "risk_level": "low",
+    "decision_action": "prepare_ar_guide_session",
+    "procedure_type": "filter_cleaning",
+    "official_match_status": "verified",
+    "evidence_refs": ["OA_AC_ASQ24ENXE_MANUAL_001"],
+    "created_at": "2026-06-04T10:06:00+09:00"
+  }
+]

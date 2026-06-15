@@ -1,0 +1,1234 @@
+[
+  {
+    "environment_id": "ENV_REAL_001",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=23.0225&longitude=72.5714&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=23.0225&longitude=72.5714&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Ahmedabad",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 36.41,
+    "humidity_percent": 32.57,
+    "aqi": 39.85,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "heatwave_ac_overload",
+      "hard_water_limescale"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_002",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=12.9716&longitude=77.5946&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=12.9716&longitude=77.5946&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Bengaluru",
+    "climate_zone": "humid_polluted",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 27.79,
+    "humidity_percent": 56.0,
+    "aqi": 50.55,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care",
+      "pm25_filter",
+      "humidity_mold_smell",
+      "monsoon_moisture"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_003",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=23.2599&longitude=77.4126&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=23.2599&longitude=77.4126&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Madhya Pradesh",
+    "city": "Bhopal",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 36.17,
+    "humidity_percent": 21.86,
+    "aqi": 48.15,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_004",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=20.2961&longitude=85.8245&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=20.2961&longitude=85.8245&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Odisha",
+    "city": "Bhubaneswar",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 31.13,
+    "humidity_percent": 71.71,
+    "aqi": 17.59,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell",
+      "routine_care"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_005",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=30.7333&longitude=76.7794&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=30.7333&longitude=76.7794&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Chandigarh",
+    "city": "Chandigarh",
+    "climate_zone": "mixed_india",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 30.07,
+    "humidity_percent": 42.71,
+    "aqi": 49.18,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care",
+      "pm25_filter"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_006",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=13.0827&longitude=80.2707&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=13.0827&longitude=80.2707&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Chennai",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 30.51,
+    "humidity_percent": 73.43,
+    "aqi": 14.4,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "hard_water_limescale",
+      "humidity_mold_smell"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_007",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=11.0168&longitude=76.9558&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=11.0168&longitude=76.9558&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Coimbatore",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 27.61,
+    "humidity_percent": 74.29,
+    "aqi": 30.18,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "hard_water_limescale",
+      "humidity_mold_smell"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_008",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=28.6139&longitude=77.209&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=28.6139&longitude=77.209&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Delhi",
+    "city": "Delhi",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 34.44,
+    "humidity_percent": 34.71,
+    "aqi": 519.73,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_009",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=28.4089&longitude=77.3178&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=28.4089&longitude=77.3178&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Haryana",
+    "city": "Faridabad",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 33.94,
+    "humidity_percent": 36.57,
+    "aqi": 965.07,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_010",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=28.6692&longitude=77.4538&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=28.6692&longitude=77.4538&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Ghaziabad",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 31.63,
+    "humidity_percent": 46.71,
+    "aqi": 405.89,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_011",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=28.4595&longitude=77.0266&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=28.4595&longitude=77.0266&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Haryana",
+    "city": "Gurugram",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 33.07,
+    "humidity_percent": 37.86,
+    "aqi": 965.07,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_012",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=26.1445&longitude=91.7362&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=26.1445&longitude=91.7362&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Assam",
+    "city": "Guwahati",
+    "climate_zone": "humid_polluted",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 24.93,
+    "humidity_percent": 87.43,
+    "aqi": 34.17,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell",
+      "monsoon_moisture",
+      "pm25_filter"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_013",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=17.385&longitude=78.4867&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=17.385&longitude=78.4867&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Telangana",
+    "city": "Hyderabad",
+    "climate_zone": "mixed_india",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 32.36,
+    "humidity_percent": 46.14,
+    "aqi": 44.44,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care",
+      "pm25_filter"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_014",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=22.7196&longitude=75.8577&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=22.7196&longitude=75.8577&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Madhya Pradesh",
+    "city": "Indore",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 35.76,
+    "humidity_percent": 22.43,
+    "aqi": 45.32,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "heatwave_ac_overload",
+      "routine_care"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_015",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=26.9124&longitude=75.7873&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=26.9124&longitude=75.7873&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Jaipur",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 35.07,
+    "humidity_percent": 26.0,
+    "aqi": 230.09,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_016",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=26.2389&longitude=73.0243&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=26.2389&longitude=73.0243&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Jodhpur",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 36.34,
+    "humidity_percent": 24.0,
+    "aqi": 181.52,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload",
+      "pm25_filter"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_017",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=26.4499&longitude=80.3319&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=26.4499&longitude=80.3319&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Kanpur",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 34.69,
+    "humidity_percent": 36.71,
+    "aqi": 271.36,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_018",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=9.9312&longitude=76.2673&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=9.9312&longitude=76.2673&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Kerala",
+    "city": "Kochi",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 27.56,
+    "humidity_percent": 87.43,
+    "aqi": 24.92,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell",
+      "monsoon_moisture"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_019",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=22.5726&longitude=88.3639&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=22.5726&longitude=88.3639&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "West Bengal",
+    "city": "Kolkata",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 30.51,
+    "humidity_percent": 75.43,
+    "aqi": 25.45,
+    "water_hardness_level": "soft",
+    "care_triggers": [
+      "humidity_mold_smell"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_020",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=26.8467&longitude=80.9462&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=26.8467&longitude=80.9462&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Lucknow",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 33.36,
+    "humidity_percent": 44.71,
+    "aqi": 155.84,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_021",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=30.901&longitude=75.8573&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=30.901&longitude=75.8573&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Ludhiana",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 31.23,
+    "humidity_percent": 44.29,
+    "aqi": 92.36,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "routine_care",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_022",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=9.9252&longitude=78.1198&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=9.9252&longitude=78.1198&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Madurai",
+    "climate_zone": "humid_polluted",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 29.94,
+    "humidity_percent": 70.43,
+    "aqi": 35.61,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "hard_water_limescale",
+      "humidity_mold_smell",
+      "pm25_filter",
+      "monsoon_moisture"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_023",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=28.9845&longitude=77.7064&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=28.9845&longitude=77.7064&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Meerut",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 31.86,
+    "humidity_percent": 45.14,
+    "aqi": 405.89,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_024",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=19.076&longitude=72.8777&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=19.076&longitude=72.8777&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Mumbai",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 30.8,
+    "humidity_percent": 72.0,
+    "aqi": 43.72,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_025",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=12.2958&longitude=76.6394&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=12.2958&longitude=76.6394&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Mysuru",
+    "climate_zone": "humid_polluted",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 26.81,
+    "humidity_percent": 69.86,
+    "aqi": 42.24,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care",
+      "humidity_mold_smell",
+      "pm25_filter"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_026",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=21.1458&longitude=79.0882&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=21.1458&longitude=79.0882&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Nagpur",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 36.71,
+    "humidity_percent": 30.71,
+    "aqi": 55.92,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "heatwave_ac_overload",
+      "pm25_filter"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_027",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=19.9975&longitude=73.7898&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=19.9975&longitude=73.7898&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Nashik",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 31.39,
+    "humidity_percent": 42.14,
+    "aqi": 34.21,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_028",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=28.5355&longitude=77.391&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=28.5355&longitude=77.391&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Noida",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 32.41,
+    "humidity_percent": 44.0,
+    "aqi": 965.07,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload",
+      "monsoon_moisture"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_029",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=25.5941&longitude=85.1376&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=25.5941&longitude=85.1376&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Bihar",
+    "city": "Patna",
+    "climate_zone": "humid_polluted",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 30.44,
+    "humidity_percent": 68.71,
+    "aqi": 70.06,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "pm25_filter",
+      "humidity_mold_smell"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_030",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=18.5204&longitude=73.8567&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=18.5204&longitude=73.8567&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Pune",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 31.14,
+    "humidity_percent": 47.86,
+    "aqi": 38.22,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_031",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=21.2514&longitude=81.6296&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=21.2514&longitude=81.6296&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Chhattisgarh",
+    "city": "Raipur",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 34.36,
+    "humidity_percent": 42.0,
+    "aqi": 66.88,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "pm25_filter",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_032",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=22.3039&longitude=70.8022&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=22.3039&longitude=70.8022&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Rajkot",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 32.54,
+    "humidity_percent": 52.43,
+    "aqi": 36.8,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_033",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=23.3441&longitude=85.3096&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=23.3441&longitude=85.3096&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Jharkhand",
+    "city": "Ranchi",
+    "climate_zone": "humid_polluted",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 27.99,
+    "humidity_percent": 60.0,
+    "aqi": 59.79,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "pm25_filter",
+      "routine_care",
+      "humidity_mold_smell"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_034",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=21.1702&longitude=72.8311&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=21.1702&longitude=72.8311&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Surat",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 33.3,
+    "humidity_percent": 56.71,
+    "aqi": 44.82,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_035",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=19.2183&longitude=72.9781&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=19.2183&longitude=72.9781&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Thane",
+    "climate_zone": "mixed_india",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 31.84,
+    "humidity_percent": 66.86,
+    "aqi": 43.72,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_036",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=8.5241&longitude=76.9366&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=8.5241&longitude=76.9366&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Kerala",
+    "city": "Thiruvananthapuram",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 26.74,
+    "humidity_percent": 88.29,
+    "aqi": 21.14,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell",
+      "monsoon_moisture"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_037",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=22.3072&longitude=73.1812&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=22.3072&longitude=73.1812&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Vadodara",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 35.83,
+    "humidity_percent": 37.29,
+    "aqi": 38.59,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "heatwave_ac_overload",
+      "hard_water_limescale"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_038",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=25.3176&longitude=82.9739&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=25.3176&longitude=82.9739&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Varanasi",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 34.14,
+    "humidity_percent": 42.14,
+    "aqi": 98.46,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload",
+      "pm10_dust_filter"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_039",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=16.5062&longitude=80.648&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=16.5062&longitude=80.648&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Andhra Pradesh",
+    "city": "Vijayawada",
+    "climate_zone": "mixed_india",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 32.64,
+    "humidity_percent": 62.86,
+    "aqi": 21.46,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_040",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=17.6868&longitude=83.2185&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=17.6868&longitude=83.2185&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Andhra Pradesh",
+    "city": "Visakhapatnam",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 30.73,
+    "humidity_percent": 73.14,
+    "aqi": 25.07,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_041",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=27.1767&longitude=78.0081&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=27.1767&longitude=78.0081&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Agra",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 34.43,
+    "humidity_percent": 36.0,
+    "aqi": 641.72,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "hard_water_limescale",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_042",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=31.634&longitude=74.8723&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=31.634&longitude=74.8723&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Amritsar",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 30.71,
+    "humidity_percent": 45.86,
+    "aqi": 75.42,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "routine_care",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_043",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=19.8762&longitude=75.3433&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=19.8762&longitude=75.3433&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Aurangabad",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 34.76,
+    "humidity_percent": 25.71,
+    "aqi": 34.84,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "heatwave_ac_overload",
+      "routine_care"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_044",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=30.3165&longitude=78.0322&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=30.3165&longitude=78.0322&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Uttarakhand",
+    "city": "Dehradun",
+    "climate_zone": "humid_polluted",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 26.24,
+    "humidity_percent": 58.0,
+    "aqi": 45.25,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "routine_care",
+      "pm25_filter",
+      "humidity_mold_smell"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_045",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=31.326&longitude=75.5762&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=31.326&longitude=75.5762&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Jalandhar",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 30.54,
+    "humidity_percent": 46.14,
+    "aqi": 82.15,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "pm25_filter",
+      "pm10_dust_filter",
+      "heatwave_ac_overload"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_046",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=25.2138&longitude=75.8648&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=25.2138&longitude=75.8648&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Kota",
+    "climate_zone": "hot_dry",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 37.23,
+    "humidity_percent": 21.86,
+    "aqi": 73.82,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "heatwave_ac_overload",
+      "hard_water_limescale",
+      "pm10_dust_filter"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_047",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=12.9141&longitude=74.856&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=12.9141&longitude=74.856&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Mangalore",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 28.24,
+    "humidity_percent": 84.71,
+    "aqi": 36.73,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell",
+      "monsoon_moisture"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_048",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=11.9416&longitude=79.8083&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=11.9416&longitude=79.8083&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Puducherry",
+    "city": "Puducherry",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 29.06,
+    "humidity_percent": 82.29,
+    "aqi": 21.21,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell",
+      "monsoon_moisture"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_049",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=34.0837&longitude=74.7973&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=34.0837&longitude=74.7973&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Jammu and Kashmir",
+    "city": "Srinagar",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 16.77,
+    "humidity_percent": 71.86,
+    "aqi": 34.74,
+    "water_hardness_level": "moderate",
+    "care_triggers": [
+      "humidity_mold_smell",
+      "routine_care"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  },
+  {
+    "environment_id": "ENV_REAL_050",
+    "source": "Open-Meteo Historical Weather API; Open-Meteo Air Quality API; CGWB/NWDP referenced water-risk lookup",
+    "source_api": {
+      "weather": "https://archive-api.open-meteo.com/v1/archive?latitude=10.7905&longitude=78.7047&start_date=2026-05-12&end_date=2026-05-18&daily=temperature_2m_max,temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=Asia%2FKolkata",
+      "air_quality": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=10.7905&longitude=78.7047&start_date=2026-05-12&end_date=2026-05-18&hourly=pm10,pm2_5&timezone=Asia%2FKolkata"
+    },
+    "source_date": "2026-06-03",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Tiruchirappalli",
+    "climate_zone": "hot_humid",
+    "season": "pre_monsoon_2026",
+    "temperature_c": 29.46,
+    "humidity_percent": 76.29,
+    "aqi": 30.49,
+    "water_hardness_level": "hard",
+    "care_triggers": [
+      "humidity_mold_smell",
+      "hard_water_limescale"
+    ],
+    "observed_at": "2026-06-03T12:00:00+05:30",
+    "evidence_level": "api_statistical_context"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "match_id": "MATCH_AC_FILTER_001",
+    "alert_id": "ALERT_AC_FILTER_001",
+    "content_id": "OC_AC_FILTER_MANUAL_001",
+    "template_id": "GUIDE_AC_FILTER_TEMPLATE_V1",
+    "match_type": "exact_model_official_content_and_ar_template",
+    "match_score": 0.96,
+    "evidence_refs": ["OA_AC_ASQ24ENXE_MANUAL_001", "REF_ASQ24_OPEN_FILTER_V1"],
+    "created_at": "2026-06-04T10:03:10+09:00"
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "notification_id": "NOTIFY_AC_FILTER_001",
+    "alert_id": "ALERT_AC_FILTER_001",
+    "user_id": "U001",
+    "device_id": "D001",
+    "channel": "thinq_app_mock",
+    "status": "shown",
+    "message": "Preventive AC filter care is recommended.",
+    "sent_at": "2026-06-04T10:03:05+09:00",
+    "clicked_at": "2026-06-04T10:04:00+09:00"
+  }
+]

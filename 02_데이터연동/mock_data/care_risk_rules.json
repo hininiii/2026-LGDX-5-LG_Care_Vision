@@ -1,0 +1,36 @@
+[
+  {
+    "rule_id": "RULE_AC_FILTER_HUMIDITY_RUNTIME_V1",
+    "product_type": "air_conditioner",
+    "procedure_type": "filter_cleaning",
+    "rule_name": "AC filter care score from humidity, AQI, runtime, and last care days",
+    "weight": 1.0,
+    "threshold": {
+      "low": 40,
+      "medium": 65,
+      "high": 85,
+      "humidity_percent_bonus_from": 60,
+      "aqi_bonus_from": 150,
+      "days_since_last_care_bonus_from": 30
+    },
+    "enabled": true,
+    "created_at": "2026-06-04T10:00:00+09:00"
+  },
+  {
+    "rule_id": "RULE_WM_TUB_CLEAN_HUMIDITY_HARDWATER_V1",
+    "product_type": "washing_machine",
+    "procedure_type": "tub_clean",
+    "rule_name": "Washer tub clean score from humidity, hard water, cycle count, and last care days",
+    "weight": 1.0,
+    "threshold": {
+      "low": 40,
+      "medium": 65,
+      "high": 85,
+      "humidity_percent_bonus_from": 70,
+      "hard_water_bonus": true,
+      "days_since_last_care_bonus_from": 30
+    },
+    "enabled": true,
+    "created_at": "2026-06-04T10:00:00+09:00"
+  }
+]

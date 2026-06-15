@@ -1,0 +1,158 @@
+{
+  "template_id": "washing_machine_tub_clean_v1",
+  "version": 1,
+  "product_type": "washing_machine",
+  "procedure_type": "tub_clean",
+  "risk_ceiling": "low",
+  "reuse_category": "care_video_reusable",
+  "allowed_match_scope": ["exact_model", "official_alias", "official_series", "product_type_common"],
+  "required_official_sources": ["online_manual", "owners_manual", "official_faq"],
+  "parts": [
+    {
+      "tag": "washing_machine.body",
+      "display_name": "Washing machine body",
+      "user_accessible": true
+    },
+    {
+      "tag": "washing_machine.door_or_lid",
+      "display_name": "Door or lid",
+      "user_accessible": true
+    },
+    {
+      "tag": "washing_machine.drum",
+      "display_name": "Drum",
+      "user_accessible": true
+    },
+    {
+      "tag": "washing_machine.detergent_drawer",
+      "display_name": "Detergent drawer",
+      "user_accessible": true
+    },
+    {
+      "tag": "washing_machine.control_panel",
+      "display_name": "Control panel",
+      "user_accessible": true
+    },
+    {
+      "tag": "washing_machine.tub_clean_button",
+      "display_name": "Tub Clean menu",
+      "user_accessible": true,
+      "position_variant_required": true
+    }
+  ],
+  "allowed_actions": [
+    "empty_drum",
+    "add_tub_cleaner_if_officially_supported",
+    "select_tub_clean_course",
+    "start_cycle",
+    "ventilate_after_cycle",
+    "wipe_outer_door_gasket_if_officially_supported"
+  ],
+  "conditional_actions": [
+    "use_lg_recommended_cleaner",
+    "clean_detergent_drawer"
+  ],
+  "forbidden_actions": [
+    "remove_drum",
+    "open_back_cover",
+    "repair_motor",
+    "inspect_pcb",
+    "disassemble_drain_pump",
+    "handle_internal_heater"
+  ],
+  "camera_rules": [
+    "front_wide",
+    "drum_inside_medium",
+    "control_panel_close",
+    "drawer_close",
+    "final_front_wide"
+  ],
+  "highlight_rules": [
+    "drum_circle_highlight",
+    "tub_clean_menu_highlight",
+    "detergent_drawer_outline",
+    "fixed_empty_drum_safety_text"
+  ],
+  "forbidden_generation_notes": [
+    "Do not show rear cover internals, motor, PCB, heater, or internal drain pump.",
+    "Do not invent detergent amount or cleaner brand unless official source confirms it.",
+    "Do not invent control panel labels beyond official source or generic overlay."
+  ],
+  "scene_steps": [
+    {
+      "step_id": "wm_tub_01_empty_drum",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 9,
+      "camera": "drum_inside_medium",
+      "parts": ["washing_machine.drum", "washing_machine.door_or_lid"],
+      "action": "empty_drum",
+      "highlight": {
+        "type": "outline",
+        "target_part": "washing_machine.drum",
+        "text_template_id": "washing_empty_drum"
+      },
+      "subtitle_template_id": "washing_empty_drum",
+      "tts_template_id": "washing_empty_drum"
+    },
+    {
+      "step_id": "wm_tub_02_add_cleaner",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 10,
+      "camera": "drawer_close",
+      "parts": ["washing_machine.detergent_drawer", "washing_machine.drum"],
+      "action": "add_tub_cleaner_if_officially_supported",
+      "highlight": {
+        "type": "step_number",
+        "target_part": "washing_machine.detergent_drawer",
+        "text_template_id": "washing_add_cleaner_official_only"
+      },
+      "subtitle_template_id": "washing_add_tub_cleaner",
+      "tts_template_id": "washing_add_tub_cleaner"
+    },
+    {
+      "step_id": "wm_tub_03_select_course",
+      "duration_sec_shortform": 7,
+      "duration_sec_manual": 12,
+      "camera": "control_panel_close",
+      "parts": ["washing_machine.control_panel", "washing_machine.tub_clean_button"],
+      "action": "select_tub_clean_course",
+      "highlight": {
+        "type": "outline",
+        "target_part": "washing_machine.tub_clean_button",
+        "text_template_id": "washing_select_tub_clean"
+      },
+      "subtitle_template_id": "washing_select_tub_clean",
+      "tts_template_id": "washing_select_tub_clean"
+    },
+    {
+      "step_id": "wm_tub_04_start",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 7,
+      "camera": "control_panel_close",
+      "parts": ["washing_machine.control_panel"],
+      "action": "start_cycle",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "washing_machine.control_panel",
+        "text_template_id": "washing_start_cycle"
+      },
+      "subtitle_template_id": "washing_start_cycle",
+      "tts_template_id": "washing_start_cycle"
+    },
+    {
+      "step_id": "wm_tub_05_ventilate",
+      "duration_sec_shortform": 6,
+      "duration_sec_manual": 11,
+      "camera": "final_front_wide",
+      "parts": ["washing_machine.door_or_lid", "washing_machine.drum"],
+      "action": "ventilate_after_cycle",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "washing_machine.door_or_lid",
+        "text_template_id": "washing_ventilate_after_cycle"
+      },
+      "subtitle_template_id": "washing_ventilate",
+      "tts_template_id": "washing_ventilate"
+    }
+  ]
+}

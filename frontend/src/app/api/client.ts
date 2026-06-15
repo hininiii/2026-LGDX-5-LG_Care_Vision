@@ -9,9 +9,9 @@ export async function apiGet<T>(path: string): Promise<T> {
   return response.json();
 }
 
-export async function apiPost<TResponse, TBody>(path: string, body: TBody): Promise<TResponse> {
+export async function apiPost<TResponse, TBody>(path: string, body: TBody, method = "POST"): Promise<TResponse> {
   const response = await fetch(`${API_BASE_URL}${path}`, {
-    method: "POST",
+    method,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });

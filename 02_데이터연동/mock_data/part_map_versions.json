@@ -1,0 +1,19 @@
+[
+  {
+    "part_map_version_id": "PMV_WALL_AC_A_OPEN_FILTER_V1",
+    "reference_image_id": "REF_ASQ24_OPEN_FILTER_V1",
+    "structure_type": "wall_ac_type_a",
+    "version": "v1",
+    "part_map_ids": [
+      "PMAP_WALL_AC_A_POWER",
+      "PMAP_WALL_AC_A_FRONT_COVER",
+      "PMAP_WALL_AC_A_FRONT_FILTER",
+      "PMAP_WALL_AC_A_AIR_OUTLET",
+      "PMAP_WALL_AC_A_FORBIDDEN_INTERNAL"
+    ],
+    "calibrated_by": "codex",
+    "calibrated_at": "2026-06-03T14:25:00+09:00",
+    "approved_status": "mvp_needs_review",
+    "approval_notes": "Open-cover filter reference coordinates are visually checked for demo, but final AR overlay accuracy QA is still required."
+  }
+]

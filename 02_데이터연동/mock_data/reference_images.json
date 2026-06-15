@@ -1,0 +1,28 @@
+[
+  {
+    "reference_image_id": "REF_ASQ24_OPEN_FILTER_V1",
+    "model_name": "AS-Q24ENXE",
+    "product_type": "air_conditioner",
+    "structure_type": "wall_ac_type_a",
+    "image_path": "/static/assets/reference/as_q24enxe_reference_cover_open_filter_visible.png",
+    "image_role": "open_cover_filter_visible",
+    "version": "v1",
+    "clean_reference": true,
+    "annotated_reference": false,
+    "source_asset_id": "OA_AC_ASQ24ENXE_IMAGE_001",
+    "created_at": "2026-06-03T10:00:00+05:30"
+  },
+  {
+    "reference_image_id": "REF_ASQ24_CLOSED_V1",
+    "model_name": "AS-Q24ENXE",
+    "product_type": "air_conditioner",
+    "structure_type": "wall_ac_type_a",
+    "image_path": "/static/assets/reference/as_q24enxe_reference_closed.jpeg",
+    "image_role": "closed_front",
+    "version": "v1",
+    "clean_reference": true,
+    "annotated_reference": false,
+    "source_asset_id": "OA_AC_ASQ24ENXE_IMAGE_001",
+    "created_at": "2026-06-03T10:00:00+05:30"
+  }
+]

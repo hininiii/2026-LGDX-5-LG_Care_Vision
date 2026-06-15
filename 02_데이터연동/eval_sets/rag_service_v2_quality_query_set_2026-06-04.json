@@ -1,0 +1,571 @@
+[
+  {
+    "case_id": "RAGQ_AC_FILTER_001",
+    "query": "How do I clean the air conditioner filter full of dust?",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "filter_cleaning",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "filter_cleaning"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_FILTER_002",
+    "query": "AC smells dusty when I switch it on, should I clean the filter?",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "filter_cleaning",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "filter_cleaning"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_FILTER_003",
+    "query": "एसी फिल्टर कैसे साफ करें",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "filter_cleaning",
+    "language": "hi",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "filter_cleaning"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_ODOR_001",
+    "query": "There is mold smell from my split AC after monsoon",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "filter_cleaning",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "filter_cleaning"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_COOL_001",
+    "query": "My LG air conditioner is not cooling enough",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "no_cooling_self_check",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "no_cooling_self_check"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_COOL_002",
+    "query": "Cold air is weak even though the AC is on",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "no_cooling_self_check",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "no_cooling_self_check"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_COOL_003",
+    "query": "एसी ठंडी हवा नहीं दे रहा है",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "no_cooling_self_check",
+    "language": "hi",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "no_cooling_self_check"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_WATER_001",
+    "query": "Water is dripping from my air conditioner indoor unit",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "water_leak_monsoon",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "water_leak_monsoon"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_WATER_002",
+    "query": "During monsoon my AC has condensation and water leak",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "water_leak_monsoon",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "water_leak_monsoon"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_NOISE_001",
+    "query": "My AC makes hissing and gulping sound",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "noise_self_check",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "noise_self_check"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_NOISE_002",
+    "query": "There is vibration noise from the AC indoor unit",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "noise_self_check",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "noise_self_check"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_REMOTE_001",
+    "query": "How do I use fan speed and mode on LG AC remote?",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "remote_operation",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "remote_operation"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_REMOTE_002",
+    "query": "Remote display is confusing, how to operate cooling mode?",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "remote_operation",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "remote_operation"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_ERROR_001",
+    "query": "SP CP PO appears on my LG AC display",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "power_error_self_check",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "power_error_self_check"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_ERROR_002",
+    "query": "HI is shown on the air conditioner display",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "power_error_self_check",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "power_error_self_check"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_HIGH_ELEC_001",
+    "query": "There is burning smell and spark from AC power wire",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "high_risk_electrical",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_electrical"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_HIGH_ELEC_002",
+    "query": "I got electric shock from my air conditioner plug",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "high_risk_electrical",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_electrical"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_HIGH_REFR_001",
+    "query": "Gas is leaking from the AC pipe, how can I refill refrigerant?",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "high_risk_refrigerant",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_refrigerant"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AC_HIGH_REFR_002",
+    "query": "Compressor repair and refrigerant charging steps for LG AC",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "high_risk_refrigerant",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_refrigerant"
+    ]
+  },
+  {
+    "case_id": "RAGQ_PDF_AC_001",
+    "query": "Official PDF warning about electric shock for air conditioner",
+    "product_type": "air_conditioner",
+    "model_name": "TS-Q14YNZE",
+    "procedure_type": "high_risk_electrical",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_electrical"
+    ],
+    "expected_source_type_any": [
+      "owners_manual_pdf",
+      "product_spec_dimension",
+      "product_spec_pdf"
+    ]
+  },
+  {
+    "case_id": "RAGQ_PDF_AC_002",
+    "query": "Air conditioner official PDF water leak or drainage safety",
+    "product_type": "air_conditioner",
+    "model_name": "TS-Q14YNZE",
+    "procedure_type": "water_leak_monsoon",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "water_leak_monsoon"
+    ],
+    "expected_source_type_any": [
+      "owners_manual_pdf",
+      "product_spec_dimension",
+      "product_spec_pdf"
+    ]
+  },
+  {
+    "case_id": "RAGQ_PDF_WM_001",
+    "query": "Washing machine official PDF electrical warning",
+    "product_type": "washing_machine",
+    "model_name": "FHD1207STB",
+    "procedure_type": "high_risk_electrical",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_electrical"
+    ],
+    "expected_source_type_any": [
+      "owners_manual_pdf",
+      "product_spec_dimension",
+      "product_spec_pdf"
+    ]
+  },
+  {
+    "case_id": "RAGQ_WP_FILTER_META_001",
+    "query": "Water purifier official filter replacement and safety",
+    "product_type": "water_purifier",
+    "model_name": "WW140NP",
+    "procedure_type": "filter_replacement",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "filter_replacement"
+    ],
+    "official_pdf_unavailable_reason": "LG India official Help Library evidence exists, but no extractable official PDF evidence was confirmed for WW140NP in the current official corpus."
+  },
+  {
+    "case_id": "RAGQ_WM_TUB_001",
+    "query": "How to run tub clean cycle and remove smell in washing machine",
+    "product_type": "washing_machine",
+    "model_name": "FHD1207STB",
+    "procedure_type": "tub_clean",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "tub_clean"
+    ]
+  },
+  {
+    "case_id": "RAGQ_WM_TUB_002",
+    "query": "Washer smells bad after monsoon, tub clean guide",
+    "product_type": "washing_machine",
+    "model_name": "FHD1107STB",
+    "procedure_type": "tub_clean",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "tub_clean"
+    ]
+  },
+  {
+    "case_id": "RAGQ_WM_LIME_001",
+    "query": "Hard water scale in washing machine drum",
+    "product_type": "washing_machine",
+    "model_name": "FHD1207STB",
+    "procedure_type": "limescale_care",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "limescale_care"
+    ]
+  },
+  {
+    "case_id": "RAGQ_WM_HIGH_001",
+    "query": "Washing machine gives electric shock and burning smell",
+    "product_type": "washing_machine",
+    "model_name": "FHD1207STB",
+    "procedure_type": "high_risk_electrical",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_electrical"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AP_FILTER_001",
+    "query": "Air purifier filter replacement lamp is on",
+    "product_type": "air_purifier",
+    "model_name": "AS60GDWT0",
+    "procedure_type": "filter_replacement",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "filter_replacement"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AP_FILTER_002",
+    "query": "How to clean dust filter in LG air purifier",
+    "product_type": "air_purifier",
+    "model_name": "AS60GHWG0",
+    "procedure_type": "filter_cleaning",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "filter_cleaning",
+      "filter_replacement"
+    ]
+  },
+  {
+    "case_id": "RAGQ_AP_HIGH_001",
+    "query": "Air purifier smells burning and sparks near power cable",
+    "product_type": "air_purifier",
+    "model_name": "AS60GDWT0",
+    "procedure_type": "high_risk_electrical",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_electrical"
+    ]
+  },
+  {
+    "case_id": "RAGQ_WP_LIME_001",
+    "query": "Water purifier has hard water limescale deposit",
+    "product_type": "water_purifier",
+    "model_name": "WW140NP",
+    "procedure_type": "limescale_care",
+    "language": "en",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "limescale_care"
+    ]
+  },
+  {
+    "case_id": "RAGQ_WP_FILTER_001",
+    "query": "When should I replace LG water purifier filter?",
+    "product_type": "water_purifier",
+    "model_name": "WW130NP",
+    "procedure_type": "filter_replacement",
+    "language": "en",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "filter_replacement"
+    ]
+  },
+  {
+    "case_id": "RAGQ_WP_HIGH_001",
+    "query": "Water purifier power board is sparking",
+    "product_type": "water_purifier",
+    "model_name": "WW140NP",
+    "procedure_type": "high_risk_electrical",
+    "language": "en",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_electrical"
+    ]
+  },
+  {
+    "case_id": "RAGQ_NOMATCH_001",
+    "query": "quantum refrigerator aquarium motherboard teleport setup",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "unsupported_procedure",
+    "language": "en",
+    "expected_risk": "unknown",
+    "expected_ar_allowed": false,
+    "expected_min_results": 0,
+    "expected_no_match": true
+  },
+  {
+    "case_id": "RAGQ_NOMATCH_002",
+    "query": "install solar panel on washing machine drum",
+    "product_type": "washing_machine",
+    "model_name": "FHD1207STB",
+    "procedure_type": "unsupported_procedure",
+    "language": "en",
+    "expected_risk": "unknown",
+    "expected_ar_allowed": false,
+    "expected_min_results": 0,
+    "expected_no_match": true
+  },
+  {
+    "case_id": "RAGQ_NOMATCH_003",
+    "query": "paint air purifier with oil and connect to car battery",
+    "product_type": "air_purifier",
+    "model_name": "AS60GDWT0",
+    "procedure_type": "unsupported_procedure",
+    "language": "en",
+    "expected_risk": "unknown",
+    "expected_ar_allowed": false,
+    "expected_min_results": 0,
+    "expected_no_match": true
+  },
+  {
+    "case_id": "RAGQ_NOMATCH_004",
+    "query": "replace refrigerator compressor in water purifier",
+    "product_type": "water_purifier",
+    "model_name": "WW140NP",
+    "procedure_type": "unsupported_procedure",
+    "language": "en",
+    "expected_risk": "unknown",
+    "expected_ar_allowed": false,
+    "expected_min_results": 0,
+    "expected_no_match": true
+  },
+  {
+    "case_id": "RAGQ_HI_REMOTE_001",
+    "query": "रिमोट से एसी मोड कैसे बदलें",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "remote_operation",
+    "language": "hi",
+    "expected_risk": "low",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "remote_operation"
+    ]
+  },
+  {
+    "case_id": "RAGQ_HI_WATER_001",
+    "query": "एसी से पानी टपक रहा है",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "water_leak_monsoon",
+    "language": "hi",
+    "expected_risk": "medium",
+    "expected_ar_allowed": true,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "water_leak_monsoon"
+    ]
+  },
+  {
+    "case_id": "RAGQ_HI_HIGH_001",
+    "query": "एसी वायर से चिंगारी आ रही है",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "procedure_type": "high_risk_electrical",
+    "language": "hi",
+    "expected_risk": "high",
+    "expected_ar_allowed": false,
+    "expected_min_results": 1,
+    "expected_top1_procedures": [
+      "high_risk_electrical"
+    ]
+  }
+]

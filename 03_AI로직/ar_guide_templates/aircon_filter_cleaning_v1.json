@@ -1,0 +1,191 @@
+{
+  "template_id": "aircon_filter_cleaning_v1",
+  "version": 1,
+  "product_type": "air_conditioner",
+  "procedure_type": "filter_cleaning",
+  "risk_ceiling": "low",
+  "reuse_category": "care_video_reusable",
+  "allowed_match_scope": ["exact_model", "official_alias", "official_series", "product_type_common"],
+  "required_official_sources": ["product_image", "owners_manual", "official_faq"],
+  "parts": [
+    {
+      "tag": "air_conditioner.body",
+      "display_name": "Air conditioner body",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_conditioner.front_panel",
+      "display_name": "Front panel",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_conditioner.filter.mesh_filter",
+      "display_name": "Dust filter",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_conditioner.filter_slot",
+      "display_name": "Filter slot",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_conditioner.air_outlet",
+      "display_name": "Air outlet",
+      "user_accessible": true
+    },
+    {
+      "tag": "air_conditioner.power_button",
+      "display_name": "Power button",
+      "user_accessible": true
+    }
+  ],
+  "allowed_actions": [
+    "power_off",
+    "open_front_panel",
+    "remove_filter",
+    "wash_filter_with_water",
+    "dry_filter_in_shade",
+    "insert_filter",
+    "close_front_panel",
+    "run_fan_or_clean_mode_if_officially_supported"
+  ],
+  "conditional_actions": [
+    "use_soft_brush",
+    "use_neutral_detergent",
+    "run_auto_clean"
+  ],
+  "forbidden_actions": [
+    "open_internal_cover",
+    "touch_pcb",
+    "remove_fan_motor",
+    "check_refrigerant",
+    "repair_wiring",
+    "spray_water_inside_unit"
+  ],
+  "camera_rules": [
+    "front_wide",
+    "front_medium",
+    "close_up_filter",
+    "top_or_angle_view",
+    "final_front_wide"
+  ],
+  "highlight_rules": [
+    "filter_outline",
+    "filter_handle_dotted_box",
+    "removal_direction_arrow",
+    "step_number",
+    "safety_power_off_icon"
+  ],
+  "forbidden_generation_notes": [
+    "Do not show PCB, refrigerant pipe, compressor, fan motor internals, or internal wiring.",
+    "Do not invent labels, buttons, logos, or model text not found in official assets.",
+    "Keep clean reference separate from annotated overlay."
+  ],
+  "scene_steps": [
+    {
+      "step_id": "ac_filter_01_power_off",
+      "duration_sec_shortform": 3,
+      "duration_sec_manual": 5,
+      "camera": "front_wide",
+      "parts": ["air_conditioner.power_button", "air_conditioner.body"],
+      "action": "power_off",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "air_conditioner.power_button",
+        "text_template_id": "safety_power_off"
+      },
+      "subtitle_template_id": "aircon_filter_power_off",
+      "tts_template_id": "aircon_filter_power_off"
+    },
+    {
+      "step_id": "ac_filter_02_front_panel",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 7,
+      "camera": "front_medium",
+      "parts": ["air_conditioner.front_panel"],
+      "action": "open_front_panel",
+      "highlight": {
+        "type": "outline",
+        "target_part": "air_conditioner.front_panel",
+        "text_template_id": "aircon_front_panel"
+      },
+      "subtitle_template_id": "aircon_open_front_panel",
+      "tts_template_id": "aircon_open_front_panel"
+    },
+    {
+      "step_id": "ac_filter_03_remove_filter",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 8,
+      "camera": "close_up_filter",
+      "parts": ["air_conditioner.filter.mesh_filter", "air_conditioner.filter_slot"],
+      "action": "remove_filter",
+      "highlight": {
+        "type": "arrow",
+        "target_part": "air_conditioner.filter.mesh_filter",
+        "text_template_id": "aircon_filter_pull_direction"
+      },
+      "subtitle_template_id": "aircon_remove_filter",
+      "tts_template_id": "aircon_remove_filter"
+    },
+    {
+      "step_id": "ac_filter_04_wash",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 9,
+      "camera": "close_up_filter",
+      "parts": ["air_conditioner.filter.mesh_filter"],
+      "action": "wash_filter_with_water",
+      "highlight": {
+        "type": "step_number",
+        "target_part": "air_conditioner.filter.mesh_filter",
+        "text_template_id": "aircon_wash_filter"
+      },
+      "subtitle_template_id": "aircon_wash_filter",
+      "tts_template_id": "aircon_wash_filter"
+    },
+    {
+      "step_id": "ac_filter_05_dry",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 7,
+      "camera": "close_up_filter",
+      "parts": ["air_conditioner.filter.mesh_filter"],
+      "action": "dry_filter_in_shade",
+      "highlight": {
+        "type": "safety_icon",
+        "target_part": "air_conditioner.filter.mesh_filter",
+        "text_template_id": "aircon_dry_in_shade"
+      },
+      "subtitle_template_id": "aircon_dry_filter",
+      "tts_template_id": "aircon_dry_filter"
+    },
+    {
+      "step_id": "ac_filter_06_reinstall",
+      "duration_sec_shortform": 5,
+      "duration_sec_manual": 8,
+      "camera": "top_or_angle_view",
+      "parts": ["air_conditioner.filter.mesh_filter", "air_conditioner.filter_slot"],
+      "action": "insert_filter",
+      "highlight": {
+        "type": "arrow",
+        "target_part": "air_conditioner.filter.mesh_filter",
+        "text_template_id": "aircon_insert_filter_direction"
+      },
+      "subtitle_template_id": "aircon_insert_filter",
+      "tts_template_id": "aircon_insert_filter"
+    },
+    {
+      "step_id": "ac_filter_07_close_panel",
+      "duration_sec_shortform": 4,
+      "duration_sec_manual": 6,
+      "camera": "final_front_wide",
+      "parts": ["air_conditioner.front_panel", "air_conditioner.body"],
+      "action": "close_front_panel",
+      "highlight": {
+        "type": "outline",
+        "target_part": "air_conditioner.front_panel",
+        "text_template_id": "aircon_close_panel"
+      },
+      "subtitle_template_id": "aircon_close_panel",
+      "tts_template_id": "aircon_close_panel"
+    }
+  ]
+}

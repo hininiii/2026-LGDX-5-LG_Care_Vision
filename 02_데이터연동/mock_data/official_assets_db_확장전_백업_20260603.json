@@ -1,0 +1,4153 @@
+[
+  {
+    "asset_id": "OA_LGIN_001",
+    "asset_type": "official_faq",
+    "product_type": "common",
+    "model_name": null,
+    "title": "Frequently Asked Questions - Support & Help | LG India",
+    "source_url": "https://www.lg.com/in/support/order-support/frequently-asked-questions-1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "product_type_common",
+    "matched_model_names": [],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "faq_care_and_service"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_001.html"
+  },
+  {
+    "asset_id": "OA_LGIN_002",
+    "asset_type": "help_library",
+    "product_type": "air_conditioner",
+    "model_name": null,
+    "title": "How to clean filter in LG Split AC",
+    "source_url": "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT20150063-20152544608551/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "product_type_common",
+    "matched_model_names": [],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "filter_cleaning"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_002.html"
+  },
+  {
+    "asset_id": "OA_LGIN_003",
+    "asset_type": "help_library",
+    "product_type": "washing_machine",
+    "model_name": null,
+    "title": "How to clean tub of LG Washing Machine using LG ScaLGo",
+    "source_url": "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT52006627-20153905536408TWW/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "product_type_common",
+    "matched_model_names": [],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "tub_clean"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_003.html"
+  },
+  {
+    "asset_id": "OA_LGIN_004",
+    "asset_type": "help_library",
+    "product_type": "washing_machine",
+    "model_name": null,
+    "title": "How to clean tub of LG Washing Machine using LG ScaLGo",
+    "source_url": "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT52006627-20155073290419/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "product_type_common",
+    "matched_model_names": [],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "tub_clean"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_004.html"
+  },
+  {
+    "asset_id": "OA_LGIN_005",
+    "asset_type": "help_library",
+    "product_type": "air_purifier",
+    "model_name": null,
+    "title": "LG Help Library - Support & Help | LG India",
+    "source_url": "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT52006833-20154844249465/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "product_type_common",
+    "matched_model_names": [],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "filter_replacement_lamp"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_005.html"
+  },
+  {
+    "asset_id": "OA_LGIN_006",
+    "asset_type": "help_library",
+    "product_type": "water_purifier",
+    "model_name": null,
+    "title": "LG Help Library - Support & Help | LG India",
+    "source_url": "https://www.lg.com/in/support/product-support/troubleshoot/help-library/cs-CT52006627-20153753013272/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "product_type_common",
+    "matched_model_names": [],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "filter_replacement"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_006.html"
+  },
+  {
+    "asset_id": "OA_LGIN_007",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "title": "3 Star (2.0) Split AC Price in India - AS-Q24ENXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/as-q24enxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "AS-Q24ENXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_007.html"
+  },
+  {
+    "asset_id": "OA_LGIN_008",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "ADQ75153435",
+    "title": "PuriCare 360° Air Purifier V Pet-Filter - ADQ75153435 | LG India",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/filter/adq75153435/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "ADQ75153435"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "filter_replacement"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_008.html"
+  },
+  {
+    "asset_id": "OA_LGIN_009",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "ALL-AIR-CONDITIONERS",
+    "title": "All Air Conditioners : Find the Products You Need | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/all-air-conditioners/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "ALL-AIR-CONDITIONERS"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_009.html"
+  },
+  {
+    "asset_id": "OA_LGIN_010",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "SPLIT-AIR-CONDITIONERS",
+    "title": "Split AC: Buy Split Air Conditioner at Best Price | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "SPLIT-AIR-CONDITIONERS"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_010.html"
+  },
+  {
+    "asset_id": "OA_LGIN_011",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "TS-Q14YNZE",
+    "title": "Split AC: Buy Split Air Conditioner at Best Price | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/ts-q14ynze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "TS-Q14YNZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_011.html"
+  },
+  {
+    "asset_id": "OA_LGIN_012",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "TS-Q18TNXE1",
+    "title": "3 Star (1.5), Split AC, AI Convertible 6-in-1, Viraat and Diet Mode, 2024 Model | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/ts-q18tnxe1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "TS-Q18TNXE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_012.html"
+  },
+  {
+    "asset_id": "OA_LGIN_013",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "TS-Q19ENZE",
+    "title": "LG 5 Star (1.5), Split AC, AI convertible 6in1 & Viraat Mode, 2024 Model - TS-Q19ENZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/ts-q19enze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "TS-Q19ENZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_013.html"
+  },
+  {
+    "asset_id": "OA_LGIN_014",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19MWZE",
+    "title": "Buy 5 Star Split AC with Wi-Fi, 2025 - US-Q19MWZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19mwze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19MWZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_014.html"
+  },
+  {
+    "asset_id": "OA_LGIN_015",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19JWZE",
+    "title": "5 Star Convertible 6-in-1 Split AC - US-Q19JWZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19jwze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19JWZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_015.html"
+  },
+  {
+    "asset_id": "OA_LGIN_016",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19BNZE",
+    "title": "Buy 1.5 ton Split AC, 2025 Model - US-Q19BNZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19bnze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19BNZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_016.html"
+  },
+  {
+    "asset_id": "OA_LGIN_017",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19YNZE1",
+    "title": "5.8 kW (1.5 ton) Split AC - US-Q19YNZE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19ynze1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19YNZE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_017.html"
+  },
+  {
+    "asset_id": "OA_LGIN_018",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q18JNXE",
+    "title": "Buy 3 Star Dual Inverter Split AC, 2025 - US-Q18JNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q18jnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q18JNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_018.html"
+  },
+  {
+    "asset_id": "OA_LGIN_019",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q14ENZE",
+    "title": "5 Star Split AC Price , Copper Tubes - US-Q14ENZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q14enze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q14ENZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_019.html"
+  },
+  {
+    "asset_id": "OA_LGIN_020",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q13JNYE",
+    "title": "4 star Convertible 6-in-1 Split AC - US-Q13JNYE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q13jnye/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q13JNYE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_020.html"
+  },
+  {
+    "asset_id": "OA_LGIN_021",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-H19VNXE",
+    "title": "5.8 kW (1.5 ton) Hot & Cold Split AC - US-H19VNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h19vnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-H19VNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_021.html"
+  },
+  {
+    "asset_id": "OA_LGIN_022",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q12CNXE",
+    "title": "3 Star Convertible Split AC Price - US-Q12CNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q12cnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q12CNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_022.html"
+  },
+  {
+    "asset_id": "OA_LGIN_023",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q24ENXE",
+    "title": "3 Star (2.0) 6-in-1 Cooling Split AC - US-Q24ENXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q24enxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q24ENXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_023.html"
+  },
+  {
+    "asset_id": "OA_LGIN_024",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19CNXE",
+    "title": "5.5 kW (1.5 ton) 6-in-1 Split AC - US-Q19CNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19cnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19CNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_024.html"
+  },
+  {
+    "asset_id": "OA_LGIN_025",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q18YNXE1",
+    "title": "5.15 kW (1.5 ton) 6-in-1 Split AC - US-Q18YNXE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q18ynxe1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q18YNXE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_025.html"
+  },
+  {
+    "asset_id": "OA_LGIN_026",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19ANZE1",
+    "title": "5 Star AI Convertible Split AC - US-Q19ANZE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19anze1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19ANZE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_026.html"
+  },
+  {
+    "asset_id": "OA_LGIN_027",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q18ZNXE1",
+    "title": "5.15 kW (1.5 ton) Split AC Price- US-Q18ZNXE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q18znxe1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q18ZNXE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_027.html"
+  },
+  {
+    "asset_id": "OA_LGIN_028",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19WNXE",
+    "title": "Buy 3 Star AI Convertible Split AC - US-Q19WNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19wnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19WNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_028.html"
+  },
+  {
+    "asset_id": "OA_LGIN_029",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19XNXE",
+    "title": "5 kW (1.5 ton) 6-in-1 Split AC - US-Q19XNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19xnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19XNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_029.html"
+  },
+  {
+    "asset_id": "OA_LGIN_030",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q18ZNXE",
+    "title": "3 Star R32 Convertible Split AC - US-Q18ZNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q18znxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q18ZNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_030.html"
+  },
+  {
+    "asset_id": "OA_LGIN_031",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q24HNXE",
+    "title": "3 Star AI Convertible Split AC Price - US-Q24HNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q24hnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q24HNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_031.html"
+  },
+  {
+    "asset_id": "OA_LGIN_032",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19ANZE",
+    "title": "5.8 kW (1.5 ton) Split AC Price - US-Q19ANZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19anze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19ANZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_032.html"
+  },
+  {
+    "asset_id": "OA_LGIN_033",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19PNZE1",
+    "title": "5.8 kW (1.5 ton) Split AC, White - US-Q19PNZE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19pnze1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19PNZE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_033.html"
+  },
+  {
+    "asset_id": "OA_LGIN_034",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19AWZE",
+    "title": "5.8 kW (1.5 ton) Split AC Price - US-Q19AWZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19awze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19AWZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_034.html"
+  },
+  {
+    "asset_id": "OA_LGIN_035",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19PWZE1",
+    "title": "5 Star AI+ Convertible 6-in-1 Split AC - US-Q19PWZE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19pwze1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19PWZE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_035.html"
+  },
+  {
+    "asset_id": "OA_LGIN_036",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19QNXE",
+    "title": "5.5 kW (1.5 ton) Split AC, White - US-Q19QNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19qnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19QNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_036.html"
+  },
+  {
+    "asset_id": "OA_LGIN_037",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19QNZE",
+    "title": "5.8 kW (1.5 ton) AI Split AC Price- US-Q19QNZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19qnze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19QNZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_037.html"
+  },
+  {
+    "asset_id": "OA_LGIN_038",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19PNXE",
+    "title": "Split AC: Buy Split Air Conditioner at Best Price | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19pnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19PNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_038.html"
+  },
+  {
+    "asset_id": "OA_LGIN_039",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19RNZE",
+    "title": "5.8 kW (1.5 ton) 6-in-1 Split AC - US-Q19RNZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19rnze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19RNZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_039.html"
+  },
+  {
+    "asset_id": "OA_LGIN_040",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q24SNXE",
+    "title": "6.8 kW (2 ton) Convertible Split AC - US-Q24SNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q24snxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q24SNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_040.html"
+  },
+  {
+    "asset_id": "OA_LGIN_041",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-H18VNXE",
+    "title": "5.15 kW (1.5 ton) Hot & Cold Split AC - US-H18VNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-h18vnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-H18VNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_041.html"
+  },
+  {
+    "asset_id": "OA_LGIN_042",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19PNZE",
+    "title": "5 kW (1.5) Wall Mounted Split AC - US-Q19GNZE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19pnze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19PNZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_042.html"
+  },
+  {
+    "asset_id": "OA_LGIN_043",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q12BNXE",
+    "title": "3.65 kW (1 ton) 6-in-1 Split AC - US-Q12BNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q12bnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q12BNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_043.html"
+  },
+  {
+    "asset_id": "OA_LGIN_044",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q18DNXE1",
+    "title": "5.15 kW (1.5 ton) 6-in-1 Split AC - US-Q18DNXE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q18dnxe1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q18DNXE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_044.html"
+  },
+  {
+    "asset_id": "OA_LGIN_045",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q18LNXE",
+    "title": "5 kW (1.5 ton) AI Convertible Split AC - US-Q18LNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q18lnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q18LNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_045.html"
+  },
+  {
+    "asset_id": "OA_LGIN_046",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q18TNXE",
+    "title": "1.5 ton 6-in-1 Split AC, 2025 - US-Q18TNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q18tnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q18TNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_046.html"
+  },
+  {
+    "asset_id": "OA_LGIN_047",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q18RNXE",
+    "title": "3 Star Diet Mode+ Split AC Price - US-Q18RNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q18rnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q18RNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_047.html"
+  },
+  {
+    "asset_id": "OA_LGIN_048",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19ZWZE",
+    "title": "5.8 kW (1.5 ton) Split AC - US-Q19ZWZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19zwze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19ZWZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_048.html"
+  },
+  {
+    "asset_id": "OA_LGIN_049",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q12JNXE",
+    "title": "3.65 kW (1 ton) 6-in-1 AI Split AC - US-Q12JNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q12jnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q12JNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_049.html"
+  },
+  {
+    "asset_id": "OA_LGIN_050",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q19RNZE1",
+    "title": "5.8 kW (1.5 ton) 6-in-1 Split AC - US-Q19RNZE1 | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q19rnze1/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q19RNZE1"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_050.html"
+  },
+  {
+    "asset_id": "OA_LGIN_051",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q12PNXE",
+    "title": "3.65 kW (1.0 ton) Split AC Price - US-Q12PNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q12pnxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q12PNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_051.html"
+  },
+  {
+    "asset_id": "OA_LGIN_052",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q12YNXE",
+    "title": "3.65 kW (1 ton) GoldFin+ Split AC - US-Q12YNXE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q12ynxe/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q12YNXE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_052.html"
+  },
+  {
+    "asset_id": "OA_LGIN_053",
+    "asset_type": "product_page",
+    "product_type": "air_conditioner",
+    "model_name": "US-Q14ANZE",
+    "title": "5 Star Dual Inverter Split AC - US-Q14ANZE | LG India",
+    "source_url": "https://www.lg.com/in/air-conditioners/split-air-conditioners/us-q14anze/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "US-Q14ANZE"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "refrigerant_handling",
+      "compressor_repair",
+      "gas_leak_handling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_053.html"
+  },
+  {
+    "asset_id": "OA_LGIN_054",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "ALL-WASHING-MACHINES",
+    "title": "All Washing Machines : Find the Products You Need | LG India",
+    "source_url": "https://www.lg.com/in/laundry/all-washing-machines/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "ALL-WASHING-MACHINES"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_054.html"
+  },
+  {
+    "asset_id": "OA_LGIN_055",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "DRYERS",
+    "title": "Condenser Tumble Dryers | Clothes Dryers | LG India",
+    "source_url": "https://www.lg.com/in/laundry/dryers/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "DRYERS"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_055.html"
+  },
+  {
+    "asset_id": "OA_LGIN_056",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "DHV09SAB",
+    "title": "Buy LG 9kg Dual Inverter Heat Pump™ Dryer - DHV09SAB | LG India",
+    "source_url": "https://www.lg.com/in/laundry/dryers/dhv09sab/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "DHV09SAB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_056.html"
+  },
+  {
+    "asset_id": "OA_LGIN_057",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "DHV09SAM",
+    "title": "Buy LG 9kg Dual Inverter Heat Pump™ Dryer - DHV09SAM | LG India",
+    "source_url": "https://www.lg.com/in/laundry/dryers/dhv09sam/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "DHV09SAM"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_057.html"
+  },
+  {
+    "asset_id": "OA_LGIN_058",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "WASHER-DRYERS",
+    "title": "Washer Dryer Combo: All-In-One Washing Machines | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WASHER-DRYERS"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_058.html"
+  },
+  {
+    "asset_id": "OA_LGIN_059",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHD0905SWM",
+    "title": "LG 9/5Kg Front Load Washer Dryer - FHD0905SWM | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/fhd0905swm/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHD0905SWM"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_059.html"
+  },
+  {
+    "asset_id": "OA_LGIN_060",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHD1107STB",
+    "title": "Buy 11/7Kg Front Load Washer Dryer - FHD1107STB | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/fhd1107stb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHD1107STB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_060.html"
+  },
+  {
+    "asset_id": "OA_LGIN_061",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHD1508STB",
+    "title": "Buy 15/8Kg Front Load Washer-Dryer - FHD1508STB | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/fhd1508stb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHD1508STB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_061.html"
+  },
+  {
+    "asset_id": "OA_LGIN_062",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHD2112STB",
+    "title": "Buy LG 21 KG Front Load Washer-Dryer - FHD2112STB | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/fhd2112stb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHD2112STB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_062.html"
+  },
+  {
+    "asset_id": "OA_LGIN_063",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHD1107SWM",
+    "title": "LG 11/7Kg Front Load Washer Dryer - FHD1107SWM | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/fhd1107swm/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHD1107SWM"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_063.html"
+  },
+  {
+    "asset_id": "OA_LGIN_064",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHD1207STB",
+    "title": "LG 12/7Kg AIDD™ Front Load Washer Dryer - FHD1207STB | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/fhd1207stb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHD1207STB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_064.html"
+  },
+  {
+    "asset_id": "OA_LGIN_065",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHD1308STB",
+    "title": "13 Front Load Washer-Dryer (Black)- FHD1308STB | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/fhd1308stb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHD1308STB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_065.html"
+  },
+  {
+    "asset_id": "OA_LGIN_066",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHD0905STB",
+    "title": "Buy 9/5KG Washer Dryer - FHD0905STB | LG India",
+    "source_url": "https://www.lg.com/in/laundry/washer-dryers/fhd0905stb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHD0905STB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_066.html"
+  },
+  {
+    "asset_id": "OA_LGIN_067",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FRONT-LOADING-WASHING-MACHINES",
+    "title": "Buy Best Front Load Washing Machines Online | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FRONT-LOADING-WASHING-MACHINES"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_067.html"
+  },
+  {
+    "asset_id": "OA_LGIN_068",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1208A5M",
+    "title": "Buy 8KG Front Load Washing Machine - FHP1208A5M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1208a5m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1208A5M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_068.html"
+  },
+  {
+    "asset_id": "OA_LGIN_069",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1208Z5M",
+    "title": "8 KG WiFi Front Load Washing Machine - FHP1208Z5M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1208z5m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1208Z5M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_069.html"
+  },
+  {
+    "asset_id": "OA_LGIN_070",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1209Z5M",
+    "title": "LG 9Kg Front Load Washing Machine - FHP1209Z5M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1209z5m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1209Z5M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_070.html"
+  },
+  {
+    "asset_id": "OA_LGIN_071",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1209Z7P",
+    "title": "Buy 9KG Front Load Washing Machine - FHP1209Z7P | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1209z7p/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1209Z7P"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_071.html"
+  },
+  {
+    "asset_id": "OA_LGIN_072",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1209Z9B",
+    "title": "Buy 9KG Front Load Washing Machine- FHP1209Z9B | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1209z9b/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1209Z9B"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_072.html"
+  },
+  {
+    "asset_id": "OA_LGIN_073",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1410Z5M",
+    "title": "LG 10Kg Front Load Washing Machine - FHP1410Z5M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1410z5m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1410Z5M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_073.html"
+  },
+  {
+    "asset_id": "OA_LGIN_074",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1410Z7P",
+    "title": "10 KG Front Load Washing Machine - FHP1410Z7P | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1410z7p/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1410Z7P"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_074.html"
+  },
+  {
+    "asset_id": "OA_LGIN_075",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1411Z9B",
+    "title": "Buy 11 KG Front Load Washing Machine - FHP1411Z9B | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1411z9b/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1411Z9B"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_075.html"
+  },
+  {
+    "asset_id": "OA_LGIN_076",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1411Z9P",
+    "title": "LG 11Kg Front Load Washing Machine - FHP1411Z9P | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1411z9p/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1411Z9P"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_076.html"
+  },
+  {
+    "asset_id": "OA_LGIN_077",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHV1409Z4M",
+    "title": "9 KG Front Load Washing Machine - FHV1409Z4M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhv1409z4m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHV1409Z4M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_077.html"
+  },
+  {
+    "asset_id": "OA_LGIN_078",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1413Z7M",
+    "title": "Buy 13KG Front Load Washing Machine - FHP1413Z7M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1413z7m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1413Z7M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_078.html"
+  },
+  {
+    "asset_id": "OA_LGIN_079",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1207Z4M",
+    "title": "Buy 7KG Front Load Washing Machine - FHB1207Z4M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1207z4m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1207Z4M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_079.html"
+  },
+  {
+    "asset_id": "OA_LGIN_080",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1207Z2M",
+    "title": "Buy 7Kg Front Load Washing Machine - FHB1207Z2M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1207z2m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1207Z2M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_080.html"
+  },
+  {
+    "asset_id": "OA_LGIN_081",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1208Z4M",
+    "title": "Buy 8KG Front Load Washing Machine - FHB1208Z4M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1208z4m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1208Z4M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_081.html"
+  },
+  {
+    "asset_id": "OA_LGIN_082",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1208Z2M",
+    "title": "Buy 8KG Front Load Washing Machine - FHB1208Z2M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1208z2m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1208Z2M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_082.html"
+  },
+  {
+    "asset_id": "OA_LGIN_083",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1209Z4B",
+    "title": "Buy 9KG Front Load Washing Machine - FHB1209Z4B | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1209z4b/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1209Z4B"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_083.html"
+  },
+  {
+    "asset_id": "OA_LGIN_084",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1207Z2MA",
+    "title": "Buy 7KG Front Load Washing Machine - FHB1207Z2MA | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1207z2ma/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1207Z2MA"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_084.html"
+  },
+  {
+    "asset_id": "OA_LGIN_085",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1209Z2M",
+    "title": "Buy 9KG Front Load Washing Machine - FHB1209Z2M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1209z2m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1209Z2M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_085.html"
+  },
+  {
+    "asset_id": "OA_LGIN_086",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1209Z4M",
+    "title": "Buy 9 KG Front Load Washing Mchine - FHB1209Z4M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1209z4m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1209Z4M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_086.html"
+  },
+  {
+    "asset_id": "OA_LGIN_087",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1208Z4P",
+    "title": "LG 8 KG Front Load Washing Machine - FHB1208Z4P | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1208z4p/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1208Z4P"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_087.html"
+  },
+  {
+    "asset_id": "OA_LGIN_088",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1209Z4P",
+    "title": "9 KG Front Load Washing Machine - FHB1209Z4P | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1209z4p/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1209Z4P"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_088.html"
+  },
+  {
+    "asset_id": "OA_LGIN_089",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1412Z9B",
+    "title": "Buy 12 Kg Front Load Washing Machine - FHP1412Z9B | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1412z9b/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1412Z9B"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_089.html"
+  },
+  {
+    "asset_id": "OA_LGIN_090",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHB1207Z2W",
+    "title": "Buy 7 kg Front Load Washing Machine - FHB1207Z2W | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhb1207z2w/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHB1207Z2W"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_090.html"
+  },
+  {
+    "asset_id": "OA_LGIN_091",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHV1409Z2M",
+    "title": "Buy LG 9Kg Front Load Washing Machine - FHV1409Z2M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhv1409z2m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHV1409Z2M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_091.html"
+  },
+  {
+    "asset_id": "OA_LGIN_092",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1412Z5O",
+    "title": "12 Kg Front Load Washing Machine - FHP1412Z5O | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1412z5o/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1412Z5O"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_092.html"
+  },
+  {
+    "asset_id": "OA_LGIN_093",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1412Z3O",
+    "title": "12 Kg Front Load Washing Machine - FHP1412Z3O | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1412z3o/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1412Z3O"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_093.html"
+  },
+  {
+    "asset_id": "OA_LGIN_094",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FHP1410Z3M",
+    "title": "Buy 10Kg Front Load Washing Machine - FHP1410Z3M | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fhp1410z3m/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FHP1410Z3M"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_094.html"
+  },
+  {
+    "asset_id": "OA_LGIN_095",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FX1412A9K",
+    "title": "12 Kg Front Load Washer Online Today - FX1412A9K | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fx1412a9k/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FX1412A9K"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_095.html"
+  },
+  {
+    "asset_id": "OA_LGIN_096",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FX1412N9K",
+    "title": "12 Kg Front Load Washing Machine - FX1412N9K | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fx1412n9k/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FX1412N9K"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_096.html"
+  },
+  {
+    "asset_id": "OA_LGIN_097",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FX62515B9E",
+    "title": "Buy 15 Kg Front Load Washing Machine - FX62515B9E | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fx62515b9e/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FX62515B9E"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_097.html"
+  },
+  {
+    "asset_id": "OA_LGIN_098",
+    "asset_type": "product_page",
+    "product_type": "washing_machine",
+    "model_name": "FX1412N9S",
+    "title": "12Kg FL Washing Machine for Large Family - FX1412N9S | LG India",
+    "source_url": "https://www.lg.com/in/laundry/front-loading-washing-machines/fx1412n9s/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FX1412N9S"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "motor_repair",
+      "drain_pump_disassembly"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_098.html"
+  },
+  {
+    "asset_id": "OA_LGIN_099",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "AIR-PURIFIERS",
+    "title": "Air Purifiers: Home Air Cleaners at Best Price",
+    "source_url": "https://www.lg.com/in/air-care/air-purifiers/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "AIR-PURIFIERS"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_099.html"
+  },
+  {
+    "asset_id": "OA_LGIN_100",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "AS60GDWT0",
+    "title": "LG PuriCare Air Purifier, 360°, PM 1.0 - AS60GDWT0 | LG India",
+    "source_url": "https://www.lg.com/in/air-care/air-purifiers/as60gdwt0/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "AS60GDWT0"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_100.html"
+  },
+  {
+    "asset_id": "OA_LGIN_101",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "AS60GHWG0",
+    "title": "LG 360° Air Purifier, PM 1.0 Sensor - AS60GHWG0 | LG India",
+    "source_url": "https://www.lg.com/in/air-care/air-purifiers/as60ghwg0/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "AS60GHWG0"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_101.html"
+  },
+  {
+    "asset_id": "OA_LGIN_102",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "AS55GGWX0",
+    "title": "Buy LG 360° Clean Air Purifier - AS55GGWX0 | LG India",
+    "source_url": "https://www.lg.com/in/air-care/air-purifiers/as55ggwx0/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "AS55GGWX0"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_102.html"
+  },
+  {
+    "asset_id": "OA_LGIN_103",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "AS10GDBY0",
+    "title": "LG 360° Air Purifier for 104m² Space - AS10GDBY0 | LG India",
+    "source_url": "https://www.lg.com/in/air-care/air-purifiers/as10gdby0/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "AS10GDBY0"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_103.html"
+  },
+  {
+    "asset_id": "OA_LGIN_104",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "AIR-PURIFIERS",
+    "title": "LG Air Purifier HEPA Filter Accessories & Spare Parts",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "AIR-PURIFIERS"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_104.html"
+  },
+  {
+    "asset_id": "OA_LGIN_105",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "FILTER",
+    "title": "LG Genuine PuriCare Air Purifier Filter",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/filter/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "FILTER"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_105.html"
+  },
+  {
+    "asset_id": "OA_LGIN_106",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "ADQ75153404",
+    "title": "PuriCare™ 360° Air Purifier Filter - ADQ75153404 | LG India",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/filter/adq75153404/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "ADQ75153404"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_106.html"
+  },
+  {
+    "asset_id": "OA_LGIN_107",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "MDJ64424304",
+    "title": "Montblanc Air Purifier HEPA Filter - MDJ64424304 | LG India",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/filter/mdj64424304/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "MDJ64424304"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_107.html"
+  },
+  {
+    "asset_id": "OA_LGIN_108",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "MDJ64424406",
+    "title": "Montblanc Air Purifier Hybrid Deodorizing Filter - MDJ64424406 | LG India",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/filter/mdj64424406/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "MDJ64424406"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_108.html"
+  },
+  {
+    "asset_id": "OA_LGIN_109",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "AGF04101503",
+    "title": "PuriCare Aero Series Air Purifier V Filter-AGF04101503 | LG India",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/filter/agf04101503/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "AGF04101503"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_109.html"
+  },
+  {
+    "asset_id": "OA_LGIN_110",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "OTHERS",
+    "title": "Other LG Air Purifier Accessories | Genuine Parts",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/others/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "OTHERS"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_110.html"
+  },
+  {
+    "asset_id": "OA_LGIN_111",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "ALL",
+    "title": "All",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/all/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "ALL"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_111.html"
+  },
+  {
+    "asset_id": "OA_LGIN_112",
+    "asset_type": "product_page",
+    "product_type": "air_purifier",
+    "model_name": "ALL-AIR-PURIFIERS-ACCESSORIES",
+    "title": "All Air Purifiers Accessories",
+    "source_url": "https://www.lg.com/in/care-accessories/air-purifiers/all-air-purifiers-accessories/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "ALL-AIR-PURIFIERS-ACCESSORIES"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "sensor_board_repair",
+      "fan_motor_repair"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_112.html"
+  },
+  {
+    "asset_id": "OA_LGIN_113",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW120NNC",
+    "title": "Buy LG 8L UV+UF Water Purifier Online - WW120NNC | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww120nnc/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW120NNC"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_113.html"
+  },
+  {
+    "asset_id": "OA_LGIN_114",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW130NP",
+    "title": "8L RO Water Purifier, Stainless Steel - WW130NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww130np/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW130NP"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_114.html"
+  },
+  {
+    "asset_id": "OA_LGIN_115",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW140NPR",
+    "title": "8L RO+Mineral Booster Water Purifier - WW140NPR | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww140npr/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW140NPR"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_115.html"
+  },
+  {
+    "asset_id": "OA_LGIN_116",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW140NP",
+    "title": "8L RO+ Mineral Booster Water Purifier - WW140NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww140np/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW140NP"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_116.html"
+  },
+  {
+    "asset_id": "OA_LGIN_117",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW142NPC",
+    "title": "8L RO + Mineral Booster Water Purifier - WW142NPC | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww142npc/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW142NPC"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_117.html"
+  },
+  {
+    "asset_id": "OA_LGIN_118",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW145NPW",
+    "title": "Shop 8L RO+UV Water Purifier - WW145NPW | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww145npw/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW145NPW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_118.html"
+  },
+  {
+    "asset_id": "OA_LGIN_119",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW151NPR",
+    "title": "8L RO+UV+Mineral Booster Water Purifier - WW151NPR | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww151npr/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW151NPR"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_119.html"
+  },
+  {
+    "asset_id": "OA_LGIN_120",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW151NP",
+    "title": "8L RO+UV+Mineral Booster Water Purifier - WW151NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww151np/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW151NP"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_120.html"
+  },
+  {
+    "asset_id": "OA_LGIN_121",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW152NP",
+    "title": "8L RO+UV LED Water Purifier - WW152NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww152np/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW152NP"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_121.html"
+  },
+  {
+    "asset_id": "OA_LGIN_122",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW155NPB-OLD",
+    "title": "8L RO+UV+Mineral Booster Water Purifier - WW155NPB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww155npb-old/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW155NPB-OLD"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_122.html"
+  },
+  {
+    "asset_id": "OA_LGIN_123",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW174NPB",
+    "title": "8L RO+UV+Mineral Booster Water Purifier - WW174NPB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww174npb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW174NPB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_123.html"
+  },
+  {
+    "asset_id": "OA_LGIN_124",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW174NPC",
+    "title": "8L RO+UV+Mineral Booster Water Purifier - WW174NPC | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww174npc/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW174NPC"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_124.html"
+  },
+  {
+    "asset_id": "OA_LGIN_125",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW175EPW",
+    "title": "8L RO+UV+Mineral Booster Water Purifier - WW175EPW | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww175epw/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW175EPW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_125.html"
+  },
+  {
+    "asset_id": "OA_LGIN_126",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW184EPB",
+    "title": "8 L RO Water Purifier Price for Home - WW184EPB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww184epb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW184EPB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_126.html"
+  },
+  {
+    "asset_id": "OA_LGIN_127",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW184EPC",
+    "title": "8L RO+Mineral Booster Water Purifier - WW184EPC | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww184epc/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW184EPC"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_127.html"
+  },
+  {
+    "asset_id": "OA_LGIN_128",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW156RPTB",
+    "title": "Buy 8L RO+UV+MB Water Purifier Online - WW156RPTB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww156rptb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW156RPTB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_128.html"
+  },
+  {
+    "asset_id": "OA_LGIN_129",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW156RPTC",
+    "title": "8L RO+UV+MB Water Purifier - WW156RPTC | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww156rptc/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW156RPTC"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_129.html"
+  },
+  {
+    "asset_id": "OA_LGIN_130",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW146RPLB",
+    "title": "8L RO+Mineral Booster Water Purifier - WW146RPLB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww146rplb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW146RPLB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_130.html"
+  },
+  {
+    "asset_id": "OA_LGIN_131",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW146RPLC",
+    "title": "8L RO+Mineral Booster Water Purifier - WW146RPLC | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww146rplc/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW146RPLC"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_131.html"
+  },
+  {
+    "asset_id": "OA_LGIN_132",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW136RPNB",
+    "title": "By 8L RO Water Purifier Online - WW136RPNB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww136rpnb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW136RPNB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_132.html"
+  },
+  {
+    "asset_id": "OA_LGIN_133",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW176GPBW",
+    "title": "Buy 8L RO Wall Mounted Water Purifier - WW176GPBW | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww176gpbw/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW176GPBW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_133.html"
+  },
+  {
+    "asset_id": "OA_LGIN_134",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW176GPRB",
+    "title": "8L RO Water Purifier with Smart Display - WW176GPRB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww176gprb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW176GPRB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_134.html"
+  },
+  {
+    "asset_id": "OA_LGIN_135",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW131NP",
+    "title": "8L RO Water Purifier with Smart Display - WW131NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww131np/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW131NP"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_135.html"
+  },
+  {
+    "asset_id": "OA_LGIN_136",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW146RPLC-NEW",
+    "title": "8L RO+Mineral Booster Water Purifier - WW146RPLC | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww146rplc-new/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW146RPLC-NEW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_136.html"
+  },
+  {
+    "asset_id": "OA_LGIN_137",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW151NP-NEW",
+    "title": "8L RO+UV+Mineral Booster Water Purifier - WW151NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww151np-new/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW151NP-NEW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_137.html"
+  },
+  {
+    "asset_id": "OA_LGIN_138",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW146RPLB-NEW",
+    "title": "8L RO+Mineral Booster Water Purifier - WW146RPLB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww146rplb-new/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW146RPLB-NEW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_138.html"
+  },
+  {
+    "asset_id": "OA_LGIN_139",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW132NP-NEW",
+    "title": "Buy 8L RO + Carbon Filter Water Purifier - WW132NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww132np-new/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW132NP-NEW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_139.html"
+  },
+  {
+    "asset_id": "OA_LGIN_140",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW155NPB",
+    "title": "8 L RO Water Purifier Price - WW155NPB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww155npb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW155NPB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_140.html"
+  },
+  {
+    "asset_id": "OA_LGIN_141",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW152NP-NEW",
+    "title": "8L RO+UV LED Water Purifier - WW152NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww152np-new/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW152NP-NEW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_141.html"
+  },
+  {
+    "asset_id": "OA_LGIN_142",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW131NP-NEW",
+    "title": "8L RO Water Purifier with Smart Display - WW131NP | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww131np-new/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW131NP-NEW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_142.html"
+  },
+  {
+    "asset_id": "OA_LGIN_143",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW136RPNB-NEW",
+    "title": "By 8L RO Water Purifier Online - WW136RPNB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww136rpnb-new/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW136RPNB-NEW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_143.html"
+  },
+  {
+    "asset_id": "OA_LGIN_144",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW184ETB",
+    "title": "8L RO+UF+Mineral Booster Water Purifier - WW184ETB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww184etb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW184ETB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_144.html"
+  },
+  {
+    "asset_id": "OA_LGIN_145",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW184ETC",
+    "title": "8L RO+UF+Mineral Booster Water Purifier - WW184ETC | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww184etc/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW184ETC"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_145.html"
+  },
+  {
+    "asset_id": "OA_LGIN_146",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW176GTBW",
+    "title": "Buy 8L RO Wall Mounted Water Purifier - WW176GTBW | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww176gtbw/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW176GTBW"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_146.html"
+  },
+  {
+    "asset_id": "OA_LGIN_147",
+    "asset_type": "product_page",
+    "product_type": "water_purifier",
+    "model_name": "WW156RTTB",
+    "title": "Buy 8L RO+UV+MB Water Purifier Online - WW156RTTB | LG India",
+    "source_url": "https://www.lg.com/in/water-purifiers/ww156rttb/",
+    "source_date": "2026-06-03",
+    "applicability_scope": "exact_model",
+    "matched_model_names": [
+      "WW156RTTB"
+    ],
+    "matched_aliases": [],
+    "matched_series": null,
+    "available_procedures": [
+      "product_page"
+    ],
+    "forbidden_actions": [
+      "electrical_repair",
+      "pcb_repair",
+      "internal_disassembly",
+      "internal_water_line_opening",
+      "internal_tank_descaling"
+    ],
+    "verification_status": "collected_official_lg_india",
+    "last_checked_at": "2026-06-03T12:00:00+05:30",
+    "raw_file": "02_데이터연동\\source_data\\official_lg_india\\raw\\OA_LGIN_147.html"
+  }
+]

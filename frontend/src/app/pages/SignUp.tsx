@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Eye, EyeOff } from "lucide-react";
+import { registerUser } from "../api/user";
+import { setCurrentUserEmail } from "../utils/authSession";
 
 const airbrushBg = [
   "radial-gradient(ellipse 120% 55% at 50% -5%, rgba(255,190,140,0.22) 0%, transparent 70%)",
@@ -22,7 +24,7 @@ export function SignUp() {
   const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name || !form.email || !form.phone || !form.address || !form.password || !form.confirm) {
       setError("모든 항목을 입력해주세요.");
       return;
@@ -31,9 +33,21 @@ export function SignUp() {
       setError("비밀번호가 일치하지 않습니다.");
       return;
     }
-    localStorage.setItem("signedUp", "true");
-    localStorage.removeItem("appLanguage");
-    navigate("/login");
+    try {
+      const response = await registerUser({
+        user_email: form.email,
+        password: form.password,
+        name: form.name,
+        phone: form.phone,
+        address: form.address,
+      });
+      setCurrentUserEmail(response.user.user_email ?? form.email);
+      localStorage.setItem("signedUp", "true");
+      localStorage.removeItem("appLanguage");
+      navigate("/login");
+    } catch {
+      setError("회원가입 정보를 저장하지 못했습니다.");
+    }
   };
 
   return (
@@ -42,9 +56,9 @@ export function SignUp() {
 
         <div className="relative z-10 px-[24px] pt-[56px] pb-[40px]">
           {/* 로고 */}
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Shot</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Vision</p>
           <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#888] mb-8">
-            가전 기기 케어 관리 서비스
+            인도 가전 Care 및 A/S 서비스
           </p>
 
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-6">회원가입</p>
@@ -53,8 +67,6 @@ export function SignUp() {
             {[
               { key: "name" as const, label: "이름", type: "text", placeholder: "이름을 입력하세요" },
               { key: "email" as const, label: "이메일", type: "email", placeholder: "이메일을 입력하세요" },
-              { key: "phone" as const, label: "전화번호", type: "tel", placeholder: "전화번호를 입력하세요" },
-              { key: "address" as const, label: "주소", type: "text", placeholder: "주소를 입력하세요" },
             ].map((f) => (
               <div key={f.key}>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">{f.label}</p>
@@ -98,6 +110,23 @@ export function SignUp() {
                 style={inputStyle}
               />
             </div>
+
+            {[
+              { key: "phone" as const, label: "전화번호", type: "tel", placeholder: "전화번호를 입력하세요" },
+              { key: "address" as const, label: "주소", type: "text", placeholder: "주소를 입력하세요" },
+            ].map((f) => (
+              <div key={f.key}>
+                <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">{f.label}</p>
+                <input
+                  type={f.type}
+                  placeholder={f.placeholder}
+                  value={form[f.key]}
+                  onChange={(e) => setForm({ ...form, [f.key]: e.target.value })}
+                  className="w-full rounded-[16px] px-4 py-[14px] font-['Pretendard:Regular',sans-serif] text-[14px] text-[#111] placeholder:text-[#c8ccd0] outline-none transition-colors"
+                  style={inputStyle}
+                />
+              </div>
+            ))}
           </div>
 
           {error && <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#ff4c49] mb-4 ml-1">{error}</p>}

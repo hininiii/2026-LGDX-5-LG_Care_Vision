@@ -1,0 +1,35 @@
+[
+  {
+    "session_id": "ARSESSION_DEMO_CARE_001",
+    "user_id": "U001",
+    "device_id": "D001",
+    "guide_id": "GUIDE_AC_FILTER_CARE_AR_V1",
+    "guide_type": "preventive_care",
+    "structure_type": "wall_ac_type_a",
+    "completed_steps": ["ARSTEP_AC_CARE_001", "ARSTEP_AC_CARE_002", "ARSTEP_AC_CARE_003"],
+    "completed": false,
+    "solved": null,
+    "clicked_as": false,
+    "created_at": "2026-06-03T12:15:00+09:00",
+    "updated_at": "2026-06-03T12:18:00+09:00"
+  },
+  {
+    "session_id": "ARSESSION_DEMO_SELF_001",
+    "user_id": "U001",
+    "device_id": "D001",
+    "guide_id": "GUIDE_AC_WEAK_AIRFLOW_ODOR_SELF_CHECK_AR_V1",
+    "guide_type": "self_check",
+    "structure_type": "wall_ac_type_a",
+    "completed_steps": [
+      "ARSTEP_AC_SELF_001",
+      "ARSTEP_AC_SELF_002",
+      "ARSTEP_AC_SELF_003",
+      "ARSTEP_AC_SELF_004"
+    ],
+    "completed": true,
+    "solved": false,
+    "clicked_as": true,
+    "created_at": "2026-06-03T12:20:00+09:00",
+    "updated_at": "2026-06-03T12:28:00+09:00"
+  }
+]

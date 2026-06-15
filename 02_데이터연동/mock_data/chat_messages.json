@@ -1,0 +1,68 @@
+[
+  {
+    "message_id": "MSG_AR_001_001",
+    "session_id": "CHAT_AR_001",
+    "role": "user",
+    "message_text": "Please help me clean the AC filter.",
+    "message_state": "received",
+    "detected_language": "en",
+    "intent_snapshot": {"intent_type": "care", "confidence": 0.86},
+    "risk_snapshot": {"risk_level": "low", "reasons": ["care_keyword_filter"]},
+    "created_at": "2026-06-03T10:00:10+05:30"
+  },
+  {
+    "message_id": "MSG_AR_001_002",
+    "session_id": "CHAT_AR_001",
+    "role": "assistant",
+    "message_text": "I found official care guidance for your registered AC. You can start the AR filter cleaning guide.",
+    "message_state": "ar_ready",
+    "detected_language": "en",
+    "intent_snapshot": {"intent_type": "care", "confidence": 0.86},
+    "risk_snapshot": {"risk_level": "low", "reasons": ["official_asset_verified"]},
+    "created_at": "2026-06-03T10:00:20+05:30"
+  },
+  {
+    "message_id": "MSG_AR_002_001",
+    "session_id": "CHAT_AR_002",
+    "role": "user",
+    "message_text": "냄새가 나요.",
+    "message_state": "received",
+    "detected_language": "ko",
+    "intent_snapshot": {"intent_type": "ambiguous", "confidence": 0.52},
+    "risk_snapshot": {"risk_level": "unknown", "reasons": ["odor_type_missing"]},
+    "created_at": "2026-06-03T10:10:10+05:30"
+  },
+  {
+    "message_id": "MSG_AR_002_002",
+    "session_id": "CHAT_AR_002",
+    "role": "assistant",
+    "message_text": "타는 냄새인가요, 곰팡이 냄새인가요?",
+    "message_state": "clarifying",
+    "detected_language": "ko",
+    "intent_snapshot": {"intent_type": "ambiguous", "confidence": 0.52},
+    "risk_snapshot": {"risk_level": "unknown", "reasons": ["safety_first_clarification_required"]},
+    "created_at": "2026-06-03T10:10:20+05:30"
+  },
+  {
+    "message_id": "MSG_AR_003_001",
+    "session_id": "CHAT_AR_003",
+    "role": "user",
+    "message_text": "There is smoke and a burning smell from the AC.",
+    "message_state": "received",
+    "detected_language": "en",
+    "intent_snapshot": {"intent_type": "high_risk", "confidence": 0.98},
+    "risk_snapshot": {"risk_level": "high", "reasons": ["smoke", "burning_smell"]},
+    "created_at": "2026-06-03T10:20:10+05:30"
+  },
+  {
+    "message_id": "MSG_AR_003_002",
+    "session_id": "CHAT_AR_003",
+    "role": "assistant",
+    "message_text": "For safety, AR guidance is blocked. I will connect you to service support.",
+    "message_state": "high_risk_service_route",
+    "detected_language": "en",
+    "intent_snapshot": {"intent_type": "high_risk", "confidence": 0.98},
+    "risk_snapshot": {"risk_level": "high", "reasons": ["high_risk_keyword_detected"]},
+    "created_at": "2026-06-03T10:20:20+05:30"
+  }
+]

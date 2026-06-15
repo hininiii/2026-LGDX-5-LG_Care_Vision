@@ -1,0 +1,42 @@
+[
+  {
+    "provider_id": "ENV_PROVIDER_OPENWEATHER",
+    "provider_name": "OpenWeatherMap",
+    "provider_type": "weather_api",
+    "base_url": "https://api.openweathermap.org",
+    "auth_type": "api_key",
+    "refresh_policy": "refresh_on_care_risk_evaluation_or_cache_expiry",
+    "enabled": true,
+    "created_at": "2026-06-04T10:00:00+09:00"
+  },
+  {
+    "provider_id": "ENV_PROVIDER_WAQI",
+    "provider_name": "World Air Quality Index",
+    "provider_type": "air_quality_api",
+    "base_url": "https://api.waqi.info",
+    "auth_type": "api_key",
+    "refresh_policy": "refresh_on_care_risk_evaluation_or_cache_expiry",
+    "enabled": true,
+    "created_at": "2026-06-04T10:00:00+09:00"
+  },
+  {
+    "provider_id": "ENV_PROVIDER_OPENMETEO",
+    "provider_name": "Open-Meteo Weather and Air Quality",
+    "provider_type": "development_weather_air_quality_api",
+    "base_url": "https://open-meteo.com",
+    "auth_type": "none",
+    "refresh_policy": "development_no_key_external_refresh",
+    "enabled": true,
+    "created_at": "2026-06-05T10:40:00+09:00"
+  },
+  {
+    "provider_id": "ENV_PROVIDER_WATER_HARDNESS_CONTEXT",
+    "provider_name": "India Regional Water Hardness Context Cache",
+    "provider_type": "water_hardness_context_cache",
+    "base_url": null,
+    "auth_type": "none",
+    "refresh_policy": "fallback_from_environment_contexts_until_official_source_connected",
+    "enabled": true,
+    "created_at": "2026-06-05T10:40:00+09:00"
+  }
+]

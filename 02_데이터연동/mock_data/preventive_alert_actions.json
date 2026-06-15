@@ -1,0 +1,11 @@
+[
+  {
+    "action_id": "ALERT_ACTION_AC_FILTER_001",
+    "alert_id": "ALERT_AC_FILTER_001",
+    "user_id": "U001",
+    "action_type": "start_ar",
+    "selected_content_id": null,
+    "selected_session_id": "ARSESSION_DEMO_CARE_001",
+    "created_at": "2026-06-04T10:04:00+09:00"
+  }
+]

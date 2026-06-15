@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-12T03:37:23.306640+00:00",
+  "source_path": "02_데이터연동\\source_data\\voc\\raw_voc_cases.jsonl",
+  "raw_voc_count": 500,
+  "selected_case_count": 147,
+  "excluded_case_count": 353,
+  "coverage_passed": true,
+  "minimum_checks": {
+    "raw_pool_size_is_500": true,
+    "selected_cases_at_least_100": true,
+    "each_product_at_least_20": true,
+    "self_care_at_least_20": true,
+    "self_as_at_least_20": true,
+    "expert_as_at_least_10": true,
+    "low_medium_high_each_at_least_10": true,
+    "followup_cases_at_least_5": true
+  },
+  "selected_by_product_type": {
+    "air_conditioner": 28,
+    "air_purifier": 40,
+    "washing_machine": 40,
+    "water_purifier": 39
+  },
+  "selected_by_service_flow_type": {
+    "expert_as": 28,
+    "self_as": 56,
+    "self_care": 63
+  },
+  "selected_by_risk_level": {
+    "high": 28,
+    "low": 63,
+    "medium": 56
+  },
+  "selected_by_procedure_type": {
+    "filter_cleaning": 18,
+    "filter_replacement": 14,
+    "high_risk_troubleshooting": 28,
+    "limescale_care": 28,
+    "no_cooling_self_check": 5,
+    "noise_self_check": 15,
+    "odor_self_check": 15,
+    "power_troubleshooting": 15,
+    "remote_operation": 2,
+    "tub_clean": 1,
+    "water_leak_monsoon": 6
+  },
+  "selected_by_expected_action": {
+    "ask_clarification": 28,
+    "manual_or_service_guidance_only": 2,
+    "prepare_ar_guide_session": 74,
+    "prepare_limited_ar_safe_check": 15,
+    "route_to_service": 28
+  },
+  "selected_by_followup_required": {
+    "false": 119,
+    "true": 28
+  },
+  "selected_by_source_type": {
+    "mouthshut_review": 40,
+    "reddit": 12,
+    "youtube_comment": 95
+  },
+  "excluded_by_reason": {
+    "no_project_symptom_or_care_signal": 180,
+    "out_of_scope_mixed_purchase_context": 11,
+    "out_of_scope_purchase_price_warranty_or_general_comment": 124,
+    "product_text_mismatch": 38
+  }
+}

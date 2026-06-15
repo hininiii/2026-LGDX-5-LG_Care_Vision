@@ -1,0 +1,36 @@
+[
+  {
+    "content_id": "OC_AC_FILTER_MANUAL_001",
+    "content_type": "manual",
+    "product_type": "air_conditioner",
+    "model_name": "AS-Q24ENXE",
+    "series": "Q24",
+    "procedure_type": "filter_cleaning",
+    "language": "en",
+    "title": "AS-Q24ENXE filter cleaning official manual section",
+    "source_url": "https://www.lg.com/in/support/product-support",
+    "source_asset_ids": ["OA_AC_ASQ24ENXE_MANUAL_001"],
+    "reuse_policy": "official_reference",
+    "safety_status": "pass",
+    "quality_status": "pass",
+    "created_at": "2026-06-03T10:00:00+05:30",
+    "updated_at": "2026-06-03T10:00:00+05:30"
+  },
+  {
+    "content_id": "OC_AC_FILTER_FAQ_001",
+    "content_type": "faq",
+    "product_type": "air_conditioner",
+    "model_name": null,
+    "series": "Q24",
+    "procedure_type": "filter_cleaning",
+    "language": "en",
+    "title": "Air conditioner filter care FAQ",
+    "source_url": "https://www.lg.com/in/support/product-support",
+    "source_asset_ids": ["OA_AC_ASQ24ENXE_MANUAL_001"],
+    "reuse_policy": "series_reference",
+    "safety_status": "pass",
+    "quality_status": "pass",
+    "created_at": "2026-06-03T10:00:00+05:30",
+    "updated_at": "2026-06-03T10:00:00+05:30"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "session_id": "CHAT_AR_001",
+    "slots": {
+      "symptom": "filter_cleaning",
+      "odor_type": null,
+      "product_area": "front_filter",
+      "procedure_type": "filter_cleaning"
+    },
+    "intent_candidates": [{"intent_type": "care", "score": 0.86}],
+    "risk_candidates": [{"risk_level": "low", "score": 0.88}],
+    "missing_slots": [],
+    "last_question_id": null,
+    "ready_for_decision": true,
+    "updated_at": "2026-06-03T10:03:00+05:30"
+  },
+  {
+    "session_id": "CHAT_AR_002",
+    "slots": {
+      "symptom": "odor",
+      "odor_type": null,
+      "product_area": null,
+      "procedure_type": null
+    },
+    "intent_candidates": [
+      {"intent_type": "care", "score": 0.41},
+      {"intent_type": "high_risk", "score": 0.31}
+    ],
+    "risk_candidates": [
+      {"risk_level": "unknown", "score": 0.6},
+      {"risk_level": "high", "score": 0.31}
+    ],
+    "missing_slots": ["odor_type"],
+    "last_question_id": "ASK_ODOR_TYPE",
+    "ready_for_decision": false,
+    "updated_at": "2026-06-03T10:11:00+05:30"
+  },
+  {
+    "session_id": "CHAT_AR_003",
+    "slots": {
+      "symptom": "smoke_burning_smell",
+      "odor_type": "burning",
+      "product_area": "unknown",
+      "procedure_type": null
+    },
+    "intent_candidates": [{"intent_type": "high_risk", "score": 0.98}],
+    "risk_candidates": [{"risk_level": "high", "score": 0.99}],
+    "missing_slots": [],
+    "last_question_id": null,
+    "ready_for_decision": true,
+    "updated_at": "2026-06-03T10:21:00+05:30"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "template_id": "GUIDE_AC_FILTER_TEMPLATE_V1",
+    "guide_id": "GUIDE_AC_FILTER_CARE_AR_V1",
+    "product_type": "air_conditioner",
+    "structure_type": "wall_ac_type_a",
+    "procedure_type": "filter_cleaning",
+    "guide_type": "preventive_care",
+    "risk_ceiling": "low",
+    "required_official_sources": ["official_pdf", "official_faq"],
+    "allowed_actions": ["power_off", "open_front_panel", "remove_filter", "wash_filter", "dry_filter", "insert_filter", "close_front_panel"],
+    "forbidden_actions": ["open_internal_cover", "touch_pcb", "check_refrigerant", "repair_wiring"],
+    "camera_alignment_rules": {
+      "mode": "reference_image_overlay",
+      "alignment_frame": "front_panel_centered",
+      "requires_user_alignment": true,
+      "object_recognition": false
+    },
+    "highlight_rules": {
+      "allowed": ["outline", "arrow", "pulse", "bottom_sheet"],
+      "forbidden": ["internal_electrical_highlight", "unverified_label"]
+    },
+    "version": "v1",
+    "approved_status": "development_ready",
+    "created_at": "2026-06-04T10:00:00+09:00",
+    "updated_at": "2026-06-04T10:00:00+09:00"
+  },
+  {
+    "template_id": "GUIDE_AC_WEAK_AIRFLOW_TEMPLATE_V1",
+    "guide_id": "GUIDE_AC_WEAK_AIRFLOW_ODOR_SELF_CHECK_AR_V1",
+    "product_type": "air_conditioner",
+    "structure_type": "wall_ac_type_a",
+    "procedure_type": "weak_airflow_or_odor_check",
+    "guide_type": "self_check",
+    "risk_ceiling": "medium",
+    "required_official_sources": ["official_pdf", "help_library"],
+    "allowed_actions": ["power_off", "inspect_filter", "inspect_air_outlet", "close_and_check_result"],
+    "forbidden_actions": ["open_internal_cover", "touch_pcb", "check_refrigerant", "repair_wiring"],
+    "camera_alignment_rules": {
+      "mode": "reference_image_overlay",
+      "alignment_frame": "front_panel_centered",
+      "requires_user_alignment": true,
+      "object_recognition": false
+    },
+    "highlight_rules": {
+      "allowed": ["outline", "arrow", "pulse", "safety_notice"],
+      "forbidden": ["internal_electrical_highlight", "unverified_label"]
+    },
+    "version": "v1",
+    "approved_status": "development_ready",
+    "created_at": "2026-06-04T10:00:00+09:00",
+    "updated_at": "2026-06-04T10:00:00+09:00"
+  }
+]

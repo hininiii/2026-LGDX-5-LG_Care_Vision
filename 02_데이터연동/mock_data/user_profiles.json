@@ -1,0 +1,2778 @@
+[
+  {
+    "user_id": "U001",
+    "customer_name": "Evidence User 001",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Ahmedabad",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0019B1C27E14"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U002",
+    "customer_name": "Evidence User 002",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Bengaluru",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0068E2AAE3B7"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U003",
+    "customer_name": "Evidence User 003",
+    "country": "India",
+    "region": "Madhya Pradesh",
+    "city": "Bhopal",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_006A88A78B03"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U004",
+    "customer_name": "Evidence User 004",
+    "country": "India",
+    "region": "Odisha",
+    "city": "Bhubaneswar",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_00884D3FD582"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U005",
+    "customer_name": "Evidence User 005",
+    "country": "India",
+    "region": "Chandigarh",
+    "city": "Chandigarh",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_00E02CE7C49D"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U006",
+    "customer_name": "Evidence User 006",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Chennai",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_010E4BA9C3A2"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U007",
+    "customer_name": "Evidence User 007",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Coimbatore",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_015412977850"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U008",
+    "customer_name": "Evidence User 008",
+    "country": "India",
+    "region": "Delhi",
+    "city": "Delhi",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_01F57E848AC5"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U009",
+    "customer_name": "Evidence User 009",
+    "country": "India",
+    "region": "Haryana",
+    "city": "Faridabad",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_021F2ED70B10"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U010",
+    "customer_name": "Evidence User 010",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Ghaziabad",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0234AEFBCDC9"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U011",
+    "customer_name": "Evidence User 011",
+    "country": "India",
+    "region": "Haryana",
+    "city": "Gurugram",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "odor_mold",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0374196A89D8"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U012",
+    "customer_name": "Evidence User 012",
+    "country": "India",
+    "region": "Assam",
+    "city": "Guwahati",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_03A76E739EAD"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U013",
+    "customer_name": "Evidence User 013",
+    "country": "India",
+    "region": "Telangana",
+    "city": "Hyderabad",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_052BC203FBE2"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U014",
+    "customer_name": "Evidence User 014",
+    "country": "India",
+    "region": "Madhya Pradesh",
+    "city": "Indore",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_0582F38A0A26"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U015",
+    "customer_name": "Evidence User 015",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Jaipur",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_05C52B1B5F97"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U016",
+    "customer_name": "Evidence User 016",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Jodhpur",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_05FFEA7F81B6"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U017",
+    "customer_name": "Evidence User 017",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Kanpur",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0657616E0310"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U018",
+    "customer_name": "Evidence User 018",
+    "country": "India",
+    "region": "Kerala",
+    "city": "Kochi",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_071C18B6EF04"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U019",
+    "customer_name": "Evidence User 019",
+    "country": "India",
+    "region": "West Bengal",
+    "city": "Kolkata",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_077EDC8417B9"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U020",
+    "customer_name": "Evidence User 020",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Lucknow",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0866FA446045"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U021",
+    "customer_name": "Evidence User 021",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Ludhiana",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0871FC687517"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U022",
+    "customer_name": "Evidence User 022",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Madurai",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_08DF0C38C786"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U023",
+    "customer_name": "Evidence User 023",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Meerut",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_08F300BB663F"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U024",
+    "customer_name": "Evidence User 024",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Mumbai",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0907C9314E99"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U025",
+    "customer_name": "Evidence User 025",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Mysuru",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_093F0DDEBEF9"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U026",
+    "customer_name": "Evidence User 026",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Nagpur",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working",
+      "water_leak",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_098D34E89EB5"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U027",
+    "customer_name": "Evidence User 027",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Nashik",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_09B31017EF56"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U028",
+    "customer_name": "Evidence User 028",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Noida",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_09B5489B2258"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U029",
+    "customer_name": "Evidence User 029",
+    "country": "India",
+    "region": "Bihar",
+    "city": "Patna",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0A5A16B25C82"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U030",
+    "customer_name": "Evidence User 030",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Pune",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0A9E3BE21472"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U031",
+    "customer_name": "Evidence User 031",
+    "country": "India",
+    "region": "Chhattisgarh",
+    "city": "Raipur",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0AA5DEA66DFD"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U032",
+    "customer_name": "Evidence User 032",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Rajkot",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0B4A2BCCE2C5"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U033",
+    "customer_name": "Evidence User 033",
+    "country": "India",
+    "region": "Jharkhand",
+    "city": "Ranchi",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0B51657EF83F"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U034",
+    "customer_name": "Evidence User 034",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Surat",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0C70B958318B"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U035",
+    "customer_name": "Evidence User 035",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Thane",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0CB005B4C2A8"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U036",
+    "customer_name": "Evidence User 036",
+    "country": "India",
+    "region": "Kerala",
+    "city": "Thiruvananthapuram",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0CE23D997164"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U037",
+    "customer_name": "Evidence User 037",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Vadodara",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay",
+      "noise_vibration"
+    ],
+    "evidence_case_ids": [
+      "VOC_0D0B5C507C94"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U038",
+    "customer_name": "Evidence User 038",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Varanasi",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_0D32D688451B"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U039",
+    "customer_name": "Evidence User 039",
+    "country": "India",
+    "region": "Andhra Pradesh",
+    "city": "Vijayawada",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "general_customer_voice"
+    ],
+    "evidence_case_ids": [
+      "VOC_0D976A9C4C28"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U040",
+    "customer_name": "Evidence User 040",
+    "country": "India",
+    "region": "Andhra Pradesh",
+    "city": "Visakhapatnam",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0D9EF8DFD294"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U041",
+    "customer_name": "Evidence User 041",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Agra",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_000FC292E148"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U042",
+    "customer_name": "Evidence User 042",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Amritsar",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_00276B86C690"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U043",
+    "customer_name": "Evidence User 043",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Aurangabad",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_002F3D87E463"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U044",
+    "customer_name": "Evidence User 044",
+    "country": "India",
+    "region": "Uttarakhand",
+    "city": "Dehradun",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_002F56748351"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U045",
+    "customer_name": "Evidence User 045",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Jalandhar",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0038E196B809"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U046",
+    "customer_name": "Evidence User 046",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Kota",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "noise_vibration"
+    ],
+    "evidence_case_ids": [
+      "VOC_003A40B41B51"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U047",
+    "customer_name": "Evidence User 047",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Mangalore",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_003E64B54175"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U048",
+    "customer_name": "Evidence User 048",
+    "country": "India",
+    "region": "Puducherry",
+    "city": "Puducherry",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working",
+      "water_leak"
+    ],
+    "evidence_case_ids": [
+      "VOC_00439585C436"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U049",
+    "customer_name": "Evidence User 049",
+    "country": "India",
+    "region": "Jammu and Kashmir",
+    "city": "Srinagar",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "noise_vibration"
+    ],
+    "evidence_case_ids": [
+      "VOC_0048B99ED947"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U050",
+    "customer_name": "Evidence User 050",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Tiruchirappalli",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "water_leak"
+    ],
+    "evidence_case_ids": [
+      "VOC_0049B8B7AB2B"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U051",
+    "customer_name": "Evidence User 051",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Ahmedabad",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_0053B287E8BA"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U052",
+    "customer_name": "Evidence User 052",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Bengaluru",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay",
+      "noise_vibration"
+    ],
+    "evidence_case_ids": [
+      "VOC_006595C7F867"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U053",
+    "customer_name": "Evidence User 053",
+    "country": "India",
+    "region": "Madhya Pradesh",
+    "city": "Bhopal",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_009ED0AC3BE0"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U054",
+    "customer_name": "Evidence User 054",
+    "country": "India",
+    "region": "Odisha",
+    "city": "Bhubaneswar",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_00B8BDD6E670"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U055",
+    "customer_name": "Evidence User 055",
+    "country": "India",
+    "region": "Chandigarh",
+    "city": "Chandigarh",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_00D9934467C4"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U056",
+    "customer_name": "Evidence User 056",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Chennai",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_00FD1F899D41"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U057",
+    "customer_name": "Evidence User 057",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Coimbatore",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_011095002E3D"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U058",
+    "customer_name": "Evidence User 058",
+    "country": "India",
+    "region": "Delhi",
+    "city": "Delhi",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_012880D7A1A0"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U059",
+    "customer_name": "Evidence User 059",
+    "country": "India",
+    "region": "Haryana",
+    "city": "Faridabad",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "water_leak",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_01290BA7B6CD"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U060",
+    "customer_name": "Evidence User 060",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Ghaziabad",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0183730A44E8"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U061",
+    "customer_name": "Evidence User 061",
+    "country": "India",
+    "region": "Haryana",
+    "city": "Gurugram",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_019133C47D2A"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U062",
+    "customer_name": "Evidence User 062",
+    "country": "India",
+    "region": "Assam",
+    "city": "Guwahati",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_019B58950654"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U063",
+    "customer_name": "Evidence User 063",
+    "country": "India",
+    "region": "Telangana",
+    "city": "Hyderabad",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_019F95807529"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U064",
+    "customer_name": "Evidence User 064",
+    "country": "India",
+    "region": "Madhya Pradesh",
+    "city": "Indore",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_01A478ED5A9B"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U065",
+    "customer_name": "Evidence User 065",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Jaipur",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "noise_vibration"
+    ],
+    "evidence_case_ids": [
+      "VOC_01AD3FA1E221"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U066",
+    "customer_name": "Evidence User 066",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Jodhpur",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay",
+      "noise_vibration"
+    ],
+    "evidence_case_ids": [
+      "VOC_01C38584D4A8"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U067",
+    "customer_name": "Evidence User 067",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Kanpur",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_01E0487D387A"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U068",
+    "customer_name": "Evidence User 068",
+    "country": "India",
+    "region": "Kerala",
+    "city": "Kochi",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_01EA1E15EEEF"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U069",
+    "customer_name": "Evidence User 069",
+    "country": "India",
+    "region": "West Bengal",
+    "city": "Kolkata",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_020197A1645B"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U070",
+    "customer_name": "Evidence User 070",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Lucknow",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0209FFD16750"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U071",
+    "customer_name": "Evidence User 071",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Ludhiana",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0210AE581E9A"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U072",
+    "customer_name": "Evidence User 072",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Madurai",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_02161AC269A8"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U073",
+    "customer_name": "Evidence User 073",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Meerut",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_0216BAEDC7DC"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U074",
+    "customer_name": "Evidence User 074",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Mumbai",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0228337260FE"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U075",
+    "customer_name": "Evidence User 075",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Mysuru",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_0228CAE1E0B8"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U076",
+    "customer_name": "Evidence User 076",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Nagpur",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_022E7EC8470B"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U077",
+    "customer_name": "Evidence User 077",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Nashik",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_02302B31A375"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U078",
+    "customer_name": "Evidence User 078",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Noida",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "cooling_not_working"
+    ],
+    "evidence_case_ids": [
+      "VOC_0261ECE48770"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U079",
+    "customer_name": "Evidence User 079",
+    "country": "India",
+    "region": "Bihar",
+    "city": "Patna",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_02706BC71866"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U080",
+    "customer_name": "Evidence User 080",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Pune",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "noise_vibration"
+    ],
+    "evidence_case_ids": [
+      "VOC_0283354CCC0D"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U081",
+    "customer_name": "Evidence User 081",
+    "country": "India",
+    "region": "Chhattisgarh",
+    "city": "Raipur",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0241AD16F16A"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U082",
+    "customer_name": "Evidence User 082",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Rajkot",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_05573E1683B2"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U083",
+    "customer_name": "Evidence User 083",
+    "country": "India",
+    "region": "Jharkhand",
+    "city": "Ranchi",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_059A39C9E43E"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U084",
+    "customer_name": "Evidence User 084",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Surat",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_059D07F25236"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U085",
+    "customer_name": "Evidence User 085",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Thane",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_061F7FD3BE8E"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U086",
+    "customer_name": "Evidence User 086",
+    "country": "India",
+    "region": "Kerala",
+    "city": "Thiruvananthapuram",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "odor_mold"
+    ],
+    "evidence_case_ids": [
+      "VOC_068897485248"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U087",
+    "customer_name": "Evidence User 087",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Vadodara",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_06EDD4F15964"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U088",
+    "customer_name": "Evidence User 088",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Varanasi",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_09599B6F6CC7"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U089",
+    "customer_name": "Evidence User 089",
+    "country": "India",
+    "region": "Andhra Pradesh",
+    "city": "Vijayawada",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0A35A637A633"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U090",
+    "customer_name": "Evidence User 090",
+    "country": "India",
+    "region": "Andhra Pradesh",
+    "city": "Visakhapatnam",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0A7F9A968799"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U091",
+    "customer_name": "Evidence User 091",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Agra",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0AF2611A0F7C"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U092",
+    "customer_name": "Evidence User 092",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Amritsar",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "odor_mold",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0BE67ABB077A"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U093",
+    "customer_name": "Evidence User 093",
+    "country": "India",
+    "region": "Maharashtra",
+    "city": "Aurangabad",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_0D540EF80108"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U094",
+    "customer_name": "Evidence User 094",
+    "country": "India",
+    "region": "Uttarakhand",
+    "city": "Dehradun",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0E4D0CA6E1D6"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U095",
+    "customer_name": "Evidence User 095",
+    "country": "India",
+    "region": "Punjab",
+    "city": "Jalandhar",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0E6F064D55E9"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U096",
+    "customer_name": "Evidence User 096",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Kota",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "odor_mold"
+    ],
+    "evidence_case_ids": [
+      "VOC_0EB449FE035F"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U097",
+    "customer_name": "Evidence User 097",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Mangalore",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0FCFD6169D59"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U098",
+    "customer_name": "Evidence User 098",
+    "country": "India",
+    "region": "Puducherry",
+    "city": "Puducherry",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_0FE019EBFE35"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U099",
+    "customer_name": "Evidence User 099",
+    "country": "India",
+    "region": "Jammu and Kashmir",
+    "city": "Srinagar",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_10D5B8524E74"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U100",
+    "customer_name": "Evidence User 100",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Tiruchirappalli",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_120EE74CD75A"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U101",
+    "customer_name": "Evidence User 101",
+    "country": "India",
+    "region": "Gujarat",
+    "city": "Ahmedabad",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_13C66299C8E6"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U102",
+    "customer_name": "Evidence User 102",
+    "country": "India",
+    "region": "Karnataka",
+    "city": "Bengaluru",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_14A2B1015756"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U103",
+    "customer_name": "Evidence User 103",
+    "country": "India",
+    "region": "Madhya Pradesh",
+    "city": "Bhopal",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_176122CDEAB1"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U104",
+    "customer_name": "Evidence User 104",
+    "country": "India",
+    "region": "Odisha",
+    "city": "Bhubaneswar",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_17B0F2D5F3E8"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U105",
+    "customer_name": "Evidence User 105",
+    "country": "India",
+    "region": "Chandigarh",
+    "city": "Chandigarh",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_17D1B52AD751"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U106",
+    "customer_name": "Evidence User 106",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Chennai",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_180FCF89A2E3"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U107",
+    "customer_name": "Evidence User 107",
+    "country": "India",
+    "region": "Tamil Nadu",
+    "city": "Coimbatore",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_1B411A15B434"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U108",
+    "customer_name": "Evidence User 108",
+    "country": "India",
+    "region": "Delhi",
+    "city": "Delhi",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_1B76A204075A"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U109",
+    "customer_name": "Evidence User 109",
+    "country": "India",
+    "region": "Haryana",
+    "city": "Faridabad",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_1C5407E8349E"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U110",
+    "customer_name": "Evidence User 110",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Ghaziabad",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_1F54EF5E937C"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U111",
+    "customer_name": "Evidence User 111",
+    "country": "India",
+    "region": "Haryana",
+    "city": "Gurugram",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_212B3376FFEB"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U112",
+    "customer_name": "Evidence User 112",
+    "country": "India",
+    "region": "Assam",
+    "city": "Guwahati",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "odor_mold",
+      "service_delay"
+    ],
+    "evidence_case_ids": [
+      "VOC_23A19C7AC9CA"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U113",
+    "customer_name": "Evidence User 113",
+    "country": "India",
+    "region": "Telangana",
+    "city": "Hyderabad",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_24BC5851C399"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U114",
+    "customer_name": "Evidence User 114",
+    "country": "India",
+    "region": "Madhya Pradesh",
+    "city": "Indore",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_2674BC94C095"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U115",
+    "customer_name": "Evidence User 115",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Jaipur",
+    "preferred_language": "en",
+    "preferred_language_label": "English",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_2913CAB19817"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U116",
+    "customer_name": "Evidence User 116",
+    "country": "India",
+    "region": "Rajasthan",
+    "city": "Jodhpur",
+    "preferred_language": "hi",
+    "preferred_language_label": "Hindi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "delayed_service_region",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_299E7DD4EA92"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U117",
+    "customer_name": "Evidence User 117",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Kanpur",
+    "preferred_language": "ta",
+    "preferred_language_label": "Tamil",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_2B41F83102D0"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U118",
+    "customer_name": "Evidence User 118",
+    "country": "India",
+    "region": "Kerala",
+    "city": "Kochi",
+    "preferred_language": "mr",
+    "preferred_language_label": "Marathi",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_2BD0D7927E6E"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U119",
+    "customer_name": "Evidence User 119",
+    "country": "India",
+    "region": "West Bengal",
+    "city": "Kolkata",
+    "preferred_language": "bn",
+    "preferred_language_label": "Bengali",
+    "video_style": "ar_step_by_step",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_2DBBFE4872A6"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  },
+  {
+    "user_id": "U120",
+    "customer_name": "Evidence User 120",
+    "country": "India",
+    "region": "Uttar Pradesh",
+    "city": "Lucknow",
+    "preferred_language": "te",
+    "preferred_language_label": "Telugu",
+    "video_style": "short_guided",
+    "timezone": "Asia/Kolkata",
+    "thinq_account_status": "mock_active",
+    "service_access_profile": "standard",
+    "scenario_basis": "Generated from crawled India VOC cases and environment source contexts.",
+    "pain_tags": [
+      "filter_dirty"
+    ],
+    "evidence_case_ids": [
+      "VOC_2E96573CD4BD"
+    ],
+    "evidence_level": "evidence_based_synthetic",
+    "created_at": "2026-06-03T12:00:00+05:30",
+    "updated_at": "2026-06-03T12:00:00+05:30"
+  }
+]
