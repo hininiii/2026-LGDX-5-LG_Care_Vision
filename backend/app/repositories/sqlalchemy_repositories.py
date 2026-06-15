@@ -501,6 +501,47 @@ class SQLAlchemyUsageLogRepository(BaseRepository):
 
 
 class SQLAlchemyEnvironmentRepository(BaseRepository):
+    def list_environment_refresh_targets(self, limit: int = 20) -> list[dict[str, Any]]:
+        rows = self.fetch_all(
+            """
+            SELECT DISTINCT priority, region, city
+            FROM (
+              SELECT 0 AS priority, r.state AS region, r.city
+              FROM "USER" u
+              JOIN "REGION" r ON r.region_id = u.region_id
+              WHERE r.state IS NOT NULL
+                AND r.city IS NOT NULL
+              UNION ALL
+              SELECT 1 AS priority, r.state AS region, r.city
+              FROM "ENVIRONMENT_OBSERVATION" eo
+              JOIN "REGION" r ON r.region_id = eo.region_id
+              WHERE r.state IS NOT NULL
+                AND r.city IS NOT NULL
+            )
+            ORDER BY priority, region, city
+            LIMIT ?
+            """,
+            (limit,),
+        )
+        default_targets = [
+            {"region": "Delhi", "city": "Delhi"},
+            {"region": "Gujarat", "city": "Ahmedabad"},
+        ]
+        combined = default_targets + rows
+        if rows:
+            seen: set[tuple[str, str]] = set()
+            targets: list[dict[str, Any]] = []
+            for row in combined:
+                key = (str(row.get("region")), str(row.get("city")))
+                if key in seen:
+                    continue
+                seen.add(key)
+                targets.append({"region": row.get("region"), "city": row.get("city")})
+                if len(targets) >= limit:
+                    break
+            return targets
+        return default_targets[:limit]
+
     def get_environment_context(self, region: str, city: str | None = None) -> dict[str, Any] | None:
         return self.get_current_environment_observation(region, city)
 

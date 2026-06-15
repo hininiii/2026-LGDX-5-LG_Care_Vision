@@ -6,14 +6,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
+from zoneinfo import ZoneInfo
 
 from .path_setup import DATA_DIR, PROJECT_DIR
 
 
 DEFAULT_CASES_PATH = DATA_DIR / "mock_data" / "intent_risk_test_cases.json"
 DEFAULT_RESULTS_PATH = DATA_DIR / "mock_data" / "intent_risk_eval_results.json"
-DEFAULT_REPORT_JSON_PATH = DATA_DIR / "eval_sets" / "intent_risk_accuracy_report_2026-06-12.json"
-DEFAULT_REPORT_MD_PATH = PROJECT_DIR / "06_산출물" / "2026-06-12_intent_risk_accuracy_report.md"
+KST = ZoneInfo("Asia/Seoul")
 
 
 DEVICE_BY_PRODUCT_TYPE = {
@@ -41,38 +41,66 @@ class EvaluationService:
     def run_intent_risk_evaluation(
         self,
         *,
-        cases_path: str | Path = DEFAULT_CASES_PATH,
-        results_path: str | Path = DEFAULT_RESULTS_PATH,
-        report_json_path: str | Path = DEFAULT_REPORT_JSON_PATH,
-        report_md_path: str | Path = DEFAULT_REPORT_MD_PATH,
+        cases_path: str | Path | None = DEFAULT_CASES_PATH,
+        results_path: str | Path | None = None,
+        report_json_path: str | Path | None = None,
+        report_md_path: str | Path | None = None,
+        report_date: str | None = None,
         product_type: str | None = None,
         limit: int | None = None,
         run_id: str | None = None,
     ) -> dict[str, Any]:
+        run_at = datetime.now(timezone.utc)
+        report_date = report_date or run_at.astimezone(KST).date().isoformat()
+        cases_path = Path(cases_path) if cases_path else DEFAULT_CASES_PATH
+        output_paths = self.default_output_paths(report_date)
+        results_path = Path(results_path) if results_path else output_paths["results_path"]
+        report_json_path = Path(report_json_path) if report_json_path else output_paths["report_json_path"]
+        report_md_path = Path(report_md_path) if report_md_path else output_paths["report_md_path"]
+
         cases = self.load_cases(cases_path)
         if product_type:
             cases = [case for case in cases if case.get("product_type") == product_type]
         if limit is not None:
             cases = cases[:limit]
 
-        run_id = run_id or f"INTENT_RISK_EVAL_{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}_{uuid4().hex[:6].upper()}"
-        evaluated_at = datetime.now(timezone.utc).isoformat()
+        run_id = run_id or f"INTENT_RISK_EVAL_{run_at.strftime('%Y%m%dT%H%M%SZ')}_{uuid4().hex[:6].upper()}"
+        evaluated_at = run_at.isoformat()
         results = [self.evaluate_case(case, run_id=run_id, evaluated_at=evaluated_at) for case in cases]
-        report = self.build_report(run_id=run_id, evaluated_at=evaluated_at, cases=cases, results=results)
+        report = self.build_report(
+            run_id=run_id,
+            evaluated_at=evaluated_at,
+            cases_path=Path(cases_path),
+            results_path=Path(results_path),
+            cases=cases,
+            results=results,
+        )
 
         self.write_json(results_path, results)
         self.write_json(report_json_path, report)
+        self.write_json(DEFAULT_RESULTS_PATH, results)
         self.write_markdown_report(report_md_path, report)
 
         return {
             "run_id": run_id,
             "evaluated_at": evaluated_at,
             "case_count": len(cases),
+            "report_date": report_date,
             "results_path": str(Path(results_path)),
             "report_json_path": str(Path(report_json_path)),
             "report_md_path": str(Path(report_md_path)),
+            "legacy_results_path": str(DEFAULT_RESULTS_PATH),
             "metrics": report["metrics"],
             "error_type_counts": report["error_type_counts"],
+        }
+
+    @staticmethod
+    def default_output_paths(report_date: str) -> dict[str, Path]:
+        compact_date = report_date.replace("-", "")
+        return {
+            "results_path": DATA_DIR / "eval_sets" / f"intent_risk_eval_results_{compact_date}.json",
+            "report_json_path": DATA_DIR / "eval_sets" / f"intent_risk_accuracy_report_{compact_date}.json",
+            "report_md_path": PROJECT_DIR / "06_산출물" / f"{report_date}_intent_risk_accuracy_report.md",
         }
 
     @staticmethod
@@ -274,6 +302,8 @@ class EvaluationService:
         *,
         run_id: str,
         evaluated_at: str,
+        cases_path: Path,
+        results_path: Path,
         cases: list[dict[str, Any]],
         results: list[dict[str, Any]],
     ) -> dict[str, Any]:
@@ -286,6 +316,7 @@ class EvaluationService:
             or row["predicted_intent"] == "expert_as"
             or row["predicted_action"] == "route_to_service"
         ]
+        expected_no_match = [row for row in results if row["expected_no_match"]]
         predicted_no_match = [row for row in results if row["predicted_no_match"]]
         no_match_true_positive = [row for row in predicted_no_match if row["expected_no_match"]]
         metrics = {
@@ -299,13 +330,16 @@ class EvaluationService:
             "high_risk_recall": self.ratio(len(high_risk_hits), len(expected_high)),
             "no_match_precision": self.ratio(len(no_match_true_positive), len(predicted_no_match)),
             "expected_high_risk_count": len(expected_high),
+            "expected_no_match_count": len(expected_no_match),
             "predicted_no_match_count": len(predicted_no_match),
+            "no_match_true_positive_count": len(no_match_true_positive),
+            "failed_case_count": sum(1 for row in results if row.get("error_type")),
         }
         return {
             "run_id": run_id,
             "evaluated_at": evaluated_at,
-            "cases_path": str(DEFAULT_CASES_PATH),
-            "results_path": str(DEFAULT_RESULTS_PATH),
+            "cases_path": str(cases_path),
+            "results_path": str(results_path),
             "case_count": total,
             "metrics": metrics,
             "label_distribution": {

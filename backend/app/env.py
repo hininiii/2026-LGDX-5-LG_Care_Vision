@@ -41,3 +41,4 @@ def find_env_file() -> Path | None:
         if candidate.exists():
             return candidate
     return None
+

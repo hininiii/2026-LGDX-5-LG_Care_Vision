@@ -1,0 +1,22 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://127.0.0.1:5173",
+      "localStorage": [
+        {
+          "name": "isLoggedIn",
+          "value": "true"
+        },
+        {
+          "name": "currentUserEmail",
+          "value": "u001@careshot.local"
+        },
+        {
+          "name": "appLanguage",
+          "value": "ko"
+        }
+      ]
+    }
+  ]
+}

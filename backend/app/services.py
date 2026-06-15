@@ -308,6 +308,11 @@ class CareShotBackendService:
         if not hasattr(self, "evaluation_service"):
             self.evaluation_service = EvaluationService(self)
         return self.evaluation_service.run_intent_risk_evaluation(
+            cases_path=payload.get("cases_path") or payload.get("casesPath") or payload.get("input_path") or payload.get("inputPath"),
+            results_path=payload.get("results_path") or payload.get("resultsPath"),
+            report_json_path=payload.get("report_json_path") or payload.get("reportJsonPath"),
+            report_md_path=payload.get("report_md_path") or payload.get("reportMdPath"),
+            report_date=payload.get("report_date") or payload.get("reportDate"),
             product_type=payload.get("product_type"),
             limit=payload.get("limit"),
             run_id=payload.get("run_id"),
@@ -602,7 +607,7 @@ class CareShotBackendService:
         product_type: str | None = None,
         requested_metrics: list[str] | None = None,
         provider_id: str | None = None,
-        cache_ttl_minutes: int = 180,
+        cache_ttl_minutes: int = 60,
         force_refresh: bool = False,
     ) -> dict[str, Any]:
         environment = self.environment_adapter.get_environment(
@@ -635,7 +640,7 @@ class CareShotBackendService:
             requested_metrics=payload.get("requested_metrics"),
             provider_id=provider_id,
             force_refresh=payload.get("force_refresh", True),
-            cache_ttl_minutes=int(payload.get("cache_ttl_minutes") or 180),
+            cache_ttl_minutes=int(payload.get("cache_ttl_minutes") or 60),
         )
         return {
             "fetch_log": environment.get("fetch_log"),
@@ -646,6 +651,61 @@ class CareShotBackendService:
                 "observation": environment.get("observation"),
                 "providers": self.repo.list_environment_providers(),
             },
+        }
+
+    def list_environment_refresh_targets(self, limit: int = 20) -> list[dict[str, Any]]:
+        if hasattr(self.repo, "list_environment_refresh_targets"):
+            return self.repo.list_environment_refresh_targets(limit=limit)
+        return [
+            {"region": "Delhi", "city": "Delhi"},
+            {"region": "Gujarat", "city": "Ahmedabad"},
+        ]
+
+    def refresh_scheduled_environment_targets(
+        self,
+        *,
+        provider_id: str = "ENV_PROVIDER_OPENMETEO",
+        limit: int = 20,
+    ) -> dict[str, Any]:
+        targets = self.list_environment_refresh_targets(limit=limit)
+        refreshed: list[dict[str, Any]] = []
+        failed: list[dict[str, Any]] = []
+        for target in targets:
+            region = target.get("region")
+            city = target.get("city")
+            if not region:
+                continue
+            try:
+                current = self.refresh_environment(
+                    {
+                        "region": region,
+                        "city": city,
+                        "provider_id": provider_id,
+                        "force_refresh": True,
+                        "cache_ttl_minutes": 60,
+                    }
+                )["current"]
+                observation = current.get("observation") or {}
+                refreshed.append(
+                    {
+                        "region": observation.get("region") or region,
+                        "city": observation.get("city") or city,
+                        "observed_at": observation.get("observed_at"),
+                        "aqi": observation.get("aqi"),
+                        "temperature_c": observation.get("temperature_c"),
+                        "humidity_percent": observation.get("humidity_percent"),
+                    }
+                )
+            except Exception as exc:
+                failed.append({"region": region, "city": city, "error": str(exc)})
+        return {
+            "refreshed_count": len(refreshed),
+            "failed_count": len(failed),
+            "targets_count": len(targets),
+            "provider_id": provider_id,
+            "refreshed": refreshed,
+            "failed": failed,
+            "refreshed_at": datetime.now(timezone.utc).isoformat(),
         }
 
     def evaluate_care_risk(self, payload: dict[str, Any]) -> dict[str, Any]:
@@ -678,7 +738,7 @@ class CareShotBackendService:
             product_type=device.get("product_type"),
             requested_metrics=payload.get("requested_metrics"),
             force_refresh=payload.get("force_environment_refresh", False),
-            cache_ttl_minutes=int(payload.get("cache_ttl_minutes") or 180),
+            cache_ttl_minutes=int(payload.get("cache_ttl_minutes") or 60),
         )
         environment = environment_result.get("observation")
         procedure_type = payload.get("procedure_type") or self.default_procedure_for_product(device["product_type"])

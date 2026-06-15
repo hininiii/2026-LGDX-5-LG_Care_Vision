@@ -224,3 +224,34 @@ def test_ambiguous_power_question_collects_slots_then_finalizes_intent() -> None
     assert second["analysis"]["decision_result"]["service_flow_type"] == "self_as"
     assert second["analysis"]["procedure"]["procedure_type"] == "power_troubleshooting"
     assert second["analysis"]["decision_result"]["ar_scope"] == "external_safe_check_only"
+
+
+@pytest.mark.parametrize("message", ["이상해요", "문제가 있어요", "고장난 것 같아요", "작동이 이상해요", "상태가 이상해요"])
+def test_generic_low_info_initial_question_asks_symptom_before_default_filter_guide(message: str) -> None:
+    first = _post_chat(message)
+    state = first["chatbot_engine"]["conversation_state"]
+    missing, slots = _state_slots(state)
+
+    assert state["state_status"] == "collecting"
+    assert missing == ["symptom_type"]
+    assert "symptom_type" not in slots
+    assert first["analysis"]["decision_result"]["decision_action"] == "ask_clarification"
+    assert first["analysis"]["decision_result"]["missing_slots"] == ["symptom_type"]
+    assert first["analysis"]["procedure"].get("procedure_type") != "filter_cleaning"
+    assert first["chatbot_engine"]["guide_options"] is None
+    assert "어떤 문제가 있나요" in first["chatbot_engine"]["ai_message"]["message_content"]
+
+
+def test_generic_low_info_followup_can_resolve_to_cooling_self_as() -> None:
+    first = _post_chat("이상해요")
+    session_id = first["chatbot_engine"]["chat_session"]["session_id"]
+
+    second = _post_chat("냉방이 안 돼요", session_id=session_id)
+    state = second["chatbot_engine"]["conversation_state"]
+    missing, slots = _state_slots(state)
+
+    assert slots["symptom_type"] == "weak_airflow"
+    assert "risk_signal" in missing
+    assert second["analysis"]["decision_result"]["decision_action"] == "ask_clarification"
+    assert second["analysis"]["decision_result"]["service_flow_type"] == "self_as"
+    assert second["analysis"]["procedure"]["procedure_type"] == "no_cooling_self_check"
