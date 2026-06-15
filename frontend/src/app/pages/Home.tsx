@@ -373,7 +373,11 @@ export function Home() {
               <div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">대기질</p>
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111] leading-tight">
+
                   <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">AQI</span> {aqi}
+
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">AQI</span> 10
+
                 </p>
               </div>
             </div>
@@ -390,7 +394,10 @@ export function Home() {
               <div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">미세 먼지</p>
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111] leading-tight">
+
                   <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">pm</span> {pmValue}
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">pm</span> 10
+
                 </p>
               </div>
             </div>
