@@ -92,6 +92,31 @@ def test_power_troubleshooting_options_do_not_recommend_filter_cleaning_videos(t
         app.dependency_overrides.clear()
 
 
+def test_noise_self_check_recommends_exact_official_youtube_without_filter_fallback(tmp_path) -> None:
+    client, _service = make_test_client(tmp_path)
+    try:
+        response = client.get(
+            "/api/v1/guides/options",
+            params={
+                "user_id": "U001",
+                "device_id": "D001",
+                "procedure_type": "noise_self_check",
+                "service_flow_type": "self_as",
+                "language_code": "en",
+            },
+        )
+        assert response.status_code == 200
+        option_set = response.json()
+        assert option_set["procedure_type"] == "noise_self_check"
+        assert option_set["youtube_recommendations"]
+        assert option_set["youtube_recommendations"][0]["source_url"] == "https://www.youtube.com/watch?v=I-06GlrB_pY"
+        assert option_set["youtube_recommendations"][0]["procedure_type"] == "noise_self_check"
+        assert all(item["procedure_type"] != "filter_cleaning" for item in option_set["youtube_recommendations"])
+        assert option_set["manual_guides"][0]["video_url"] == "https://www.youtube.com/watch?v=I-06GlrB_pY"
+    finally:
+        app.dependency_overrides.clear()
+
+
 def test_dynamic_manual_guides_are_created_for_supported_aircon_procedures(tmp_path) -> None:
     client, _service = make_test_client(tmp_path)
     cases = [

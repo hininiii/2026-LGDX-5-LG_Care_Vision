@@ -901,7 +901,7 @@ intent/risk 평가셋: 0건, 현 단계 미수행
 15.3 PostgreSQL FK migration 적용 - 수행됨 / FK 후보 103개 중 101개 적용, reference image asset 미연결 2개 보류
 16. EnvironmentDataAdapter 구현 - 수행됨 / cache hit, external refresh, fallback, fetch log, Care Risk 전달 검증
 16.2 EnvironmentDataAdapter 운영 보완 실행 - 수행됨 / provider adapter, API key manager, hard water source, fallback live 검증
-17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / usage log + 환경 데이터 기반 self care 추천 조건 계산 검증
+17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / usage log + 환경 데이터 기반 self care 추천 조건 계산 검증, AQI 가중치 보정 완료
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 수행됨 / self_care, self_as, expert_as 용어 통일
 17.1-A GuideOptionSet 및 Guide 완료 API 재정리 - 수행됨 / options API, 완료 이력 저장 API 검증
 17.2 Product Code Registry 및 제품 등록 흐름 설계/DB 반영 - 수행됨 / 검증 완료
@@ -927,14 +927,14 @@ intent/risk 평가셋: 0건, 현 단계 미수행
 22.5 프론트 원본 UI 보호 및 데이터 주입 정리 - 수행됨 / UI 구조 변경 금지, 승인된 데이터 치환만 유지
 22.6 제품 코드 등록 시연 흐름 - 후속 필요 / `PRODUCT` master 조회 -> `USER_PRODUCT` 연결 흐름 미구현
 22.7 AR reference image 정적 서빙 및 part map 좌표 seed - 후속 필요
-23. 프론트 챗봇 UI를 multi-turn + 공식근거 카드 구조로 변경 - 수행 중 / 자유입력 추가 질문, API 기반 YouTube+단계 가이드 표시 구현
+23. 프론트 챗봇 UI를 multi-turn + 공식근거 카드 구조로 변경 - 수행 중 / 자유입력 추가 질문, 저정보 문의 추가질문 guard, API 기반 YouTube+단계 가이드 표시, 전원 문의 risk/detail 분리 검증
 23-1. self care 예방 알림 UI 구현 - 부분 수행 / Care Risk API 연결, 문구/근거 정합성 보강 중
-24. 안전 차단 카드 / expert A/S 연결 카드 / AR 시작 카드 정리 - 부분 수행 / expert_as 차단 및 AR 시작 분기 연결, 화면 QA 후속
+24. 안전 차단 카드 / expert A/S 연결 카드 / AR 시작 카드 정리 - 수행됨 / High Risk, no-match, Low/Medium 화면 분기 검증 완료
 25. RAG 연결 후 intent/risk 평가 기준 확정 - 수행됨 / 2026-06-12 검증 완료
 26. VOC 원천 풀에서 intent/risk 평가셋 별도 라벨링 - 수행됨 / 2026-06-12 검증 완료
-27. EvaluationService 구현 및 정확도 리포트 생성 - 다음 작업
-28. 정상/모호/Medium/High Risk/매칭 실패/self care 알림/expert A/S 시나리오 검증 - 후속
-29. AR 오버레이 정확도 검수 - 후속
+27. EvaluationService 구현 및 정확도 리포트 생성 - 수행됨 / 147건 평가 실행, 정확도 리포트 저장, 실패 케이스 분류 완료
+28. 정상/모호/Medium/High Risk/매칭 실패/self care 알림/expert A/S 시나리오 검증 - 수행됨 / 7개 시나리오 자동검증, QA 리포트, 화면 캡처 생성 완료
+29. AR 오버레이 정확도 검수 - 다음 작업
 30. 발표용 UI와 산출물 정리 - 후속
 ```
 
@@ -1057,6 +1057,12 @@ python -m pytest tests -q
 16. EnvironmentDataAdapter 구현 - 수행됨 / 검증 완료
    - 환경 데이터는 최종 구조에서 외부 API를 실시간 또는 준실시간으로 조회한다.
    - 단, 매 요청마다 외부 API를 호출하지 않고 DB cache freshness를 먼저 확인한다.
+   - 2026-06-15 보정: 기본 cache TTL을 180분에서 60분으로 낮췄다. `/environment/current` 또는 Care Risk 호출 시 TTL이 만료되었으면 외부 API를 호출해 DB에 저장한 뒤 응답한다.
+   - 2026-06-15 보정: 서버 자동갱신을 추가했다. FastAPI lifespan background task가 서버 시작 후 `CARESHOT_ENV_AUTO_REFRESH_INITIAL_DELAY_SECONDS` 뒤 1회 실행되고, 이후 `CARESHOT_ENV_AUTO_REFRESH_INTERVAL_MINUTES` 기본 60분마다 환경 refresh target을 외부 API로 갱신해 DB에 저장한다.
+   - 2026-06-15 보정: 자동갱신 target은 `Delhi/Delhi`, `Gujarat/Ahmedabad`를 우선 포함하고, 이후 USER/ENVIRONMENT_OBSERVATION 기반 지역을 이어 붙인다. 기본 provider는 key 없이 검증 가능한 `ENV_PROVIDER_OPENMETEO`다.
+   - 역할 구분: lazy refresh는 사용자가 호출했을 때 만료 여부를 보고 갱신하는 흐름, server auto refresh는 사용자가 앱을 켜지 않아도 DB를 미리 최신화하는 흐름, frontend polling은 이미 켜진 화면이 최신 DB/API 값을 다시 받아 UI를 갱신하는 흐름이다.
+   - 설정: `CARESHOT_ENV_AUTO_REFRESH_ENABLED=0`이면 서버 자동갱신을 끈다. `CARESHOT_ENV_AUTO_REFRESH_INTERVAL_MINUTES`, `CARESHOT_ENV_AUTO_REFRESH_PROVIDER`, `CARESHOT_ENV_AUTO_REFRESH_TARGET_LIMIT`로 주기/provider/target 수를 조정한다.
+   - 2026-06-15 보정: `New Delhi`, `뉴델리` 입력은 `REGION.city = Delhi`로 정규화해 환경 API 조회, DB cache 조회, DB observation 저장이 같은 지역 기준으로 동작하도록 했다.
    - 입력: user_id, region, city, product_type, requested_metrics
    - 처리: provider 선택, API key 관리, cache TTL 확인, 외부 API 호출, 응답 정규화, fetch log 저장
    - 출력: temperature, humidity, AQI, PM2.5, PM10, rain/monsoon intensity, water hardness, observed_at, provider
@@ -1064,6 +1070,8 @@ python -m pytest tests -q
    - 산출물: `EnvironmentDataAdapter`, `EnvironmentProvider` interface, `environment_observations`, `environment_api_fetch_logs`, `/environment/current`, `/environment/refresh`
    - 완료 기준: DB cache가 유효하면 cache를 쓰고, 만료 시 외부 API 호출 결과를 저장한 뒤 Care Risk 계산에 전달
    - 검증 결과: cache hit, 외부 API refresh, fallback cache, fetch log 저장, Care Risk 전달 검증 완료
+   - 2026-06-15 검증: `/api/v1/environment/current?region=Delhi&city=New%20Delhi`가 `normalized_location.requested_city=New Delhi`, `normalized_location.city=Delhi`, `cache_ttl_minutes=60`, observation `city=Delhi`로 응답함을 TestClient smoke로 확인했다.
+   - 2026-06-15 검증: `refresh_scheduled_environment_targets(provider_id="ENV_PROVIDER_OPENMETEO", limit=2)` smoke 결과 Delhi/Delhi, Gujarat/Ahmedabad 2건이 `failed_count=0`으로 refresh되었다.
 
 16.1 EnvironmentDataAdapter 현재 검증 감사 및 보완 필요사항 - 2026-06-05 재검증
    - 실제 검증 결과: `/environment/current`는 fresh cache에서 `cache_hit` 반환, `/environment/refresh`는 외부 API 호출 후 `environment_observations`와 `environment_api_fetch_logs`에 저장, `/care/risk/evaluate`는 최신 observation을 받아 Care Risk 계산에 사용
@@ -1101,6 +1109,8 @@ python -m pytest tests -q
    - 산출물: `CareRiskScoreEngine`, `PreventiveCareRecommendationEngine`, `/care/risk/evaluate`, `/guides/options`, `/guides/{guide_id}/complete`
    - 완료 기준: 사용자 문의 없이도 usage log + 환경 API/cache 데이터만으로 self care 추천 조건이 계산되고, Manual Guide와 AR Guide가 함께 제공됨
    - 검증 결과: `/care/risk/evaluate` Guide 옵션 반환, `/guides/options` 옵션 세트 조회, `/guides/{guide_id}/complete` 완료 이력 저장 검증 완료
+   - 2026-06-15 보정: 에어컨/공기청정기 AQI 가중치를 공식 AQI health category 기반 CRS 내부 가중치로 조정했다. AQI 100~149는 +10, 150~199는 +20, 200~299는 +30, 300 이상은 +35를 부여한다.
+   - 2026-06-15 검증: AQI 223/일평균 6시간/습도 40% 에어컨 케이스가 `20 + 15 + 30 = 65`, `risk_band=medium`으로 산출됨을 확인했다. live 환경 API smoke에서는 AQI 227 기준 score 65, risk_level medium, factor_scores `[daily_runtime_hours +15, aqi +30]` 확인.
 
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 문서/DB 설계 반영 및 API endpoint 재정리 완료
    - 서비스 명칭을 `self_care`, `self_as`, `expert_as`로 통일했다.
@@ -1151,6 +1161,9 @@ python -m pytest tests -q
    - 2026-06-11 사전 보정: `analysis.decision_result.service_flow_type` 응답 필드를 추가했다.
    - 주의: 현재 최종 21개 테이블 구조에서는 `decision_logs`를 사용하지 않는다. 챗봇 문의 분석 저장은 `AI_INQUIRY_ANALYSIS.intent_type`에 `self_care`, `self_as`, `expert_as` 기준으로 저장하도록 ChatbotEngine/DB 연동을 맞췄다.
    - 검증: `tests/test_chat_service_flow_type.py`에서 필터 청소/self_care, 바람 약함+냄새/self_as, 연기+타는 냄새/expert_as 및 expert_as AR 차단을 확인했다.
+   - 2026-06-15 보정: `이상해요`, `문제가 있어요`, `고장난 것 같아요`, `작동이 이상해요`, `상태가 이상해요` 같은 저정보 초기 문의는 어떤 증상으로도 억지 분류하지 않고 `missing_slots=["symptom_type"]`, `needs_clarification=true`, `guide_options=null`로 응답한다.
+   - 2026-06-15 보정 질문: "어떤 문제가 있나요? 냉방/바람, 소음/진동, 냄새, 물샘, 전원 문제, 필터 관리 중 가까운 증상을 알려주세요."
+   - 저장 주의: 최종 21개 테이블의 `AI_INQUIRY_ANALYSIS.intent_type` CHECK 제약은 `self_care/self_as/expert_as`만 허용하므로, 저정보 문의의 DB 저장용 intent는 보수적으로 `self_as`로 기록하되 응답 decision/procedure/guide는 비워 추가 질문 상태를 유지한다.
 
 18.1 ChatbotEngine 최종 21개 테이블 정합 보정 - 수행됨 / 2026-06-11 검증 완료
    - `decision_logs` 사용을 제거하고 최종 21개 테이블 구조에 없는 테이블 호출이 남지 않도록 보정했다.
@@ -1252,10 +1265,11 @@ FastAPI 응답으로 Home, Chat, AR Guide Session, 회원가입/프로필 흐름
 | 22.3 기본 fetch 전환 | 수행됨 | user, device, chat API client가 FastAPI 호출 |
 | 22.4 Home/Chat/ARGuide API 연결 | 수행됨 | Care Risk, 환경, guide options, AR plan/session 호출 연결 |
 | 22.5 챗봇 응답 분기 | 부분 수행 | `service_flow_type`, `risk_level`, `needs_clarification`, `guide_options` 기반 카드 분기 연결 |
-| 22.6 회원가입/로그인/프로필 DB 연동 | 수행됨 | `USER` 저장/조회/수정, 로그인, `currentUserEmail` 세션 저장 |
+| 22.6 회원가입/로그인/프로필 DB 연동 | 수행됨 | `USER` 저장/조회/수정, 로그인, `currentUserEmail` 세션 저장, FastAPI 8791 실제 연결 및 DB row 검증 |
 | 22.7 가입 후 demo ThinQ seed | 수행됨 | `USER_PRODUCT`, `APPLIANCE_USAGE_LOG`, `SMART_DIAGNOSIS_RESULT`, `SELF_MANAGEMENT_HISTORY` 자동 생성 |
 | 22.8 환경/Care Risk 주소 연동 | 수행됨 | 회원가입/프로필의 region/city 기준 환경 API와 Care Risk 계산 연결 |
 | 22.9 프론트 원본 UI 보호 | 수행 중 | 임의 버튼/문구 추가 제거, 원본 카드 구조 유지, 데이터 주입부만 제한 수정 |
+| 22.9-1 홈 환경/Care Risk polling | 수행됨 | Home 화면이 켜져 있으면 60분마다 환경 API와 Care Risk API를 재호출해 최신 DB/API 값을 반영 |
 | 22.10 제품 코드 등록 시연 흐름 | 후속 필요 | `PRODUCT` master 조회 -> `USER_PRODUCT` 연결 API/UI 미구현 |
 | 22.11 AR asset 정확도 보강 | 후속 필요 | reference image 정적 서빙, part map 좌표 seed, overlay 정확도 검수 필요 |
 
@@ -1286,6 +1300,10 @@ PATCH /api/v1/ar/sessions/{session_id}
 회귀 테스트: tests/test_frontend_compat_api.py, tests/test_care_risk_engine.py,
 tests/test_repositories_sqlalchemy.py 등 관련 범위 통과
 프론트 원본 보호 확인: 임의 추가 버튼/문구 제거 후 build 성공
+2026-06-15 추가 검증: 프론트 5173은 200, 초기 백엔드 8791 미기동으로 회원가입 API 실패 재현
+2026-06-15 보강: FastAPI 8791 기동 후 `POST /api/users/register`, `POST /api/users/login`, `GET /api/users/me` 실제 성공 확인
+2026-06-15 DB 검증: `USER`, `USER_PRODUCT`, `APPLIANCE_USAGE_LOG`, `SMART_DIAGNOSIS_RESULT`, `SELF_MANAGEMENT_HISTORY`에 신규 user_email 기준 row 1건씩 생성 확인
+2026-06-15 프론트 검증: `npm run build` -> success, Vite chunk size warning만 있음
 ```
 
 남은 작업:
@@ -1324,8 +1342,15 @@ tests/test_repositories_sqlalchemy.py 등 관련 범위 통과
    - 2026-06-15 보정: 추가 질문 순서를 `위험 신호 확인`과 `증상 상황 설명`으로 분리했다. `risk_signal`이 남아 있으면 연기/스파크/타는 냄새/감전/냉매 냄새 여부만 먼저 묻고, 부정 답변 후 procedure별 위치/상황 질문으로 넘어간다.
    - 2026-06-15 보정: `guide_options`가 있으면 `ar_guides`가 비어 있어도 `AR 가이드` 버튼을 함께 표시한다. 사용자가 AR 버튼을 눌렀을 때 해당 procedure의 AR 템플릿이 없으면 화면 이동 대신 AR 제공 불가 안내 말풍선을 표시한다.
    - 2026-06-15 보정: 공식근거 영상/단계 카드와 기존 비디오/매뉴얼 카드 폭을 대화 말풍선 및 완료 확인 카드 기준인 `max-w-[290px]`로 맞췄다. 영상은 고정 높이 대신 `aspect-video`로 렌더링해 카드 폭 변경 시 비율이 유지되도록 했다.
+   - 2026-06-15 보정: `매뉴얼 가이드`/`AR 가이드` 버튼 묶음도 가이드 카드 기준 폭 `max-w-[290px]`에 맞추고 각 버튼을 균등 폭으로 정렬했다. AR 미지원 안내가 마지막 메시지로 추가되어도 `관리를 완료하셨나요?` 확인 버튼이 유지되도록 `showDoneAsk`를 함께 내려준다.
+   - 2026-06-15 보정: 전원 문의(`전원이 불안정하고 자주 꺼져요`)는 첫 턴에서 위험 신호만 묻고, 사용자가 `아니요`라고 답한 뒤에 플러그/콘센트/차단기/표시장/리모컨 상태를 묻도록 `/api/ai/chat` 실제 호출 smoke로 검증했다.
+   - 2026-06-15 보정: `/chat`에서 `AR 가이드`를 누를 때 `guide_options.procedure_type`과 procedure별 step title/desc를 `/ar-guide` route state로 전달한다. `ARGuide.tsx`는 더 이상 모든 챗봇 진입을 필터청소 하드코딩 단계로 렌더링하지 않고, 전달된 `guideSteps`를 우선 표시한다.
+   - 2026-06-15 보정: `noise_self_check` 공식 YouTube seed의 `OFFICIAL_ASSET.procedure_type`과 `OFFICIAL_DOCUMENT_CHUNK.procedure_type`을 `air_conditioner_support`에서 `noise_self_check`로 맞췄다. `/api/v1/guides/options`는 이제 소음/진동 자가점검에서 LG India 공식 영상 `LG Split Air Conditioner: Silent Function`을 반환한다.
+   - 2026-06-15 보정: `/api/ai/chat` 호환 응답도 `missing_slots=["symptom_type"]`일 때 ChatbotEngine의 `next_question`을 그대로 노출하도록 맞췄다. 따라서 초기 `이상해요` 입력은 필터청소 카드가 아니라 추가 질문 말풍선으로 표시된다.
+   - 검증: `npm run build` -> success, `python -m pytest -q tests/test_frontend_compat_api.py tests/test_conversation_state_multiturn.py -vv` -> 20 passed, `/api/ai/chat` TestClient smoke -> 전원 문의 1턴 risk-only / 2턴 power detail 응답 확인.
+   - 2026-06-15 추가 검증: `python -m pytest -q tests/test_environment_data_adapter.py tests/test_conversation_state_multiturn.py tests/test_content_option_flow.py tests/test_frontend_compat_api.py` -> 40 passed. TestClient smoke에서 `이상해요`는 `needs_clarification=true`, `procedure_type=null`, `guide_options=null`, 지정 추가 질문 문구로 응답했고, `noise_self_check`는 YouTube 1건(`I-06GlrB_pY`)과 manual `video_url`을 반환했다.
    - 산출물: `src/app/api/chat.ts`, `src/app/types/chat.ts`, `src/app/pages/Chat.tsx`
-   - 구현 메모: 기존 UI 보존 조건 때문에 이번 차수에서는 `ChatPanel`, `EvidenceCard`, `ClarificationPrompt` 파일 분리 대신 `Chat.tsx` 내부 렌더링으로 연결했다. 별도 컴포넌트 분리는 UI QA 후 필요 시 진행한다.
+   - 구현 확정: 기존 UI 보호와 시연 안정성을 우선해 `ChatPanel`, `EvidenceCard`, `ClarificationPrompt` 별도 파일 분리는 진행하지 않는다. 챗봇 말풍선, 추가 질문, 공식근거 영상/단계 카드, 매뉴얼/AR 버튼, 완료 확인 버튼은 `Chat.tsx` 내부 렌더링으로 유지한다.
    - 완료 기준: 모호 문의에서 추가 질문이 나오고, 고객 자유입력 답변 후 공식 근거 기반 영상/단계 카드 또는 차단/서비스센터 분기가 표시됨
 
 23-1. 예방 관리 알림 UI 구현
@@ -1338,8 +1363,26 @@ tests/test_repositories_sqlalchemy.py 등 관련 범위 통과
 24. 안전 차단 카드 / expert A/S 연결 카드 / AR 시작 카드 정리
    - High Risk는 AR 시작 버튼을 숨기고 expert A/S 연결 카드만 표시
    - 공식근거 no-match는 “공식자료 확인 불가” 차단 카드로 표시
-   - Low/Medium은 AR 시작 카드 표시
+   - Low/Medium은 기존 원본 UI의 `매뉴얼 가이드` / `AR 가이드` 버튼과 영상+단계 카드 표시를 AR 시작 카드 역할로 인정
    - 산출물: `SafetyBlockCard`, `ServiceRouteCard`, `ARStartCard`
+   - 2026-06-15 백엔드 계약 보강:
+     - `/api/ai/chat` 응답에 `card_policy`를 추가한다.
+     - `card_policy.card_type=service_route`: High Risk 또는 `expert_as`, AR 버튼 숨김, 서비스센터 연결만 허용.
+     - `card_policy.card_type=safety_block`: `official_match_review_needed` 또는 `official_evidence_required`, 공식자료 확인 불가 카드 대상.
+     - `card_policy.card_type=ar_start`: Low/Medium + 공식 guide options 존재, 매뉴얼/AR 버튼 허용.
+     - `card_policy.card_type=clarification`: 추가 질문 수집 중, 가이드/서비스 버튼 숨김.
+   - 2026-06-15 검증:
+     - `pytest tests/test_frontend_compat_api.py tests/test_decision_engine_v2.py tests/test_chat_service_flow_type.py` -> 23 passed
+     - UTF-8 live smoke: 한국어 High Risk 입력 -> `service_route`, `show_ar_button=false`, `show_service_button=true`
+     - UTF-8 live smoke: 필터 청소 입력 -> `ar_start`, `show_manual_button=true`, `show_ar_button=true`
+   - 2026-06-15 프론트 no-match 최소 반영:
+     - `Chat.tsx`에서 `card_policy.card_type=safety_block`일 때만 “공식자료 확인 불가” 차단 안내를 렌더링한다.
+     - Low/Medium 화면에는 별도 설명 카드를 추가하지 않고 기존 매뉴얼/AR 버튼과 영상+단계 카드 구조를 유지한다.
+     - High Risk는 기존처럼 AR/매뉴얼 버튼 없이 서비스센터 연결 버튼만 표시한다.
+   - 2026-06-15 화면 검증:
+     - no-match 저장소 주입 렌더링 -> “공식자료 확인 불가” 표시, 서비스센터 버튼 표시, AR/매뉴얼 버튼 미표시
+     - High Risk 렌더링 -> 서비스센터 버튼 표시, AR/매뉴얼 버튼 미표시
+     - Low/Medium 렌더링 -> 매뉴얼/AR 버튼 및 단계 카드 표시, 서비스센터/no-match 카드 미표시
    - 완료 기준: High Risk, no-match, Low/Medium 케이스가 화면에서 명확히 다르게 표시
 
 25. RAG 연결 후 intent/risk 평가 기준 확정 - 수행됨 / 2026-06-12 검증 완료
@@ -1402,19 +1445,73 @@ tests/test_repositories_sqlalchemy.py 등 관련 범위 통과
      - `python -m pytest -q` -> 57 passed, 1 skipped
    - 완료 기준: 제품군별, risk별, intent별 최소 기준을 충족하는 평가셋 생성 완료
 
-27. EvaluationService 구현 및 정확도 리포트 생성
+27. EvaluationService 구현 및 정확도 리포트 생성 - 수행됨 / 2026-06-15 검증 완료
    - ChatbotEngine/DecisionEngineV2를 평가셋에 일괄 실행
    - intent accuracy, risk accuracy, action accuracy, High Risk recall, no-match precision 계산
    - clarification 필요 여부와 실패 케이스 error_type 분류
    - 정확도 리포트 결과를 본 뒤 rule 보정, LLM adapter 보강, 또는 별도 학습 기반 classifier 도입 여부를 결정한다.
-   - 산출물: `EvaluationService`, `intent_risk_eval_results`, 정확도 리포트
+   - 산출물:
+     - `04_백엔드/app/evaluation_service.py`
+     - `04_백엔드/app/routers/evaluation.py`
+     - `04_백엔드/scripts/run_intent_risk_evaluation.py`
+     - `02_데이터연동/eval_sets/intent_risk_eval_results_20260615.json`
+     - `02_데이터연동/eval_sets/intent_risk_accuracy_report_20260615.json`
+     - `06_산출물/2026-06-15_intent_risk_accuracy_report.md`
+   - 2026-06-15 구현/보강:
+     - `report_date`, `cases_path`, `results_path`, `report_json_path`, `report_md_path` 옵션을 EvaluationService/API/CLI에 연결했다.
+     - 기본 출력은 `report_date` 기준 날짜별 JSON/MD 산출물로 저장하고, 호환용 `mock_data/intent_risk_eval_results.json`도 함께 갱신한다.
+     - no-match 해석을 위해 `expected_no_match_count`, `no_match_true_positive_count`, `failed_case_count`를 metrics에 추가했다.
+   - 2026-06-15 평가 결과:
+     - 평가 케이스: 147건
+     - intent_accuracy: 0.5782
+     - risk_accuracy: 0.4830
+     - action_accuracy: 0.4286
+     - procedure_accuracy: 0.4626
+     - ar_allowed_accuracy: 0.5102
+     - clarification_accuracy: 0.5986
+     - high_risk_recall: 1.0
+     - no_match_precision: 0.0
+     - 실패 케이스: 107건
+     - error_type_counts: correct 40, clarification_error 58, intent_mismatch 23, risk_mismatch 13, no_match_false_positive 7, procedure_mismatch 6
+   - 검증:
+     - `pytest tests/test_evaluation_service.py tests/test_intent_risk_eval_dataset.py` -> 5 passed
+     - `pytest` -> 89 passed, 1 skipped
+     - `python scripts/run_intent_risk_evaluation.py --run-id EVAL_27_FULL_20260615 --report-date 2026-06-15` -> 147건 리포트 생성
+     - `POST /api/v1/evaluation/intent-risk/run` limit=2 smoke -> 2026-06-15 날짜 경로 응답 확인
+   - 실패/해석:
+     - 현재 정확도는 데모 가능 여부 판단용 baseline이며, 바로 제품 품질 기준으로 보기에는 낮다.
+     - 가장 큰 실패 유형은 clarification_error 58건이다. 긴 VOC 문장인데도 추가 질문으로 보내는 경향이 있어 28번 시나리오 검증/룰 보정 대상이다.
+     - no_match_precision 0.0은 평가셋에 expected no-match가 0건인데 7건을 no-match로 예측했기 때문이다.
    - 완료 기준: 정확도 수치와 실패 케이스 목록이 산출물로 저장
 
-28. 정상/모호/Medium/High Risk/매칭 실패/예방 알림 시나리오 검증
+28. 정상/모호/Medium/High Risk/매칭 실패/예방 알림 시나리오 검증 - 수행됨 / 2026-06-15 검증 완료
    - API와 프론트 기준 통합 시나리오 검증
    - 예방 알림, 정상 관리, 자가점검 가능, 추가 질문 필요, High Risk A/S 연결, 공식근거 없음, 저장/재시청 케이스 포함
    - 산출물: 시나리오 테스트 스크립트, QA 리포트, 화면 캡처
    - 완료 기준: 핵심 사용자 흐름이 API와 화면에서 모두 재현
+   - 2026-06-15 수행 내용:
+     - `04_백엔드/scripts/run_scenario_validation.py`를 추가해 핵심 흐름 7개를 일괄 검증한다.
+     - 검증 대상: 예방 관리 알림, 필터 청소 정상 관리, 모호 문의 추가 질문, Medium 냉방/바람 약함 self_as, High Risk expert A/S, 공식근거 no-match 카드 정책, 가이드 완료 저장/AR session 재시청.
+     - 검증 결과: 7개 시나리오 모두 passed, failed 0.
+     - 산출물:
+       - `02_데이터연동/eval_sets/scenario_validation_results_20260615.json`
+       - `06_산출물/2026-06-15_scenario_validation_report.md`
+       - `06_산출물/scenario_screenshots_20260615/01_home_authenticated.png`
+       - `06_산출물/scenario_screenshots_20260615/02_chat_authenticated.png`
+       - `06_산출물/scenario_screenshots_20260615/03_ar_guide_authenticated.png`
+     - 검증:
+       - `python -X utf8 scripts/run_scenario_validation.py --run-id SCENARIO_28_FULL_20260615 --report-date 2026-06-15` -> 7 passed / 0 failed
+       - `pytest tests/test_frontend_compat_api.py tests/test_conversation_state_multiturn.py tests/test_self_management_history_lifecycle.py` -> 31 passed
+       - `pytest` -> 89 passed, 1 skipped
+       - `npm run build` -> Vite build 성공, chunk size warning 발생
+       - Playwright CLI screenshot -> Home/Chat/ARGuide authenticated 화면 캡처 생성
+     - 실패/수정 사항:
+       - 1차 스크립트 실행 실패: 임시 DB 초기화에서 실제 DB에 없는 `AR_STEP_LOG`, `AR_SESSION_LOG` 삭제를 시도했다. AR session/step은 repository 내부 ephemeral 저장소라 해당 삭제를 제거했다.
+       - 2차 스크립트 실행 실패: JSON 리포트 detail에 `dict_keys`가 들어가 직렬화가 실패했다. `list(guide_options.keys())`로 보정했다.
+       - 1차 화면 캡처는 로그인 화면으로 저장되었다. `storage_state_20260615.json`으로 `isLoggedIn/currentUserEmail/appLanguage`를 주입해 인증된 Home/Chat/ARGuide 화면을 다시 캡처했다.
+       - Playwright 브라우저 바이너리가 없어 최초 캡처가 실패했다. `npx playwright install chromium` 후 재검증했다.
+       - no-match는 현재 seed 평가셋에 expected no-match row가 없으므로 실제 corpus no-match가 아니라 frontend card_policy mapping 단위로 검증했다.
+       - 프론트 빌드는 성공했지만 `index` JS chunk가 500kB를 초과한다는 Vite 경고가 남아 있다. 기능 실패는 아니며 발표 전 성능 최적화 후보로만 기록한다.
 
 29. AR 오버레이 정확도 검수
    - AR 방식은 객체인식이 아니라 image-based reference overlay로 고정
@@ -2225,7 +2322,7 @@ online manual 36건, help library 773건 기준이었다.
 15.2 PostgreSQL 운영 안정화 및 Alembic migration 관리 전환 - named volume 적용 완료 / Alembic baseline은 18단계 시작 전 수행
 16. EnvironmentDataAdapter 구현 - 수행됨 / cache hit, 외부 API refresh, fallback cache, fetch log, Care Risk 전달 검증 완료
 16.2 EnvironmentDataAdapter 운영 보완 실행 - 수행됨 / provider adapter, API key manager, 실제 OpenWeather/WAQI key 연결 검증 완료
-17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / Care Risk 계산 및 Guide 옵션 반환 검증 완료
+17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / Care Risk 계산 및 Guide 옵션 반환 검증 완료, AQI 가중치 보정 완료
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 문서/DB 설계 반영 및 API endpoint 재정리 완료
 17.1-A GuideOptionSet 및 Guide 완료 API 재정리 - 수행됨 / 검증 완료
 17.2 Product Code Registry 및 제품 등록 흐름 설계/DB 반영 - 수행됨 / 검증 완료
@@ -2250,14 +2347,14 @@ online manual 36건, help library 773건 기준이었다.
 22.4 회원가입/로그인/프로필 DB 연동 - 수행됨
 22.5 제품 코드 등록 시연 흐름 - 후속 필요
 22.6 AR reference image 정적 서빙 및 part map 좌표 seed - 후속 필요
-23. 프론트 챗봇 UI를 multi-turn + 공식근거 카드 구조로 변경 - 수행 중 / 자유입력 추가 질문, API 기반 YouTube+단계 가이드 표시 구현
+23. 프론트 챗봇 UI를 multi-turn + 공식근거 카드 구조로 변경 - 수행 중 / 자유입력 추가 질문, 저정보 문의 추가질문 guard, API 기반 YouTube+단계 가이드 표시, 전원 문의 risk/detail 분리 검증
 23-1. self care 추천 UI 구현 - 부분 수행 / Care Risk API 연결, 화면 문구 QA 후속
-24. 안전 차단 카드 / expert A/S 연결 카드 / AR 시작 카드 정리 - 부분 수행 / 화면 QA 후속
+24. 안전 차단 카드 / expert A/S 연결 카드 / AR 시작 카드 정리 - 수행됨 / High Risk, no-match, Low/Medium 화면 분기 검증 완료
 25. RAG 연결 후 intent/risk 평가 기준 확정 - 수행됨 / 2026-06-12 검증 완료
 26. VOC 원천 풀에서 intent/risk 평가셋 별도 라벨링 - 수행됨 / 2026-06-12 검증 완료
-27. EvaluationService 구현 및 정확도 리포트 생성 - 다음 작업
-28. 정상/모호/Medium/High Risk/매칭 실패/self care 추천 시나리오 검증
-29. AR 오버레이 정확도 검수
+27. EvaluationService 구현 및 정확도 리포트 생성 - 수행됨 / 147건 평가 실행, 정확도 리포트 저장, 실패 케이스 분류 완료
+28. 정상/모호/Medium/High Risk/매칭 실패/self care 추천 시나리오 검증 - 수행됨 / 7개 시나리오 자동검증, QA 리포트, 화면 캡처 생성 완료
+29. AR 오버레이 정확도 검수 - 다음 작업
 30. 발표용 UI와 산출물 정리
 
 ### 21.3 FastAPI 전환 시점
@@ -3554,6 +3651,287 @@ MindAR target, AR_GUIDE.overlay_config_json 렌더링을 연결해야 한다.
 - 프론트 상태: 카메라 권한 대기, AI 분류 중, wall_split_ac 감지, window_ac/not_ac 차단, target locked/lost, 단계 진행, 완료 확인
 - DB 사용: PRODUCT, USER_PRODUCT, GUIDE, AR_TARGET, AR_GUIDE, AI_INQUIRY_ANALYSIS, RAG_SEARCH_LOG, SELF_MANAGEMENT_HISTORY
 - 신규 테이블 미생성: AI 분류 결과, AR session log, AR step log, Part Map 전용 테이블
+```
+
+### 30.1 MindAR 폐기 후 YOLO 실시간 필터 탐지 데이터셋 1차 착수 - 진행 중
+
+배경:
+
+```text
+MindAR image target 방식은 기준 이미지를 화면에 맞춰 띄우는 느낌이 강해,
+실제 카메라 화면 안에서 에어컨 내부 필터를 직접 찾는 방식으로 전환한다.
+새 방향은 YOLO 기반 실시간 filter bbox 탐지 + canvas overlay Web AR POC이다.
+```
+
+수행 내용:
+
+```text
+1. 1번 작업을 필터 탐지용 데이터셋 100~200장 구성으로 확정
+2. 학습 class를 `filter` 1개로 제한
+3. 공개 웹 이미지 무단 수집 대신 직접 촬영/사용 허가/공개 라이선스 후보 중심으로 수집 기준 정의
+4. 로컬 reference 이미지 4개는 학습 주력 데이터가 아니라 라벨링 기준/시연 seed로 분리
+5. Roboflow 라벨링 전 manifest 기록 기준 생성
+```
+
+생성 파일:
+
+```text
+02_데이터연동/filter_detection_dataset/README.md
+02_데이터연동/filter_detection_dataset/candidate_sources.md
+02_데이터연동/filter_detection_dataset/dataset_inventory.md
+02_데이터연동/filter_detection_dataset/manifest_template.csv
+02_데이터연동/filter_detection_dataset/dataset_manifest.csv
+02_데이터연동/filter_detection_dataset/official_manual_page_candidates_manifest.csv
+02_데이터연동/filter_detection_dataset/open_license_download_failures.log
+02_데이터연동/filter_detection_dataset/raw/local_reference_seed/*
+02_데이터연동/filter_detection_dataset/raw/official_manual_page_candidates/*
+```
+
+결정:
+
+```text
+1차 POC는 데이터셋 구성부터 진행한다.
+공개 데이터만으로 에어컨 내부 필터 bbox 100~200장을 안정 구성하기 어렵기 때문에,
+직접 촬영/허가 이미지 60~100장 + 공개 라이선스 후보 30~60장 + negative sample 20~40장으로 시작한다.
+유튜브/블로그/stock preview 이미지는 사용 허가 또는 명시 라이선스가 없으면 학습 데이터에 넣지 않는다.
+```
+
+남은 작업:
+
+```text
+1. 실제 이미지 파일을 raw/ 하위 폴더에 추가 수집
+2. manifest에 이미지별 출처/라이선스/사용 가능 여부 기록
+3. Roboflow Object Detection 프로젝트 생성 및 filter bbox 라벨링
+4. YOLO export 후 Colab 학습
+5. best.pt 생성 후 FastAPI inference 서버 연결
+```
+
+현재 확보:
+
+```text
+local_reference_seed 4장 복사 완료
+LG 공식 에어컨 매뉴얼 PDF의 필터/청소 관련 페이지 19장 렌더링 완료
+dataset_manifest.csv 기준 후보 23장 확보
+Wikimedia Commons 자동 다운로드는 429 robot policy로 실패
+추가 필요: 최소 77장, 권장 177장까지
+```
+
+2026-06-15 추가 수집:
+
+```text
+사용자 피드백에 따라 1번 데이터셋 수집이 끝나기 전에는 Roboflow/학습 단계로 넘어가지 않는 기준으로 재고정했다.
+
+LG 공식 지원 페이지 23개를 대상으로 필터/청소 관련 이미지 URL을 수집했다.
+- gscs.lge.com 공식 지원 이미지 candidate URL: 113개
+- 다운로드 성공 unique 이미지: 100장
+- 중복 SHA 제외: 13장
+- 다운로드 실패/스킵: 0장
+
+raw/direct_or_approved/ 하위 생성:
+- lg_official_support_crawled: 100장
+- lg_official_filter_visible_candidates: 74장
+- lg_official_filter_training_seed_accepted: 71장
+
+생성 manifest:
+- lg_official_support_crawled_manifest.csv
+- lg_official_filter_visible_candidates_manifest.csv
+- lg_official_filter_training_seed_accepted_manifest.csv
+
+시각 검토:
+- contact sheet 생성 후 필터/필터케이스/필터 분리 장면 중심으로 확인
+- 043, 046, 047은 표시창/버튼 UI 위주라 bbox 라벨링 대상에서 제외
+
+현재 1차 라벨링 seed:
+- 공식 LG 지원 페이지 기반 accepted 후보 71장
+- 기존 local/reference/manual 후보 포함 전체 manifest 기준 123장
+
+주의:
+- 폴더는 기존 계획명 raw/direct_or_approved/를 사용했지만,
+  라이선스 상태는 `official_public_support_candidate_not_explicit_training_license`로 기록했다.
+- 즉, 공식 공개 지원 콘텐츠 후보이며 학습/배포 사용권은 별도 확인 필요하다.
+- 실제 앱 품질 기준으로는 직접 촬영 또는 명시 허가 사진 30장 이상을 추가해
+  최종 100~200장 균형 데이터셋으로 보강해야 한다.
+```
+
+2026-06-15 추가 수집 라운드2/3 및 최종 선별:
+
+```text
+100~200장 목표에 아직 부족하므로 추가 수집을 계속했다.
+
+추가 수집:
+- LG 공식 지원 이미지 round2 신규 unique: 27장
+- LG 공식/웹 제품 상세 및 가이드 round3 partial: 94장
+- iFixit LG/Goldstar 에어컨 필터 실사진 신규 unique: 36장
+
+최종 합산:
+- filter_bbox_seed_100plus: 128장
+- contact sheet 시각 검토 후 제외: 13장
+- 최종 Roboflow bbox 라벨링 seed: 115장
+
+최종 위치:
+- raw/training_candidates/filter_bbox_seed_final_reviewed_115/
+- filter_bbox_seed_final_reviewed_115_manifest.csv
+- filter_bbox_seed_final_reviewed_115_contact_sheet.jpg
+
+상태 판단:
+- 1번 데이터셋 구성은 최소 수량 기준 100장을 넘긴 상태다.
+- 아직 Roboflow 라벨링은 시작하지 않았다.
+- 다음 단계는 이 115장을 Roboflow에 업로드하고 `filter` bbox 라벨링을 수행하는 것이다.
+
+주의:
+- LG 공식 공개 지원 콘텐츠와 iFixit 공개 가이드 후보가 섞여 있으므로,
+  산출물/배포 전에는 manifest의 license_status 기준으로 사용 가능성을 확인한다.
+- 모델 품질 보강을 위해 직접 촬영/명시 허가 실사진 30장 이상과 negative sample 20~40장을 추가하는 것이 좋다.
+```
+
+2026-06-15 Roboflow 라벨링 준비:
+
+```text
+2번 Roboflow bbox 라벨링 단계로 넘어가기 위한 업로드 패키지를 생성했다.
+실제 Roboflow 웹 라벨링은 아직 완료하지 않았다.
+
+생성 위치:
+- 02_데이터연동/filter_detection_dataset/roboflow_upload/filter_bbox_seed_final_reviewed_115/
+
+패키지:
+- images/ : 115장
+- filter_bbox_seed_final_reviewed_115_images.zip : zip entries 115
+- roboflow_upload_manifest.csv : 115행
+- roboflow_labeling_checklist.csv : 115행
+- roboflow_labeling_guide.md : filter bbox 라벨링 기준
+- roboflow_upload_status.md : 업로드 상태 및 차단 조건
+- upload_to_roboflow.py : API 키가 있을 때 사용할 업로드 스크립트 템플릿
+
+Roboflow 프로젝트 기준:
+- Project Type: Object Detection
+- Project Name: careshot-lg-ac-filter-detection
+- Class: filter
+- Export Target: YOLOv8
+
+현재 차단:
+- ROBOFLOW_API_KEY 미설정
+- ROBOFLOW_WORKSPACE 미설정
+- ROBOFLOW_PROJECT 미설정
+- roboflow Python SDK 미설치
+
+따라서 자동 API 업로드는 실행하지 않았다.
+다음 단계는 Roboflow 계정/프로젝트 접근 후 zip 업로드 및 filter bbox 수동 라벨링이다.
+라벨링 완료 증거가 없으면 YOLO 학습으로 넘어가지 않는다.
+```
+
+2026-06-15 Roboflow export 검증/Colab 학습 준비:
+
+```text
+Roboflow 라벨링이 완료된 뒤 YOLO 학습으로 넘어가기 위한 검증/학습 준비 파일을 생성했다.
+실제 학습은 아직 실행하지 않았다.
+
+생성 파일:
+- roboflow_export/verify_roboflow_yolov8_export.py
+- training_runs/train_yolo_filter_colab.py
+- training_runs/colab_training_README.md
+
+검증 스크립트 역할:
+- data.yaml 존재 확인
+- class names가 ['filter']인지 확인
+- train/valid/test images/labels 존재 확인
+- label txt가 YOLO 형식 5컬럼인지 확인
+- class id가 0만 존재하는지 확인
+- bbox 좌표가 0..1 정규화 범위인지 확인
+- total_images, total_boxes가 0보다 큰지 확인
+
+학습 게이트:
+- Roboflow bbox labeling 완료 전 학습 금지
+- YOLOv8 export 미확보 상태에서 학습 금지
+- verify_roboflow_yolov8_export.py errors=[] 통과 전 학습 금지
+
+현재 상태:
+- roboflow_upload package 준비 완료
+- roboflow_export 실제 dataset export 미확보
+- best.pt 미생성
+```
+
+### 30.2 YOLO 필터 탐지 FastAPI/웹캠 overlay 연결 뼈대 - 진행 중
+
+배경:
+
+```text
+필터 탐지용 best.pt가 아직 생성되지 않았지만,
+best.pt 생성 이후 바로 연결할 수 있도록 FastAPI inference endpoint와
+프론트 웹캠 프레임 전송/canvas bbox overlay/smoothing 구조를 먼저 준비했다.
+
+사용자 추가 지시에 따라 DB 구조는 변경하지 않고,
+프론트/백엔드 영역은 백업 후 후속 작업 기준으로 관리한다.
+```
+
+백업:
+
+```text
+99_백업/2026-06-15_17-05-42_yolo_filter_front_backend_backup/
+```
+
+수정 파일:
+
+```text
+04_백엔드/app/schemas.py
+04_백엔드/app/routers/ar.py
+04_백엔드/app/yolo_filter_service.py
+04_백엔드/tests/test_ar_filter_detection.py
+05_프론트엔드/react-vite/src/app/pages/ARGuide.tsx
+```
+
+구현 내용:
+
+```text
+1. POST /api/v1/ar/filter-detect 추가
+2. CARESHOT_FILTER_YOLO_MODEL_PATH 또는 기본 경로의 best.pt가 있으면 Ultralytics YOLO 추론 사용
+3. best.pt가 없으면 mock_fallback=true 기준 중앙 filter bbox 반환
+4. ARGuide 화면에서 웹캠 video, capture canvas, overlay canvas 구성
+5. 700ms 간격으로 카메라 프레임을 JPEG data URL로 전송
+6. 응답 bbox를 canvas에 표시
+7. 이전 bbox와 현재 bbox를 EMA 방식으로 smoothing
+8. 기존 단계 이동/완료 확인 흐름은 유지
+```
+
+검증:
+
+```text
+python -m pytest -q tests/test_ar_filter_detection.py
+-> 1 passed
+
+npm run build
+-> built successfully
+
+HTTP smoke:
+POST http://127.0.0.1:8791/api/v1/ar/filter-detect
+-> mode=mock, detections[0].class_name=filter, image_width=640, image_height=480
+
+브라우저 확인:
+http://127.0.0.1:5173/ar-guide
+-> video element 1개, canvas 2개, AR 단계 텍스트 렌더링, console error 0건
+```
+
+DB 기준:
+
+```text
+DB 구조 변경 없음.
+SQLite careshot_ar_mock.db table_count=21 유지.
+신규 테이블/ALTER/DROP/CREATE 없음.
+
+주의:
+처음 백엔드를 일반 기동했을 때 기존 environment auto-refresh loop가 동작해 DB 파일 LastWriteTime이 갱신되었다.
+스키마는 변하지 않았다.
+DB 구조 변경 금지 조건은 table_count와 sqlite schema 기준으로 검증한다.
+환경 자동갱신 루프는 기존 런타임 기능이므로 임의로 비활성화하지 않는다.
+```
+
+남은 작업:
+
+```text
+1. 실제 filter 사진 100~200장 확보
+2. Roboflow filter bbox 라벨링
+3. YOLO 학습 후 03_AI로직/models/filter_detection/best.pt 배치
+4. mock_fallback 대신 실제 YOLO mode로 탐지 검증
+5. guide step별 target label/안전문구를 detection 상태와 더 정교하게 연결
 ```
 
 

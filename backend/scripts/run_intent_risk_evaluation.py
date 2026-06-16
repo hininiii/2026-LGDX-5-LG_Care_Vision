@@ -18,6 +18,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--product-type", default=None, help="Optional product_type filter.")
     parser.add_argument("--limit", type=int, default=None, help="Optional case limit for smoke checks.")
     parser.add_argument("--run-id", default=None, help="Optional deterministic run_id.")
+    parser.add_argument("--report-date", default=None, help="Report date for default output filenames, YYYY-MM-DD.")
+    parser.add_argument("--cases-path", default=None, help="Optional input evaluation cases JSON path.")
+    parser.add_argument("--results-path", default=None, help="Optional output per-case results JSON path.")
+    parser.add_argument("--report-json-path", default=None, help="Optional output report JSON path.")
+    parser.add_argument("--report-md-path", default=None, help="Optional output report markdown path.")
     return parser.parse_args()
 
 
@@ -29,6 +34,11 @@ def main() -> int:
             "product_type": args.product_type,
             "limit": args.limit,
             "run_id": args.run_id,
+            "report_date": args.report_date,
+            "cases_path": args.cases_path,
+            "results_path": args.results_path,
+            "report_json_path": args.report_json_path,
+            "report_md_path": args.report_md_path,
         }
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))

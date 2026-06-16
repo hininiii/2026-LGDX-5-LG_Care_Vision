@@ -41,6 +41,7 @@ class FakeEnvironmentRepository:
         self.cached = cached
         self.observations: list[dict[str, Any]] = []
         self.fetch_logs: list[dict[str, Any]] = []
+        self.current_observation_calls: list[tuple[str, str | None]] = []
         self.context = {
             "environment_id": "ENVCTX_TEST_001",
             "country": "India",
@@ -56,6 +57,7 @@ class FakeEnvironmentRepository:
         }
 
     def get_current_environment_observation(self, region: str, city: str | None = None) -> dict[str, Any] | None:
+        self.current_observation_calls.append((region, city))
         return self.cached
 
     def get_environment_context(self, region: str, city: str | None = None) -> dict[str, Any] | None:
@@ -122,6 +124,32 @@ def test_environment_adapter_refreshes_external_api_and_persists_observation() -
     assert repo.fetch_logs[0]["status"] == "success_external_api"
     assert repo.fetch_logs[0]["provider_id"] == "ENV_PROVIDER_OPENWEATHER"
     assert repo.observations[0]["payload"]["water_hardness_provider_id"] == "ENV_PROVIDER_WATER_HARDNESS_CONTEXT"
+
+
+def test_environment_adapter_normalizes_new_delhi_alias_before_cache_and_persist() -> None:
+    repo = FakeEnvironmentRepository()
+    provider = FakeProvider()
+    adapter = EnvironmentDataAdapter(repo, provider, providers={"ENV_PROVIDER_OPENMETEO": provider})
+
+    result = adapter.get_environment(
+        user_id="U001",
+        region="Delhi",
+        city="New Delhi",
+        product_type="air_conditioner",
+        provider_id="ENV_PROVIDER_OPENMETEO",
+        force_refresh=True,
+    )
+
+    assert repo.current_observation_calls == [("Delhi", "Delhi")]
+    assert result["normalized_location"] == {
+        "requested_region": "Delhi",
+        "requested_city": "New Delhi",
+        "region": "Delhi",
+        "city": "Delhi",
+    }
+    assert provider.calls == 1
+    assert repo.observations[0]["region"] == "Delhi"
+    assert repo.observations[0]["city"] == "Delhi"
 
 
 def test_openweather_provider_without_api_key_uses_fallback_cache(monkeypatch) -> None:

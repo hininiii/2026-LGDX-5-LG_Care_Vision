@@ -74,7 +74,7 @@ def _symptom_location_question(procedure: str | None) -> str:
     return {
         "noise_self_check": "소음이나 진동이 어디에서 느껴지나요? 실내기 본체, 송풍구, 앞 커버, 배수부, 전원부 중 가까운 위치를 알려주세요.",
         "no_cooling_self_check": "냉방이 잘 안 되는 상황을 조금 더 알려주세요. 바람은 나오는지, 바람이 약한지, 송풍구 쪽 문제인지 알려주세요.",
-        "power_troubleshooting": "전원 문제가 어디에서 보이나요? 플러그, 콘센트, 차단기, 표시창, 리모컨 중 가까운 위치를 알려주세요.",
+        "power_troubleshooting": "전원이 꺼지는 상황을 조금 더 알려주세요. 플러그, 콘센트, 차단기, 표시창, 리모컨 중 어디에서 이상이 보이나요?",
         "odor_self_check": "냄새가 어디에서 주로 나나요? 송풍구, 필터, 실내기 본체, 배수부 중 가까운 위치를 알려주세요.",
         "water_leak_monsoon": "물이 어디에서 새나요? 실내기 본체, 송풍구, 배수 호스, 실외기 주변 중 가까운 위치를 알려주세요.",
     }.get(str(procedure), "증상이 나타나는 위치나 상황을 조금 더 알려주세요.")
@@ -97,7 +97,13 @@ def _localized_chat_message(raw: dict[str, Any], fallback: str) -> str:
         if first_missing == "environment_context":
             return "현재 실내가 습하거나 먼지가 많거나 비/장마 영향을 받고 있나요?"
         if first_missing == "recent_diagnosis":
-            return "ThinQ 진단이나 표시창에 에러, 전원 꺼짐, 차단기 관련 신호가 보이나요?"
+            return "ThinQ 진단이나 표시창에 에러 코드가 보이나요? 차단기가 내려가거나 전원이 반복해서 꺼지는 신호가 있으면 함께 알려주세요."
+        if first_missing == "symptom_type":
+            return (
+                decision.get("next_question")
+                or state.get("next_question")
+                or "어떤 문제가 있나요? 냉방/바람, 소음/진동, 냄새, 물샘, 전원 문제, 필터 관리 중 가까운 증상을 알려주세요."
+            )
         return "안전한 안내를 위해 증상을 한 가지만 더 알려주세요."
 
     if decision.get("service_flow_type") == "expert_as" or decision.get("risk_level") == "high":
@@ -114,6 +120,96 @@ def _localized_chat_message(raw: dict[str, Any], fallback: str) -> str:
     if chatbot.get("guide_options"):
         return f"공식 근거에 맞는 {procedure_label} 안내를 준비했어요. 안전 규칙상 허용되는 단계만 보여드릴게요."
     return fallback
+
+
+def _frontend_card_policy(raw: dict[str, Any]) -> dict[str, Any]:
+    chatbot = raw.get("chatbot_engine") or {}
+    analysis = raw.get("analysis") or {}
+    decision = analysis.get("decision_result") or {}
+    state = chatbot.get("conversation_state") or {}
+    guide_options = chatbot.get("guide_options")
+    missing_slots = _json_list(state.get("missing_slots") or decision.get("missing_slots"))
+    service_flow_type = decision.get("service_flow_type")
+    risk_level = decision.get("risk_level")
+    decision_action = decision.get("decision_action")
+    blocked_reason = decision.get("blocked_reason")
+    ar_guide_allowed = bool(decision.get("ar_guide_allowed"))
+    official_match = analysis.get("official_asset_match") or {}
+    official_match_status = official_match.get("match_status")
+    no_match_actions = {"official_match_review_needed", "official_evidence_required"}
+
+    if missing_slots:
+        return {
+            "card_type": "clarification",
+            "title": "추가 확인 필요",
+            "description": "안전한 안내를 위해 고객 답변을 먼저 확인합니다.",
+            "primary_action": "answer_question",
+            "show_manual_button": False,
+            "show_ar_button": False,
+            "show_service_button": False,
+            "reason": "missing_slots",
+        }
+
+    if service_flow_type == "expert_as" or risk_level == "high":
+        return {
+            "card_type": "service_route",
+            "title": "전문 A/S 연결 권장",
+            "description": "위험 신호가 있어 AR 자가 안내를 차단하고 서비스센터 연결만 제공합니다.",
+            "primary_action": "service_center",
+            "show_manual_button": False,
+            "show_ar_button": False,
+            "show_service_button": True,
+            "reason": blocked_reason or "high_risk",
+        }
+
+    if decision_action in no_match_actions or (
+        official_match_status is not None and official_match_status != "verified"
+    ):
+        return {
+            "card_type": "safety_block",
+            "title": "공식자료 확인 불가",
+            "description": "공식 근거가 확인되지 않아 AR 자가 안내를 시작하지 않습니다.",
+            "primary_action": "service_center",
+            "show_manual_button": False,
+            "show_ar_button": False,
+            "show_service_button": True,
+            "reason": blocked_reason or decision_action or "official_no_match",
+        }
+
+    if guide_options and service_flow_type in {"self_care", "self_as"} and risk_level in {"low", "medium"}:
+        return {
+            "card_type": "ar_start",
+            "title": "AR 가이드 시작 가능",
+            "description": "공식 근거가 확인된 Low/Medium 자가점검 또는 관리 안내입니다.",
+            "primary_action": "start_ar",
+            "show_manual_button": True,
+            "show_ar_button": True,
+            "show_service_button": False,
+            "reason": "official_guide_options_ready",
+        }
+
+    if guide_options:
+        return {
+            "card_type": "manual_only",
+            "title": "매뉴얼 가이드 제공",
+            "description": "공식 자료 기반 매뉴얼 안내를 먼저 제공합니다.",
+            "primary_action": "manual_guide",
+            "show_manual_button": True,
+            "show_ar_button": ar_guide_allowed,
+            "show_service_button": False,
+            "reason": "manual_guide_options_ready",
+        }
+
+    return {
+        "card_type": "none",
+        "title": "",
+        "description": "",
+        "primary_action": None,
+        "show_manual_button": False,
+        "show_ar_button": False,
+        "show_service_button": False,
+        "reason": "no_display_card",
+    }
 
 
 def _frontend_ai_chat_response(raw: dict[str, Any]) -> dict[str, Any]:
@@ -142,6 +238,7 @@ def _frontend_ai_chat_response(raw: dict[str, Any]) -> dict[str, Any]:
         "needs_clarification": bool(missing_slots),
         "missing_slots": missing_slots,
         "guide_options": guide_options,
+        "card_policy": _frontend_card_policy(raw),
         "analysis": analysis,
         "raw": raw,
     }

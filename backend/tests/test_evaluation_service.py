@@ -38,6 +38,9 @@ def test_evaluation_service_runs_subset_and_writes_artifacts(tmp_path) -> None:
     assert "action_accuracy" in report["metrics"]
     assert "high_risk_recall" in report["metrics"]
     assert "no_match_precision" in report["metrics"]
+    assert "failed_case_count" in report["metrics"]
+    assert summary["report_date"]
+    assert summary["legacy_results_path"]
     assert {"expected_intent", "predicted_intent", "error_type"}.issubset(results[0])
 
 

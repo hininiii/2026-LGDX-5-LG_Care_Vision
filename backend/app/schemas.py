@@ -65,6 +65,33 @@ class ARSessionUpdateRequest(APIModel):
     clicked_as: bool | None = None
 
 
+class ARFilterDetectionRequest(APIModel):
+    image_data_url: str | None = None
+    image_base64: str | None = None
+    image_width: int = Field(default=640, ge=1)
+    image_height: int = Field(default=480, ge=1)
+    confidence_threshold: float = Field(default=0.25, ge=0, le=1)
+    mock_fallback: bool = True
+
+
+class ARFilterDetectionBox(APIModel):
+    x: float
+    y: float
+    width: float
+    height: float
+    confidence: float
+    class_name: str = "filter"
+
+
+class ARFilterDetectionResponse(APIModel):
+    model_loaded: bool
+    mode: Literal["yolo", "mock", "none"]
+    image_width: int
+    image_height: int
+    detections: list[ARFilterDetectionBox] = Field(default_factory=list)
+    message: str | None = None
+
+
 class EnvironmentRefreshRequest(APIModel):
     provider_id: str = "ENV_PROVIDER_OPENWEATHER"
     user_id: str | None = "U001"
@@ -83,7 +110,7 @@ class EnvironmentRefreshRequest(APIModel):
         ]
     )
     force_refresh: bool = True
-    cache_ttl_minutes: int = Field(default=180, ge=0, le=1440)
+    cache_ttl_minutes: int = Field(default=60, ge=0, le=1440)
 
 
 class CareRiskEvaluateRequest(APIModel):
@@ -92,7 +119,7 @@ class CareRiskEvaluateRequest(APIModel):
     procedure_type: str | None = None
     region: str | None = None
     city: str | None = None
-    cache_ttl_minutes: int = Field(default=180, ge=0, le=1440)
+    cache_ttl_minutes: int = Field(default=60, ge=0, le=1440)
     force_environment_refresh: bool = False
 
 
@@ -100,6 +127,11 @@ class IntentRiskEvaluationRequest(APIModel):
     product_type: str | None = None
     limit: int | None = Field(default=None, ge=1)
     run_id: str | None = None
+    report_date: str | None = None
+    cases_path: str | None = None
+    results_path: str | None = None
+    report_json_path: str | None = None
+    report_md_path: str | None = None
 
 
 class GuideCompleteRequest(APIModel):

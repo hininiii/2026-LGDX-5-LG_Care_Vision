@@ -24,6 +24,21 @@ class MissingAPIKeyError(EnvironmentProviderError):
     pass
 
 
+CITY_ALIASES: dict[tuple[str, str], tuple[str, str]] = {
+    ("delhi", "new delhi"): ("Delhi", "Delhi"),
+    ("delhi", "뉴델리"): ("Delhi", "Delhi"),
+}
+
+
+def normalize_region_city(region: str, city: str | None) -> tuple[str, str | None]:
+    normalized_region = (region or "").strip()
+    normalized_city = city.strip() if isinstance(city, str) else city
+    alias_key = (normalized_region.lower(), (normalized_city or "").lower())
+    if alias_key in CITY_ALIASES:
+        return CITY_ALIASES[alias_key]
+    return normalized_region, normalized_city
+
+
 class APIKeyManager:
     ENV_BY_PROVIDER = {
         "ENV_PROVIDER_OPENWEATHER": "OPENWEATHER_API_KEY",
@@ -311,8 +326,11 @@ class EnvironmentDataAdapter:
         requested_metrics: list[str] | None = None,
         provider_id: str | None = None,
         force_refresh: bool = False,
-        cache_ttl_minutes: int = 180,
+        cache_ttl_minutes: int = 60,
     ) -> dict[str, Any]:
+        requested_region = region
+        requested_city = city
+        region, city = normalize_region_city(region, city)
         metrics = requested_metrics or [
             "temperature",
             "humidity",
@@ -330,6 +348,12 @@ class EnvironmentDataAdapter:
                 "cache_ttl_minutes": cache_ttl_minutes,
                 "observation": self.with_fallback_water_hardness(cached, region, city),
                 "fetch_log": None,
+                "normalized_location": {
+                    "requested_region": requested_region,
+                    "requested_city": requested_city,
+                    "region": region,
+                    "city": city,
+                },
             }
 
         runtime_provider = self.select_provider(provider_id)
@@ -352,6 +376,8 @@ class EnvironmentDataAdapter:
                         "requested_metrics": metrics,
                         "runtime_provider_id": runtime_provider.provider_id,
                         "observation_id": observation["observation_id"],
+                        "requested_region": requested_region,
+                        "requested_city": requested_city,
                     },
                 }
             )
@@ -362,6 +388,12 @@ class EnvironmentDataAdapter:
                 "cache_ttl_minutes": cache_ttl_minutes,
                 "observation": observation,
                 "fetch_log": log,
+                "normalized_location": {
+                    "requested_region": requested_region,
+                    "requested_city": requested_city,
+                    "region": region,
+                    "city": city,
+                },
             }
         except Exception as exc:
             fallback = self.fallback_observation(region=region, city=city)
@@ -379,6 +411,8 @@ class EnvironmentDataAdapter:
                         "product_type": product_type,
                         "requested_metrics": metrics,
                         "runtime_provider_id": runtime_provider.provider_id,
+                        "requested_region": requested_region,
+                        "requested_city": requested_city,
                     },
                 }
             )
@@ -389,6 +423,12 @@ class EnvironmentDataAdapter:
                 "observation": fallback,
                 "fetch_log": log,
                 "error": str(exc),
+                "normalized_location": {
+                    "requested_region": requested_region,
+                    "requested_city": requested_city,
+                    "region": region,
+                    "city": city,
+                },
             }
 
     def select_provider(self, provider_id: str | None) -> EnvironmentProvider:

@@ -18,7 +18,7 @@ def get_current_environment(
     product_type: str | None = None,
     provider_id: str | None = None,
     requested_metrics: list[str] | None = Query(default=None),
-    cache_ttl_minutes: int = 180,
+    cache_ttl_minutes: int = 60,
     force_refresh: bool = False,
     service: CareShotBackendService = Depends(get_service),
 ) -> dict:

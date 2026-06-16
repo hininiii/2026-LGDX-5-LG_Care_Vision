@@ -86,10 +86,32 @@ class ChatbotEngine:
             "power",
             "turns off",
             "no power",
+            "unstable",
             "꺼",
+            "꺼져",
+            "자주 꺼",
             "전원",
+            "불안정",
         ],
     }
+
+    GENERIC_LOW_INFO_PATTERNS = [
+        "weird",
+        "strange",
+        "not working right",
+        "problem",
+        "issue",
+        "broken",
+        "이상",
+        "이상해",
+        "이상해요",
+        "문제",
+        "문제가",
+        "고장",
+        "고장난",
+        "작동이 이상",
+        "상태가 이상",
+    ]
 
     RISK_KEYWORDS = {
         "burning_smell": ["burning", "burnt", "타는", "탄내"],
@@ -411,6 +433,8 @@ class ChatbotEngine:
             return []
         if symptom_type == "power_issue" and not continuing_collection and "suddenly turns off" in normalized:
             return []
+        if not symptom_type and self.is_generic_low_info_inquiry(normalized):
+            return ["symptom_type"]
         if not symptom_type and not ambiguous_kind and not continuing_collection:
             return []
 
@@ -463,7 +487,7 @@ class ChatbotEngine:
         symptom_type = collected_slots.get("symptom_type")
         first_missing = missing_slots[0]
         if first_missing == "symptom_type":
-            return "What exact symptom do you see: smell, water leak, weak airflow, noise, power issue, or filter care?"
+            return "어떤 문제가 있나요? 냉방/바람, 소음/진동, 냄새, 물샘, 전원 문제, 필터 관리 중 가까운 증상을 알려주세요."
         if first_missing == "risk_signal":
             if symptom_type == "odor":
                 return "Does it smell like burning or gas, or is it more like mold/dust?"
@@ -491,6 +515,13 @@ class ChatbotEngine:
             if any(pattern in normalized for pattern in patterns):
                 return kind
         return None
+
+    def is_generic_low_info_inquiry(self, normalized: str) -> bool:
+        if not normalized:
+            return False
+        if self.detect_risk_signal(normalized) or self.detect_symptom_type(normalized):
+            return False
+        return any(pattern in normalized for pattern in self.GENERIC_LOW_INFO_PATTERNS)
 
     def detect_risk_signal(self, normalized: str) -> str | None:
         for signal, patterns in self.RISK_KEYWORDS.items():
@@ -628,7 +659,11 @@ class ChatbotEngine:
             {
                 "inquiry_id": inquiry["inquiry_id"],
                 "symptom": procedure.get("procedure_type"),
-                "intent_type": decision.get("service_flow_type") or intent.get("service_flow_type"),
+                "intent_type": (
+                    decision.get("service_flow_type")
+                    or intent.get("service_flow_type")
+                    or "self_as"
+                ),
                 "risk_level": decision.get("risk_level"),
                 "recommended_guide_id": self.recommended_guide_id(analysis),
                 "safety_reason": self.safety_reason(analysis),
@@ -656,6 +691,11 @@ class ChatbotEngine:
             procedure["primary_procedure"] = procedure_type
             decision["service_flow_type"] = service_flow_type
             intent["service_flow_type"] = service_flow_type
+        elif "symptom_type" in turn_context["missing_slots"]:
+            procedure.pop("procedure_type", None)
+            procedure.pop("primary_procedure", None)
+            decision.pop("service_flow_type", None)
+            intent.pop("service_flow_type", None)
         decision["decision_action"] = "ask_clarification"
         decision["ar_guide_allowed"] = False
         decision["generation_allowed"] = False
