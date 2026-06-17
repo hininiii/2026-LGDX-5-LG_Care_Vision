@@ -32,13 +32,19 @@ export const router = createBrowserRouter([
   },
   {
     path: "/ar-guide",
-    Component: ARGuide,
+    element: (
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div className="relative h-screen w-full max-w-[390px] overflow-hidden">
+          <ARGuide />
+        </div>
+      </div>
+    ),
   },
   {
     path: "/chat",
     element: (
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="relative h-screen w-full max-w-[390px] bg-white">
+        <div className="relative h-screen w-full max-w-[390px] overflow-hidden">
           <Chat />
         </div>
       </div>
