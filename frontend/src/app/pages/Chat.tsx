@@ -1,7 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+﻿import { useState, useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router";
-import { ChevronLeft, Send, Paperclip } from "lucide-react";
+import { ChevronLeft, Send, Paperclip, Lightbulb, ClipboardList, Wrench, CircleHelp } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import aiAlertVideo from "../../imports/AS-Q24ENXE_filter_cleaning_MVP_hyperframes.mp4";
+import lgGif from "../../imports/LG______-1.gif";
 import {
   getAllProductTypes,
   getAvailableDates,
@@ -129,6 +131,7 @@ const guideVideo = (guideOptions?: ChatGuideOptions) => {
 export function Chat() {
   const navigate = useNavigate();
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const problemMsgRef = useRef<HTMLDivElement>(null);
 
   const getInitialMessages = (): Message[] => {
     LEGACY_CHAT_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
@@ -154,6 +157,59 @@ export function Chat() {
   const [serviceInfo, setServiceInfo] = useState<Partial<ServiceInfo>>({});
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [serviceCompleted, setServiceCompleted] = useState(false);
+  const [gifPop, setGifPop] = useState(false);
+  const [uiPhase, setUiPhase] = useState<"initial" | "selecting" | "selecting-type" | "pending-start" | "morphing">("initial");
+  const [floatingChips, setFloatingChips] = useState<string[]>([]);
+  const [selectingProducts, setSelectingProducts] = useState(false);
+  const [selectingTypes, setSelectingTypes] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<string>("");
+
+  const triggerGifPop = useCallback(() => {
+    setGifPop(true);
+    setTimeout(() => setGifPop(false), 700);
+  }, []);
+
+  const handleInitialSelect = (label: string) => {
+    setFloatingChips([label]);
+    setUiPhase("selecting");
+    setSelectingProducts(false);
+    setSelectingTypes(false);
+    if (label === "제품 문제 해결") setFlow("trouble");
+    else if (label === "가전 관리 방법") setFlow("care");
+    else if (label === "서비스 센터 연결") setFlow("service");
+    setTimeout(() => setSelectingProducts(true), 420);
+  };
+
+  const handleProductSelect = (product: string, mainFlow: string) => {
+    setFloatingChips([mainFlow, product]);
+    setSelectedProduct(product);
+    setSelectingProducts(false);
+    setUiPhase("selecting-type");
+    setTimeout(() => setSelectingTypes(true), 420);
+  };
+
+  const handleTypeSelect = (type: string, mainFlow: string, product: string) => {
+    setFloatingChips([mainFlow, product, type]);
+    setSelectingTypes(false);
+    setUiPhase("pending-start");
+  };
+
+  const handleStartChat = () => {
+    const [mainFlow, product, type] = floatingChips;
+    setUiPhase("morphing");
+    setTimeout(() => {
+      handleOptionClick(mainFlow);
+      setTimeout(() => handleOptionClick(product), 750);
+      setTimeout(() => {
+        handleOptionClick(type);
+        setTimeout(() => {
+          problemMsgRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+        }, 700);
+      }, 1500);
+    }, 520);
+  };
+
+  const isInitial = messages.length === 1 && uiPhase !== "morphing";
 
   const handleBack = () => {
     if (serviceCompleted) {
@@ -331,6 +387,7 @@ export function Chat() {
     const text = inputValue.trim();
     setInputValue("");
     addUserMessage(text);
+    triggerGifPop();
 
     // 서비스 센터 정보 수집 중 (issue 단계만 텍스트 입력)
     if (serviceStep === "issue") {
@@ -355,6 +412,7 @@ export function Chat() {
 
   const handleOptionClick = (option: string) => {
     addUserMessage(option);
+    triggerGifPop();
 
     setTimeout(async () => {
       // ── 최상위 메뉴 ──
@@ -480,6 +538,7 @@ export function Chat() {
   const handleModelSelect = (device: ChatDeviceOption) => {
     addUserMessage(`${device.name} (${device.model})`);
     setServiceInfo((prev) => ({ ...prev, model: `${device.name} — ${device.model}` }));
+    triggerGifPop();
     setChatContext((prev) => ({
       ...prev,
       deviceId: device.id,
@@ -505,12 +564,84 @@ export function Chat() {
 
   return (
     <div
-      className="h-full flex flex-col w-full"
-      style={{
-        backgroundImage:
-          "linear-gradient(rgba(192, 255, 218, 0.2) 0%, rgba(255, 141, 27, 0.2) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)",
-      }}
+      className="relative h-full w-full overflow-hidden"
+      style={{ background: "linear-gradient(160deg, #d6f2e8 0%, #f0f8e8 30%, #fce8f0 65%, #ede8f8 100%)" }}
     >
+      <svg style={{ position: "absolute", width: 0, height: 0 }} aria-hidden="true">
+        <defs>
+          <filter id="remove-white" colorInterpolationFilters="sRGB" x="0" y="0" width="100%" height="100%">
+            <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -40 -40 -40 120 -20" />
+          </filter>
+        </defs>
+      </svg>
+
+      <motion.div
+        className="absolute inset-0 flex flex-col"
+        animate={{ y: isInitial ? 0 : "-18%", opacity: isInitial ? 1 : 0, scale: isInitial ? 1 : 0.94, filter: isInitial ? "blur(0px)" : "blur(12px)" }}
+        transition={{ duration: 1.1, ease: [0.4, 0.0, 0.15, 1] }}
+        style={{ pointerEvents: isInitial ? "auto" : "none" }}
+      >
+        <div className="px-[25px] pt-[44px] pb-0 flex items-center gap-2">
+          <button onClick={handleBack} className="p-1 -ml-1">
+            <ChevronLeft size={22} className="text-[#555]" strokeWidth={2} />
+          </button>
+          <span className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#222]">LG Chat</span>
+        </div>
+
+        <div className="px-[28px] pt-[24px]">
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[22px] text-[#222] leading-[1.35] tracking-[-0.4px]">
+            {uiPhase === "initial" && <>안녕하세요!<br /><span style={{ color: "#5db88a" }}>무엇을 도와드릴까요?</span></>}
+            {uiPhase === "selecting" && <>제품을 <span style={{ color: "#5db88a" }}>선택</span>해주세요</>}
+            {uiPhase === "selecting-type" && <>종류를 <span style={{ color: "#5db88a" }}>선택</span>해주세요</>}
+            {uiPhase === "pending-start" && <>선택을 <span style={{ color: "#5db88a" }}>완료</span>했어요!</>}
+          </p>
+        </div>
+
+        <motion.div className="flex items-center justify-center" animate={{ flex: uiPhase === "initial" ? 1 : 0.35 }} transition={{ duration: 0.65 }}>
+          <motion.div animate={{ width: uiPhase === "initial" ? 230 : 100, height: uiPhase === "initial" ? 230 : 100, y: [0, -10, 0], scale: gifPop ? 1.08 : 1 }} transition={{ y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }, scale: { duration: 0.2 } }} style={{ position: "relative", isolation: "isolate" }}>
+            <div style={{ position: "absolute", inset: 10, borderRadius: "50%", background: "radial-gradient(circle at 40% 35%, #d4f7d4 0%, #b8f0d8 20%, #c8f0f8 40%, #e8d8f8 65%, #f8d8ec 85%)", boxShadow: "0 0 40px 12px rgba(180,240,200,0.55), 0 0 80px 24px rgba(220,180,255,0.30)", filter: "blur(2px)" }} />
+            <img src={lgGif} alt="LG AI" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", filter: "url(#remove-white)" }} />
+          </motion.div>
+        </motion.div>
+
+        <div className="px-[18px] pb-4">
+          {floatingChips.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              {floatingChips.map((chip, i) => (
+                <motion.div key={`${chip}-${i}`} initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.09 }} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(155,142,246,0.4)", boxShadow: "0 4px 12px rgba(155,142,246,0.2)" }}>
+                  <span className="text-[11px]">✓</span><span className="font-['Pretendard:SemiBold',sans-serif] text-[12px] text-[#9b8ef6]">{chip}</span>
+                </motion.div>
+              ))}
+              <button onClick={() => { setUiPhase("initial"); setFloatingChips([]); setSelectingProducts(false); setSelectingTypes(false); setFlow(null); }} className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(155,142,246,0.4)" }}>
+                <ChevronLeft size={14} className="text-[#9b8ef6]" strokeWidth={2.5} />
+              </button>
+            </div>
+          )}
+
+          {uiPhase === "initial" && (
+            <div className="grid grid-cols-2 gap-2 mb-3">
+              {[
+                { icon: <Wrench size={15} />, label: "제품 문제 해결", color: "#5db88a" },
+                { icon: <Lightbulb size={15} />, label: "가전 관리 방법", color: "#5ba8d8" },
+                { icon: <ClipboardList size={15} />, label: "서비스 센터 연결", color: "#d87ab0" },
+                { icon: <CircleHelp size={15} />, label: "자주 묻는 질문", color: "#9b8ef6" },
+              ].map((item, i) => (
+                <motion.button key={item.label} onClick={() => i < 3 && handleInitialSelect(item.label)} whileTap={{ scale: 0.96 }} className="flex items-center gap-2 px-4 py-3 rounded-[14px] text-left" style={{ background: "rgba(255,255,255,0.62)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.88)", boxShadow: "0 4px 14px rgba(0,0,0,0.05)" }}>
+                  <span style={{ color: item.color }}>{item.icon}</span><p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#333]">{item.label}</p>
+                </motion.button>
+              ))}
+            </div>
+          )}
+
+          {uiPhase === "selecting" && selectingProducts && <div className="grid grid-cols-2 gap-2 mb-3">{PRODUCTS.map((product, i) => <motion.button key={product} initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.09 }} onClick={() => handleProductSelect(product, floatingChips[0])} whileTap={{ scale: 0.96 }} className="py-3 px-4 rounded-[14px] text-left font-['Pretendard:Medium',sans-serif] text-[13px] text-[#333]" style={{ background: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.9)", boxShadow: "0 3px 10px rgba(0,0,0,0.06)" }}>{product}</motion.button>)}</div>}
+
+          {uiPhase === "selecting-type" && selectingTypes && <div className="grid grid-cols-2 gap-2 mb-3">{getProductTypes(selectedProduct).map((type, i) => <motion.button key={type} initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.09 }} onClick={() => handleTypeSelect(type, floatingChips[0], floatingChips[1])} whileTap={{ scale: 0.96 }} className="py-3 px-4 rounded-[14px] text-left font-['Pretendard:Medium',sans-serif] text-[13px] text-[#333]" style={{ background: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.9)", boxShadow: "0 3px 10px rgba(0,0,0,0.06)" }}>{type}</motion.button>)}</div>}
+
+          {uiPhase === "pending-start" && <motion.button initial={{ y: 12, opacity: 0, scale: 0.96 }} animate={{ y: 0, opacity: 1, scale: 1 }} onClick={handleStartChat} whileTap={{ scale: 0.97 }} className="w-full py-[15px] mt-[15px] rounded-[28px] font-['Pretendard:SemiBold',sans-serif] text-[15px] text-white" style={{ background: "linear-gradient(135deg, #9b8ef6 0%, #6b8ef6 100%)", boxShadow: "0 6px 24px rgba(155,142,246,0.38), inset 0 1px 0 rgba(255,255,255,0.25)" }}>채팅을 시작할까요?</motion.button>}
+        </div>
+      </motion.div>
+
+      <motion.div className="absolute inset-0 flex flex-col" animate={{ y: isInitial ? "12%" : 0, opacity: isInitial ? 0 : 1, scale: isInitial ? 0.96 : 1, filter: isInitial ? "blur(10px)" : "blur(0px)" }} transition={{ duration: 1.1, ease: [0.25, 0.0, 0.15, 1], delay: isInitial ? 0 : 0.18 }} style={{ pointerEvents: isInitial ? "none" : "auto" }}>
       {/* 헤더 */}
       <div className="px-[25px] pt-[40px] pb-3">
         <div className="flex items-center gap-2">
@@ -526,7 +657,7 @@ export function Chat() {
       {/* 메시지 영역 */}
       <div className="flex-1 overflow-y-auto px-[20px] py-6 space-y-4">
         {messages.map((message, index) => (
-          <div key={message.id} className="space-y-1">
+          <div key={message.id} className="space-y-1" ref={message.problemOptions ? problemMsgRef : undefined}>
             {message.type === "bot" ? (
               <>
                 <div className="flex justify-start">
@@ -590,7 +721,11 @@ export function Chat() {
                     {message.guideButtons.includes("manual") && (
                       <button
                         onClick={() => {
-                          if (!message.guideOptions) handleOptionClick("매뉴얼 가이드");
+                          if (message.guideOptions) {
+                            navigate("/self-care", { state: { tab: "manual", guideOptions: message.guideOptions } });
+                            return;
+                          }
+                          handleOptionClick("매뉴얼 가이드");
                         }}
                         className="flex-1 bg-[#ff4c49] text-white rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#e63d3a] transition-colors shadow-sm"
                       >
@@ -831,6 +966,8 @@ export function Chat() {
           </button>
         </div>
       </div>
+      </motion.div>
     </div>
   );
 }
+
