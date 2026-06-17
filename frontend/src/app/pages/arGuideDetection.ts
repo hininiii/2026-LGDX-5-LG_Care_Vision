@@ -10,6 +10,8 @@ export interface DetectionBox {
 export interface FilterDetectionResponse {
   model_loaded: boolean;
   mode: "yolo" | "mock" | "none";
+  model_profile?: string | null;
+  model_path?: string | null;
   image_width: number;
   image_height: number;
   detections: DetectionBox[];
@@ -65,17 +67,4 @@ export const getObjectCoverTransform = (
     scaleX: containerWidth / sourceWidth,
     scaleY: renderedHeight / sourceHeight,
   };
-};
-
-export const getDetectionGuideText = (
-  cameraState: CameraState,
-  detectionMode: DetectionMode,
-  lastDetection: DetectionBox | null,
-) => {
-  if (cameraState === "denied") return "카메라 권한을 허용하면 필터 위치 안내가 표시됩니다.";
-  if (cameraState === "loading") return "카메라 화면을 준비하고 있습니다.";
-  if (!lastDetection) return "필터가 화면 중앙에 보이도록 에어컨을 비춰주세요.";
-  if (detectionMode === "mock") return "예비 위치 표시 중입니다. best.pt 연결 후 실제 탐지로 전환됩니다.";
-  if (detectionMode === "yolo") return "탐지된 필터 위치를 기준으로 현재 단계를 진행하세요.";
-  return "탐지 서버 연결을 확인하고 있습니다.";
 };

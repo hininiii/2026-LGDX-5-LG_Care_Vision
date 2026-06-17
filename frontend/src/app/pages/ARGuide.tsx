@@ -1,10 +1,9 @@
 import { useNavigate, useLocation } from "react-router";
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, Camera, ScanSearch, ShieldCheck } from "lucide-react";
+import { ChevronLeft, Camera } from "lucide-react";
 import { API_BASE_URL } from "../api/client";
 import {
   getCaptureSizeFromDimensions,
-  getDetectionGuideText,
   getObjectCoverTransform,
   smoothBox,
   type DetectionBox,
@@ -20,6 +19,8 @@ interface ARGuideStep {
   desc: string;
   safety?: string;
   targetHint?: string;
+  targetClasses?: string[];
+  contextClasses?: string[];
 }
 
 interface ARGuideLocationState {
@@ -34,31 +35,37 @@ const defaultSteps: ARGuideStep[] = [
     title: "전원 차단",
     desc: "전원을 끄고 플러그를 뽑으세요.",
     safety: "전원이 완전히 꺼진 상태에서만 다음 단계로 이동하세요.",
-    targetHint: "전원 버튼 / 플러그",
+    targetHint: "에어컨 본체",
+    targetClasses: ["aircon"],
   },
   {
     title: "커버 열기",
     desc: "필터 커버를 천천히 들어 올리세요.",
     safety: "커버가 걸리면 억지로 당기지 말고 여닫힘 방향을 다시 확인하세요.",
-    targetHint: "전면 커버 상단",
+    targetHint: "에어컨 본체",
+    targetClasses: ["aircon"],
   },
   {
     title: "필터 분리",
     desc: "양쪽 잠금을 풀고 필터를 분리하세요.",
     safety: "표시된 필터 위치와 실제 손 위치가 맞는지 확인한 뒤 분리하세요.",
     targetHint: "필터 그물망",
+    targetClasses: ["filter"],
+    contextClasses: ["aircon"],
   },
   {
     title: "세척 및 건조",
     desc: "흐르는 물로 헹군 후 그늘에 말리세요.",
     safety: "젖은 필터는 완전히 건조한 뒤 재장착하세요.",
     targetHint: "분리한 필터",
+    targetClasses: ["filter"],
   },
   {
     title: "재장착",
     desc: "필터를 다시 끼우고 커버를 닫으세요.",
     safety: "필터 방향이 맞는지 확인하고 커버를 천천히 닫으세요.",
-    targetHint: "필터 삽입부",
+    targetHint: "에어컨 본체",
+    targetClasses: ["aircon"],
   },
 ];
 
@@ -66,16 +73,28 @@ const getCaptureSize = (video: HTMLVideoElement) => {
   return getCaptureSizeFromDimensions(video.videoWidth, video.videoHeight);
 };
 
-const getStepSafetyText = (step: ARGuideStep) =>
-  step.safety ?? "무리하게 분해하지 말고 이상하면 작업을 중단하세요.";
+const detectionLabelMap: Record<string, string> = {
+  filter: "필터",
+  aircon: "에어컨",
+  outlet: "토출구",
+};
 
-const getStepTargetText = (step: ARGuideStep) => step.targetHint ?? "필터 위치";
+const DETECTION_CONFIDENCE_THRESHOLD = 0.35;
+const DETECTION_JPEG_QUALITY = 0.85;
+const DETECTION_HOLD_MS = 1800;
+
+const getDetectionLabel = (detection: DetectionBox) =>
+  `${detectionLabelMap[detection.class_name] ?? detection.class_name} ${(
+    detection.confidence * 100
+  ).toFixed(0)}%`;
 
 export function ARGuide() {
   const navigate = useNavigate();
   const location = useLocation();
   const routeState = (location.state as ARGuideLocationState | null) ?? {};
   const from = routeState.from ?? "/self-care";
+  const procedureType = routeState.procedureType ?? "filter_cleaning";
+  const modelProfile = procedureType === "no_cooling_self_check" ? "self_as_no_cooling" : "self_care";
   const steps = routeState.guideSteps?.length ? routeState.guideSteps : defaultSteps;
   const [current, setCurrent] = useState(0);
   const [cameraState, setCameraState] = useState<CameraState>("loading");
@@ -86,10 +105,14 @@ export function ARGuide() {
   const overlayRef = useRef<HTMLCanvasElement | null>(null);
   const captureRef = useRef<HTMLCanvasElement | null>(null);
   const smoothedBoxRef = useRef<DetectionBox | null>(null);
+  const lastDetectionAtRef = useRef(0);
   const currentStep = steps[current];
-  const stepSafetyText = getStepSafetyText(currentStep);
-  const stepTargetText = getStepTargetText(currentStep);
-  const detectionGuideText = getDetectionGuideText(cameraState, detectionMode, lastDetection);
+
+  useEffect(() => {
+    setLastDetection(null);
+    smoothedBoxRef.current = null;
+    lastDetectionAtRef.current = 0;
+  }, [current]);
 
   useEffect(() => {
     let stream: MediaStream | null = null;
@@ -107,7 +130,7 @@ export function ARGuide() {
           await videoRef.current.play();
         }
         setCameraState("ready");
-        setStatusText("필터 위치 탐지 중");
+        setStatusText("확인 대상 탐지 중");
       } catch {
         setCameraState("denied");
         setStatusText("카메라 권한을 확인해주세요");
@@ -136,7 +159,7 @@ export function ARGuide() {
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
       ctx.drawImage(video, 0, 0, width, height);
-      const imageDataUrl = canvas.toDataURL("image/jpeg", 0.72);
+      const imageDataUrl = canvas.toDataURL("image/jpeg", DETECTION_JPEG_QUALITY);
 
       busy = true;
       try {
@@ -147,7 +170,11 @@ export function ARGuide() {
             image_data_url: imageDataUrl,
             image_width: width,
             image_height: height,
-            confidence_threshold: 0.25,
+            confidence_threshold: DETECTION_CONFIDENCE_THRESHOLD,
+            target_classes: steps[current].targetClasses ?? ["filter"],
+            require_context_classes: steps[current].contextClasses ?? null,
+            model_profile: modelProfile,
+            procedure_type: procedureType,
             mock_fallback: false,
           }),
         });
@@ -159,11 +186,20 @@ export function ARGuide() {
           const smoothed = smoothBox(smoothedBoxRef.current, detection);
           smoothedBoxRef.current = smoothed;
           setLastDetection(smoothed);
-          setStatusText(result.mode === "mock" ? "필터 위치 예비 표시" : "필터 위치 탐지됨");
+          lastDetectionAtRef.current = Date.now();
+          const detectedLabel = detectionLabelMap[detection.class_name] ?? "확인 대상";
+          setStatusText(result.mode === "mock" ? "확인 대상 예비 표시" : `${detectedLabel} 탐지됨`);
         } else {
-          setLastDetection(null);
-          smoothedBoxRef.current = null;
-          setStatusText("필터를 찾는 중");
+          const shouldHoldLastDetection =
+            smoothedBoxRef.current && Date.now() - lastDetectionAtRef.current <= DETECTION_HOLD_MS;
+          if (shouldHoldLastDetection) {
+            setLastDetection(smoothedBoxRef.current);
+            setStatusText("탐지 유지 중");
+          } else {
+            setLastDetection(null);
+            smoothedBoxRef.current = null;
+            setStatusText("탐지 대기");
+          }
         }
       } catch {
         setDetectionMode("none");
@@ -174,7 +210,7 @@ export function ARGuide() {
     }, 700);
 
     return () => window.clearInterval(interval);
-  }, [cameraState]);
+  }, [cameraState, current, steps, modelProfile, procedureType]);
 
   useEffect(() => {
     const canvas = overlayRef.current;
@@ -217,7 +253,7 @@ export function ARGuide() {
       ctx.fillStyle = "#fff";
       ctx.font = "12px sans-serif";
       ctx.fillText(
-        `필터 ${(lastDetection.confidence * 100).toFixed(0)}%`,
+        getDetectionLabel(lastDetection),
         visibleX + 8,
         Math.max(16, visibleY - 11),
       );
@@ -249,7 +285,6 @@ export function ARGuide() {
       navigate(from);
     }
   };
-
   return (
     <div className="min-h-screen w-full bg-black">
       <div className="w-full max-w-[390px] mx-auto min-h-screen relative flex flex-col">
@@ -292,12 +327,6 @@ export function ARGuide() {
             </div>
           )}
 
-          <div className="absolute left-4 right-4 top-4 rounded-lg bg-black/45 px-3 py-2 text-white backdrop-blur-sm">
-            <p className="font-['Pretendard:SemiBold',sans-serif] text-[12px]">{statusText}</p>
-            <p className="font-['Pretendard:Medium',sans-serif] text-[10px] text-white/65">
-              {detectionGuideText}
-            </p>
-          </div>
         </div>
 
         <div className="bg-white px-6 py-5">
@@ -310,26 +339,6 @@ export function ARGuide() {
           <p className="font-['Pretendard:Medium',sans-serif] text-[13px] text-[#666] mb-4">
             {currentStep.desc}
           </p>
-
-          <div className="mb-4 space-y-2 rounded-lg border border-[#f0e0d8] bg-[#fff8f4] px-3 py-3">
-            <div className="flex items-start gap-2">
-              <ScanSearch size={16} className="mt-[1px] shrink-0 text-[#F77B50]" />
-              <div>
-                <p className="font-['Pretendard:SemiBold',sans-serif] text-[12px] text-black">
-                  확인 위치: {stepTargetText}
-                </p>
-                <p className="font-['Pretendard:Medium',sans-serif] text-[11px] leading-[1.45] text-[#777]">
-                  {detectionGuideText}
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-2">
-              <ShieldCheck size={16} className="mt-[1px] shrink-0 text-[#2f8f5b]" />
-              <p className="font-['Pretendard:Medium',sans-serif] text-[11px] leading-[1.45] text-[#555]">
-                {stepSafetyText}
-              </p>
-            </div>
-          </div>
 
           <div className="flex gap-3">
             <button
