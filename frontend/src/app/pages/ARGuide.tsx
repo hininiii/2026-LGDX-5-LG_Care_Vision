@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from "react-router";
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, Camera, Volume2, VolumeX, Lightbulb, Check } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import arTitleLogo from "../../imports/ar-title.svg";
 
 const CHAT_STORAGE_KEY = "chat_messages_v20260618_transition_v2";
 
@@ -72,7 +73,9 @@ export function ARGuide() {
           <button onClick={goBack} className="-ml-1 flex h-9 w-9 items-center justify-start" aria-label="Go back">
             <ChevronLeft size={32} strokeWidth={1.9} className="text-[#35383B]" />
           </button>
-          <h1 className="text-[23px] font-semibold leading-none tracking-[-0.025em]">AR</h1>
+          <h1 className="flex h-[24px] items-center justify-center" aria-label="AR">
+            <img src={arTitleLogo} alt="" className="h-[17px] w-[30px]" />
+          </h1>
           <div className="w-9" />
         </header>
 

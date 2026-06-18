@@ -61,12 +61,12 @@ export function ProfileEdit() {
       <div className="pointer-events-none absolute -top-20 -left-16 w-72 h-72 rounded-full"
         style={{ background: "rgba(61,220,151,0.09)", filter: "blur(90px)" }} />
 
-      <div className="relative z-10 px-[18px] pt-[39px] pb-[20px] w-full max-w-[390px] mx-auto">
-        <div className="flex items-center gap-3 mb-6">
+      <div className="relative z-10 px-[18px] pt-[40px] pb-[20px] w-full max-w-[390px] mx-auto">
+        <div className="flex items-center gap-1 mb-5 -mx-[2px]">
           <button onClick={() => navigate("/settings")} className="p-1">
-            <ChevronLeft size={24} className="text-[#555]" />
+            <ChevronLeft size={22} className="text-[#555]" />
           </button>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111]">
+          <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-[15px]">
             Edit Profile
           </p>
         </div>
@@ -108,7 +108,10 @@ export function ProfileEdit() {
             });
           }}
           className="w-full text-white rounded-[15px] py-4 font-['Pretendard:SemiBold',sans-serif] text-[15px]"
-          style={{ background: "#FF6B6B" }}
+          style={{
+            background: "linear-gradient(135deg, #1DB87A 0%, #3DDC97 100%)",
+            boxShadow: "0 6px 22px rgba(29,184,122,0.28), inset 0 1px 0 rgba(255,255,255,0.28)",
+          }}
         >
           Save
         </button>
