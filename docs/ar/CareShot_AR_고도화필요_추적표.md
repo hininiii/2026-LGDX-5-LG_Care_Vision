@@ -42,7 +42,7 @@
 | RAG 데이터 구축 | 공식자료 chunk 1,890개 / embedding 1,890개 | 수행됨 / 실패 케이스 보정 후 재검증 통과 | FastAPI 전환 후 repository/API 검색 결과가 동일한지 회귀 검증 필요 |
 | Embedding/Vector DB | `official_document_embeddings`, JSONL vector index | 수행됨 / 1,890개 chunk와 embedding 연결 완료 | PostgreSQL + pgvector 전환 시 동일 top-k 결과 검증 필요 |
 | RAGService | RAGService v2, metadata strict filter, vector similarity, lexical fallback | 구현됨 / 40개 query 재검증 통과 | FastAPI endpoint, 로그 저장, API 오류 응답 표준화 필요 |
-| 다국어 / TTS | 영어 중심 AR step TTS 메타데이터, Web Speech fallback, Google Cloud TTS 직접 합성 endpoint | 구현됨 / 고도화 필요 | 힌디어/지역어 음성 정책, Supabase Storage mp3 캐시, 언어 선택 UI, 비용/캐시 운영 기준 보완 필요 |
+| 다국어 / TTS | 영어 중심 AR step TTS 메타데이터, Web Speech fallback, Google Cloud TTS 직접 합성 endpoint, runtime cache 기반 `audio_url` 생성 | 구현됨 / 고도화 필요 | 힌디어/지역어 음성 정책, Supabase Storage mp3 영구 저장, 언어 선택 UI, 비용/캐시 운영 기준 보완 필요 |
 | 안전검증 | High Risk keyword 차단 | 구현됨 / 고도화 필요 | 금지 부품/금지 action rule, 전기/냉매/PCB/내부 분해 차단, 고객 문구와 내부 로그 분리 |
 | QA | 일부 API/브라우저 수동 확인 | 검증 필요 | 정상 관리, 모호한 문의, Medium Risk, High Risk, 매칭 실패, 좌표 오차 시나리오 테스트 작성 |
 | 발표 산출물 | 로드맵/개발계획/README | 초안 작성 / 고도화 필요 | 아키텍처 다이어그램, 시연 시나리오, 최종 흐름 캡처, 제한사항/향후 확장 정리 |

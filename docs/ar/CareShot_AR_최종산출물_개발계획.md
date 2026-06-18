@@ -37,6 +37,14 @@
 - 회원가입 주소는 환경 API 조회와 `expert_as` 연결 주소의 기준이다.
 - 고객 선택 언어는 웹 UI, 챗봇, 공식 콘텐츠, AR 안내, TTS/자막에 반영한다.
 
+## 1.2 2026-06-19 TTS 단계별 음성 안내 상태
+
+- `POST /api/v1/tts/synthesize`: Google Cloud TTS 직접 mp3 합성 완료.
+- `POST /api/v1/tts/generate`: step 텍스트를 runtime cache mp3로 생성하고 `audio_url` 반환 완료.
+- `GET /api/v1/tts/audio/{cache_key}.mp3`: runtime cache mp3 재생 URL 제공 완료.
+- `GOOGLE_TTS_PREGENERATE=1`: guide step 응답에 `audio_url` 사전 부착 가능.
+- 현재 한계: Render runtime cache는 재시작/재배포 시 사라질 수 있으므로, 다음 단계에서 Supabase Storage 영구 저장으로 전환한다.
+
 ## 2. 최종 산출물 정의
 
 최종 산출물은 아래 8개 묶음으로 제출/발표 가능해야 한다.

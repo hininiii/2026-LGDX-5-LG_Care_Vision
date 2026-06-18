@@ -23,7 +23,7 @@ from .engines import CareRiskScoreEngine, DecisionEngineV2, PreventiveCareRecomm
 from .evaluation_service import EvaluationService
 from .llm_service import create_llm_service
 from .repositories import CareShotRepository, PostgreSQLRepositoryRegistry
-from .tts_service import google_tts_enabled
+from .tts_service import generate_google_tts_mp3_asset, google_tts_enabled, google_tts_pregenerate_enabled
 
 
 PART_LABELS = {
@@ -449,11 +449,7 @@ class CareShotBackendService:
                     "display_safety": copy.get("safety") or step.get("safety_message"),
                     "target_part_map": part_lookup.get(target_part),
                     "next_button_label": "완료" if step["step_order"] == len(guide_steps) else "다음 단계",
-                    "tts_enabled": bool(display_instruction),
-                    "tts_text": display_instruction,
-                    "tts_language_code": "en-IN",
-                    "tts_provider": "google_cloud_tts" if google_tts_enabled() else "web_speech",
-                    "audio_url": None,
+                    **self.tts_fields_for_step(display_instruction),
                 }
             )
 
@@ -1220,14 +1216,39 @@ class CareShotBackendService:
             {
                 "title": f"STEP {index}",
                 "text": step,
-                "tts_enabled": True,
-                "tts_text": step,
-                "tts_language_code": "en-IN",
-                "tts_provider": provider,
-                "audio_url": None,
+                **CareShotBackendService.tts_fields_for_step(step, provider=provider),
             }
             for index, step in enumerate(raw_steps, start=1)
         ]
+
+    @staticmethod
+    def tts_fields_for_step(
+        text: str | None,
+        *,
+        language_code: str = "en-IN",
+        provider: str | None = None,
+    ) -> dict[str, Any]:
+        tts_text = (text or "").strip()
+        selected_provider = provider or ("google_cloud_tts" if google_tts_enabled() else "web_speech")
+        audio_url = None
+        cache_key = None
+        if tts_text and google_tts_enabled() and google_tts_pregenerate_enabled():
+            try:
+                asset = generate_google_tts_mp3_asset(text=tts_text, language_code=language_code)
+                audio_url = asset.audio_url
+                cache_key = asset.cache_key
+                selected_provider = asset.provider
+            except Exception:
+                audio_url = None
+                cache_key = None
+        return {
+            "tts_enabled": bool(tts_text),
+            "tts_text": tts_text,
+            "tts_language_code": language_code,
+            "tts_provider": selected_provider,
+            "audio_url": audio_url,
+            "tts_cache_key": cache_key,
+        }
 
     @staticmethod
     def ar_guide_option(template: dict[str, Any]) -> dict[str, Any]:

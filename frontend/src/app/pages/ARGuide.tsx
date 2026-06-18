@@ -219,6 +219,12 @@ const getConfidenceThresholdForStep = (step: ARGuideStep | undefined) => {
   return DEFAULT_DETECTION_CONFIDENCE_THRESHOLD;
 };
 
+const resolveAudioUrl = (audioUrl: string) => {
+  if (!audioUrl.startsWith("/")) return audioUrl;
+  const apiOrigin = new URL(API_BASE_URL, window.location.origin).origin;
+  return `${apiOrigin}${audioUrl}`;
+};
+
 export function ARGuide() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -323,7 +329,7 @@ export function ARGuide() {
       if (currentStep.tts_provider === "google_cloud_tts" || currentStep.audio_url) {
         try {
           const audioUrl =
-            currentStep.audio_url ||
+            (currentStep.audio_url ? resolveAudioUrl(currentStep.audio_url) : "") ||
             URL.createObjectURL(
               await fetch(`${API_BASE_URL}/v1/tts/synthesize`, {
                 method: "POST",

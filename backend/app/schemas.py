@@ -41,6 +41,14 @@ class TTSSynthesizeRequest(APIModel):
     speaking_rate: float = Field(default=0.92, ge=0.25, le=4.0)
 
 
+class TTSGenerateResponse(APIModel):
+    audio_url: str
+    cache_key: str
+    provider: str = "google_cloud_tts"
+    cached: bool
+    content_type: str = "audio/mpeg"
+
+
 class ARPlanRequest(APIModel):
     analysis: dict[str, Any] | None = None
     user_id: str = "U001"
