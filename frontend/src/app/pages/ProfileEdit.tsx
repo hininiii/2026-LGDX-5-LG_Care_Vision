@@ -49,11 +49,11 @@ export function ProfileEdit() {
     setForm((prev) => ({ ...prev, [key]: value }));
 
   const fields: { key: keyof typeof form; label: string; type?: string; placeholder?: string }[] = [
-    { key: "email", label: "이메일", type: "email" },
-    { key: "password", label: "비밀번호", type: "password", placeholder: "변경할 비밀번호" },
-    { key: "name", label: "이름" },
-    { key: "phone", label: "전화번호" },
-    { key: "address", label: "주소" },
+    { key: "email", label: "Email", type: "email" },
+    { key: "password", label: "Password", type: "password", placeholder: "New password" },
+    { key: "name", label: "Name" },
+    { key: "phone", label: "Phone Number" },
+    { key: "address", label: "Address" },
   ];
 
   return (
@@ -67,7 +67,7 @@ export function ProfileEdit() {
             <ChevronLeft size={24} className="text-[#555]" />
           </button>
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111]">
-            개인정보 수정
+            Edit Profile
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export function ProfileEdit() {
         </div>
 
         <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888] mb-4 px-1">
-          주소는 홈 화면 날씨 정보 기준 지역으로 사용됩니다.
+          Your address is used as the reference location for home-screen weather information.
         </p>
 
         <button
@@ -110,7 +110,7 @@ export function ProfileEdit() {
           className="w-full text-white rounded-[15px] py-4 font-['Pretendard:SemiBold',sans-serif] text-[15px]"
           style={{ background: "#FF6B6B" }}
         >
-          저장
+          Save
         </button>
       </div>
     </div>

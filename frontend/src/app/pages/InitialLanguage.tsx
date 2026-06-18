@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { Check } from "lucide-react";
 
 const LANGUAGES = [
-  { code: "ko", name: "Korean", native: "한국어" },
+  { code: "ko", name: "Korean", native: "Korean" },
   { code: "en", name: "English", native: "English" },
   { code: "hi", name: "Hindi", native: "हिन्दी" },
   { code: "bn", name: "Bengali", native: "বাংলা" },
@@ -42,12 +42,12 @@ export function InitialLanguage() {
         <div className="relative z-10 px-[24px] pt-[64px] pb-[40px]">
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Shot</p>
           <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#888] mb-8">
-            가전 기기 케어 관리 서비스
+            Home Appliance Care Management Service
           </p>
 
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-2">언어 설정</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-2">Language Settings</p>
           <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888] mb-6">
-            서비스에 사용할 언어를 선택해주세요.
+            Please select the language you want to use for the service.
           </p>
 
           <div className="rounded-[20px] overflow-hidden mb-6" style={glass}>
@@ -82,7 +82,7 @@ export function InitialLanguage() {
               boxShadow: "0 8px 24px rgba(255,76,73,0.30)",
             }}
           >
-            시작하기
+            Get Started
           </button>
         </div>
       </div>

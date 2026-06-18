@@ -3,9 +3,9 @@ import { ChevronLeft, Snowflake, Thermometer, Wind } from "lucide-react";
 import imgImage6 from "../../imports/제품페이지관리/47f735f974d0900368394246ff236d4a45df2a58.png";
 
 const recentHistory = [
-  { id: "r1", type: "Self Care", title: "에어컨 필터 청소", date: "2일 전" },
-  { id: "r2", type: "Self A/S", title: "리모컨 페어링", date: "1주 전" },
-  { id: "r3", type: "Self Care", title: "실외기 외관 점검", date: "2주 전" },
+  { id: "r1", type: "Self Care", title: "Air Conditioner Filter Cleaning", date: "2 days ago" },
+  { id: "r2", type: "Self A/S", title: "Remote Pairing", date: "1 week ago" },
+  { id: "r3", type: "Self Care", title: "Outdoor Unit Exterior Check", date: "2 weeks ago" },
 ];
 
 const glass = {
@@ -32,7 +32,7 @@ export function DeviceDetail() {
   const asCount = 2;
 
   return (
-    <div className="relative min-h-full w-full bg-[#f7f9f8]">
+    <div className="relative min-h-full w-full overflow-x-hidden bg-[#f7f9f8]">
       <div
         className="pointer-events-none absolute -top-20 -left-16 w-72 h-72 rounded-full"
         style={{ background: "rgba(61,220,151,0.09)", filter: "blur(90px)" }}
@@ -48,32 +48,32 @@ export function DeviceDetail() {
             <ChevronLeft size={24} className="text-[#555]" />
           </button>
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111]">
-            제품 상세
+            Product Details
           </p>
         </div>
 
         <div className="rounded-[20px] p-5 mb-4" style={glass}>
           <div className="flex justify-center mb-4">
-            <img src={imgImage6} alt="에어컨" className="w-[200px] h-[100px] object-contain" />
+            <img src={imgImage6} alt="Air Conditioner" className="w-[200px] h-[100px] object-contain" />
           </div>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[18px] text-[#111] text-center mb-1">거실 에어컨</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[18px] text-[#111] text-center mb-1">Living Room Air Conditioner</p>
           <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888] text-center mb-4">
-            LG 휘센 벽걸이 · 제품 #{id}
+            LG Whisen Wall-mounted · Product #{id}
           </p>
           <div className="grid grid-cols-2 gap-2 pt-4" style={{ borderTop: "1px solid rgba(200,200,200,0.25)" }}>
             <div className="flex justify-between">
-              <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#999]">제품군</p>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[13px] text-[#111]">에어컨</p>
+              <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#999]">Product Type</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[13px] text-[#111]">Air Conditioner</p>
             </div>
             <div className="flex justify-between">
-              <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#999]">등록일</p>
+              <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#999]">Registered Date</p>
               <p className="font-['Pretendard:Medium',sans-serif] text-[13px] text-[#111]">2024.01.15</p>
             </div>
           </div>
         </div>
 
         <div className="rounded-[20px] p-5 mb-4" style={glass}>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-4">제품 상태</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-4">Product Status</p>
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-[14px] p-3 flex flex-col items-center gap-1" style={innerCard}>
               <div
@@ -82,8 +82,8 @@ export function DeviceDetail() {
               >
                 <Snowflake size={16} className="text-[#2060b0]" />
               </div>
-              <p className="font-['Pretendard:SemiBold',sans-serif] text-[14px] text-[#111]">냉방</p>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">모드</p>
+              <p className="font-['Pretendard:SemiBold',sans-serif] text-[14px] text-[#111]">Cooling</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">Mode</p>
             </div>
             <div className="rounded-[14px] p-3 flex flex-col items-center gap-1" style={innerCard}>
               <div
@@ -93,7 +93,7 @@ export function DeviceDetail() {
                 <Thermometer size={16} className="text-[#d97706]" />
               </div>
               <p className="font-['Pretendard:SemiBold',sans-serif] text-[14px] text-[#111]">23°</p>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">설정 온도</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">Set Temperature</p>
             </div>
             <div className="rounded-[14px] p-3 flex flex-col items-center gap-1" style={innerCard}>
               <div
@@ -102,14 +102,14 @@ export function DeviceDetail() {
               >
                 <Wind size={16} className="text-[#1DB87A]" />
               </div>
-              <p className="font-['Pretendard:SemiBold',sans-serif] text-[14px] text-[#111]">자동</p>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">바람 세기</p>
+              <p className="font-['Pretendard:SemiBold',sans-serif] text-[14px] text-[#111]">Auto</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">Fan Speed</p>
             </div>
           </div>
         </div>
 
         <div className="rounded-[20px] p-5 mb-4" style={glass}>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-4">관리 요약</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-4">Care Summary</p>
           <div className="grid grid-cols-2 gap-3 mb-1 px-1">
             <div
               className="rounded-[16px] overflow-hidden"
@@ -127,7 +127,7 @@ export function DeviceDetail() {
                   {careCount}
                 </span>
                 <div style={{ width: "40%", height: "1px", background: "rgba(22,163,74,0.25)", borderRadius: 99 }} />
-                <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px]" style={{ color: "#16a34a" }}>Self Care 횟수</p>
+                <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px]" style={{ color: "#16a34a" }}>Self Care Count</p>
               </div>
             </div>
             <div
@@ -146,12 +146,12 @@ export function DeviceDetail() {
                   {asCount}
                 </span>
                 <div style={{ width: "40%", height: "1px", background: "rgba(202,138,4,0.25)", borderRadius: 99 }} />
-                <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px]" style={{ color: "#ca8a04" }}>Self A/S 횟수</p>
+                <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px]" style={{ color: "#ca8a04" }}>Self Service Count</p>
               </div>
             </div>
           </div>
           <div className="pt-3 mt-3" style={{ borderTop: "1px solid rgba(200,200,200,0.25)" }}>
-            <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1">최근 관리 내용</p>
+            <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1">Recent Care Details</p>
             <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#111]">
               {recentHistory[0].title} · {recentHistory[0].date}
             </p>
@@ -159,7 +159,7 @@ export function DeviceDetail() {
         </div>
 
         <div className="rounded-[20px] p-5" style={glass}>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-3">최근 관리 이력</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-3">Recent Care History</p>
           <div className="space-y-3">
             {recentHistory.map((item) => (
               <div key={item.id} className="flex items-center justify-between gap-3">

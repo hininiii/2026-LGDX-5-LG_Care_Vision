@@ -1,4 +1,4 @@
-﻿import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router";
 import { ChevronLeft, Send, Paperclip, Lightbulb, ClipboardList, Wrench, CircleHelp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -32,55 +32,55 @@ const AVAILABLE_DATES = getAvailableDates();
 const TIME_SLOTS = getTimeSlots();
 
 const PROCEDURE_LABELS: Record<string, string> = {
-  filter_cleaning: "필터 청소",
-  noise_self_check: "소음/진동 자가점검",
-  no_cooling_self_check: "냉방/바람 약함 자가점검",
-  odor_self_check: "냄새 자가점검",
-  water_leak_monsoon: "누수 자가점검",
-  power_troubleshooting: "전원 자가점검",
-  remote_operation: "리모컨/기능 사용 안내",
+  filter_cleaning: "Filter Cleaning",
+  noise_self_check: "Noise/Vibration Self Check",
+  no_cooling_self_check: "Weak Cooling/Airflow Self Check",
+  odor_self_check: "Odor Self Check",
+  water_leak_monsoon: "Water Leak Self Check",
+  power_troubleshooting: "Power Self Check",
+  remote_operation: "Remote/Function Use Guide",
 };
 
 const FILTER_CLEANING_STEPS = [
-  "전원을 끄고 플러그를 뽑으세요.",
-  "필터 커버를 천천히 들어 올리세요.",
-  "잠금을 풀고 필터를 분리하세요.",
-  "흐르는 물로 헹군 후 그늘에 말리세요.",
-  "필터를 재장착하고 커버를 닫으세요.",
+  "Turn off the power and unplug the unit.",
+  "Slowly lift the filter cover.",
+  "Release the lock and remove the filter.",
+  "Rinse under running water, then dry in the shade.",
+  "Reinstall the filter and close the cover.",
 ];
 
 const KNOWN_GUIDE_STEPS: Record<string, string[]> = {
   filter_cleaning: FILTER_CLEANING_STEPS,
   noise_self_check: [
-    "금속성 소리, 타는 냄새, 심한 진동이 있으면 사용을 멈추고 서비스센터로 연결하세요.",
-    "앞 커버나 보이는 패널이 완전히 닫혀 있는지 확인하세요.",
-    "커튼, 가구, 느슨한 물건이 바람 때문에 떨리는지 확인하세요.",
-    "안전한 거리에서 제품이 기울어져 있지 않은지 확인하세요.",
-    "낮은 풍량으로 다시 켜서 소음이 줄어드는지 확인하세요.",
-    "내부 커버, 팬, 모터 부위는 직접 분해하거나 만지지 마세요.",
-    "소음이 계속되면 전문 A/S를 신청하세요.",
+    "If you notice metallic sounds, a burning smell, or severe vibration, stop using the product and contact the service center.",
+    "Check that the front cover and visible panels are fully closed.",
+    "Check whether curtains, furniture, or loose items are shaking because of airflow.",
+    "From a safe distance, check that the product is not tilted.",
+    "Turn it back on with low airflow and check whether the noise decreases.",
+    "Do not disassemble or touch internal covers, fans, or motor parts yourself.",
+    "If the noise continues, request professional service.",
   ],
   no_cooling_self_check: [
-    "희망 온도를 현재 실내 온도보다 낮게 설정했는지 확인하세요.",
-    "필터에 먼지가 많으면 필터를 청소한 뒤 다시 작동해보세요.",
-    "실외기 주변 통풍을 막는 물건이 없는지 확인하세요.",
-    "문과 창문이 열려 있거나 햇빛이 강하게 들어오는지 확인하세요.",
-    "냉방이 계속 약하면 전문 A/S를 신청하세요.",
+    "Check that the desired temperature is set lower than the current indoor temperature.",
+    "If the filter has a lot of dust, clean it and try operating again.",
+    "Check that nothing is blocking ventilation around the outdoor unit.",
+    "Check whether doors or windows are open or strong sunlight is coming in.",
+    "If cooling remains weak, request professional service.",
   ],
   power_troubleshooting: [
-    "타는 냄새, 연기, 스파크가 있으면 전원을 끄고 바로 서비스센터로 연결하세요.",
-    "리모컨 배터리와 표시창 상태를 확인하세요.",
-    "전원 플러그가 안전하게 연결되어 있는지 눈으로만 확인하세요.",
-    "차단기가 내려갔는지 확인하되, 젖은 손으로 만지지 마세요.",
-    "같은 증상이 반복되면 내부 분해 없이 전문 A/S를 신청하세요.",
+    "If there is a burning smell, smoke, or sparks, turn off the power and contact the service center immediately.",
+    "Check the remote batteries and display status.",
+    "Visually check that the power plug is securely connected.",
+    "Check whether the circuit breaker is off, but do not touch it with wet hands.",
+    "If the same symptom repeats, request professional service without disassembling the product.",
   ],
 };
 
 const AR_GUIDE_STEP_TITLES: Record<string, string[]> = {
-  filter_cleaning: ["전원 차단", "커버 열기", "필터 분리", "세척 및 건조", "재장착"],
-  no_cooling_self_check: ["온도 설정 확인", "필터 상태 확인", "실외기 통풍 확인", "실내 환경 확인", "전문 A/S 신청"],
-  noise_self_check: ["위험 신호 확인", "커버 상태 확인", "주변 물건 확인", "기울어짐 확인", "저풍량 확인", "분해 금지", "전문 A/S 신청"],
-  power_troubleshooting: ["위험 신호 확인", "표시창 확인", "전원 연결 확인", "차단기 확인", "전문 A/S 신청"],
+  filter_cleaning: ["Turn Off Power", "Open Cover", "Remove Filter", "Wash and Dry", "Reinstall"],
+  no_cooling_self_check: ["Check Temperature Setting", "Check Filter Status", "Check Outdoor Unit Ventilation", "Check Indoor Environment", "Request Professional Service"],
+  noise_self_check: ["Check Warning Signs", "Check Cover Status", "Check Nearby Items", "Check Tilt", "Check Low Airflow", "Do Not Disassemble", "Request Professional Service"],
+  power_troubleshooting: ["Check Warning Signs", "Check Display", "Check Power Connection", "Check Circuit Breaker", "Request Professional Service"],
 };
 
 const arGuideStepsFromOptions = (guideOptions?: ChatGuideOptions) => {
@@ -94,7 +94,7 @@ const arGuideStepsFromOptions = (guideOptions?: ChatGuideOptions) => {
 };
 
 const getProcedureLabel = (procedure?: string) =>
-  (procedure && PROCEDURE_LABELS[procedure]) || "가이드";
+  (procedure && PROCEDURE_LABELS[procedure]) || "Guide";
 
 const youtubeEmbedUrl = (url?: string, videoId?: string) => {
   if (videoId) return `https://www.youtube.com/embed/${videoId}`;
@@ -113,7 +113,7 @@ const extractGuideSteps = (guide?: ChatManualGuide, procedureType?: string) => {
     .split(/\n+/)
     .map((line) => line.replace(/^\s*(?:\d+[\).\s-]*|[①-⑳]\s*)/, "").trim())
     .filter((line) => line.length > 0);
-  return steps.length > 0 ? steps : ["공식 가이드 내용을 확인한 뒤 안전한 범위에서 단계대로 진행하세요."];
+  return steps.length > 0 ? steps : ["Review the official guide and proceed step by step within a safe range."];
 };
 
 const guideVideo = (guideOptions?: ChatGuideOptions) => {
@@ -121,7 +121,7 @@ const guideVideo = (guideOptions?: ChatGuideOptions) => {
   const manual = guideOptions?.manual_guides?.[0];
   const embedUrl = youtubeEmbedUrl(youtube?.source_url, youtube?.video_id) || youtubeEmbedUrl(manual?.video_url || undefined);
   return {
-    title: youtube?.title || manual?.title || "LG 공식 영상 가이드",
+    title: youtube?.title || manual?.title || "LG Official Video Guide",
     embedUrl,
     videoUrl: manual?.video_url || youtube?.source_url || null,
     channel: youtube?.channel_name,
@@ -174,9 +174,9 @@ export function Chat() {
     setUiPhase("selecting");
     setSelectingProducts(false);
     setSelectingTypes(false);
-    if (label === "제품 문제 해결") setFlow("trouble");
-    else if (label === "가전 관리 방법") setFlow("care");
-    else if (label === "서비스 센터 연결") setFlow("service");
+    if (label === "Troubleshoot Product Issue") setFlow("trouble");
+    else if (label === "Appliance Care Guide") setFlow("care");
+    else if (label === "Connect to Service Center") setFlow("service");
     setTimeout(() => setSelectingProducts(true), 420);
   };
 
@@ -224,7 +224,7 @@ export function Chat() {
     localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages));
   }, [messages]);
 
-  // AR 가이드 복귀 시 동기화
+  // AR Guide 복귀 시 동기화
   useEffect(() => {
     const handleFocus = () => {
       const saved = localStorage.getItem(CHAT_STORAGE_KEY);
@@ -291,7 +291,7 @@ export function Chat() {
       {
         id: analyzingId,
         type: "bot",
-        content: "증상을 분석하고 있어요.",
+        content: "Analyzing the symptom.",
         time: now(),
         status: "analyzing",
       },
@@ -329,7 +329,7 @@ export function Chat() {
           message.id === analyzingId
             ? {
                 ...message,
-                content: "API 연결을 확인하지 못했어요. 잠시 후 다시 시도해주세요.",
+                content: "Could not verify the API connection. Please try again later.",
                 status: "blocked",
               }
             : message,
@@ -356,7 +356,7 @@ export function Chat() {
       {
         id: Date.now().toString(),
         type: "bot",
-        content: "현재 이 증상은 공식 매뉴얼 가이드는 제공되지만 AR 가이드 템플릿은 아직 준비되지 않았어요. 먼저 영상과 단계별 매뉴얼로 확인해주세요.",
+        content: "An official manual guide is available for this symptom, but the AR guide template is not ready yet. Please check the video and step-by-step manual first.",
         time: now(),
         status: "blocked",
         showDoneAsk: true,
@@ -372,13 +372,13 @@ export function Chat() {
         const devices = await getRegisteredDevices();
         setMessages((prev) => [...prev, {
           id: (Date.now() + 1).toString(), type: "bot",
-          content: "등록된 가전 중 서비스를 신청할 제품을 선택해주세요.",
+          content: "Select the registered appliance that needs service.",
           time: now(),
           modelOptions: devices,
         }]);
       }, 600);
     } else if (step === "issue") {
-      addBotMessage("겪고 계신 문제를 자세히 입력해주세요.");
+      addBotMessage("Please describe the issue in detail.");
     }
   };
 
@@ -398,7 +398,7 @@ export function Chat() {
       setTimeout(() => {
         setMessages((prev) => [...prev, {
           id: (Date.now() + 1).toString(), type: "bot",
-          content: "입력하신 정보를 확인해주세요.\n방문 가능한 날짜를 선택해주시면 A/S를 신청해드릴게요.",
+          content: "Please review the information you entered.\nSelect an available visit date and I'll request service for you.",
           time: now(),
           showServiceSummary: updated,
           showSchedule: true,
@@ -416,22 +416,22 @@ export function Chat() {
 
     setTimeout(async () => {
       // ── 최상위 메뉴 ──
-      if (option === "제품 문제 해결") {
+      if (option === "Troubleshoot Product Issue") {
         setFlow("trouble");
         setChatContext({ intent: "trouble", session_id: undefined });
-        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "어떤 제품에 문제가 생겼나요?", time: now(), options: PRODUCTS }]);
+        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "Which product has an issue?", time: now(), options: PRODUCTS }]);
         return;
       }
-      if (option === "가전 관리 방법") {
+      if (option === "Appliance Care Guide") {
         setFlow("care");
         setChatContext({ intent: "care", session_id: undefined });
-        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "관리 방법이 필요한 제품을 선택해주세요.", time: now(), options: PRODUCTS }]);
+        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "Select the product you need care instructions for.", time: now(), options: PRODUCTS }]);
         return;
       }
-      if (option === "서비스 센터 연결") {
+      if (option === "Connect to Service Center") {
         setFlow("service");
         setChatContext({ intent: "service", session_id: undefined });
-        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "서비스를 신청할 제품을 선택해주세요.", time: now(), options: PRODUCTS }]);
+        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "Select the product you want to request service for.", time: now(), options: PRODUCTS }]);
         return;
       }
 
@@ -439,17 +439,17 @@ export function Chat() {
       if (PRODUCTS.includes(option)) {
         const types = getProductTypes(option);
         setChatContext((prev) => ({ ...prev, productCategory: option }));
-        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: `${option}의 종류를 선택해주세요.`, time: now(), options: types }]);
+        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: `Select a ${option} type.`, time: now(), options: types }]);
         setServiceInfo((prev) => ({ ...prev, product: option }));
         return;
       }
 
-      // ── 제품군 선택 ──
+      // ── Product Type 선택 ──
       const allTypes = getAllProductTypes();
       if (allTypes.includes(option)) {
         setChatContext((prev) => ({ ...prev, productType: option }));
         if (flow === "service") {
-          // 고객 정보 자동 불러오기
+          // 고객 정보 Auto 불러오기
           const profile = await getUserProfile();
           setServiceInfo((prev) => ({
             ...prev,
@@ -457,18 +457,18 @@ export function Chat() {
             phone: profile.phone,
             address: profile.address,
           }));
-          // 자동 확인 메시지 후 모델 선택으로 이동
+          // Auto 확인 메시지 후 모델 선택으로 이동
           setMessages((prev) => [...prev, {
             id: (Date.now() + 1).toString(), type: "bot",
-            content: `고객 정보를 확인했습니다.\n\n이름: ${profile.name}\n연락처: ${profile.phone}\n주소: ${profile.address}\n\n이 정보로 진행할게요.`,
+            content: `Customer information confirmed.\n\nName: ${profile.name}\nPhone: ${profile.phone}\nAddress: ${profile.address}\n\nI'll proceed with this information.`,
             time: now(),
           }]);
           nextServiceStep("model");
         } else {
-          // 문제 해결 / 관리 방법 → 증상 선택
+          // 문제 해결 / Care 방법 → 증상 선택
           setMessages((prev) => [...prev, {
             id: (Date.now() + 1).toString(), type: "bot",
-            content: "🔍 현재 상태를 선택해주세요.",
+            content: "🔍 Please select the current status.",
             time: now(),
             problemOptions: getProblemOptions(),
           }]);
@@ -477,7 +477,7 @@ export function Chat() {
       }
 
       // ── 증상 선택 ──
-      if (getProblemOptions().includes(option) && option !== "그 외 다른 문제") {
+      if (getProblemOptions().includes(option) && option !== "Other issue") {
         setChatContext((prev) => ({
           ...prev,
           session_id: undefined,
@@ -487,7 +487,7 @@ export function Chat() {
         await submitAiMessage(option, { resetSession: true });
         return;
       }
-      if (option === "그 외 다른 문제") {
+      if (option === "Other issue") {
         setChatContext((prev) => ({
           ...prev,
           symptom: option,
@@ -495,17 +495,17 @@ export function Chat() {
         }));
         setMessages((prev) => [...prev, {
           id: (Date.now() + 1).toString(), type: "bot",
-          content: "불편하신 점을 자세히 입력해주세요.\n정확한 안내를 위해 최대한 구체적으로 작성해주시면 좋아요.",
+          content: "Please describe the inconvenience in detail.\nThe more specific you are, the more accurate the guidance can be.",
           time: now(),
         }]);
         return;
       }
 
-      // ── 매뉴얼 가이드 ──
-      if (option === "매뉴얼 가이드") {
+      // ── Manual Guide ──
+      if (option === "Manual Guide") {
         setMessages((prev) => [...prev, {
           id: (Date.now() + 1).toString(), type: "bot",
-          content: "영상과 순서를 따라 차례대로 진행해보세요.",
+          content: "Follow the video and steps in order.",
           time: now(),
           showVideo: true,
           showDoneAsk: true,
@@ -513,25 +513,25 @@ export function Chat() {
         return;
       }
 
-      // ── 완료 확인 ──
-      if (option === "완료했어요") {
+      // ── Done 확인 ──
+      if (option === "Completed") {
         const history = JSON.parse(localStorage.getItem("careHistory") || "[]");
-        history.push({ id: Date.now().toString(), type: "Self A/S", title: "셀프 케어 완료", date: new Date().toISOString() });
+        history.push({ id: Date.now().toString(), type: "Self A/S", title: "Self Care Completed", date: new Date().toISOString() });
         localStorage.setItem("careHistory", JSON.stringify(history));
         endSession();
-        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "✅ 관리 완료가 기록되었어요!\n수고하셨습니다 😊", time: now() }]);
+        setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "✅ Care completion has been recorded!\nGreat work 😊", time: now() }]);
         return;
       }
-      if (option === "아직 해결 안됐어요") {
+      if (option === "Still not resolved") {
         setMessages((prev) => [...prev, {
           id: (Date.now() + 1).toString(), type: "bot",
-          content: "아직 해결이 안 되셨군요 😥\n어떤 부분에서 문제가 계속되는지 자세히 말씀해주시면 추가로 도움을 드릴게요.",
+          content: "It is still not resolved 😥\nTell me which part is still causing trouble and I'll help further.",
           time: now(),
         }]);
         return;
       }
 
-      setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "확인했습니다. 추가 도움이 필요하시면 말씀해주세요.", time: now() }]);
+      setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), type: "bot", content: "Got it. Let me know if you need more help.", time: now() }]);
     }, 600);
   };
 
@@ -550,12 +550,12 @@ export function Chat() {
 
   const handleScheduleConfirm = (time: string) => {
     const full = `${selectedDate} ${time}`;
-    addUserMessage(`${full} 방문 예약`);
+    addUserMessage(`${full} visit reservation`);
     setServiceCompleted(true);
     setTimeout(() => {
       setMessages((prev) => [...prev, {
         id: (Date.now() + 1).toString(), type: "bot",
-        content: "✅ A/S 신청이 완료되었습니다!\n\n담당 엔지니어가 방문 전날 확인 연락을 드릴 예정이에요.\n이용해주셔서 감사합니다 😊",
+        content: "✅ Service request completed!\n\nThe assigned engineer will contact you the day before the visit.\nThank you for using our service 😊",
         time: now(),
         showServiceComplete: true,
       }]);
@@ -590,10 +590,10 @@ export function Chat() {
 
         <div className="px-[28px] pt-[24px]">
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[22px] text-[#222] leading-[1.35] tracking-[-0.4px]">
-            {uiPhase === "initial" && <>안녕하세요!<br /><span style={{ color: "#5db88a" }}>무엇을 도와드릴까요?</span></>}
-            {uiPhase === "selecting" && <>제품을 <span style={{ color: "#5db88a" }}>선택</span>해주세요</>}
-            {uiPhase === "selecting-type" && <>종류를 <span style={{ color: "#5db88a" }}>선택</span>해주세요</>}
-            {uiPhase === "pending-start" && <>선택을 <span style={{ color: "#5db88a" }}>완료</span>했어요!</>}
+            {uiPhase === "initial" && <>Hello!<br /><span style={{ color: "#5db88a" }}>How can I help you?</span></>}
+            {uiPhase === "selecting" && <>Select a <span style={{ color: "#5db88a" }}>product</span></>}
+            {uiPhase === "selecting-type" && <>Select a <span style={{ color: "#5db88a" }}>type</span></>}
+            {uiPhase === "pending-start" && <>Selection <span style={{ color: "#5db88a" }}>complete</span>!</>}
           </p>
         </div>
 
@@ -621,10 +621,10 @@ export function Chat() {
           {uiPhase === "initial" && (
             <div className="grid grid-cols-2 gap-2 mb-3">
               {[
-                { icon: <Wrench size={15} />, label: "제품 문제 해결", color: "#5db88a" },
-                { icon: <Lightbulb size={15} />, label: "가전 관리 방법", color: "#5ba8d8" },
-                { icon: <ClipboardList size={15} />, label: "서비스 센터 연결", color: "#d87ab0" },
-                { icon: <CircleHelp size={15} />, label: "자주 묻는 질문", color: "#9b8ef6" },
+                { icon: <Wrench size={15} />, label: "Troubleshoot Product Issue", color: "#5db88a" },
+                { icon: <Lightbulb size={15} />, label: "Appliance Care Guide", color: "#5ba8d8" },
+                { icon: <ClipboardList size={15} />, label: "Connect to Service Center", color: "#d87ab0" },
+                { icon: <CircleHelp size={15} />, label: "FAQ", color: "#9b8ef6" },
               ].map((item, i) => (
                 <motion.button key={item.label} onClick={() => i < 3 && handleInitialSelect(item.label)} whileTap={{ scale: 0.96 }} className="flex items-center gap-2 px-4 py-3 rounded-[14px] text-left" style={{ background: "rgba(255,255,255,0.62)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.88)", boxShadow: "0 4px 14px rgba(0,0,0,0.05)" }}>
                   <span style={{ color: item.color }}>{item.icon}</span><p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#333]">{item.label}</p>
@@ -637,7 +637,7 @@ export function Chat() {
 
           {uiPhase === "selecting-type" && selectingTypes && <div className="grid grid-cols-2 gap-2 mb-3">{getProductTypes(selectedProduct).map((type, i) => <motion.button key={type} initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.09 }} onClick={() => handleTypeSelect(type, floatingChips[0], floatingChips[1])} whileTap={{ scale: 0.96 }} className="py-3 px-4 rounded-[14px] text-left font-['Pretendard:Medium',sans-serif] text-[13px] text-[#333]" style={{ background: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.9)", boxShadow: "0 3px 10px rgba(0,0,0,0.06)" }}>{type}</motion.button>)}</div>}
 
-          {uiPhase === "pending-start" && <motion.button initial={{ y: 12, opacity: 0, scale: 0.96 }} animate={{ y: 0, opacity: 1, scale: 1 }} onClick={handleStartChat} whileTap={{ scale: 0.97 }} className="w-full py-[15px] mt-[15px] rounded-[28px] font-['Pretendard:SemiBold',sans-serif] text-[15px] text-white" style={{ background: "linear-gradient(135deg, #9b8ef6 0%, #6b8ef6 100%)", boxShadow: "0 6px 24px rgba(155,142,246,0.38), inset 0 1px 0 rgba(255,255,255,0.25)" }}>채팅을 시작할까요?</motion.button>}
+          {uiPhase === "pending-start" && <motion.button initial={{ y: 12, opacity: 0, scale: 0.96 }} animate={{ y: 0, opacity: 1, scale: 1 }} onClick={handleStartChat} whileTap={{ scale: 0.97 }} className="w-full py-[15px] mt-[15px] rounded-[28px] font-['Pretendard:SemiBold',sans-serif] text-[15px] text-white" style={{ background: "linear-gradient(135deg, #9b8ef6 0%, #6b8ef6 100%)", boxShadow: "0 6px 24px rgba(155,142,246,0.38), inset 0 1px 0 rgba(255,255,255,0.25)" }}>Start chat?</motion.button>}
         </div>
       </motion.div>
 
@@ -706,16 +706,16 @@ export function Chat() {
                   <div className="mt-3 pl-1 max-w-[290px]">
                     <div className="bg-white rounded-[15px] px-4 py-3 w-full shadow-sm border border-[#ffd7d7]">
                       <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#ff4c49] mb-1">
-                        {message.cardPolicy.title || "공식자료 확인 불가"}
+                        {message.cardPolicy.title || "Official Source Not Available"}
                       </p>
                       <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#444] leading-[18px]">
-                        {message.cardPolicy.description || "공식 근거가 확인되지 않아 AR 자가 안내를 시작하지 않습니다."}
+                        {message.cardPolicy.description || "AR self-guidance will not start because an official source could not be verified."}
                       </p>
                     </div>
                   </div>
                 )}
 
-                {/* 가이드 버튼 */}
+                {/* Guide 버튼 */}
                 {message.guideButtons && (
                   <div className="flex gap-2 mt-3 pl-1 max-w-[290px]">
                     {message.guideButtons.includes("manual") && (
@@ -725,11 +725,11 @@ export function Chat() {
                             navigate("/self-care", { state: { tab: "manual", guideOptions: message.guideOptions } });
                             return;
                           }
-                          handleOptionClick("매뉴얼 가이드");
+                          handleOptionClick("Manual Guide");
                         }}
                         className="flex-1 bg-[#ff4c49] text-white rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#e63d3a] transition-colors shadow-sm"
                       >
-                        매뉴얼 가이드
+                        Manual Guide
                       </button>
                     )}
                     {message.guideButtons.includes("ar") && (
@@ -737,21 +737,21 @@ export function Chat() {
                         onClick={() => handleArGuideClick(message)}
                         className="flex-1 bg-white border border-[#ff4c49] text-[#ff4c49] rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#fff5f5] transition-colors shadow-sm"
                       >
-                        AR 가이드
+                        AR Guide
                       </button>
                     )}
                     {message.guideButtons.includes("service") && (
                       <button
-                        onClick={() => handleOptionClick("서비스 센터 연결")}
+                        onClick={() => handleOptionClick("Connect to Service Center")}
                         className="flex-1 bg-white border border-[#ff4c49] text-[#ff4c49] rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] hover:bg-[#fff5f5] transition-colors shadow-sm"
                       >
-                        서비스 센터 연결
+                        Connect to Service Center
                       </button>
                     )}
                   </div>
                 )}
 
-                {/* 공식근거 기반 영상 + 단계별 가이드 */}
+                {/* 공식근거 기반 영상 + 단계별 Guide */}
                 {message.guideOptions && (
                   <div className="mt-3 pl-1 space-y-2 max-w-[290px]">
                     {(() => {
@@ -774,16 +774,16 @@ export function Chat() {
                                 />
                               ) : (
                                 <video controls className="w-full h-full object-cover" src={video.videoUrl || undefined} controlsList="nodownload">
-                                  브라우저가 비디오 태그를 지원하지 않습니다.
+                                  Your browser does not support the video tag.
                                 </video>
                               )}
                             </div>
                           )}
                           <div className="bg-white rounded-[15px] px-4 py-3 w-full shadow-sm border border-[#f0f0f0]">
                             <div className="flex items-center justify-between gap-2 mb-2">
-                              <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-black">📋 {procedureLabel} 순서</p>
+                              <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-black">📋 {procedureLabel} Steps</p>
                               <span className="font-['Pretendard:Medium',sans-serif] text-[9px] text-[#2d9b69] bg-[#eaf8f1] rounded-full px-2 py-[2px] whitespace-nowrap">
-                                LG 공식 기준
+                                LG official standard
                               </span>
                             </div>
                             {steps.map((step, i) => (
@@ -803,31 +803,31 @@ export function Chat() {
                   <div className="mt-3 pl-1 space-y-2 max-w-[290px]">
                     <div className="bg-gray-900 w-full aspect-video rounded-[15px] overflow-hidden shadow-sm">
                       <video controls className="w-full h-full object-cover" src={aiAlertVideo} controlsList="nodownload">
-                        브라우저가 비디오 태그를 지원하지 않습니다.
+                        Your browser does not support the video tag.
                       </video>
                     </div>
                     <div className="bg-white rounded-[15px] px-4 py-3 w-full shadow-sm border border-[#f0f0f0]">
-                      <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-black mb-2">📋 필터 청소 순서</p>
-                      {["① 전원을 끄고 플러그를 뽑으세요.", "② 필터 커버를 천천히 들어 올리세요.", "③ 잠금을 풀고 필터를 분리하세요.", "④ 흐르는 물로 헹군 후 그늘에 말리세요.", "⑤ 필터를 재장착하고 커버를 닫으세요."].map((step, i) => (
+                      <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-black mb-2">📋 Filter Cleaning Steps</p>
+                      {["1. Turn off the power and unplug the unit.", "2. Slowly lift the filter cover.", "3. Release the lock and remove the filter.", "4. Rinse under running water, then dry in the shade.", "5. Reinstall the filter and close the cover."].map((step, i) => (
                         <p key={i} className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#444] leading-[18px]">{step}</p>
                       ))}
                     </div>
                   </div>
                 )}
 
-                {/* 완료 확인 버튼 */}
+                {/* Done 확인 버튼 */}
                 {(message.showDoneAsk || message.guideOptions) && index === messages.length - 1 && (
                   <div className="mt-3 pl-1">
                     <div className="bg-white rounded-[15px] px-4 py-4 max-w-[290px] shadow-sm border border-[#f0ecec]">
-                      <p className="font-['Pretendard:SemiBold',sans-serif] text-[14px] text-black mb-3">관리를 완료하셨나요?</p>
+                      <p className="font-['Pretendard:SemiBold',sans-serif] text-[14px] text-black mb-3">Did you complete the care task?</p>
                       <div className="flex gap-2">
-                        <button onClick={() => handleOptionClick("완료했어요")}
+                        <button onClick={() => handleOptionClick("Completed")}
                           className="flex-1 bg-gradient-to-r from-[#F77B50] to-[#F05C5C] text-white rounded-[10px] py-2.5 font-['Pretendard:SemiBold',sans-serif] text-[13px]">
-                          완료했어요
+                          Completed
                         </button>
-                        <button onClick={() => handleOptionClick("아직 해결 안됐어요")}
+                        <button onClick={() => handleOptionClick("Still not resolved")}
                           className="flex-1 bg-white border border-[#F77B50] text-[#F77B50] rounded-[10px] py-2.5 font-['Pretendard:SemiBold',sans-serif] text-[13px]">
-                          해결 안됐어요
+                          Not resolved
                         </button>
                       </div>
                     </div>
@@ -854,14 +854,14 @@ export function Chat() {
                 {message.showServiceSummary && (
                   <div className="mt-2 pl-2">
                     <div className="bg-white rounded-[15px] px-4 py-3 w-[220px] shadow-sm border border-[#f0ecec]">
-                      <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-[#ff4c49] mb-2">📋 신청 정보 확인</p>
+                      <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-[#ff4c49] mb-2">📋 Confirm Request Information</p>
                       {[
-                        ["제품", message.showServiceSummary.product],
-                        ["성함", message.showServiceSummary.name],
-                        ["연락처", message.showServiceSummary.phone],
-                        ["주소", message.showServiceSummary.address],
-                        ["모델명", message.showServiceSummary.model],
-                        ["문제 증상", message.showServiceSummary.issue],
+                        ["Product", message.showServiceSummary.product],
+                        ["Name", message.showServiceSummary.name],
+                        ["Phone", message.showServiceSummary.phone],
+                        ["Address", message.showServiceSummary.address],
+                        ["Model", message.showServiceSummary.model],
+                        ["Issue", message.showServiceSummary.issue],
                       ].map(([label, value]) => (
                         <div key={label} className="flex gap-2 mb-1">
                           <span className="font-['Pretendard:SemiBold',sans-serif] text-[9px] text-[#888] w-[42px] shrink-0">{label}</span>
@@ -876,7 +876,7 @@ export function Chat() {
                 {message.showSchedule && index === messages.length - 1 && (
                   <div className="mt-3 pl-2">
                     <div className="bg-white rounded-[15px] px-4 py-3 w-[240px] shadow-sm border border-[#f0ecec]">
-                      <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-black mb-2">📅 방문 날짜 선택</p>
+                      <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-black mb-2">📅 Select Visit Date</p>
                       <div className="flex flex-wrap gap-1 mb-3">
                         {AVAILABLE_DATES.map((d) => (
                           <button key={d.value}
@@ -892,7 +892,7 @@ export function Chat() {
                       </div>
                       {selectedDate && (
                         <>
-                          <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-black mb-2">⏰ 방문 시간 선택</p>
+                          <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-black mb-2">⏰ Select Visit Time</p>
                           <div className="flex flex-col gap-1">
                             {TIME_SLOTS.map((t) => (
                               <button key={t}
@@ -908,13 +908,13 @@ export function Chat() {
                   </div>
                 )}
 
-                {/* A/S 신청 완료 */}
+                {/* Service Request Completed */}
                 {message.showServiceComplete && (
                   <div className="mt-2 pl-2">
                     <div className="bg-gradient-to-br from-[#fff5f5] to-[#fff] rounded-[15px] px-4 py-3 w-[220px] shadow-sm border border-[#ffdddd] text-center">
                       <p className="text-[28px] mb-1">🎉</p>
-                      <p className="font-['Pretendard:Bold',sans-serif] text-[12px] text-[#ff4c49]">A/S 신청 완료</p>
-                      <p className="font-['Pretendard:Regular',sans-serif] text-[9px] text-[#888] mt-1">방문 전날 확인 연락 예정</p>
+                      <p className="font-['Pretendard:Bold',sans-serif] text-[12px] text-[#ff4c49]">Service Request Completed</p>
+                      <p className="font-['Pretendard:Regular',sans-serif] text-[9px] text-[#888] mt-1">Confirmation call scheduled for the day before the visit</p>
                     </div>
                   </div>
                 )}
@@ -958,7 +958,7 @@ export function Chat() {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-            placeholder="메시지를 입력해주세요..."
+            placeholder="Enter a message..."
             className="flex-1 bg-transparent outline-none font-['Pretendard:Regular',sans-serif] text-[13px] text-black placeholder:text-[#949ba5]"
           />
           <button onClick={handleSendMessage} className="text-[#4B4B4B] hover:text-[#000] transition-colors flex-shrink-0">

@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router";
 import { ChevronRight, User, Globe, LogOut } from "lucide-react";
 
 const settingsItems = [
-  { to: "/settings/profile", icon: User, label: "개인정보 수정", description: "이름, 이메일, 비밀번호, 전화번호, 주소" },
-  { to: "/settings/language", icon: Globe, label: "언어 설정", description: "서비스 표시 언어" },
+  { to: "/settings/profile", icon: User, label: "Edit Profile", description: "Name, email, password, phone number, address" },
+  { to: "/settings/language", icon: Globe, label: "Language Settings", description: "Service display language" },
 ];
 
 const glass = {
@@ -29,10 +29,10 @@ export function Settings() {
 
       <div className="relative z-10 px-[18px] pt-[39px] pb-[20px] w-full max-w-[390px] mx-auto">
         <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111] mb-6">
-          설정
+          Settings
         </p>
 
-        {/* 사용자 정보 */}
+        {/* Usage자 정보 */}
         <div className="rounded-[20px] p-5 mb-4" style={glass}>
           <div className="flex items-center gap-4">
             <div className="w-[56px] h-[56px] rounded-full flex items-center justify-center flex-shrink-0"
@@ -46,7 +46,7 @@ export function Settings() {
           </div>
         </div>
 
-        {/* 설정 메뉴 */}
+        {/* Settings 메뉴 */}
         <div className="rounded-[20px] overflow-hidden mb-4" style={glass}>
           {settingsItems.map((item, index) => {
             const Icon = item.icon;
@@ -71,19 +71,19 @@ export function Settings() {
           })}
         </div>
 
-        {/* 앱 정보 */}
+        {/* App Info */}
         <div className="rounded-[20px] p-5 mb-4" style={glass}>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-3">앱 정보</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-3">App Info</p>
           <div className="flex justify-between">
-            <p className="font-['Pretendard:Regular',sans-serif] text-[14px] text-[#888]">버전</p>
+            <p className="font-['Pretendard:Regular',sans-serif] text-[14px] text-[#888]">Version</p>
             <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#111]">1.0.0</p>
           </div>
         </div>
 
-        {/* 로그아웃 */}
+        {/* Log Out */}
         <button onClick={handleLogout} className="w-full rounded-[20px] p-4 flex items-center justify-center gap-2 hover:bg-white/40 transition-colors" style={glass}>
           <LogOut size={18} className="text-[#ff4c49]" />
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#ff4c49]">로그아웃</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#ff4c49]">Log Out</p>
         </button>
       </div>
     </div>

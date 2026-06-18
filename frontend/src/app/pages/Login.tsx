@@ -26,7 +26,7 @@ export function Login() {
 
   const handleSubmit = async () => {
     if (!form.email || !form.password) {
-      setError("이메일과 비밀번호를 입력해주세요.");
+      setError("Please enter your email and password.");
       return;
     }
     try {
@@ -37,7 +37,7 @@ export function Login() {
       if (!langSet) navigate("/setup/language");
       else navigate("/");
     } catch {
-      setError("이메일 또는 비밀번호를 확인해주세요.");
+      setError("Please check your email or password.");
     }
   };
 
@@ -49,17 +49,17 @@ export function Login() {
           {/* 로고 */}
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Vision</p>
           <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#888] mb-12">
-            인도 가전 Care 및 A/S 서비스
+            India Home Appliance Care and Service
           </p>
 
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-6">로그인</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-6">Log In</p>
 
           <div className="flex flex-col gap-4 mb-6">
             <div>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">이메일</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">Email</p>
               <input
                 type="email"
-                placeholder="이메일을 입력하세요"
+                placeholder="Enter your email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full rounded-[16px] px-4 py-[14px] font-['Pretendard:Regular',sans-serif] text-[14px] text-[#111] placeholder:text-[#c8ccd0] outline-none transition-colors"
@@ -67,11 +67,11 @@ export function Login() {
               />
             </div>
             <div>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">비밀번호</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">Password</p>
               <div className="relative">
                 <input
                   type={showPw ? "text" : "password"}
-                  placeholder="비밀번호를 입력하세요"
+                  placeholder="Enter your password"
                   value={form.password}
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
                   className="w-full rounded-[16px] px-4 py-[14px] pr-12 font-['Pretendard:Regular',sans-serif] text-[14px] text-[#111] placeholder:text-[#c8ccd0] outline-none transition-colors"
@@ -95,14 +95,14 @@ export function Login() {
               boxShadow: "0 8px 24px rgba(255,76,73,0.30)",
             }}
           >
-            로그인
+            Log In
           </button>
 
           <div className="flex items-center justify-center gap-2">
-            <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888]">계정이 없으신가요?</p>
+            <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888]">Don't have an account?</p>
             <button onClick={() => navigate("/signup")}
               className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#ff4c49]">
-              회원가입
+              Sign Up
             </button>
           </div>
         </div>

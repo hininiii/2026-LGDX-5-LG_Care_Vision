@@ -1,4 +1,4 @@
-﻿import { useNavigate, useLocation } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, Camera, Volume2, VolumeX, Lightbulb, Check } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from "motion/react";
 const CHAT_STORAGE_KEY = "chat_messages_v20260612";
 
 const steps = [
-  { title: "전원 차단", desc: "전원을 끄고 플러그를 뽑으세요.", hint: "에어컨 전원 버튼을 길게 누르거나\n플러그를 직접 뽑아주세요." },
-  { title: "커버 열기", desc: "필터 커버를 천천히 들어 올리세요.", hint: "필터 커버의 양쪽을 잡고\n천천히 위로 들어 올려주세요." },
-  { title: "필터 분리", desc: "양쪽 잠금을 풀고 필터를 분리하세요.", hint: "필터 양쪽의 잠금 탭을 누른 상태로\n아래로 당겨주세요." },
-  { title: "세척 및 건조", desc: "흐르는 물로 헹군 후 그늘에 말리세요.", hint: "세제 없이 흐르는 미지근한 물로만\n헹궈주세요." },
-  { title: "재장착", desc: "필터를 다시 끼우고 커버를 닫으세요.", hint: "필터를 끼운 후 딸깍 소리가 날 때까지\n커버를 눌러주세요." },
+  { title: "Turn Off Power", desc: "Turn off the power and unplug the unit.", hint: "Press and hold the air conditioner power button\nor unplug it directly." },
+  { title: "Open Cover", desc: "Slowly lift the filter cover.", hint: "Hold both sides of the filter cover\nand slowly lift it upward." },
+  { title: "Remove Filter", desc: "Release both locks and remove the filter.", hint: "Press the lock tabs on both sides of the filter\nand pull it downward." },
+  { title: "Wash and Dry", desc: "Rinse under running water, then dry in the shade.", hint: "Rinse only with lukewarm running water\nwithout detergent." },
+  { title: "Reinstall", desc: "Reinstall the filter and close the cover.", hint: "After inserting the filter, press the cover\nuntil it clicks." },
 ];
 
 export function ARGuide() {
@@ -50,7 +50,7 @@ export function ARGuide() {
       const doneMsg = {
         id: Date.now().toString(),
         type: "bot",
-        content: "AR 가이드를 완료하셨나요?\n관리 내용을 기록해드릴게요.",
+        content: "Did you finish the AR guide?\nI'll record the care details.",
         time: new Date().toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit" }),
         showDoneAsk: true,
       };
@@ -69,7 +69,7 @@ export function ARGuide() {
         transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
         className="relative flex h-full w-full flex-col overflow-hidden text-[#292B2E]" style={{ background: "linear-gradient(160deg, #d6f2e8 0%, #f0f8e8 30%, #fce8f0 65%, #ede8f8 100%)" }}>
         <header className="flex shrink-0 items-center justify-between px-[24px] pb-[24px] pt-[44px]">
-          <button onClick={goBack} className="-ml-1 flex h-9 w-9 items-center justify-start" aria-label="뒤로가기">
+          <button onClick={goBack} className="-ml-1 flex h-9 w-9 items-center justify-start" aria-label="Go back">
             <ChevronLeft size={32} strokeWidth={1.9} className="text-[#35383B]" />
           </button>
           <h1 className="text-[23px] font-semibold leading-none tracking-[-0.025em]">AR</h1>
@@ -112,7 +112,14 @@ export function ARGuide() {
 
         <main className="flex min-h-0 flex-1 flex-col gap-[12px] overflow-y-auto px-[12px] pb-[10px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <section className="relative flex flex-1 flex-col rounded-[18px] px-[14px] pb-[14px] pt-[14px]" style={{ background: "rgba(255,255,255,0.55)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", border: "1px solid rgba(255,255,255,0.75)", boxShadow: "0 16px 32px rgba(31,69,61,0.08), inset 0 1px 0 rgba(255,255,255,0.9)" }}>
-              <button onClick={() => setSoundOn(!soundOn)} className="absolute right-[12px] top-[22px] z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/70 backdrop-blur-sm" aria-label="음성 안내">
+              <button
+                onClick={() => setSoundOn(!soundOn)}
+                className="absolute right-[12px] top-[22px] z-10 flex h-10 w-10 items-center justify-center rounded-full backdrop-blur-sm"
+                style={{
+                  background: "rgba(255,255,255,0.86)",
+                }}
+                aria-label="Voice guidance"
+              >
                 {soundOn ? <Volume2 size={22} strokeWidth={1.9} className="text-[#35383B]" /> : <VolumeX size={22} strokeWidth={1.9} className="text-[#C7CECC]" />}
               </button>
             <AnimatePresence mode="wait">
@@ -129,7 +136,7 @@ export function ARGuide() {
             </motion.div>
             </AnimatePresence>
 
-            <div className="relative mt-[12px] flex flex-1 min-h-[160px] overflow-hidden rounded-[15px] border-[1.5px] border-[#22C59A]/40 bg-black">
+            <div className="relative mt-[12px] flex flex-1 min-h-[160px] overflow-hidden rounded-[15px] border-[1.5px] border-[#22C59A]/40 bg-white/20">
               <video ref={videoRef} autoPlay playsInline muted className="h-full w-full object-cover" />
               <Corner className="left-[17px] top-[18px] rotate-0" />
               <Corner className="right-[17px] top-[18px] rotate-90" />
@@ -140,7 +147,7 @@ export function ARGuide() {
                   <div className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-[#ECF5F2]">
                     <Camera size={36} strokeWidth={1.65} className="text-[#718E86]" />
                   </div>
-                  <p className="mt-[16px] text-[15px] font-medium tracking-[-0.055em] text-white/80">카메라 권한이 필요합니다</p>
+                  <p className="mt-[16px] text-[15px] font-medium tracking-[-0.055em] text-white/80">Camera permission is required</p>
                 </div>
               )}
             </div>
@@ -154,7 +161,7 @@ export function ARGuide() {
             <div className="min-w-0 flex-1">
               <div className="mb-[6px] flex items-center gap-[5px]">
                 <span className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full bg-[#DDF3EC] text-[#22B98F]"><Lightbulb size={11} strokeWidth={2} /></span>
-                <strong className="text-[13px] font-semibold tracking-[-0.06em] text-[#20AD86]">이렇게 해보세요</strong>
+                <strong className="text-[13px] font-semibold tracking-[-0.06em] text-[#20AD86]">Try this</strong>
               </div>
               <p className="whitespace-pre-line text-[13px] font-medium leading-[1.45] tracking-[-0.06em] text-[#55595D] pl-[20px] pr-[0px] py-[0px]">{steps[current].hint}</p>
             </div>
@@ -170,14 +177,14 @@ export function ARGuide() {
               transition={{ type: "spring", stiffness: 400, damping: 22 }}
               className="h-[48px] flex-1 rounded-[12px] text-[15px] font-bold tracking-[-0.04em] transition disabled:opacity-30"
               style={{ background: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.65)", color: "#20B88E", boxShadow: "0 2px 8px rgba(31,69,61,0.06), inset 0 1px 0 rgba(255,255,255,0.9)" }}
-            >이전</motion.button>
+            >Previous</motion.button>
             <motion.button
               onClick={handleNext}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 22 }}
               className="h-[48px] flex-1 rounded-[12px] text-[15px] font-bold tracking-[-0.04em] text-white"
               style={{ background: "linear-gradient(135deg, #24C99A, #14B989)", boxShadow: "0 4px 14px rgba(34,197,154,0.35), inset 0 1px 0 rgba(255,255,255,0.3)", border: "1px solid rgba(255,255,255,0.3)" }}
-            >{current === steps.length - 1 ? "완료" : "다음"}</motion.button>
+            >{current === steps.length - 1 ? "Done" : "Next"}</motion.button>
           </div>
         </footer>
     </motion.div>

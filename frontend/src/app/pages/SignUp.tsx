@@ -26,11 +26,11 @@ export function SignUp() {
 
   const handleSubmit = async () => {
     if (!form.name || !form.email || !form.phone || !form.address || !form.password || !form.confirm) {
-      setError("모든 항목을 입력해주세요.");
+      setError("Please fill in all fields.");
       return;
     }
     if (form.password !== form.confirm) {
-      setError("비밀번호가 일치하지 않습니다.");
+      setError("Passwords do not match.");
       return;
     }
     try {
@@ -43,10 +43,11 @@ export function SignUp() {
       });
       setCurrentUserEmail(response.user.user_email ?? form.email);
       localStorage.setItem("signedUp", "true");
+      localStorage.setItem("careVisionShowWelcomeOnce", "true");
       localStorage.removeItem("appLanguage");
       navigate("/login");
     } catch {
-      setError("회원가입 정보를 저장하지 못했습니다.");
+      setError("Could not save your sign-up information.");
     }
   };
 
@@ -58,15 +59,15 @@ export function SignUp() {
           {/* 로고 */}
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[30px] text-[#ff4c49] mb-1">Care Vision</p>
           <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#888] mb-8">
-            인도 가전 Care 및 A/S 서비스
+            India Home Appliance Care and Service
           </p>
 
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-6">회원가입</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[24px] text-[#111] mb-6">Sign Up</p>
 
           <div className="flex flex-col gap-4 mb-6">
             {[
-              { key: "name" as const, label: "이름", type: "text", placeholder: "이름을 입력하세요" },
-              { key: "email" as const, label: "이메일", type: "email", placeholder: "이메일을 입력하세요" },
+              { key: "name" as const, label: "Name", type: "text", placeholder: "Enter your name" },
+              { key: "email" as const, label: "Email", type: "email", placeholder: "Enter your email" },
             ].map((f) => (
               <div key={f.key}>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">{f.label}</p>
@@ -82,11 +83,11 @@ export function SignUp() {
             ))}
 
             <div>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">비밀번호</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">Password</p>
               <div className="relative">
                 <input
                   type={showPw ? "text" : "password"}
-                  placeholder="비밀번호를 입력하세요"
+                  placeholder="Enter your password"
                   value={form.password}
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
                   className="w-full rounded-[16px] px-4 py-[14px] pr-12 font-['Pretendard:Regular',sans-serif] text-[14px] text-[#111] placeholder:text-[#c8ccd0] outline-none transition-colors"
@@ -100,10 +101,10 @@ export function SignUp() {
             </div>
 
             <div>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">비밀번호 확인</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">Confirm Password</p>
               <input
                 type="password"
-                placeholder="비밀번호를 다시 입력하세요"
+                placeholder="Re-enter your password"
                 value={form.confirm}
                 onChange={(e) => setForm({ ...form, confirm: e.target.value })}
                 className="w-full rounded-[16px] px-4 py-[14px] font-['Pretendard:Regular',sans-serif] text-[14px] text-[#111] placeholder:text-[#c8ccd0] outline-none transition-colors"
@@ -112,8 +113,8 @@ export function SignUp() {
             </div>
 
             {[
-              { key: "phone" as const, label: "전화번호", type: "tel", placeholder: "전화번호를 입력하세요" },
-              { key: "address" as const, label: "주소", type: "text", placeholder: "주소를 입력하세요" },
+              { key: "phone" as const, label: "Phone Number", type: "tel", placeholder: "Enter your phone number" },
+              { key: "address" as const, label: "Address", type: "text", placeholder: "Enter your address" },
             ].map((f) => (
               <div key={f.key}>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1.5 ml-1">{f.label}</p>
@@ -139,14 +140,14 @@ export function SignUp() {
               boxShadow: "0 8px 24px rgba(255,76,73,0.30)",
             }}
           >
-            회원가입
+            Sign Up
           </button>
 
           <div className="flex items-center justify-center gap-2">
-            <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888]">이미 계정이 있으신가요?</p>
+            <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888]">Already have an account?</p>
             <button onClick={() => navigate("/login")}
               className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#ff4c49]">
-              로그인
+              Log In
             </button>
           </div>
         </div>

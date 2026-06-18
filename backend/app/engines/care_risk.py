@@ -29,7 +29,7 @@ class CareRiskScoreEngine:
         score = min(round(score, 1), 100.0)
         risk_band = self.risk_band(score, thresholds)
         trigger_reason = [factor["reason"] for factor in factors] or [
-            "강한 예방 관리 위험 요인은 확인되지 않았습니다. 현재 관리 위험도는 낮습니다."
+            "No strong preventive care risk factors were detected. The current care risk is low."
         ]
 
         return {
@@ -65,7 +65,7 @@ class CareRiskScoreEngine:
                     "factor": "days_since_last_care",
                     "value": days_since_last_care,
                     "score_delta": round(delta, 1),
-                    "reason": f"마지막 관리 후 {int(days_since_last_care)}일이 지났습니다.",
+                    "reason": f"{int(days_since_last_care)} days have passed since the last care activity.",
                 }
             )
         if daily_runtime:
@@ -76,7 +76,7 @@ class CareRiskScoreEngine:
                     "factor": "daily_runtime_hours",
                     "value": daily_runtime,
                     "score_delta": round(delta, 1),
-                    "reason": f"최근 일평균 사용 시간은 {daily_runtime:.1f}시간입니다.",
+                    "reason": f"Recent average daily runtime is {daily_runtime:.1f} hours.",
                 }
             )
         return score
@@ -109,7 +109,7 @@ class CareRiskScoreEngine:
                     "factor": "humidity_percent",
                     "value": humidity,
                     "score_delta": delta,
-                    "reason": f"현재 습도는 {humidity:.0f}%로 높습니다.",
+                    "reason": f"Current humidity is high at {humidity:.0f}%.",
                 }
             )
         if product_type in {"air_conditioner", "air_purifier"} and aqi >= 100:
@@ -127,7 +127,7 @@ class CareRiskScoreEngine:
                     "factor": "aqi",
                     "value": aqi,
                     "score_delta": delta,
-                    "reason": f"현재 대기질 지수(AQI)는 {aqi:.0f}로 높습니다.",
+                    "reason": f"The current air quality index (AQI) is high at {aqi:.0f}.",
                 }
             )
         if product_type == "air_purifier" and (pm25 >= 60 or pm10 >= 120):
@@ -138,7 +138,7 @@ class CareRiskScoreEngine:
                     "factor": "particulate_matter",
                     "value": {"pm25": pm25, "pm10": pm10},
                     "score_delta": delta,
-                    "reason": "PM2.5 또는 PM10이 높아 공기청정기 필터 관리가 필요합니다.",
+                    "reason": "PM2.5 or PM10 is high, so air purifier filter care is recommended.",
                 }
             )
         if product_type in {"washing_machine", "water_purifier"} and water_hardness == "high":
@@ -149,19 +149,19 @@ class CareRiskScoreEngine:
                     "factor": "water_hardness_level",
                     "value": water_hardness,
                     "score_delta": delta,
-                    "reason": "현재 환경의 물 경도가 높습니다.",
+                    "reason": "Water hardness is high in the current environment.",
                 }
             )
         if product_type == "air_conditioner" and monsoon in {"moderate", "heavy"}:
             delta = 10 if monsoon == "moderate" else 15
-            monsoon_label = {"moderate": "보통", "heavy": "강함"}.get(str(monsoon), str(monsoon))
+            monsoon_label = {"moderate": "moderate", "heavy": "heavy"}.get(str(monsoon), str(monsoon))
             score += delta
             factors.append(
                 {
                     "factor": "rain_monsoon_intensity",
                     "value": monsoon,
                     "score_delta": delta,
-                    "reason": f"몬순 강도가 {monsoon_label} 수준이라 에어컨 습기 관리 필요성이 높아졌습니다.",
+                    "reason": f"Monsoon intensity is {monsoon_label}, increasing the need for air conditioner moisture care.",
                 }
             )
         return score
@@ -180,7 +180,7 @@ class CareRiskScoreEngine:
                     "factor": "smart_diagnosis_severity",
                     "value": severity,
                     "score_delta": delta,
-                    "reason": f"ThinQ 스마트 진단 심각도는 {severity}입니다.",
+                    "reason": f"ThinQ smart diagnosis severity is {severity}.",
                 }
             )
         return float(delta)

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { ChevronLeft, Check } from "lucide-react";
 
 const LANGUAGES = [
-  { code: "ko", name: "한국어", native: "한국어" },
+  { code: "ko", name: "Korean", native: "Korean" },
   { code: "en", name: "English", native: "English" },
   { code: "hi", name: "Hindi", native: "हिन्दी" },
   { code: "bn", name: "Bengali", native: "বাংলা" },
@@ -44,12 +44,12 @@ export function LanguageSettings() {
             <ChevronLeft size={24} className="text-[#555]" />
           </button>
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111]">
-            언어 설정
+            Language Settings
           </p>
         </div>
 
         <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888] mb-4 px-1">
-          UI, 매뉴얼/AR 가이드, 음성 안내가 선택한 언어로 제공됩니다.
+          The UI, manual/AR guide, and voice guidance will be provided in the selected language.
         </p>
 
         <div className="rounded-[20px] overflow-hidden mb-4" style={glass}>
@@ -77,7 +77,7 @@ export function LanguageSettings() {
           className="w-full text-white rounded-[15px] py-4 font-['Pretendard:SemiBold',sans-serif] text-[15px]"
           style={{ background: "#FF6B6B" }}
         >
-          저장
+          Save
         </button>
       </div>
     </div>

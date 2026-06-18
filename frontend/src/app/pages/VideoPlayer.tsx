@@ -8,41 +8,41 @@ const allVideos = {
   management: [
     {
       id: "1",
-      title: "에어컨 필터 청소 방법",
+      title: "How to Clean the Air Conditioner Filter",
       duration: "3:25",
-      description: "에어컨 필터를 정기적으로 청소하면 냉방 효율이 향상됩니다.",
+      description: "Regularly cleaning the air conditioner filter improves cooling efficiency.",
     },
     {
       id: "2",
-      title: "실외기 관리 방법",
+      title: "How to Maintain the Outdoor Unit",
       duration: "2:45",
-      description: "실외기 주변을 깨끗하게 유지하여 최적의 성능을 유지하세요.",
+      description: "Keep the area around the outdoor unit clean to maintain optimal performance.",
     },
     {
       id: "3",
-      title: "겨울철 에어컨 보관 방법",
+      title: "How to Store the Air Conditioner in Winter",
       duration: "4:10",
-      description: "겨울철 에어컨을 올바르게 보관하는 방법을 알려드립니다.",
+      description: "Learn how to properly store the air conditioner during winter.",
     },
   ],
   as: [
     {
       id: "1",
-      title: "전원이 켜지지 않을 때",
+      title: "When the Power Will Not Turn On",
       duration: "2:30",
-      description: "전원 문제 해결 방법을 단계별로 안내합니다.",
+      description: "Step-by-step guidance for troubleshooting power issues.",
     },
     {
       id: "2",
-      title: "냉방이 안될 때",
+      title: "When Cooling Does Not Work",
       duration: "3:15",
-      description: "냉방 불량 증상의 원인과 해결 방법입니다.",
+      description: "Causes and solutions for poor cooling.",
     },
     {
       id: "3",
-      title: "이상한 소음이 날 때",
+      title: "When Unusual Noise Occurs",
       duration: "2:50",
-      description: "에어컨에서 발생하는 소음의 원인을 파악하고 해결하세요.",
+      description: "Identify and resolve the cause of air conditioner noise.",
     },
   ],
 };
@@ -58,15 +58,15 @@ export function VideoPlayer() {
   // AI 알림 영상인지 확인
   const isAIAlertVideo = location.pathname === "/ai-alert-video";
 
-  // 저장된 영상인지 확인
+  // Save된 영상인지 확인
   const savedVideoId = (location.state as any)?.savedVideoId;
   const isSavedVideo = !!savedVideoId;
 
   // AI 알림 영상 정보
   const aiAlertVideoInfo = {
-    title: "에어컨 필터 청소 방법",
+    title: "How to Clean the Air Conditioner Filter",
     duration: "3:25",
-    description: "오늘 대기질이 나쁩니다. 에어컨 필터를 정기적으로 청소하면 냉방 효율이 향상되고 실내 공기질을 개선할 수 있습니다.",
+    description: "Air quality is poor today. Regularly cleaning the air conditioner filter can improve cooling efficiency and indoor air quality.",
     videoSrc: aiAlertVideo,
   };
 
@@ -77,24 +77,24 @@ export function VideoPlayer() {
       allVideos.as.find((v) => v.id === videoId);
 
   if (!video) {
-    return <div>비디오를 찾을 수 없습니다.</div>;
+    return <div>Video not found.</div>;
   }
 
   const handleDelete = () => {
-    if (confirm(`"${video.title}" 영상을 삭제하시겠습니까?`)) {
-      alert("영상이 삭제되었습니다.");
+    if (confirm(`"${video.title}" Do you want to delete this video?`)) {
+      alert("The video has been deleted.");
       navigate(`/device/${id}`);
     }
   };
 
   const handleDeleteSavedVideo = () => {
-    if (confirm(`"${video.title}" 영상을 삭제하시겠습니까?`)) {
-      // localStorage에서 저장된 영상 제거
+    if (confirm(`"${video.title}" Do you want to delete this video?`)) {
+      // localStorage에서 Save된 영상 제거
       const savedVideos = JSON.parse(localStorage.getItem("savedVideos") || "[]");
       const updatedVideos = savedVideos.filter((v: any) => v.id !== savedVideoId);
       localStorage.setItem("savedVideos", JSON.stringify(updatedVideos));
 
-      alert("저장된 영상이 삭제되었습니다.");
+      alert("The saved video has been deleted.");
       navigate("/device/1");
     }
   };
@@ -141,7 +141,7 @@ export function VideoPlayer() {
               <ChevronLeft size={24} className="text-[#606060]" />
             </button>
             <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-[15px]">
-              영상 재생
+              Video Playback
             </p>
           </div>
           <button
@@ -156,7 +156,7 @@ export function VideoPlayer() {
           </button>
         </div>
 
-        {/* 비디오 플레이어 */}
+        {/* Video Player */}
         <div className="relative bg-gray-900 rounded-[15px] mb-6 aspect-video flex items-center justify-center overflow-hidden">
           {(isAIAlertVideo || videoId === "1") ? (
             <>
@@ -167,12 +167,12 @@ export function VideoPlayer() {
                 src={aiAlertVideo}
                 controlsList="nodownload"
               >
-                브라우저가 비디오 태그를 지원하지 않습니다.
+                Your browser does not support the video tag.
               </video>
               <button
                 onClick={handleFullscreen}
                 className="absolute top-3 right-3 bg-black/50 hover:bg-black/70 p-2 rounded-[8px] transition-colors z-10"
-                title="전체화면"
+                title="Fullscreen"
               >
                 <Maximize size={20} className="text-white" />
               </button>
@@ -180,7 +180,7 @@ export function VideoPlayer() {
           ) : (
             <div className="text-white text-center">
               <p className="font-['Pretendard:Medium',sans-serif] text-[18px] mb-2">
-                비디오 플레이어
+                Video Player
               </p>
               <p className="font-['Pretendard:Regular',sans-serif] text-[14px] text-gray-400">
                 {video.duration}
@@ -198,7 +198,7 @@ export function VideoPlayer() {
             {video.description}
           </p>
           <div className="flex items-center gap-2 text-[#949ba5] text-[13px]">
-            <span className="font-['Pretendard:Regular',sans-serif]">재생시간</span>
+            <span className="font-['Pretendard:Regular',sans-serif]">Duration</span>
             <span>·</span>
             <span className="font-['Pretendard:Medium',sans-serif]">{video.duration}</span>
           </div>
@@ -212,7 +212,7 @@ export function VideoPlayer() {
           >
             <Trash2 size={18} className="text-[#ff4c49]" />
             <span className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#ff4c49]">
-              저장된 영상 삭제
+              Delete Saved Video
             </span>
           </button>
         ) : !isAIAlertVideo && (
@@ -222,13 +222,13 @@ export function VideoPlayer() {
           >
             <Trash2 size={18} className="text-[#ff4c49]" />
             <span className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#ff4c49]">
-              영상 삭제
+              Delete Video
             </span>
           </button>
         )}
       </div>
 
-      {/* 전체화면 모달 - Portal을 사용해 body에 직접 렌더링 */}
+      {/* Fullscreen 모달 - Portal을 Usage해 body에 직접 렌더링 */}
       {isFullscreen && createPortal(
         <div className="fixed inset-0 bg-black z-[9999] flex items-center justify-center" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}>
           <button
@@ -244,7 +244,7 @@ export function VideoPlayer() {
             src={aiAlertVideo}
             controlsList="nodownload"
           >
-            브라우저가 비디오 태그를 지원하지 않습니다.
+            Your browser does not support the video tag.
           </video>
         </div>,
         document.body

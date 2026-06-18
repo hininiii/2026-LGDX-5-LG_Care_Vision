@@ -1,20 +1,20 @@
 import type { Message, ScheduleDateOption } from "../types/chat";
 
-export const PRODUCTS = ["에어컨", "냉장고", "세탁기", "공기청정기"];
+export const PRODUCTS = ["Air Conditioner", "Refrigerator", "Washing Machine", "Air Purifier"];
 
 export const PRODUCT_TYPES: Record<string, string[]> = {
-  "에어컨": ["스탠드형", "벽걸이형", "창문형"],
-  "냉장고": ["일반형", "양문형", "김치냉장고"],
-  "세탁기": ["드럼형", "통돌이형"],
-  "공기청정기": ["스탠드형", "벽걸이형"],
+  "Air Conditioner": ["Floor-standing", "Wall-mounted", "Window Type"],
+  "Refrigerator": ["Standard", "Side-by-side", "Kimchi Refrigerator"],
+  "Washing Machine": ["Front-load", "Top-load"],
+  "Air Purifier": ["Floor-standing", "Wall-mounted"],
 };
 
 export const PROBLEM_OPTIONS = [
-  "전원이 불안정하거나 자주 꺼져요",
-  "냉방/기능이 잘 작동하지 않아요",
-  "필터에 먼지가 많이 쌓여 있어요",
-  "소음이나 진동이 심해요",
-  "그 외 다른 문제",
+  "Power is unstable or turns off often",
+  "Cooling or functions are not working well",
+  "The filter has a lot of dust",
+  "Noise or vibration is severe",
+  "Other issue",
 ];
 
 export const AVAILABLE_DATES: ScheduleDateOption[] = (() => {
@@ -23,7 +23,7 @@ export const AVAILABLE_DATES: ScheduleDateOption[] = (() => {
   for (let i = 1; i <= 7; i++) {
     const d = new Date(today);
     d.setDate(today.getDate() + i);
-    const days = ["일", "월", "화", "수", "목", "금", "토"];
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     dates.push({
       label: `${d.getMonth() + 1}/${d.getDate()}(${days[d.getDay()]})`,
       value: d.toLocaleDateString("ko-KR"),
@@ -38,9 +38,9 @@ export const initialMessages: Message[] = [
   {
     id: "1",
     type: "bot",
-    content: "안녕하세요!\nLG전자 온라인 채팅 서비스에 오신 것을 환영합니다.\n무엇을 도와드릴까요?",
-    time: "오후 12:09",
-    options: ["제품 문제 해결", "가전 관리 방법", "서비스 센터 연결"],
+    content: "Hello!\nWelcome to LG Electronics online chat service.\nHow can I help you?",
+    time: "12:09 PM",
+    options: ["Troubleshoot Product Issue", "Appliance Care Guide", "Connect to Service Center"],
   },
 ];
 
