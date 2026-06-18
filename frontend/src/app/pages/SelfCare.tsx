@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router";
-import { ChevronLeft, Maximize2 } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import acImage from "../../imports/제품페이지관리/47f735f974d0900368394246ff236d4a45df2a58.png";
 import { requestAiChat } from "../api/chat";
@@ -209,21 +209,21 @@ export function SelfCare() {
         {/* 제품 카드 — DeviceDetail 동일 구조 */}
         <div className="mx-6 mb-5">
           <div className="rounded-[20px] p-5" style={glass}>
-            <div className="flex justify-center mb-4">
+            <div className="relative flex justify-center mb-1 pt-[24px]">
+              <span className="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-[#BFEAD4] bg-[#eaf8f1] px-[10px] py-[3px] font-['Pretendard:Medium',sans-serif] text-[9px] text-[#2d9b69]">
+                LG Whisen Wall-mounted
+              </span>
               <img src={acImage} alt="Air Conditioner" className="w-[200px] h-[100px] object-contain" />
             </div>
-            <p className="font-['Pretendard:SemiBold',sans-serif] text-[18px] text-[#111] text-center mb-1">Living Room Air Conditioner</p>
-            <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888] text-center mb-4">
-              LG Whisen Wall-mounted
-            </p>
-            <div className="grid grid-cols-2 gap-2 pt-4" style={{ borderTop: "1px solid rgba(200,200,200,0.3)" }}>
-              <div className="flex justify-between">
-                <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888]">Product Type</p>
-                <p className="font-['Pretendard:Medium',sans-serif] text-[13px] text-[#111]">Air Conditioner</p>
+            <p className="font-['Pretendard:SemiBold',sans-serif] text-[16px] text-[#111] text-center mb-3">Living Room Air Conditioner</p>
+            <div className="grid grid-cols-2 pt-4" style={{ borderTop: "1px solid rgba(200,200,200,0.3)" }}>
+              <div className="flex flex-col items-center gap-[4px] border-r border-[rgba(200,200,200,0.28)] px-2">
+                <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888]">Product Type</p>
+                <p className="font-['Pretendard:Medium',sans-serif] text-[13px] leading-tight text-[#111]">Air Conditioner</p>
               </div>
-              <div className="flex justify-between">
-                <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888]">Registered Date</p>
-                <p className="font-['Pretendard:Medium',sans-serif] text-[13px] text-[#111]">2024.01.15</p>
+              <div className="flex flex-col items-center gap-[4px] px-2">
+                <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888]">Registered Date</p>
+                <p className="font-['Pretendard:Medium',sans-serif] text-[13px] leading-tight text-[#111]">2024.01.15</p>
               </div>
             </div>
           </div>
@@ -235,7 +235,7 @@ export function SelfCare() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex-1 py-2.5 text-[14px] font-semibold border-b-2 -mb-px transition-colors ${
+              className={`flex-1 py-3 text-[16px] font-semibold border-b-2 -mb-px transition-colors ${
                 activeTab === tab
                   ? "text-[#1DB87A] border-[#1DB87A]"
                   : "text-[#b0b0b0] border-transparent"
@@ -250,8 +250,22 @@ export function SelfCare() {
         {activeTab === "manual" && (
           <div className="mx-6 flex flex-col gap-4">
             {/* Chat.tsx 공식근거 기반 영상 표시 구조 */}
-            <div className="rounded-[20px] overflow-hidden" style={glass}>
-              <div className="w-full aspect-video bg-[#e8ecef] flex items-center justify-center relative">
+            <div className="rounded-[20px] p-[14px]" style={glass}>
+              <div className="mb-3">
+                <p className="flex items-baseline gap-[5px]">
+                  <span className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#555]">Official Video Guide</span>
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">·</span>
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">{procedureLabel}</span>
+                </p>
+              </div>
+              <div
+                className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-[16px]"
+                style={{
+                  background: "rgba(255,255,255,0.52)",
+                  border: "1px solid rgba(255,255,255,0.80)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 18px rgba(31,69,61,0.06)",
+                }}
+              >
                 {video.embedUrl ? (
                   <iframe
                     title={video.title}
@@ -269,9 +283,6 @@ export function SelfCare() {
                     {isGuideLoading ? "Loading the official manual." : "No linked official video is available."}
                   </p>
                 )}
-                <button className="absolute top-3 right-3 w-8 h-8 bg-white/80 rounded-lg flex items-center justify-center">
-                  <Maximize2 size={16} className="text-[#555]" />
-                </button>
               </div>
             </div>
 

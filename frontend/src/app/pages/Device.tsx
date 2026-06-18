@@ -55,8 +55,8 @@ export function Device() {
           "radial-gradient(circle at -12% -8%, rgba(61,220,151,0.10) 0, rgba(61,220,151,0.06) 24%, transparent 48%), radial-gradient(circle at 112% 46%, rgba(100,210,190,0.09) 0, rgba(100,210,190,0.045) 28%, transparent 52%), linear-gradient(180deg, #f7f9f8 0%, #f7f9f8 100%)",
       }}
     >
-      <div className="relative z-10 px-[18px] pt-[38px] pb-[12px] w-full max-w-[390px] mx-auto">
-        <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111] mb-[20px] pl-[5px] pt-[10px]">
+      <div className="relative z-10 px-[18px] pt-[48px] pb-[12px] w-full max-w-[390px] mx-auto">
+        <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-[15px] mb-[25px] pl-[2px]">
           My Devices
         </p>
 

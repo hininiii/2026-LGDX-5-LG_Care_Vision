@@ -20,8 +20,8 @@ import { getUserProfile } from "../api/user";
 import type { AiChatResponse, ChatContext, ChatGuideOptions, ChatManualGuide, FlowType, Message, ServiceInfo, ServiceStep } from "../types/chat";
 import type { ChatDeviceOption } from "../types/device";
 
-const LEGACY_CHAT_STORAGE_KEYS = ["chat_messages"];
-const CHAT_STORAGE_KEY = "chat_messages_v20260612";
+const LEGACY_CHAT_STORAGE_KEYS = ["chat_messages", "chat_messages_v20260612", "chat_messages_v20260618_transition"];
+const CHAT_STORAGE_KEY = "chat_messages_v20260618_transition_v2";
 const CHAT_ENDED_KEY = "chat_session_ended";
 
 const now = () =>
@@ -163,6 +163,7 @@ export function Chat() {
   const [selectingProducts, setSelectingProducts] = useState(false);
   const [selectingTypes, setSelectingTypes] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<string>("");
+  const [problemFocusSpacer, setProblemFocusSpacer] = useState(false);
 
   const triggerGifPop = useCallback(() => {
     setGifPop(true);
@@ -196,6 +197,7 @@ export function Chat() {
 
   const handleStartChat = () => {
     const [mainFlow, product, type] = floatingChips;
+    setProblemFocusSpacer(false);
     setUiPhase("morphing");
     setTimeout(() => {
       handleOptionClick(mainFlow);
@@ -219,7 +221,11 @@ export function Chat() {
   };
 
   const scrollToBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  useEffect(() => { scrollToBottom(); }, [messages]);
+  useEffect(() => {
+    if (!problemFocusSpacer) {
+      scrollToBottom();
+    }
+  }, [messages, problemFocusSpacer]);
   useEffect(() => {
     localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages));
   }, [messages]);
@@ -386,6 +392,7 @@ export function Chat() {
     if (!inputValue.trim()) return;
     const text = inputValue.trim();
     setInputValue("");
+    setProblemFocusSpacer(false);
     addUserMessage(text);
     triggerGifPop();
 
@@ -466,18 +473,23 @@ export function Chat() {
           nextServiceStep("model");
         } else {
           // 문제 해결 / Care 방법 → 증상 선택
+          setProblemFocusSpacer(true);
           setMessages((prev) => [...prev, {
             id: (Date.now() + 1).toString(), type: "bot",
             content: "🔍 Please select the current status.",
             time: now(),
             problemOptions: getProblemOptions(),
           }]);
+          setTimeout(() => {
+            problemMsgRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+          }, 80);
         }
         return;
       }
 
       // ── 증상 선택 ──
       if (getProblemOptions().includes(option) && option !== "Other issue") {
+        setProblemFocusSpacer(false);
         setChatContext((prev) => ({
           ...prev,
           session_id: undefined,
@@ -488,6 +500,7 @@ export function Chat() {
         return;
       }
       if (option === "Other issue") {
+        setProblemFocusSpacer(false);
         setChatContext((prev) => ({
           ...prev,
           symptom: option,
@@ -581,11 +594,11 @@ export function Chat() {
         transition={{ duration: 1.1, ease: [0.4, 0.0, 0.15, 1] }}
         style={{ pointerEvents: isInitial ? "auto" : "none" }}
       >
-        <div className="px-[25px] pt-[44px] pb-0 flex items-center gap-2">
+        <div className="px-[25px] pt-[44px] pb-0 flex items-center gap-1">
           <button onClick={handleBack} className="p-1 -ml-1">
             <ChevronLeft size={22} className="text-[#555]" strokeWidth={2} />
           </button>
-          <span className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#222]">LG Chat</span>
+          <span className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-[15px]">LG Chat</span>
         </div>
 
         <div className="px-[28px] pt-[24px]">
@@ -655,7 +668,7 @@ export function Chat() {
       </div>
 
       {/* 메시지 영역 */}
-      <div className="flex-1 overflow-y-auto px-[20px] py-6 space-y-4">
+      <div className="flex-1 overflow-y-auto px-[20px] py-6 space-y-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {messages.map((message, index) => (
           <div key={message.id} className="space-y-1" ref={message.problemOptions ? problemMsgRef : undefined}>
             {message.type === "bot" ? (
@@ -935,6 +948,7 @@ export function Chat() {
             )}
           </div>
         ))}
+        {problemFocusSpacer && <div className="h-[390px] shrink-0" aria-hidden="true" />}
         <div ref={messagesEndRef} />
       </div>
 
