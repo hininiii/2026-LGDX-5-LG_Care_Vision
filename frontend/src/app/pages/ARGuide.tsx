@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, Camera, Volume2, VolumeX, Lightbulb, Check } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-const CHAT_STORAGE_KEY = "chat_messages_v20260612";
+const CHAT_STORAGE_KEY = "chat_messages_v20260618_transition_v2";
 
 const steps = [
   { title: "Turn Off Power", desc: "Turn off the power and unplug the unit.", hint: "Press and hold the air conditioner power button\nor unplug it directly." },
@@ -163,7 +163,18 @@ export function ARGuide() {
                 <span className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full bg-[#DDF3EC] text-[#22B98F]"><Lightbulb size={11} strokeWidth={2} /></span>
                 <strong className="text-[13px] font-semibold tracking-[-0.06em] text-[#20AD86]">Try this</strong>
               </div>
-              <p className="whitespace-pre-line text-[13px] font-medium leading-[1.45] tracking-[-0.06em] text-[#55595D] pl-[20px] pr-[0px] py-[0px]">{steps[current].hint}</p>
+              <div className="grid pl-[20px] pr-[0px] py-[0px]">
+                {steps.map((step) => (
+                  <p
+                    key={step.title}
+                    aria-hidden="true"
+                    className="invisible col-start-1 row-start-1 whitespace-pre-line text-[13px] font-medium leading-[1.45] tracking-[-0.06em] text-[#55595D]"
+                  >
+                    {step.hint}
+                  </p>
+                ))}
+                <p className="col-start-1 row-start-1 whitespace-pre-line text-[13px] font-medium leading-[1.45] tracking-[-0.06em] text-[#55595D]">{steps[current].hint}</p>
+              </div>
             </div>
           </section>
         </main>
