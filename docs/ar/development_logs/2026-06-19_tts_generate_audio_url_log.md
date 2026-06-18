@@ -89,12 +89,32 @@ Manual local TestClient check with real Google credentials:
 - `POST /api/v1/tts/generate` -> `200`
 - returned `audio_url=/api/v1/tts/audio/de6cdd2dea7d36377e16891b479947a81e6cb2cc3a7eac1187194a4e5a53923a.mp3`
 - `GET` returned `200`, `audio/mpeg`, `29568` bytes, MP3 header `fff384`.
+- 2026-06-19 re-run:
+  - `python -m pytest tests/test_google_tts_mvp.py -q` -> `6 passed`
+  - `npm run smoke:ar-guide` -> `ok=true`, `static_contracts=27`, `step_target_contracts=12`
+  - `npm run build` -> success, with existing Vite large chunk warning
+  - Real Google credential local TestClient smoke -> `POST /api/v1/tts/generate` `200`, cached mp3 `GET` `200 audio/mpeg`, `29568` bytes
 
 ## Failure / correction notes
 
 - The SQLite mock DB file changed during TestClient runs; it was excluded from the commit.
 - No Google service-account JSON or private key content was committed.
 - Runtime cache is not persistent across Render restarts/redeploys; this is acceptable for task 7 MVP, but task 8 should move mp3 files to Supabase Storage.
+
+## Live Render status
+
+- GitHub branch: `taehee`
+- Implemented commit: `1368bf2 Add TTS audio URL generation`
+- Render live health check: `GET /api/v1/health` -> `200`
+- Render live OpenAPI re-check:
+  - `/api/v1/tts/synthesize` -> present
+  - `/api/v1/tts/generate` -> not present
+  - `/api/v1/tts/audio/{cache_key}.mp3` -> not present
+- Interpretation: code is implemented and pushed, but the Render service is still serving an older deployment. Manual deploy of latest commit, or successful auto-deploy, is required before live `/tts/generate` verification.
+- Required Render env for automatic guide-step `audio_url` generation:
+  - `GOOGLE_TTS_ENABLED=1`
+  - `GOOGLE_TTS_PREGENERATE=1`
+  - Google service account credential env or file-based credential already configured for live TTS
 
 ## Task 8 Supabase Storage direction
 
@@ -133,4 +153,4 @@ Official Supabase docs checked:
 
 - Storage overview: https://supabase.com/docs/guides/storage
 - Public/private bucket serving: https://supabase.com/docs/guides/storage/serving/downloads
-- Upload and public URL APIs: https://supabase.com/docs/reference/javascript/v1/storage-from-upload
+- Upload API: https://supabase.com/docs/reference/javascript/storage-from-upload
