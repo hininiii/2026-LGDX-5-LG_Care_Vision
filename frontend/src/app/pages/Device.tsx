@@ -56,7 +56,7 @@ export function Device() {
       }}
     >
       <div className="relative z-10 px-[18px] pt-[48px] pb-[12px] w-full max-w-[390px] mx-auto">
-        <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-[15px] mb-[25px] pl-[2px]">
+        <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-normal mb-[26px] pl-[2px]">
           My Devices
         </p>
 

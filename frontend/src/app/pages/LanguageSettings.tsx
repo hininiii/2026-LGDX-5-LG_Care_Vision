@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { ChevronLeft, Check } from "lucide-react";
 
 const LANGUAGES = [
-  { code: "ko", name: "Korean", native: "Korean" },
+  { code: "ko", name: "Korean", native: "한국어" },
   { code: "en", name: "English", native: "English" },
   { code: "hi", name: "Hindi", native: "हिन्दी" },
   { code: "bn", name: "Bengali", native: "বাংলা" },
@@ -38,12 +38,12 @@ export function LanguageSettings() {
       <div className="pointer-events-none absolute -top-20 -left-16 w-72 h-72 rounded-full"
         style={{ background: "rgba(61,220,151,0.09)", filter: "blur(90px)" }} />
 
-      <div className="relative z-10 px-[18px] pt-[39px] pb-[20px] w-full max-w-[390px] mx-auto">
-        <div className="flex items-center gap-3 mb-6">
+      <div className="relative z-10 px-[18px] pt-[40px] pb-[20px] w-full max-w-[390px] mx-auto">
+        <div className="flex items-center gap-1 mb-5 -mx-[2px]">
           <button onClick={() => navigate("/settings")} className="p-1">
-            <ChevronLeft size={24} className="text-[#555]" />
+            <ChevronLeft size={22} className="text-[#555]" />
           </button>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111]">
+          <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-[15px]">
             Language Settings
           </p>
         </div>
@@ -53,29 +53,35 @@ export function LanguageSettings() {
         </p>
 
         <div className="rounded-[20px] overflow-hidden mb-4" style={glass}>
-          {LANGUAGES.map((lang, idx) => (
+          {LANGUAGES.map((lang, idx) => {
+            const isSelected = selected === lang.code;
+            return (
             <div key={lang.code}>
               <button
                 onClick={() => setSelected(lang.code)}
                 className="w-full px-5 py-4 flex items-center justify-between hover:bg-white/30 transition-colors"
               >
                 <div className="text-left">
-                  <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-[2px]">{lang.native}</p>
-                  <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888]">{lang.name}</p>
+                  <p className={`${isSelected ? "font-['Pretendard:SemiBold',sans-serif]" : "font-['Pretendard:Regular',sans-serif]"} text-[15px] text-[#111] mb-[2px]`}>{lang.native}</p>
+                  <p className={`${isSelected ? "font-['Pretendard:Medium',sans-serif]" : "font-['Pretendard:Regular',sans-serif]"} text-[12px] text-[#888]`}>{lang.name}</p>
                 </div>
-                {selected === lang.code && <Check size={20} className="text-[#1DB87A]" />}
+                {isSelected && <Check size={20} className="text-[#1DB87A]" />}
               </button>
               {idx < LANGUAGES.length - 1 && (
                 <div className="h-[1px] mx-5" style={{ background: "rgba(200,200,200,0.3)" }} />
               )}
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <button
           onClick={handleSave}
           className="w-full text-white rounded-[15px] py-4 font-['Pretendard:SemiBold',sans-serif] text-[15px]"
-          style={{ background: "#FF6B6B" }}
+          style={{
+            background: "linear-gradient(135deg, #1DB87A 0%, #3DDC97 100%)",
+            boxShadow: "0 6px 22px rgba(29,184,122,0.28), inset 0 1px 0 rgba(255,255,255,0.28)",
+          }}
         >
           Save
         </button>
