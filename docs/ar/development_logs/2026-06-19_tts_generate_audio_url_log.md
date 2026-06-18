@@ -119,7 +119,12 @@ Manual local TestClient check with real Google credentials:
   - `tts_provider=google_cloud_tts`
   - `tts_language_code=en-IN`
   - `audio_url=null`
-- Interpretation: live `/tts/generate` and cached mp3 playback are complete. Guide step automatic `audio_url` pre-generation is wired in code, but not active on Render until `GOOGLE_TTS_PREGENERATE=1` is added.
+- Render live `/api/v1/guides/options` guide check:
+  - response includes guide option data
+  - `tts_provider=google_cloud_tts`
+  - `audio_url` string not present
+  - `audio_url=null`
+- Interpretation: live `/tts/generate` and cached mp3 playback are complete. Guide step automatic `audio_url` pre-generation is wired in code for `/api/v1/ar/plans` and `/api/v1/guides/options`, but not active on Render until `GOOGLE_TTS_PREGENERATE=1` is added.
 - Required Render env for automatic guide-step `audio_url` generation:
   - `GOOGLE_TTS_ENABLED=1`
   - `GOOGLE_TTS_PREGENERATE=1`
