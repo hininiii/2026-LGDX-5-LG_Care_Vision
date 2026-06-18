@@ -44,7 +44,7 @@
 - `GET /api/v1/tts/audio/{cache_key}.mp3`: runtime cache mp3 재생 URL 제공 완료.
 - `GOOGLE_TTS_PREGENERATE=1`: guide step 응답에 `audio_url` 사전 부착 가능.
 - 현재 한계: Render runtime cache는 재시작/재배포 시 사라질 수 있으므로, 다음 단계에서 Supabase Storage 영구 저장으로 전환한다.
-- 2026-06-19 재검증 기준: GitHub `taehee` 브랜치에는 구현 커밋 `1368bf2`가 반영되어 있으나, Render live OpenAPI에는 아직 `/api/v1/tts/generate`, `/api/v1/tts/audio/{cache_key}.mp3`가 노출되지 않았다. Render에서 최신 커밋 재배포와 `GOOGLE_TTS_PREGENERATE=1` 환경변수 추가 후 live smoke 검증이 필요하다.
+- 2026-06-19 재검증 기준: GitHub `taehee` 브랜치와 Render live 모두 `/api/v1/tts/generate`, `/api/v1/tts/audio/{cache_key}.mp3`가 반영되었다. Live `/tts/generate`는 mp3 URL 생성과 `audio/mpeg` 재생까지 통과했다. 단, `/api/v1/ar/plans` guide step 자동 `audio_url` 사전 부착은 Render 환경변수 `GOOGLE_TTS_PREGENERATE=1` 추가 전까지 `null`로 유지된다.
 
 ## 2. 최종 산출물 정의
 

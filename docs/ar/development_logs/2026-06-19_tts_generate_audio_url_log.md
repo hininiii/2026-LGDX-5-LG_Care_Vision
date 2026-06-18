@@ -104,13 +104,22 @@ Manual local TestClient check with real Google credentials:
 ## Live Render status
 
 - GitHub branch: `taehee`
-- Implemented commit: `1368bf2 Add TTS audio URL generation`
+- Implemented commits:
+  - `1368bf2 Add TTS audio URL generation`
+  - `4f7e60b Document TTS generate deploy status`
 - Render live health check: `GET /api/v1/health` -> `200`
 - Render live OpenAPI re-check:
   - `/api/v1/tts/synthesize` -> present
-  - `/api/v1/tts/generate` -> not present
-  - `/api/v1/tts/audio/{cache_key}.mp3` -> not present
-- Interpretation: code is implemented and pushed, but the Render service is still serving an older deployment. Manual deploy of latest commit, or successful auto-deploy, is required before live `/tts/generate` verification.
+  - `/api/v1/tts/generate` -> present
+  - `/api/v1/tts/audio/{cache_key}.mp3` -> present
+- Render live `/tts/generate` smoke:
+  - `POST /api/v1/tts/generate` -> provider `google_cloud_tts`, `cache_key` length `64`, `audio_url` prefix `/api/v1/tts/audio/`
+  - `GET {audio_url}` -> `200`, `audio/mpeg`, `29568` bytes
+- Render live `/api/v1/ar/plans` guide step check:
+  - `tts_provider=google_cloud_tts`
+  - `tts_language_code=en-IN`
+  - `audio_url=null`
+- Interpretation: live `/tts/generate` and cached mp3 playback are complete. Guide step automatic `audio_url` pre-generation is wired in code, but not active on Render until `GOOGLE_TTS_PREGENERATE=1` is added.
 - Required Render env for automatic guide-step `audio_url` generation:
   - `GOOGLE_TTS_ENABLED=1`
   - `GOOGLE_TTS_PREGENERATE=1`
