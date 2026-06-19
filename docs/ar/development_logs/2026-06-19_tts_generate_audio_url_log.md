@@ -271,3 +271,29 @@ Result: compile succeeded.
   - `manual_guides[0].display_steps[0].audio_url` is Supabase Storage public URL
   - guide option audio `GET` -> `200 audio/mpeg`, `42432` bytes
 - Final status: Task 8 Supabase Storage persistence is implemented and live verified.
+
+### 2026-06-19 final re-verification on user request
+
+- Code state:
+  - latest branch commit includes `storage_provider`, `object_path`, `SUPABASE_TTS_STORAGE_ENABLED`, Supabase upload path, and runtime cache fallback.
+  - working tree was clean after restoring the SQLite mock DB test artifact.
+- Local tests:
+  - `python -m pytest tests/test_google_tts_mvp.py -q` -> `8 passed`
+- Render OpenAPI:
+  - `TTSGenerateResponse.storage_provider` present
+  - `TTSGenerateResponse.object_path` present
+- Fresh `/api/v1/tts/generate` check with a new verification phrase:
+  - `storage_provider=supabase_storage`
+  - `cached=false`
+  - `object_path=tts/en-IN/en-IN-Standard-A/ce6476b853d60614f98ee339734abeb0a52746853ed39371df2dd9adbdc7b7b5.mp3`
+  - `audio_url` is Supabase Storage public URL
+  - `GET audio_url` -> `200 audio/mpeg`, `67200` bytes
+- `/api/v1/ar/plans` check:
+  - `step_count=7`
+  - `audio_url_count=7`
+  - `supabase_url_count=7`
+  - first step audio `GET` -> `200 audio/mpeg`, `23040` bytes
+- `/api/v1/guides/options` check:
+  - `manual_guides[0].display_steps[0].audio_url` is Supabase Storage public URL
+  - guide option audio `GET` -> `200 audio/mpeg`, `42432` bytes
+- Final re-verification result: Task 8 is complete. Remaining work is future enhancement only, such as language policy, cost controls, or private/signed URL policy if guide audio later includes user-specific text.
