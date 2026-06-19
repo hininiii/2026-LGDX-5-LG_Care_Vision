@@ -12,7 +12,14 @@ export interface DeviceCareSummary {
   recent_date?: string;
 }
 
-export interface DeviceDetailOption extends ChatDeviceOption {
-  care_summary?: DeviceCareSummary;
+export interface DeviceCareHistoryItem {
+  id: string;
+  type: "Self Care" | "Self A/S" | string;
+  title: string;
+  date: string;
 }
 
+export interface DeviceDetailOption extends ChatDeviceOption {
+  care_summary?: DeviceCareSummary;
+  recent_history?: DeviceCareHistoryItem[];
+}

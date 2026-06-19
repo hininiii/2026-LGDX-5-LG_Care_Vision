@@ -6,6 +6,7 @@ from app.repositories import (
     RepositoryRegistry,
     SQLiteRepositoryRegistry,
 )
+from app.repositories.sqlalchemy_repositories import SQLAlchemyUserRepository
 
 
 def test_repository_registry_has_required_domain_repositories() -> None:
@@ -130,6 +131,41 @@ def test_official_asset_and_care_history_repositories_are_accessible() -> None:
     care_history = repo.get_device_care_history(user_id="U001", device_id="D001", limit=5)
     assert isinstance(care_history, list)
     assert len(care_history) <= 5
+
+
+def test_signup_region_resolver_matches_common_indian_addresses() -> None:
+    class AddressLookupRepo(SQLAlchemyUserRepository):
+        regions = {
+            ("Telangana", "Hyderabad"): "INDIA_TELANGANA_HYDERABAD",
+            ("Maharashtra", "Mumbai"): "INDIA_MAHARASHTRA_MUMBAI",
+            ("Karnataka", "Bengaluru"): "INDIA_KARNATAKA_BENGALURU",
+            ("Delhi", "Delhi"): "INDIA_DELHI_DELHI",
+        }
+
+        def __init__(self) -> None:
+            pass
+
+        def fetch_one(self, sql: str, params: tuple = ()) -> dict | None:
+            if len(params) >= 2 and (params[0], params[1]) in self.regions:
+                return {"region_id": self.regions[(params[0], params[1])]}
+            if len(params) >= 1:
+                state = params[0]
+                for (region_state, _city), region_id in self.regions.items():
+                    if state == region_state:
+                        return {"region_id": region_id}
+            return None
+
+    repo = AddressLookupRepo()
+
+    assert repo.resolve_signup_region_id(
+        {"address": "146 Victoria Street, Hyderabad, Telangana 500001, India"}
+    ) == "INDIA_TELANGANA_HYDERABAD"
+    assert repo.resolve_signup_region_id(
+        {"address": "Bandra West, Mumbai, Maharashtra 400050, India"}
+    ) == "INDIA_MAHARASHTRA_MUMBAI"
+    assert repo.resolve_signup_region_id(
+        {"address": "MG Road, Bangalore, Karnataka 560001, India"}
+    ) == "INDIA_KARNATAKA_BENGALURU"
 
 
 def test_evaluation_repository_handles_empty_current_test_set() -> None:

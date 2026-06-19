@@ -15,6 +15,9 @@ export type RegisterUserPayload = {
   phone: string;
   address: string;
   preferred_language?: string;
+  region_id?: string;
+  region?: string;
+  city?: string;
 };
 
 export type LoginUserPayload = {
