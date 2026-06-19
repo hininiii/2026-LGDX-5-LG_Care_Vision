@@ -5404,3 +5404,56 @@ npm run build
 ```text
 빌드 중 chunk size warning은 남아 있으나 기존 번들 크기 경고이며 이번 단위 변경의 실패 요인은 아니다.
 ```
+
+### 27.18 회원 지역 매핑/프로필/케어 요약 API 연결 보정 - 완료
+
+배경:
+
+```text
+회원가입 주소가 Hyderabad/Telangana인데 Home 화면 지역이 New Delhi로 표시되는 문제가 있었다.
+원인은 회원가입 주소 파싱이 Delhi/Gujarat 중심이라 Hyderabad 주소를 REGION으로 매핑하지 못하면 INDIA_DELHI_DELHI로 fallback되는 구조였다.
+또한 Device Detail의 Care Summary/Recent History와 Settings 프로필 카드가 백엔드 API가 아니라 프론트 하드코딩 값을 표시하고 있었다.
+```
+
+수정:
+
+```text
+backend/app/repositories/sqlalchemy_repositories.py
+- resolve_signup_region_id 주소 매칭 확장
+- Hyderabad/Telangana, Mumbai/Maharashtra, Pune/Maharashtra, Bengaluru/Karnataka, Chennai/Tamil Nadu, Kolkata/West Bengal, Jaipur/Rajasthan, Kochi/Kerala, Lucknow/UP, Noida/UP, Gurugram/Haryana, Chandigarh, Delhi, Ahmedabad 지원
+- 도시/주/주요 pincode prefix/한글 표기 일부를 address keyword로 매칭
+- 매칭 후 REGION 테이블에서 state/city 기준으로 region_id 조회
+
+frontend/src/app/pages/DeviceDetail.tsx
+- care summary count와 recent history 하드코딩 제거
+- getUserProfile -> getDeviceDetail(deviceId, userEmail) 호출
+- API의 care_summary/recent_history를 화면에 표시
+
+frontend/src/app/pages/Settings.tsx
+- tanisha@example.com 하드코딩 제거
+- getUserProfile API 응답의 name/email을 표시
+
+frontend/src/app/types/device.ts
+- recent_history 타입 추가
+```
+
+검증:
+
+```text
+cd backend
+python -m pytest tests/test_repositories_sqlalchemy.py tests/test_frontend_compat_api.py -q --basetemp C:\Users\TAEHEE\carevision_pytest_tmp_profile -p no:cacheprovider
+-> 21 passed
+
+cd frontend
+npm run build
+-> success
+```
+
+AR 탐지 후속 방향:
+
+```text
+filter cleaning AR에서 에어컨이 잘 안 잡히는 문제는 단순 threshold 완화만으로 해결하면 오탐 위험이 커진다.
+1차는 UX fallback 보정: filter 미검출 시 정렬 가이드/촬영 각도/필터 노출 안내를 표시하고, context aircon 미검출만으로 즉시 실패 처리하지 않는 안내 상태를 둔다.
+2차는 detection policy 보정: 단계별로 filter-only 허용 단계와 aircon context 필수 단계를 분리하고, confidence threshold를 단계/객체별로 재검토한다.
+3차는 학습 데이터 보강: 실제 발표 환경의 벽걸이 에어컨, 필터가 살짝 열린 상태, 조명/거리/각도 변형 이미지를 Roboflow/YOLO 데이터셋에 추가해 재학습한다.
+```

@@ -32,6 +32,10 @@ def _demo_user_id_from_email(user_email: str | None) -> str | None:
     return user_email
 
 
+def _normalize_lookup_text(value: str | None) -> str:
+    return re.sub(r"[^a-z0-9가-힣]+", " ", (value or "").lower()).strip()
+
+
 def _product_code_from_device_id(device_id: str | None) -> str | None:
     if not device_id:
         return None
@@ -170,29 +174,8 @@ class SQLAlchemyUserRepository(BaseRepository):
             if row:
                 return str(row["region_id"])
 
-        region = str(payload.get("region") or payload.get("state") or "").strip()
-        city = str(payload.get("city") or "").strip() or None
-        if region:
-            row = self.fetch_one(
-                """
-                SELECT region_id
-                FROM "REGION"
-                WHERE state = ? OR region_id = ?
-                ORDER BY CASE WHEN (? IS NOT NULL AND city = ?) THEN 0 ELSE 1 END
-                LIMIT 1
-                """,
-                (region, region, city, city),
-            )
-            if row:
-                return str(row["region_id"])
-
-        address = str(payload.get("address") or "").lower()
-        address_matches = [
-            (("new delhi", "delhi", "connaught", "뉴델리", "델리", "코넛"), "Delhi", "Delhi"),
-            (("ahmedabad", "gujarat", "아메다바드", "구자라트"), "Gujarat", "Ahmedabad"),
-        ]
-        for keywords, state, matched_city in address_matches:
-            if any(keyword in address for keyword in keywords):
+        def lookup_region(state: str, matched_city: str | None = None) -> str | None:
+            if matched_city:
                 row = self.fetch_one(
                     """
                     SELECT region_id
@@ -204,6 +187,47 @@ class SQLAlchemyUserRepository(BaseRepository):
                 )
                 if row:
                     return str(row["region_id"])
+            row = self.fetch_one(
+                """
+                SELECT region_id
+                FROM "REGION"
+                WHERE state = ? OR region_id = ?
+                ORDER BY CASE WHEN (? IS NOT NULL AND city = ?) THEN 0 ELSE 1 END
+                LIMIT 1
+                """,
+                (state, state, matched_city, matched_city),
+            )
+            return str(row["region_id"]) if row else None
+
+        region = str(payload.get("region") or payload.get("state") or "").strip()
+        city = str(payload.get("city") or "").strip() or None
+        if region:
+            matched = lookup_region(region, city)
+            if matched:
+                return matched
+
+        address = _normalize_lookup_text(str(payload.get("address") or ""))
+        address_matches = [
+            (("hyderabad", "telangana", "500001", "5000", "하이데라바드", "텔랑가나"), "Telangana", "Hyderabad"),
+            (("mumbai", "bombay", "maharashtra", "4000", "뭄바이", "마하라슈트라"), "Maharashtra", "Mumbai"),
+            (("pune", "4110", "푸네"), "Maharashtra", "Pune"),
+            (("bengaluru", "bangalore", "karnataka", "5600", "벵갈루루", "방갈로르", "카르나타카"), "Karnataka", "Bengaluru"),
+            (("chennai", "madras", "tamil nadu", "6000", "첸나이", "타밀나두"), "Tamil Nadu", "Chennai"),
+            (("kolkata", "calcutta", "west bengal", "7000", "콜카타", "서벵골"), "West Bengal", "Kolkata"),
+            (("jaipur", "rajasthan", "3020", "자이푸르", "라자스탄"), "Rajasthan", "Jaipur"),
+            (("kochi", "cochin", "kerala", "6820", "코치", "케랄라"), "Kerala", "Kochi"),
+            (("lucknow", "uttar pradesh", "2260", "러크나우", "우타르프라데시"), "Uttar Pradesh", "Lucknow"),
+            (("noida", "2013", "노이다"), "Uttar Pradesh", "Noida"),
+            (("gurugram", "gurgaon", "haryana", "1220", "구루그람", "구르가온", "하리아나"), "Haryana", "Gurugram"),
+            (("chandigarh", "1600", "찬디가르"), "Chandigarh", "Chandigarh"),
+            (("new delhi", "delhi", "connaught", "1100", "뉴델리", "델리", "코넛"), "Delhi", "Delhi"),
+            (("ahmedabad", "gujarat", "3800", "아메다바드", "구자라트"), "Gujarat", "Ahmedabad"),
+        ]
+        for keywords, state, matched_city in address_matches:
+            if any(keyword in address for keyword in keywords):
+                matched = lookup_region(state, matched_city)
+                if matched:
+                    return matched
 
         row = self.fetch_one(
             'SELECT region_id FROM "REGION" WHERE state = ? AND city = ? LIMIT 1',

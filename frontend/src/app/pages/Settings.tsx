@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { ChevronRight, User, Globe, LogOut } from "lucide-react";
+import { getUserProfile } from "../api/user";
+import type { UserProfile } from "../types/user";
 
 const settingsItems = [
   { to: "/settings/profile", icon: User, label: "Edit Profile", description: "Name, email, password, phone number, address" },
@@ -16,11 +19,32 @@ const glass = {
 
 export function Settings() {
   const navigate = useNavigate();
+  const [profile, setProfile] = useState<UserProfile | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    async function loadProfile() {
+      try {
+        const userProfile = await getUserProfile();
+        if (active) setProfile(userProfile);
+      } catch (error) {
+        console.error("Failed to load settings profile", error);
+      }
+    }
+    loadProfile();
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     navigate("/login");
   };
+
+  const displayName = profile?.name || "User";
+  const displayEmail = profile?.user_email || profile?.email || "";
+  const initial = displayName.trim().charAt(0).toUpperCase() || "U";
 
   return (
     <div className="relative min-h-full w-full bg-[#f7f9f8]">
@@ -37,11 +61,11 @@ export function Settings() {
           <div className="flex items-center gap-4">
             <div className="w-[56px] h-[56px] rounded-full flex items-center justify-center flex-shrink-0"
               style={{ background: "linear-gradient(135deg, #1DB87A, #3DDC97)" }}>
-              <p className="font-['Pretendard:Bold',sans-serif] text-[22px] text-white">T</p>
+              <p className="font-['Pretendard:Bold',sans-serif] text-[22px] text-white">{initial}</p>
             </div>
             <div>
-              <p className="font-['Pretendard:SemiBold',sans-serif] text-[18px] text-[#111] mb-[2px]">तनीषा</p>
-              <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888]">tanisha@example.com</p>
+              <p className="font-['Pretendard:SemiBold',sans-serif] text-[18px] text-[#111] mb-[2px]">{displayName}</p>
+              <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888]">{displayEmail}</p>
             </div>
           </div>
         </div>

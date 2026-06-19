@@ -1,12 +1,10 @@
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { ChevronLeft, Snowflake } from "lucide-react";
+import { getDeviceDetail } from "../api/devices";
+import { getUserProfile } from "../api/user";
+import type { DeviceDetailOption } from "../types/device";
 import imgImage6 from "../../imports/제품페이지관리/47f735f974d0900368394246ff236d4a45df2a58.png";
-
-const recentHistory = [
-  { id: "r1", type: "Self Care", title: "Air Conditioner Filter Cleaning", date: "2 days ago" },
-  { id: "r2", type: "Self A/S", title: "Remote Pairing", date: "1 week ago" },
-  { id: "r3", type: "Self Care", title: "Outdoor Unit Exterior Check", date: "2 weeks ago" },
-];
 
 const glass = {
   background: "rgba(255,255,255,0.55)",
@@ -71,9 +69,41 @@ function AirFlowIcon() {
 export function DeviceDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [device, setDevice] = useState<DeviceDetailOption | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
 
-  const careCount = 5;
-  const asCount = 2;
+  useEffect(() => {
+    let active = true;
+    async function loadDeviceDetail() {
+      try {
+        setIsLoading(true);
+        setLoadError(false);
+        const profile = await getUserProfile();
+        const userId = profile.user_email ?? profile.email ?? "U001";
+        const detail = await getDeviceDetail(id, userId);
+        if (active) setDevice(detail);
+      } catch (error) {
+        console.error("Failed to load device detail", error);
+        if (active) setLoadError(true);
+      } finally {
+        if (active) setIsLoading(false);
+      }
+    }
+    loadDeviceDetail();
+    return () => {
+      active = false;
+    };
+  }, [id]);
+
+  const careSummary = device?.care_summary;
+  const careCount = careSummary?.self_care_count ?? 0;
+  const asCount = careSummary?.self_as_count ?? 0;
+  const careCountLabel = device ? String(careCount) : isLoading ? "..." : String(careCount);
+  const asCountLabel = device ? String(asCount) : isLoading ? "..." : String(asCount);
+  const recentHistory = device?.recent_history ?? [];
+  const recentTitle = careSummary?.recent_title || recentHistory[0]?.title || "";
+  const recentDate = careSummary?.recent_date || recentHistory[0]?.date || "";
 
   return (
     <div className="relative min-h-full w-full overflow-x-hidden bg-[#f7f9f8]">
@@ -103,7 +133,7 @@ export function DeviceDetail() {
             </span>
             <img src={imgImage6} alt="Air Conditioner" className="w-[200px] h-[100px] object-contain" />
           </div>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[16px] text-[#111] text-center mb-3">Living Room Air Conditioner</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[16px] text-[#111] text-center mb-3">{device?.name ?? "Living Room Air Conditioner"}</p>
           <p className="hidden">
             LG Whisen Wall-mounted · Product #{id}
           </p>
@@ -113,8 +143,8 @@ export function DeviceDetail() {
               <p className="font-['Pretendard:Medium',sans-serif] text-[13px] leading-tight text-[#111]">Air Conditioner</p>
             </div>
             <div className="flex flex-col items-center gap-[4px] px-2">
-              <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#999]">Registered Date</p>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[13px] leading-tight text-[#111]">2024.01.15</p>
+              <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#999]">Model</p>
+              <p className="font-['Pretendard:Medium',sans-serif] text-[13px] leading-tight text-[#111]">{device?.model ?? "AS-Q24ENXE"}</p>
             </div>
           </div>
         </div>
@@ -181,7 +211,7 @@ export function DeviceDetail() {
                 }}
               >
                 <span style={{ fontFamily: "Pretendard,sans-serif", fontSize: 25, fontWeight: 800, color: "#159B63", lineHeight: 1 }}>
-                  {careCount}
+                  {careCountLabel}
                 </span>
                 <div style={{ width: "28%", height: "1px", background: "rgba(21,155,99,0.28)", borderRadius: 99 }} />
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px]" style={{ color: "#5D7169" }}>Self Care</p>
@@ -209,7 +239,7 @@ export function DeviceDetail() {
                 }}
               >
                 <span style={{ fontFamily: "Pretendard,sans-serif", fontSize: 25, fontWeight: 800, color: "#FACC15", lineHeight: 1 }}>
-                  {asCount}
+                  {asCountLabel}
                 </span>
                 <div style={{ width: "28%", height: "1px", background: "rgba(202,138,4,0.32)", borderRadius: 99 }} />
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px]" style={{ color: "#6F6F67" }}>Self A/S</p>
@@ -219,7 +249,7 @@ export function DeviceDetail() {
           <div className="pt-3 mt-3" style={{ borderTop: "1px solid rgba(200,200,200,0.25)" }}>
             <p className="font-['Pretendard:Medium',sans-serif] text-[12px] text-[#888] mb-1">Recent Care Details</p>
             <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#111]">
-              {recentHistory[0].title} · {recentHistory[0].date}
+              {recentTitle ? `${recentTitle}${recentDate ? ` · ${recentDate}` : ""}` : isLoading ? "Loading care history..." : loadError ? "Care history is temporarily unavailable." : "No recent care history yet."}
             </p>
           </div>
         </div>
@@ -227,7 +257,7 @@ export function DeviceDetail() {
         <div className="relative overflow-hidden rounded-[20px] px-[16px] pt-[15px] pb-[16px] mb-[14px]" style={glass}>
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#555] mb-[12px]">Care History</p>
           <div className="space-y-3">
-            {recentHistory.map((item) => (
+            {recentHistory.length > 0 ? recentHistory.map((item) => (
               <div key={item.id} className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 min-w-0">
                   <span
@@ -257,7 +287,11 @@ export function DeviceDetail() {
                 </div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[10px] leading-[13px] text-[#999] shrink-0">{item.date}</p>
               </div>
-            ))}
+            )) : (
+              <p className="font-['Pretendard:Medium',sans-serif] text-[13px] text-[#888]">
+                {isLoading ? "Loading care history..." : loadError ? "Unable to load care history." : "No care history yet."}
+              </p>
+            )}
           </div>
         </div>
       </div>
