@@ -47,6 +47,8 @@ class TTSGenerateResponse(APIModel):
     provider: str = "google_cloud_tts"
     cached: bool
     content_type: str = "audio/mpeg"
+    storage_provider: str = "render_runtime"
+    object_path: str | None = None
 
 
 class ARPlanRequest(APIModel):

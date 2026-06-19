@@ -55,6 +55,8 @@ def generate_tts(request: TTSSynthesizeRequest) -> dict:
         "provider": asset.provider,
         "cached": asset.cached,
         "content_type": asset.content_type,
+        "storage_provider": asset.storage_provider,
+        "object_path": asset.object_path,
     }
 
 

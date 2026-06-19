@@ -194,3 +194,65 @@ Official Supabase docs checked:
 - Storage overview: https://supabase.com/docs/guides/storage
 - Public/private bucket serving: https://supabase.com/docs/guides/storage/serving/downloads
 - Upload API: https://supabase.com/docs/reference/javascript/storage-from-upload
+- Standard uploads, content type, and upsert behavior: https://supabase.com/docs/guides/storage/uploads/standard-uploads
+
+## Task 8 implementation
+
+### Request / background
+
+- User created the `tts-audio` Supabase Storage file bucket and added Render backend env:
+  - `SUPABASE_URL`
+  - `SUPABASE_SERVICE_ROLE_KEY`
+  - `SUPABASE_TTS_BUCKET=tts-audio`
+  - `SUPABASE_TTS_STORAGE_ENABLED=1`
+- Requirement: move generated Google TTS mp3 files from Render-only runtime cache to persistent Supabase Storage.
+
+### Backend implementation
+
+- Added Supabase Storage feature flag:
+  - `SUPABASE_TTS_STORAGE_ENABLED=1`
+- Added Storage path policy:
+  - `tts/{language_code}/{voice_name}/{cache_key}.mp3`
+- Added Storage public URL policy:
+  - `https://{project_ref}.supabase.co/storage/v1/object/public/{bucket}/{object_path}`
+- Added upload flow:
+  - compute deterministic `cache_key`
+  - check whether the public Storage object already exists
+  - if present, return existing public URL with `storage_provider=supabase_storage`
+  - if absent and local runtime cache exists, upload local mp3 bytes to Storage
+  - if absent and local runtime cache does not exist, generate Google TTS mp3, write runtime cache, upload bytes to Storage
+  - if Supabase lookup/upload fails, fall back to existing Render runtime cache URL
+- Extended `/api/v1/tts/generate` response:
+  - `storage_provider`
+  - `object_path`
+
+### Verification
+
+```powershell
+cd backend
+python -m pytest tests/test_google_tts_mvp.py -q
+```
+
+Result: `8 passed`.
+
+```powershell
+cd backend
+python -m compileall app
+```
+
+Result: compile succeeded.
+
+### Failure / correction notes
+
+- TestClient runs modified the SQLite mock DB file; it was restored and excluded from the commit.
+- Supabase service role key was not written to source files or docs.
+- The implementation keeps runtime cache fallback so presentation flow still works if Storage lookup/upload fails.
+
+### Remaining live verification
+
+- After GitHub push and Render redeploy, verify:
+  - `POST /api/v1/tts/generate` returns `storage_provider=supabase_storage`
+  - `audio_url` starts with `https://...supabase.co/storage/v1/object/public/tts-audio/`
+  - `GET audio_url` returns `200 audio/mpeg`
+  - `/api/v1/ar/plans` guide step `audio_url` uses Supabase Storage public URLs
+  - `/api/v1/guides/options` `manual_guides.display_steps.audio_url` uses Supabase Storage public URLs
