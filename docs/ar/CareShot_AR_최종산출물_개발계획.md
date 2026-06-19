@@ -45,6 +45,7 @@
 - `GOOGLE_TTS_PREGENERATE=1`: guide step 응답에 `audio_url` 사전 부착 가능.
 - 2026-06-19 최종 재검증 기준: GitHub `taehee` 브랜치와 Render live 모두 `/api/v1/tts/generate`, `/api/v1/tts/audio/{cache_key}.mp3`가 반영되었다. Live `/tts/generate`는 mp3 URL 생성과 `audio/mpeg` 재생까지 통과했다. `GOOGLE_TTS_PREGENERATE=1` 적용 후 `/api/v1/ar/plans` 7개 step 모두 `audio_url`이 생성되었고, `/api/v1/guides/options`의 `manual_guides.display_steps`에도 `audio_url`이 생성되었다.
 - 2026-06-19 Task 8 구현 기준: `SUPABASE_TTS_STORAGE_ENABLED=1`이면 `tts/{language_code}/{voice_name}/{cache_key}.mp3` 경로로 Supabase Storage `tts-audio` bucket을 우선 사용한다. Storage 객체가 이미 있으면 public URL을 재사용하고, 없으면 Google TTS 생성 후 업로드한다. Supabase 설정/업로드 실패 시 발표 안정성을 위해 기존 Render runtime cache URL로 fallback한다.
+- 2026-06-19 Task 8 live 검증 기준: Render live `/api/v1/tts/generate`, `/api/v1/ar/plans`, `/api/v1/guides/options` 모두 Supabase Storage public URL을 반환했고, 각 mp3 URL은 `200 audio/mpeg`로 재생 검증되었다.
 
 ## 2. 최종 산출물 정의
 

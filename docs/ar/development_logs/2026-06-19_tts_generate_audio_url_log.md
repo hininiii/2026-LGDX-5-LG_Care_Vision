@@ -250,9 +250,24 @@ Result: compile succeeded.
 
 ### Remaining live verification
 
-- After GitHub push and Render redeploy, verify:
-  - `POST /api/v1/tts/generate` returns `storage_provider=supabase_storage`
-  - `audio_url` starts with `https://...supabase.co/storage/v1/object/public/tts-audio/`
-  - `GET audio_url` returns `200 audio/mpeg`
-  - `/api/v1/ar/plans` guide step `audio_url` uses Supabase Storage public URLs
-  - `/api/v1/guides/options` `manual_guides.display_steps.audio_url` uses Supabase Storage public URLs
+- Completed after Render redeploy.
+
+### 2026-06-19 final live verification after Render deploy
+
+- OpenAPI:
+  - `TTSGenerateResponse.storage_provider` present
+  - `TTSGenerateResponse.object_path` present
+- `POST /api/v1/tts/generate`
+  - `storage_provider=supabase_storage`
+  - `object_path=tts/en-IN/en-IN-Standard-A/{cache_key}.mp3`
+  - `audio_url=https://ozedogtiiwxnqsnvpwby.supabase.co/storage/v1/object/public/tts-audio/...`
+  - `GET audio_url` -> `200 audio/mpeg`, `34944` bytes
+- `POST /api/v1/ar/plans`
+  - `step_count=7`
+  - `audio_url_count=7`
+  - first step `audio_url` is Supabase Storage public URL
+  - first step audio `GET` -> `200 audio/mpeg`, `23040` bytes
+- `GET /api/v1/guides/options?...`
+  - `manual_guides[0].display_steps[0].audio_url` is Supabase Storage public URL
+  - guide option audio `GET` -> `200 audio/mpeg`, `42432` bytes
+- Final status: Task 8 Supabase Storage persistence is implemented and live verified.
