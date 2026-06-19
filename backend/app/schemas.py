@@ -34,6 +34,23 @@ class RAGSearchRequest(APIModel):
     limit: int = Field(default=5, ge=1, le=10)
 
 
+class TTSSynthesizeRequest(APIModel):
+    text: str = Field(min_length=1, max_length=800)
+    language_code: str = "en-IN"
+    voice_name: str | None = None
+    speaking_rate: float = Field(default=0.92, ge=0.25, le=4.0)
+
+
+class TTSGenerateResponse(APIModel):
+    audio_url: str
+    cache_key: str
+    provider: str = "google_cloud_tts"
+    cached: bool
+    content_type: str = "audio/mpeg"
+    storage_provider: str = "render_runtime"
+    object_path: str | None = None
+
+
 class ARPlanRequest(APIModel):
     analysis: dict[str, Any] | None = None
     user_id: str = "U001"

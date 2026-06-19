@@ -4,3 +4,4 @@ SQLAlchemy>=2.0
 psycopg[binary]>=3.2
 pytest
 sentence-transformers
+google-cloud-texttospeech>=2.16

@@ -23,6 +23,7 @@ from .engines import CareRiskScoreEngine, DecisionEngineV2, PreventiveCareRecomm
 from .evaluation_service import EvaluationService
 from .llm_service import create_llm_service
 from .repositories import CareShotRepository, PostgreSQLRepositoryRegistry
+from .tts_service import generate_google_tts_mp3_asset, google_tts_enabled, google_tts_pregenerate_enabled
 
 
 PART_LABELS = {
@@ -439,14 +440,16 @@ class CareShotBackendService:
         for step in guide_steps:
             target_part = step["target_part"]
             copy = ACTION_COPY.get(step["action_type"], {})
+            display_instruction = copy.get("instruction") or step.get("instruction_text")
             display_steps.append(
                 {
                     **step,
                     "display_title": copy.get("title") or f"{PART_LABELS.get(target_part, target_part)} 안내",
-                    "display_instruction": copy.get("instruction") or step.get("instruction_text"),
+                    "display_instruction": display_instruction,
                     "display_safety": copy.get("safety") or step.get("safety_message"),
                     "target_part_map": part_lookup.get(target_part),
                     "next_button_label": "완료" if step["step_order"] == len(guide_steps) else "다음 단계",
+                    **self.tts_fields_for_step(display_instruction),
                 }
             )
 
@@ -1049,6 +1052,7 @@ class CareShotBackendService:
             "source_url": first_source_url,
             "video_url": first_video_url,
             "evidence": evidence,
+            "display_steps": self.display_steps_from_text_steps(guide_template["steps"]),
             "dynamic": True,
             "generation_source": "rag_chunk_dynamic_manual",
             "safety_scope": guide_template["safety_scope"],
@@ -1192,6 +1196,58 @@ class CareShotBackendService:
             "source_url": content.get("source_url"),
             "video_url": content.get("video_url"),
             "evidence": evidence,
+            "display_steps": CareShotBackendService.display_steps_from_text_steps(
+                content.get("guide_text") or content.get("guide_summary") or ""
+            ),
+        }
+
+    @staticmethod
+    def display_steps_from_text_steps(steps: list[str] | str | None) -> list[dict[str, Any]]:
+        if isinstance(steps, str):
+            raw_steps = [
+                line.strip()
+                for line in steps.splitlines()
+                if line.strip()
+            ]
+        else:
+            raw_steps = [str(step).strip() for step in (steps or []) if str(step).strip()]
+        provider = "google_cloud_tts" if google_tts_enabled() else "web_speech"
+        return [
+            {
+                "title": f"STEP {index}",
+                "text": step,
+                **CareShotBackendService.tts_fields_for_step(step, provider=provider),
+            }
+            for index, step in enumerate(raw_steps, start=1)
+        ]
+
+    @staticmethod
+    def tts_fields_for_step(
+        text: str | None,
+        *,
+        language_code: str = "en-IN",
+        provider: str | None = None,
+    ) -> dict[str, Any]:
+        tts_text = (text or "").strip()
+        selected_provider = provider or ("google_cloud_tts" if google_tts_enabled() else "web_speech")
+        audio_url = None
+        cache_key = None
+        if tts_text and google_tts_enabled() and google_tts_pregenerate_enabled():
+            try:
+                asset = generate_google_tts_mp3_asset(text=tts_text, language_code=language_code)
+                audio_url = asset.audio_url
+                cache_key = asset.cache_key
+                selected_provider = asset.provider
+            except Exception:
+                audio_url = None
+                cache_key = None
+        return {
+            "tts_enabled": bool(tts_text),
+            "tts_text": tts_text,
+            "tts_language_code": language_code,
+            "tts_provider": selected_provider,
+            "audio_url": audio_url,
+            "tts_cache_key": cache_key,
         }
 
     @staticmethod

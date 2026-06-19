@@ -47,6 +47,22 @@ export interface ChatManualGuide {
   safety_scope?: string;
 }
 
+export interface ChatDisplayStep {
+  title?: string;
+  text?: string;
+  tts_enabled?: boolean;
+  tts_text?: string;
+  tts_language_code?: string;
+  tts_provider?: "web_speech" | "google_cloud_tts" | string;
+  audio_url?: string | null;
+  source_type?: string;
+  source_url?: string | null;
+  source_title?: string | null;
+  source_text?: string;
+  evidence?: ChatEvidence[];
+  generation_source?: string;
+}
+
 export interface ChatYoutubeRecommendation {
   title?: string;
   source_url?: string;
@@ -60,6 +76,8 @@ export interface ChatYoutubeRecommendation {
 export interface ChatGuideOptions {
   service_flow_type?: string;
   procedure_type?: string;
+  display_title?: string;
+  display_steps?: ChatDisplayStep[];
   manual_guides?: ChatManualGuide[];
   youtube_recommendations?: ChatYoutubeRecommendation[];
   ar_guides?: unknown[];

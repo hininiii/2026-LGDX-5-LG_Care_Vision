@@ -58,6 +58,7 @@ out
 # Vite
 .vite/
 frontend/.vite/
+frontend/runtime_logs/
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
@@ -95,6 +96,7 @@ env/
 backend/.venv/
 backend/__pycache__/
 backend/*.log
+backend/runtime_logs/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

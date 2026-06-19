@@ -8,7 +8,7 @@ from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .dependencies import get_service
-from .routers import ai, ar, care, chat, devices, environment, evaluation, frontend_compat, guides, rag
+from .routers import ai, ar, care, chat, devices, environment, evaluation, frontend_compat, guides, rag, tts
 from .schemas import HealthResponse
 from .services import CareShotBackendService
 
@@ -80,6 +80,7 @@ app.include_router(evaluation.router, prefix="/api/v1")
 app.include_router(care.router, prefix="/api/v1")
 app.include_router(guides.router, prefix="/api/v1")
 app.include_router(devices.router, prefix="/api/v1")
+app.include_router(tts.router, prefix="/api/v1")
 app.include_router(frontend_compat.router, prefix="/api")
 
 
