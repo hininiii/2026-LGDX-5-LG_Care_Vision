@@ -17,6 +17,7 @@ def make_test_client(tmp_path):
     shutil.copy2(DEFAULT_SQLITE_DB_PATH, test_db)
     service = CareShotBackendService()
     service.repo = CareShotRepository(test_db)
+    service.rag_service.repo = service.repo
     app.dependency_overrides[get_service] = lambda: service
     return TestClient(app)
 
