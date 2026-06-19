@@ -6,7 +6,6 @@ import { Cloud, CloudRain, Sun, Droplets, AirVent, RotateCcw, Tv, Refrigerator }
 import { evaluateCareRisk, type CareRiskFactor, type CareRiskResponse } from "../api/care";
 import { getCurrentEnvironment, type EnvironmentCurrentResponse } from "../api/environment";
 import { getUserProfile } from "../api/user";
-import chatbotGif from "../../imports/LG______.gif";
 import acImage from "../../imports/제품페이지관리/47f735f974d0900368394246ff236d4a45df2a58.png";
 import careVisionLogo from "../../imports/care-vision-logo.svg";
 
@@ -26,24 +25,30 @@ const devices = [
   { id: 4, name: "Refrigerator", Icon: Refrigerator, score: 31, climate: 8, usage: 14, care: 9 },
 ];
 
-function getRiskColor(score: number) {
-  if (score >= 75) return { text: "text-[#ff4c49]", bar: "bg-[#ff4c49]", label: "Needs Attention", hex: "#ff4c49" };
-  if (score >= 50) return { text: "text-[#f59e0b]", bar: "bg-[#f59e0b]", label: "Normal", hex: "#FFE89A" };
-  return { text: "text-[#22c55e]", bar: "bg-[#22c55e]", label: "Good", hex: "#22c55e" };
+type CareRiskLevel = CareRiskResponse["care_risk_score"]["risk_level"];
+
+function resolveCareRiskLevel(score: number, riskLevel?: CareRiskLevel) {
+  return riskLevel ?? (score >= 85 ? "high" : score >= 65 ? "medium" : "low");
 }
 
-function getRiskComment(score: number) {
-  if (score >= 75) return "Some devices need care.";
-  if (score >= 50) return "Device care status is normal.";
+function getRiskColor(score: number, riskLevel?: CareRiskLevel) {
+  const level = resolveCareRiskLevel(score, riskLevel);
+  if (level === "high") return { text: "text-[#FF7A7A]", bar: "bg-[#FF7A7A]", label: "Critical", hex: "#FF7A7A" };
+  if (level === "medium") return { text: "text-[#FFE89A]", bar: "bg-[#FFE89A]", label: "Normal", hex: "#FFE89A" };
+  return { text: "text-[#45CA9D]", bar: "bg-[#45CA9D]", label: "Good", hex: "#45CA9D" };
+}
+
+function getRiskComment(score: number, riskLevel?: CareRiskLevel) {
+  const level = resolveCareRiskLevel(score, riskLevel);
+  if (level === "high") return "Some devices need care.";
+  if (level === "medium") return "Device care status is normal.";
   return "Device care is going well!";
 }
 
-type CareRiskLevel = CareRiskResponse["care_risk_score"]["risk_level"];
-
 function getGaugeScoreColor(score: number, riskLevel?: CareRiskLevel) {
-  const level = riskLevel ?? (score >= 85 ? "high" : score >= 65 ? "medium" : "low");
+  const level = resolveCareRiskLevel(score, riskLevel);
   if (level === "high") return "#FF7A7A";
-  if (level === "medium") return "#ffd07f";
+  if (level === "medium") return "#FFE89A";
   return "#45CA9D";
 }
 
@@ -256,7 +261,7 @@ function SegmentedGauge({ climate, usage, care, scoreColor = "#FF7A7A" }: { clim
             <span style={{ fontSize: 17, fontWeight: 800, color: s.color, fontFamily: "Pretendard, sans-serif", lineHeight: 1 }}>
               {s.value}
             </span>
-            <span style={{ fontSize: 9, color: "#999", fontFamily: "Pretendard, sans-serif", marginTop: 4 }}>{s.label}</span>
+            <span style={{ fontSize: 9, fontWeight: 700, color: "#999", fontFamily: "Pretendard, sans-serif", marginTop: 4 }}>{s.label}</span>
           </div>
         ))}
       </div>
@@ -381,7 +386,7 @@ export function Home() {
       )}
 
       <motion.div
-        className="relative z-10 px-[18px] pt-[52px] pb-[110px] w-full max-w-[390px] mx-auto"
+        className="relative z-10 px-[18px] pt-[52px] pb-[14px] w-full max-w-[390px] mx-auto"
         animate={isAiCareTransitioning ? { opacity: 0.82, filter: "blur(1.5px)" } : { opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.24, ease: "easeOut" }}
       >
@@ -390,7 +395,7 @@ export function Home() {
         <div className="mb-[6px] flex items-center pl-[5px] pt-[6px] pb-[4px]">
           <img src={careVisionLogo} alt="Care Vision" className="h-[17px] w-[121px]" />
         </div>
-        <p className="mb-[26px] font-['Pretendard:SemiBold','Noto_Sans_Devanagari:SemiBold',sans-serif] text-[20px] tracking-[-0.36px] text-[#111]" style={{ paddingLeft: "5px" }}>
+        <p className="mb-[26px] font-['Pretendard:Regular',sans-serif] text-[20px] font-normal tracking-[-0.36px] text-[#111]" style={{ paddingLeft: "5px" }}>
           {showWelcome ? "Welcome, " : ""}{displayName} 👋
         </p>
 
@@ -453,12 +458,12 @@ export function Home() {
           <div className="flex items-center justify-between mb-[12px]">
             <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#555]">{locationLabel}</p>
             <div
-              className="flex items-center gap-[4px] rounded-full px-[10px] py-[4px]"
+              className="inline-flex shrink-0 items-center gap-[4px] rounded-full px-[10px] py-[4px] font-['Pretendard:SemiBold',sans-serif] text-[11px]"
               style={{ background: "rgba(61,220,151,0.08)", border: "1px solid rgba(61,220,151,0.22)" }}
             >
-              <Cloud size={12} className="text-[#3DDC97]" />
-              <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-[#111]">{temperature}°</p>
-              <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">Cloudy</p>
+              <Cloud size={12} className="text-[#3BA7FF]" />
+              <span className="text-[#111]">{temperature}°</span>
+              <span className="font-['Pretendard:Medium',sans-serif] text-[#888]">Cloudy</span>
             </div>
           </div>
 
@@ -532,9 +537,10 @@ export function Home() {
 
         {/* ?? Care Risk Score ?? */}
         {(() => {
-          const { text, label, hex } = getRiskColor(topScore);
-          const comment = getRiskComment(topScore);
-          const scoreColor = getGaugeScoreColor(topScore, careRisk?.care_risk_score.risk_level);
+          const riskLevel = careRisk?.care_risk_score.risk_level;
+          const { text, label, hex } = getRiskColor(topScore, riskLevel);
+          const comment = getRiskComment(topScore, riskLevel);
+          const scoreColor = getGaugeScoreColor(topScore, riskLevel);
           return (
             <div
               className="relative overflow-hidden rounded-[20px] px-[16px] pt-[15px] pb-[16px] mb-[14px]"
@@ -579,17 +585,6 @@ export function Home() {
           <p className="relative font-['Pretendard:SemiBold',sans-serif] text-[16px] text-white">
             How to Clean the Air Conditioner Filter
           </p>
-        </div>
-
-        {/* ?? Chatbot ?뚮줈??踰꾪듉 ?? */}
-        <div className="fixed bottom-[130px] right-[calc(50%-165px)] z-50">
-          <button onClick={() => navigate("/chat")} className="p-0">
-            <img
-              src={chatbotGif}
-              alt="Chatbot"
-              className="w-[78px] h-[78px] rounded-full cursor-pointer hover:scale-110 transition-transform drop-shadow-lg"
-            />
-          </button>
         </div>
 
       </motion.div>

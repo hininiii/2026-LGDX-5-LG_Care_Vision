@@ -30,6 +30,13 @@ const glass = {
   boxShadow: "0 8px 32px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.95)",
 };
 
+const normalBadge = {
+  background: "rgba(255,232,154,0.24)",
+  border: "1px solid rgba(255,214,90,0.55)",
+  color: "#D8A900",
+  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.68), 0 2px 8px rgba(255,214,90,0.18)",
+};
+
 export function Device() {
   const [devices, setDevices] = useState<RegisteredDevice[]>(initialDevices);
   const [showModal, setShowModal] = useState(false);
@@ -55,23 +62,23 @@ export function Device() {
           "radial-gradient(circle at -12% -8%, rgba(61,220,151,0.10) 0, rgba(61,220,151,0.06) 24%, transparent 48%), radial-gradient(circle at 112% 46%, rgba(100,210,190,0.09) 0, rgba(100,210,190,0.045) 28%, transparent 52%), linear-gradient(180deg, #f7f9f8 0%, #f7f9f8 100%)",
       }}
     >
-      <div className="relative z-10 px-[18px] pt-[38px] pb-[12px] w-full max-w-[390px] mx-auto">
-        <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] tracking-[-0.3px] text-[#111] mb-[20px] pl-[5px] pt-[10px]">
+      <div className="relative z-10 px-[18px] pt-[48px] pb-[12px] w-full max-w-[390px] mx-auto">
+        <p className="font-['Pretendard:Medium',sans-serif] text-[20px] tracking-[-0.3px] text-black leading-normal mb-[26px] pl-[2px]">
           My Devices
         </p>
 
         <div className="space-y-3">
           {devices.map((device) => (
             <Link key={device.id} to={`/device/${device.id}`} className="block">
-              <div className="rounded-[20px] p-4 flex items-center gap-4 transition-transform hover:scale-[1.01]" style={glass}>
-                <div className="w-[72px] h-[72px] flex items-center justify-center flex-shrink-0">
-                  <img src={acImage} alt="Air Conditioner" className="w-[68px] h-[68px] object-contain" />
+              <div className="h-[112px] overflow-hidden rounded-[20px] px-[16px] py-[18px] flex items-center gap-[14px] transition-transform hover:scale-[1.01]" style={glass}>
+                <div className="w-[76px] h-[76px] flex items-center justify-center flex-shrink-0">
+                  <img src={acImage} alt="Air Conditioner" className="w-[72px] h-[72px] object-contain" />
                 </div>
-                <div className="flex-1">
-                  <p className="font-['Pretendard:SemiBold',sans-serif] text-[16px] text-[#111] mb-[3px]">{device.name}</p>
-                  <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888] mb-2">{device.model}</p>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full font-['Pretendard:Medium',sans-serif] text-[11px]"
-                    style={{ background: "rgba(61,220,151,0.12)", border: "1px solid rgba(29,184,122,0.25)", color: "#0f8a58" }}>
+                <div className="min-w-0 flex-1 flex flex-col justify-center">
+                  <p className="truncate font-['Pretendard:SemiBold',sans-serif] text-[16px] leading-[20px] text-[#111] mb-[4px]">{device.name}</p>
+                  <p className="truncate font-['Pretendard:Regular',sans-serif] text-[12px] leading-[16px] text-[#888] mb-[9px]">{device.model}</p>
+                  <span className="inline-flex h-[24px] min-w-[64px] w-fit items-center justify-center rounded-full px-[11px] font-['Pretendard:SemiBold',sans-serif] text-[11px]"
+                    style={normalBadge}>
                     {device.status}
                   </span>
                 </div>

@@ -74,6 +74,8 @@ const staticContracts = [
   ["query procedure fallback", "queryParams.get(\"procedure_type\")"],
   ["direct guide options fetch", "/v1/guides/options"],
   ["display step mapping", "guideStepsFromDisplaySteps"],
+  ["relative audio URL resolver", "resolveAudioUrl"],
+  ["audio URL uses backend origin", "new URL(API_BASE_URL, window.location.origin).origin"],
   ["direct self AS fallback", "guideStepsByProcedure[procedureType]"],
   ["outlet label", 'outlet: "토출구"'],
   ["self AS outlet direct step", 'targetClasses: ["outlet"]'],
