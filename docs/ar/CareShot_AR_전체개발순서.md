@@ -5331,3 +5331,46 @@ test_resolve_region_id_avoids_postgres_untyped_null_city_predicate
 ```text
 GitHub push 후 Render 백엔드가 자동 배포되면 /api/v1/environment/current?region=India&city=Hyderabad 또는 실제 사용자 지역 기준으로 재호출해 fallback_cache/null 문제가 해소됐는지 live 재검증한다.
 ```
+
+### 27.16 Home 환경 정보/Care Risk Score 초기 표시 지연 보정 - 완료
+
+배경:
+
+```text
+Render 프론트 Home 화면에서 환경 정보와 Care Risk Score가 늦게 반영되어 보였다.
+실제 원인은 API 응답 전까지 프론트가 New Delhi, 24도/56%/AQI 10/PM 10, Care Risk 82 같은 기본/데모 값을 먼저 표시한 뒤 실제 API 값으로 바꾸는 구조였다.
+```
+
+수정:
+
+```text
+frontend/src/app/pages/Home.tsx
+- 사용자 프로필 조회 후 care risk API와 environment API를 독립적으로 호출하도록 분리
+- care risk 응답이 오기 전에는 기본 점수 82 대신 Updating 상태와 0 기반 gauge를 표시
+- 환경 응답이 오기 전에는 24/56/10 같은 fallback 숫자 대신 ... 또는 -- 표시
+- location label을 New Delhi 고정 분기가 아니라 API observation 또는 사용자 profile region/city 기반으로 표시
+- 하나의 API가 늦어져도 다른 카드 갱신이 같이 막히지 않도록 로딩 상태를 분리
+```
+
+검증:
+
+```text
+cd frontend
+npm run build
+-> success
+```
+
+특이사항:
+
+```text
+최초 일반 빌드는 esbuild spawn EPERM 권한 문제로 실패했다.
+권한 상승 후 동일 명령을 재실행했고 Vite production build가 성공했다.
+chunk size warning은 기존 번들 크기 경고이며 이번 수정의 컴파일 실패는 아니다.
+```
+
+남은 확인:
+
+```text
+프론트 Render Static Site가 main 브랜치를 보고 있으므로, taehee 브랜치 반영만으로는 live 프론트에 바로 배포되지 않을 수 있다.
+live 반영은 main merge 또는 Render 프론트 브랜치를 taehee로 변경한 뒤 확인한다.
+```

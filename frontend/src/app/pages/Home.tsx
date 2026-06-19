@@ -18,6 +18,11 @@ function formatDisplayName(name?: string) {
   return trimmedName.endsWith(" User") ? trimmedName.slice(0, -" User".length) : trimmedName;
 }
 
+function displayLocation(region?: string, city?: string) {
+  const location = [city, region].filter(Boolean).join(", ");
+  return location ? `${location} · Today` : "Updating location · Today";
+}
+
 const devices = [
   { id: 1, name: "Air Conditioner", Icon: AirVent, score: 82, climate: 35, usage: 28, care: 19 },
   { id: 2, name: "Washing Machine", Icon: RotateCcw, score: 61, climate: 18, usage: 24, care: 19 },
@@ -277,8 +282,11 @@ export function Home() {
   );
   const [showWelcome] = useState(() => localStorage.getItem(SHOW_WELCOME_ONCE_KEY) === "true");
   const [displayName, setDisplayName] = useState("User");
+  const [profileLocation, setProfileLocation] = useState<{ region: string; city: string } | null>(null);
   const [careRisk, setCareRisk] = useState<CareRiskResponse | null>(null);
   const [environment, setEnvironment] = useState<EnvironmentCurrentResponse | null>(null);
+  const [isCareRiskLoading, setIsCareRiskLoading] = useState(true);
+  const [isEnvironmentLoading, setIsEnvironmentLoading] = useState(true);
   const [isAiCareTransitioning, setIsAiCareTransitioning] = useState(false);
 
   function handleAiCareClick() {
@@ -300,15 +308,37 @@ export function Home() {
         setDisplayName(formatDisplayName(profile.name));
         const region = profile.region ?? "Delhi";
         const city = profile.city ?? "Delhi";
-        const [careRiskResponse, environmentResponse] = await Promise.all([
-          evaluateCareRisk({ region, city, userEmail: profile.user_email ?? profile.email }),
-          getCurrentEnvironment(region, city),
-        ]);
-        if (!active) return;
-        setCareRisk(careRiskResponse);
-        setEnvironment(environmentResponse);
+        setProfileLocation({ region, city });
+
+        setIsCareRiskLoading(true);
+        evaluateCareRisk({ region, city, userEmail: profile.user_email ?? profile.email })
+          .then((careRiskResponse) => {
+            if (active) setCareRisk(careRiskResponse);
+          })
+          .catch((error) => {
+            console.error("Failed to load care risk score", error);
+          })
+          .finally(() => {
+            if (active) setIsCareRiskLoading(false);
+          });
+
+        setIsEnvironmentLoading(true);
+        getCurrentEnvironment(region, city)
+          .then((environmentResponse) => {
+            if (active) setEnvironment(environmentResponse);
+          })
+          .catch((error) => {
+            console.error("Failed to load environment data", error);
+          })
+          .finally(() => {
+            if (active) setIsEnvironmentLoading(false);
+          });
       } catch (error) {
         console.error("Failed to load home dashboard data", error);
+        if (active) {
+          setIsCareRiskLoading(false);
+          setIsEnvironmentLoading(false);
+        }
       }
     }
 
@@ -338,7 +368,9 @@ export function Home() {
   ];
   const observation = environment?.observation;
   const factors = careRisk?.care_risk_decision.factor_scores ?? [];
-  const topScore = Math.round(careRisk?.care_risk_score.score ?? devices[0].score);
+  const hasCareRisk = Boolean(careRisk);
+  const hasEnvironment = Boolean(observation);
+  const topScore = hasCareRisk ? Math.round(careRisk?.care_risk_score.score ?? 0) : 0;
   const climateScore = sumFactorDelta(factors, [
     "humidity_percent",
     "aqi",
@@ -350,16 +382,29 @@ export function Home() {
   const topDevice = {
     ...devices[0],
     score: topScore,
-    climate: climateScore || devices[0].climate,
-    usage: usageScore || devices[0].usage,
-    care: careScore || devices[0].care,
+    climate: hasCareRisk ? climateScore : 0,
+    usage: hasCareRisk ? usageScore : 0,
+    care: hasCareRisk ? careScore : 0,
   };
-  const triggerReason = selectPrimaryTriggerReason(factors, careRisk?.care_risk_score.trigger_reason?.[0]);
-  const temperature = Math.round(observation?.temperature_c ?? 24);
-  const humidity = Math.round(observation?.humidity_percent ?? 56);
-  const aqi = Math.round(observation?.aqi ?? 10);
-  const pmValue = Math.round(observation?.pm25 ?? observation?.pm10 ?? 10);
-  const locationLabel = observation?.region === "Gujarat" ? "Ahmedabad · Today" : "New Delhi · Today";
+  const triggerReason = hasCareRisk
+    ? selectPrimaryTriggerReason(factors, careRisk?.care_risk_score.trigger_reason?.[0])
+    : isCareRiskLoading
+      ? "Updating care recommendation from your appliance and environment data..."
+      : "Care recommendation is temporarily unavailable.";
+  const temperatureLabel = hasEnvironment && observation?.temperature_c != null
+    ? `${Math.round(observation.temperature_c)}°`
+    : isEnvironmentLoading ? "..." : "--";
+  const humidityLabel = hasEnvironment && observation?.humidity_percent != null
+    ? `${Math.round(observation.humidity_percent)}%`
+    : isEnvironmentLoading ? "..." : "--";
+  const aqiLabel = hasEnvironment && observation?.aqi != null
+    ? `${Math.round(observation.aqi)}`
+    : isEnvironmentLoading ? "..." : "--";
+  const pmSource = observation?.pm25 ?? observation?.pm10;
+  const pmLabel = hasEnvironment && pmSource != null ? `${Math.round(pmSource)}` : isEnvironmentLoading ? "..." : "--";
+  const locationLabel = hasEnvironment
+    ? displayLocation(observation?.region, observation?.city)
+    : displayLocation(profileLocation?.region, profileLocation?.city);
 
   return (
     <div className="relative min-h-full w-full overflow-x-hidden bg-[#f7f9f8]">
@@ -462,7 +507,7 @@ export function Home() {
               style={{ background: "rgba(61,220,151,0.08)", border: "1px solid rgba(61,220,151,0.22)" }}
             >
               <Cloud size={12} className="text-[#3BA7FF]" />
-              <span className="text-[#111]">{temperature}°</span>
+              <span className="text-[#111]">{temperatureLabel}</span>
               <span className="font-['Pretendard:Medium',sans-serif] text-[#888]">Cloudy</span>
             </div>
           </div>
@@ -480,7 +525,7 @@ export function Home() {
               </div>
               <div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">Temperature</p>
-                <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] text-[#111] leading-tight">{temperature}°</p>
+                <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] text-[#111] leading-tight">{temperatureLabel}</p>
               </div>
             </div>
 
@@ -495,7 +540,7 @@ export function Home() {
               </div>
               <div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">Humidity</p>
-                <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] text-[#111] leading-tight">{humidity}%</p>
+                <p className="font-['Pretendard:SemiBold',sans-serif] text-[20px] text-[#111] leading-tight">{humidityLabel}</p>
               </div>
             </div>
 
@@ -511,7 +556,7 @@ export function Home() {
               <div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">Air Quality</p>
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111] leading-tight">
-                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">AQI</span> {aqi}
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">AQI</span> {aqiLabel}
                 </p>
               </div>
             </div>
@@ -528,7 +573,7 @@ export function Home() {
               <div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888]">Fine Dust</p>
                 <p className="font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111] leading-tight">
-                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">pm</span> {pmValue}
+                  <span className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#aaa]">pm</span> {pmLabel}
                 </p>
               </div>
             </div>
@@ -537,10 +582,13 @@ export function Home() {
 
         {/* ?? Care Risk Score ?? */}
         {(() => {
+          const loadingRisk = isCareRiskLoading && !hasCareRisk;
           const riskLevel = careRisk?.care_risk_score.risk_level;
-          const { text, label, hex } = getRiskColor(topScore, riskLevel);
-          const comment = getRiskComment(topScore, riskLevel);
-          const scoreColor = getGaugeScoreColor(topScore, riskLevel);
+          const riskMeta = loadingRisk
+            ? { text: "text-[#888]", label: "Updating", hex: "#9CA3AF" }
+            : getRiskColor(topScore, riskLevel);
+          const comment = loadingRisk ? "Updating care risk score..." : getRiskComment(topScore, riskLevel);
+          const scoreColor = loadingRisk ? "#9CA3AF" : getGaugeScoreColor(topScore, riskLevel);
           return (
             <div
               className="relative overflow-hidden rounded-[20px] px-[16px] pt-[15px] pb-[16px] mb-[14px]"
@@ -550,10 +598,10 @@ export function Home() {
                 <div className="flex items-center justify-between gap-3">
                   <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#555]">Care Risk Score</p>
                   <span
-                    className={`font-['Pretendard:SemiBold',sans-serif] text-[11px] ${text} px-[10px] py-[4px] rounded-full shrink-0`}
-                    style={{ background: `${hex}12`, border: `1px solid ${hex}35` }}
+                    className={`font-['Pretendard:SemiBold',sans-serif] text-[11px] ${riskMeta.text} px-[10px] py-[4px] rounded-full shrink-0`}
+                    style={{ background: `${riskMeta.hex}12`, border: `1px solid ${riskMeta.hex}35` }}
                   >
-                    {label}
+                    {riskMeta.label}
                   </span>
                 </div>
                 <p className="font-['Pretendard:Medium',sans-serif] text-[11px] text-[#888] mt-[2px]">{comment}</p>
