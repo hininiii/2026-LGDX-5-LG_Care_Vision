@@ -244,7 +244,7 @@ function SegmentedGauge({ climate, usage, care, scoreColor = "#FF7A7A" }: { clim
           <div className="absolute inset-0 flex items-end justify-center pb-[4px] pointer-events-none">
             <span className="relative inline-flex justify-center" style={{ fontFamily: "Pretendard, sans-serif" }}>
               <span style={{ fontSize: 28, fontWeight: 800, color: scoreColor, lineHeight: 1, minWidth: 42, textAlign: "center" }}>{total}</span>
-              <span className="absolute left-full top-[11px]" style={{ fontSize: 13, fontWeight: 600, color: "#aaa", lineHeight: 1 }}>점</span>
+              <span className="absolute left-full top-[11px]" style={{ fontSize: 13, fontWeight: 600, color: "#aaa", lineHeight: 1 }}>pt</span>
             </span>
           </div>
         </div>
