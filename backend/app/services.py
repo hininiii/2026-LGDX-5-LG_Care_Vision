@@ -23,7 +23,7 @@ from .engines import CareRiskScoreEngine, DecisionEngineV2, PreventiveCareRecomm
 from .evaluation_service import EvaluationService
 from .llm_service import create_llm_service
 from .repositories import CareShotRepository, PostgreSQLRepositoryRegistry
-from .tts_service import google_tts_enabled
+from .tts_service import build_tts_step_fields, google_tts_enabled
 
 
 PART_LABELS = {
@@ -700,14 +700,7 @@ class CareShotBackendService:
         ar_allowed: bool,
         language_code: str,
     ) -> dict[str, Any]:
-        tts_text = (text or "").strip()
-        enabled = bool(ar_allowed and tts_text)
-        return {
-            "tts_enabled": enabled,
-            "tts_text": tts_text if enabled else "",
-            "tts_language_code": language_code,
-            "tts_provider": "google_cloud_tts" if enabled and google_tts_enabled() else "web_speech",
-        }
+        return build_tts_step_fields(text=text, ar_allowed=ar_allowed, language_code=language_code)
 
     def pick_ar_guide(self, analysis: dict[str, Any], structure_type: str) -> dict[str, Any]:
         intent_type = analysis["intent"]["intent_type"]
@@ -1369,10 +1362,7 @@ class CareShotBackendService:
         return {
             "title": title,
             "text": text,
-            "tts_enabled": bool(text),
-            "tts_text": text,
-            "tts_language_code": "en-IN",
-            "tts_provider": "google_cloud_tts" if text and google_tts_enabled() else "web_speech",
+            **build_tts_step_fields(text=text, ar_allowed=bool(text), language_code="en-IN"),
             "language_code": "en",
             "source_type": source_type,
             "source_url": source_url,
