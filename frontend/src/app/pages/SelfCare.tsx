@@ -157,6 +157,12 @@ export function SelfCare() {
   const [isGuideLoading, setIsGuideLoading] = useState(false);
 
   useEffect(() => {
+    if (routeState?.tab) {
+      setActiveTab(routeState.tab);
+    }
+  }, [routeState?.tab]);
+
+  useEffect(() => {
     if (routeState?.guideOptions) {
       setGuideOptions(routeState.guideOptions);
       return;
@@ -218,6 +224,10 @@ export function SelfCare() {
         procedureType: guideOptions?.procedure_type || "filter_cleaning",
         guideTitle: guideOptions?.display_title || procedureLabel,
         guideSteps: arGuideStepsFromOptions(guideOptions ?? undefined),
+        returnState: {
+          tab: "ar",
+          guideOptions,
+        },
       },
     });
   };

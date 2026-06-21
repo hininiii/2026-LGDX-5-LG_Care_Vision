@@ -3,8 +3,8 @@ import { useNavigate } from "react-router";
 import { ChevronLeft, Check } from "lucide-react";
 
 const LANGUAGES = [
-  { code: "ko", name: "Korean", native: "한국어" },
   { code: "en", name: "English", native: "English" },
+  { code: "ko", name: "Korean", native: "한국어" },
   { code: "hi", name: "Hindi", native: "हिन्दी" },
   { code: "bn", name: "Bengali", native: "বাংলা" },
   { code: "ta", name: "Tamil", native: "தமிழ்" },
@@ -62,8 +62,8 @@ export function LanguageSettings() {
                 className="w-full px-5 py-4 flex items-center justify-between hover:bg-white/30 transition-colors"
               >
                 <div className="text-left">
-                  <p className={`${isSelected ? "font-['Pretendard:SemiBold',sans-serif] text-[17px] text-[#111]" : "font-['Pretendard:Regular',sans-serif] text-[15px] text-[#111]"} mb-[2px] transition-all duration-200`}>{lang.native}</p>
-                  <p className={`${isSelected ? "font-['Pretendard:Medium',sans-serif] text-[13px] text-[#555]" : "font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888]"} transition-all duration-200`}>{lang.name}</p>
+                  <p className={`${isSelected ? "font-['Pretendard:SemiBold',sans-serif] text-[16px] text-[#111]" : "font-['Pretendard:Regular',sans-serif] text-[15px] text-[#111]"} mb-[2px] transition-all duration-200`}>{lang.native}</p>
+                  <p className={`${isSelected ? "font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888]" : "font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888]"} transition-all duration-200`}>{lang.name}</p>
                 </div>
                 {isSelected && <Check size={20} className="text-[#1DB87A]" />}
               </button>
@@ -77,7 +77,7 @@ export function LanguageSettings() {
 
         <button
           onClick={handleSave}
-          className="w-full text-white rounded-[15px] py-4 font-['Pretendard:SemiBold',sans-serif] text-[15px]"
+          className="w-full text-white rounded-[15px] py-4 font-['Pretendard:Medium',sans-serif] text-[14px]"
           style={{
             background: "linear-gradient(135deg, #1DB87A 0%, #3DDC97 100%)",
             boxShadow: "0 6px 22px rgba(29,184,122,0.28), inset 0 1px 0 rgba(255,255,255,0.28)",

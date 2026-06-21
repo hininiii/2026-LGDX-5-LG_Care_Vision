@@ -11,7 +11,7 @@ export function Layout() {
   const isHomeRoute = location.pathname === "/";
 
   if (!isLoggedIn) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/welcome" replace />;
   }
 
   return (

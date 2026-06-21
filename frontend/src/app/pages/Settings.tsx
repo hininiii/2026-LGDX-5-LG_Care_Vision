@@ -39,7 +39,7 @@ export function Settings() {
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
-    navigate("/login");
+    navigate("/welcome");
   };
 
   const displayName = profile?.name || "User";
@@ -99,8 +99,8 @@ export function Settings() {
         <div className="rounded-[20px] p-5 mb-4" style={glass}>
           <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-3">App Info</p>
           <div className="flex justify-between">
-            <p className="font-['Pretendard:Regular',sans-serif] text-[14px] text-[#888]">Version</p>
-            <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#111]">1.0.0</p>
+            <p className="font-['Pretendard:Regular',sans-serif] text-[14px] text-[#888]">LG_DX_2TEAM</p>
+            <p className="font-['Pretendard:Medium',sans-serif] text-[14px] text-[#111]">26.06.22</p>
           </div>
         </div>
 

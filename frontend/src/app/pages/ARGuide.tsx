@@ -53,6 +53,7 @@ interface ARGuideLocationState {
   procedureType?: string;
   guideTitle?: string;
   guideSteps?: ARGuideStep[];
+  returnState?: Record<string, unknown>;
 }
 
 const defaultSteps: ARGuideStep[] = [
@@ -244,6 +245,7 @@ export function ARGuide() {
   const debugDetectionEnabled =
     queryParams.get("debugDetection") === "1" || queryParams.get("debug_detection") === "1";
   const from = routeState.from ?? "/self-care";
+  const returnState = routeState.returnState ?? (from === "/self-care" ? { tab: "ar" } : undefined);
   const procedureType = routeState.procedureType ?? queryProcedureType ?? "filter_cleaning";
   const [remoteGuideSteps, setRemoteGuideSteps] = useState<ARGuideStep[]>([]);
   const steps = routeState.guideSteps?.length
@@ -563,7 +565,7 @@ export function ARGuide() {
     draw();
   }, [lastDetection]);
 
-  const goBack = () => navigate(from);
+  const goBack = () => navigate(from, { state: returnState });
   const handlePrev = () => {
     if (current > 0) setCurrent(current - 1);
   };
@@ -583,7 +585,7 @@ export function ARGuide() {
         };
         localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify([...messages, doneMsg]));
       }
-      navigate(from);
+      navigate(from, { state: returnState });
     }
   };
   return (

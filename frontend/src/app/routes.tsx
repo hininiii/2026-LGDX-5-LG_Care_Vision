@@ -12,8 +12,12 @@ import { LanguageSettings } from "./pages/LanguageSettings";
 import { Login } from "./pages/Login";
 import { SignUp } from "./pages/SignUp";
 import { InitialLanguage } from "./pages/InitialLanguage";
+import { Welcome } from "./pages/Welcome";
+import { Splash } from "./pages/Splash";
 
 export const router = createBrowserRouter([
+  { path: "/welcome", Component: Welcome },
+  { path: "/splash", Component: Splash },
   { path: "/signup", Component: SignUp },
   { path: "/login", Component: Login },
   { path: "/setup/language", Component: InitialLanguage },
