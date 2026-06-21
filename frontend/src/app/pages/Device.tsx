@@ -70,14 +70,14 @@ export function Device() {
         <div className="space-y-3">
           {devices.map((device) => (
             <Link key={device.id} to={`/device/${device.id}`} className="block">
-              <div className="h-[112px] overflow-hidden rounded-[20px] px-[16px] py-[18px] flex items-center gap-[14px] transition-transform hover:scale-[1.01]" style={glass}>
-                <div className="w-[76px] h-[76px] flex items-center justify-center flex-shrink-0">
-                  <img src={acImage} alt="Air Conditioner" className="w-[72px] h-[72px] object-contain" />
+              <div className="h-[104px] overflow-hidden rounded-[20px] px-[16px] py-[16px] flex items-center gap-[13px] transition-transform hover:scale-[1.01]" style={glass}>
+                <div className="w-[70px] h-[70px] flex items-center justify-center flex-shrink-0">
+                  <img src={acImage} alt="Air Conditioner" className="w-[66px] h-[66px] object-contain" />
                 </div>
                 <div className="min-w-0 flex-1 flex flex-col justify-center">
-                  <p className="truncate font-['Pretendard:SemiBold',sans-serif] text-[16px] leading-[20px] text-[#111] mb-[4px]">{device.name}</p>
-                  <p className="truncate font-['Pretendard:Regular',sans-serif] text-[12px] leading-[16px] text-[#888] mb-[9px]">{device.model}</p>
-                  <span className="inline-flex h-[24px] min-w-[64px] w-fit items-center justify-center rounded-full px-[11px] font-['Pretendard:SemiBold',sans-serif] text-[11px]"
+                  <p className="truncate font-['Pretendard:SemiBold',sans-serif] text-[15px] leading-[18px] text-[#111] mb-[2px]">{device.name}</p>
+                  <p className="truncate font-['Pretendard:Regular',sans-serif] text-[12px] leading-[16px] text-[#888] mb-[8px]">{device.model}</p>
+                  <span className="inline-flex h-[22px] min-w-[58px] w-fit items-center justify-center rounded-full px-[10px] font-['Pretendard:SemiBold',sans-serif] text-[10px]"
                     style={normalBadge}>
                     {device.status}
                   </span>
@@ -88,13 +88,13 @@ export function Device() {
         </div>
 
         <div className="mt-4 rounded-[20px] p-6 text-center" style={glass}>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[16px] text-[#111] mb-2">Register more products</p>
-          <p className="font-['Pretendard:Regular',sans-serif] text-[13px] text-[#888] mb-4">
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] mb-2">Register more products</p>
+          <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888] mb-4">
             Enter a product code to receive personalized care services
           </p>
           <button
             onClick={() => setShowModal(true)}
-            className="text-white px-6 py-3 rounded-[12px] font-['Pretendard:Medium',sans-serif] text-[14px] transition-transform hover:scale-[1.01] active:scale-[0.99]"
+            className="text-white px-6 py-3 rounded-[12px] font-['Pretendard:Medium',sans-serif] text-[13px] transition-transform hover:scale-[1.01] active:scale-[0.99]"
             style={{
               background: "linear-gradient(135deg, #24C99A 0%, #14B989 100%)",
               boxShadow: "0 4px 16px rgba(34,197,154,0.30), inset 0 1px 0 rgba(255,255,255,0.25)",

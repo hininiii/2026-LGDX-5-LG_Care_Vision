@@ -133,7 +133,7 @@ export function DeviceDetail() {
             </span>
             <img src={imgImage6} alt="Air Conditioner" className="w-[200px] h-[100px] object-contain" />
           </div>
-          <p className="font-['Pretendard:SemiBold',sans-serif] text-[16px] text-[#111] text-center mb-3">{device?.name ?? "Living Room Air Conditioner"}</p>
+          <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] text-center mb-3">{device?.name ?? "Living Room Air Conditioner"}</p>
           <p className="hidden">
             LG Whisen Wall-mounted · Product #{id}
           </p>

@@ -178,7 +178,9 @@ const guideVideo = (guideOptions?: ChatGuideOptions) => {
 export function Chat() {
   const navigate = useNavigate();
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesScrollRef = useRef<HTMLDivElement>(null);
   const problemMsgRef = useRef<HTMLDivElement>(null);
+  const serviceMsgRef = useRef<HTMLDivElement>(null);
 
   const getInitialMessages = (): Message[] => {
     LEGACY_CHAT_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
@@ -203,6 +205,10 @@ export function Chat() {
   const [serviceStep, setServiceStep] = useState<ServiceStep>("idle");
   const [serviceInfo, setServiceInfo] = useState<Partial<ServiceInfo>>({});
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const [hoveredScheduleDate, setHoveredScheduleDate] = useState<string | null>(null);
+  const [hoveredScheduleTime, setHoveredScheduleTime] = useState<string | null>(null);
+  const [hoveredModelChoice, setHoveredModelChoice] = useState<string | null>(null);
+  const [hoveredOptionChoice, setHoveredOptionChoice] = useState<string | null>(null);
   const [serviceCompleted, setServiceCompleted] = useState(false);
   const [gifPop, setGifPop] = useState(false);
   const [uiPhase, setUiPhase] = useState<"initial" | "selecting" | "selecting-type" | "pending-start" | "morphing">("initial");
@@ -248,6 +254,40 @@ export function Chat() {
     setSelectedChoiceByMessageId((prev) => ({ ...prev, [messageId]: choice }));
   };
 
+  const scrollProblemMessageIntoFocus = useCallback(() => {
+    const scroller = messagesScrollRef.current;
+    const target = problemMsgRef.current;
+    if (!scroller || !target) return;
+
+    const scrollerRect = scroller.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const targetTop = scroller.scrollTop + targetRect.top - scrollerRect.top - 12;
+    scroller.scrollTo({ top: Math.max(targetTop, 0), behavior: "auto" });
+  }, []);
+
+  const queueProblemFocusScroll = useCallback(() => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollProblemMessageIntoFocus);
+    });
+  }, [scrollProblemMessageIntoFocus]);
+
+  const scrollServiceMessageIntoFocus = useCallback(() => {
+    const scroller = messagesScrollRef.current;
+    const target = serviceMsgRef.current;
+    if (!scroller || !target) return;
+
+    const scrollerRect = scroller.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const targetTop = scroller.scrollTop + targetRect.top - scrollerRect.top - 12;
+    scroller.scrollTo({ top: Math.max(targetTop, 0), behavior: "auto" });
+  }, []);
+
+  const queueServiceFocusScroll = useCallback(() => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollServiceMessageIntoFocus);
+    });
+  }, [scrollServiceMessageIntoFocus]);
+
   const handleStartChat = () => {
     const [mainFlow, product, type] = floatingChips;
     setProblemFocusSpacer(false);
@@ -257,9 +297,7 @@ export function Chat() {
       setTimeout(() => handleOptionClick(product), 750);
       setTimeout(() => {
         handleOptionClick(type);
-        setTimeout(() => {
-          problemMsgRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
-        }, 700);
+        setTimeout(queueProblemFocusScroll, 700);
       }, 1500);
     }, 520);
   };
@@ -437,6 +475,7 @@ export function Chat() {
   const nextServiceStep = (step: ServiceStep) => {
     setServiceStep(step);
     if (step === "model") {
+      setProblemFocusSpacer(true);
       setTimeout(async () => {
         const devices = await getRegisteredDevices();
         setMessages((prev) => [...prev, {
@@ -445,6 +484,7 @@ export function Chat() {
           time: now(),
           modelOptions: devices,
         }]);
+        queueServiceFocusScroll();
       }, 600);
     } else if (step === "issue") {
       addBotMessage("Please describe the issue in detail.");
@@ -465,6 +505,9 @@ export function Chat() {
       setServiceInfo(updated);
       setChatContext((prev) => ({ ...prev, issue: text, symptom: text, recommendedActions: ["service"] }));
       setServiceStep("idle");
+      setSelectedDate(null);
+      setHoveredScheduleDate(null);
+      setHoveredScheduleTime(null);
       setTimeout(() => {
         setMessages((prev) => [...prev, {
           id: (Date.now() + 1).toString(), type: "bot",
@@ -543,9 +586,7 @@ export function Chat() {
             time: now(),
             problemOptions: getProblemOptions(),
           }]);
-          setTimeout(() => {
-            problemMsgRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
-          }, 80);
+          queueProblemFocusScroll();
         }
         return;
       }
@@ -612,6 +653,7 @@ export function Chat() {
   };
 
   const handleModelSelect = (device: ChatDeviceOption) => {
+    setProblemFocusSpacer(false);
     addUserMessage(`${device.name} (${device.model})`);
     setServiceInfo((prev) => ({ ...prev, model: `${device.name} — ${device.model}` }));
     triggerGifPop();
@@ -676,6 +718,32 @@ export function Chat() {
   } as const;
 
   const getChoiceSurface = (selected: boolean) => selected ? chatChoiceSelectedSurface : chatChoiceSurface;
+
+  const scheduleButtonSurface = {
+    background: "rgba(255,255,255,0.58)",
+    backdropFilter: "blur(14px)",
+    WebkitBackdropFilter: "blur(14px)",
+    border: "1px solid rgba(255,255,255,0.85)",
+    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.58)",
+  } as const;
+
+  const scheduleButtonHoverSurface = {
+    background: "rgba(139,128,232,0.12)",
+    backdropFilter: "blur(14px)",
+    WebkitBackdropFilter: "blur(14px)",
+    border: "1px solid rgba(139,128,232,0.32)",
+    boxShadow: "0 3px 10px rgba(139,128,232,0.10), inset 0 1px 0 rgba(255,255,255,0.58)",
+  } as const;
+
+  const scheduleButtonSelectedSurface = {
+    ...chatAccentSurface,
+    border: "2px solid rgba(139,128,232,0.65)",
+  } as const;
+
+  const getScheduleButtonSurface = (selected: boolean, hovered: boolean) => {
+    if (selected) return scheduleButtonSelectedSurface;
+    return hovered ? scheduleButtonHoverSurface : scheduleButtonSurface;
+  };
 
   return (
     <motion.div
@@ -829,9 +897,9 @@ export function Chat() {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-[20px] py-4 space-y-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div ref={messagesScrollRef} className="flex-1 overflow-y-auto px-[20px] py-4 space-y-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {messages.map((message, index) => (
-          <div key={message.id} className="space-y-1" ref={message.problemOptions ? problemMsgRef : undefined}>
+          <div key={message.id} className="space-y-1" ref={message.problemOptions ? problemMsgRef : message.modelOptions ? serviceMsgRef : undefined}>
             {message.type === "bot" ? (
               <>
                 <div className="flex justify-start gap-2 items-end">
@@ -860,15 +928,24 @@ export function Chat() {
                   <div className="flex flex-wrap gap-2 mt-3 pl-9">
                     {message.options.map((option, idx) => {
                       const selected = selectedChoiceByMessageId[message.id] === option;
+                      const optionChoiceKey = `${message.id}:${option}`;
+                      const hovered = hoveredOptionChoice === optionChoiceKey;
                       return (
                         <button
                           key={idx}
                           onClick={() => {
                             markMessageChoice(message.id, option);
+                            setHoveredOptionChoice(null);
                             handleOptionClick(option);
                           }}
-                          className="rounded-[12px] py-[9px] px-[14px] font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#444] transition-all"
-                          style={getChoiceSurface(selected)}
+                          onMouseEnter={() => setHoveredOptionChoice(optionChoiceKey)}
+                          onMouseLeave={() => setHoveredOptionChoice(null)}
+                          className={`rounded-[12px] py-[9px] px-[14px] font-['Pretendard:SemiBold',sans-serif] text-[13px] transition-all ${selected ? "text-white" : "text-[#8b80e8]"}`}
+                          style={{
+                            background: selected ? chatAccentSurface.background : hovered ? "linear-gradient(0deg, rgba(139,128,232,0.10), rgba(139,128,232,0.10)), rgba(255,255,255,0.96)" : "rgba(255,255,255,0.84)",
+                            border: `1px solid ${selected ? "rgba(139,128,232,0.65)" : hovered ? "rgba(139,128,232,0.86)" : "rgba(139,128,232,0.74)"}`,
+                            boxShadow: selected ? chatAccentSurface.boxShadow : hovered ? "0 3px 10px rgba(139,128,232,0.08)" : "none",
+                          }}
                         >
                           {option}
                         </button>
@@ -882,15 +959,24 @@ export function Chat() {
                   <div className="flex flex-col gap-2 mt-3 pl-9">
                     {message.problemOptions.map((option, idx) => {
                       const selected = selectedChoiceByMessageId[message.id] === option;
+                      const optionChoiceKey = `${message.id}:problem:${option}`;
+                      const hovered = hoveredOptionChoice === optionChoiceKey;
                       return (
                         <button
                           key={idx}
                           onClick={() => {
                             markMessageChoice(message.id, option);
+                            setHoveredOptionChoice(null);
                             handleOptionClick(option);
                           }}
-                          className="rounded-[10px] py-[10px] px-[14px] text-left font-['Pretendard:Medium',sans-serif] text-[13px] leading-snug text-[#444] w-[230px] transition-all"
-                          style={getChoiceSurface(selected)}
+                          onMouseEnter={() => setHoveredOptionChoice(optionChoiceKey)}
+                          onMouseLeave={() => setHoveredOptionChoice(null)}
+                          className={`rounded-[10px] py-[10px] px-[14px] text-left font-['Pretendard:Medium',sans-serif] text-[13px] leading-snug w-[230px] transition-all ${selected ? "text-white" : "text-[#8b80e8]"}`}
+                          style={{
+                            background: selected ? chatAccentSurface.background : hovered ? "linear-gradient(0deg, rgba(139,128,232,0.10), rgba(139,128,232,0.10)), rgba(255,255,255,0.96)" : "rgba(255,255,255,0.84)",
+                            border: `1px solid ${selected ? "rgba(139,128,232,0.65)" : hovered ? "rgba(139,128,232,0.86)" : "rgba(139,128,232,0.74)"}`,
+                            boxShadow: selected ? chatAccentSurface.boxShadow : hovered ? "0 3px 10px rgba(139,128,232,0.08)" : "none",
+                          }}
                         >
                           {option}
                         </button>
@@ -1077,17 +1163,33 @@ export function Chat() {
                 {/* Model selection buttons */}
                 {message.modelOptions && (
                   <div className="flex flex-col gap-2 mt-3 pl-9">
-                    {message.modelOptions.map((device) => (
-                      <button
-                        key={device.id}
-                        onClick={() => handleModelSelect(device)}
-                        className="rounded-[12px] px-[14px] py-[10px] text-left transition-all w-[240px]"
-                        style={chatChoiceSurface}
-                      >
-                        <p className="font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#8b80e8]">{device.name}</p>
-                        <p className="font-['Pretendard:Regular',sans-serif] text-[11px] text-[#888] mt-[2px]">{device.model}</p>
-                      </button>
-                    ))}
+                    {message.modelOptions.map((device) => {
+                      const selected = selectedChoiceByMessageId[message.id] === device.id;
+                      const modelChoiceKey = `${message.id}:${device.id}`;
+                      const hovered = hoveredModelChoice === modelChoiceKey;
+                      return (
+                        <button
+                          key={device.id}
+                          onClick={() => {
+                            markMessageChoice(message.id, device.id);
+                            setHoveredModelChoice(null);
+                            handleModelSelect(device);
+                          }}
+                          onMouseEnter={() => setHoveredModelChoice(modelChoiceKey)}
+                          onMouseLeave={() => setHoveredModelChoice(null)}
+                          className="rounded-[12px] px-[14px] py-[10px] text-left transition-all w-[240px]"
+                          style={{
+                            ...getScheduleButtonSurface(selected, hovered),
+                            background: selected ? chatAccentSurface.background : hovered ? "linear-gradient(0deg, rgba(139,128,232,0.10), rgba(139,128,232,0.10)), rgba(255,255,255,0.96)" : "rgba(255,255,255,0.84)",
+                            border: `1px solid ${selected ? "rgba(139,128,232,0.65)" : hovered ? "rgba(139,128,232,0.86)" : "rgba(139,128,232,0.74)"}`,
+                            boxShadow: selected ? chatAccentSurface.boxShadow : hovered ? "0 3px 10px rgba(139,128,232,0.08)" : "none",
+                          }}
+                        >
+                          <p className={`font-['Pretendard:SemiBold',sans-serif] text-[13px] ${selected ? "text-white" : "text-[#8b80e8]"}`}>{device.name}</p>
+                          <p className={`font-['Pretendard:Regular',sans-serif] text-[11px] mt-[2px] ${selected ? "text-white/80" : "text-[#888]"}`}>{device.model}</p>
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
 
@@ -1119,31 +1221,46 @@ export function Chat() {
                     <div className="rounded-[15px] px-4 py-3 w-[240px]" style={chatSoftCard}>
                       <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-black mb-2">📅 Select Visit Date</p>
                       <div className="flex flex-wrap gap-1 mb-3">
-                        {AVAILABLE_DATES.map((d) => (
-                          <button key={d.value}
-                            onClick={() => setSelectedDate(d.value)}
-                            className={`px-2 py-1 rounded-[6px] text-[9px] font-['Pretendard:Medium',sans-serif] transition-colors ${
-                              selectedDate === d.value
-                                ? "text-white"
-                                : "bg-[#f5f5f5] text-[#444]"
-                            }`}
-                            style={getChoiceSurface(selectedDate === d.value)}>
-                            {d.label}
-                          </button>
-                        ))}
+                        {AVAILABLE_DATES.map((d) => {
+                          const selected = selectedDate === d.value;
+                          const hovered = hoveredScheduleDate === d.value;
+                          return (
+                            <button key={d.value}
+                              onClick={() => {
+                                setSelectedDate(d.value);
+                                setHoveredScheduleTime(null);
+                              }}
+                              onMouseEnter={() => setHoveredScheduleDate(d.value)}
+                              onMouseLeave={() => setHoveredScheduleDate(null)}
+                              className={`px-2 py-1 rounded-[6px] text-[9px] font-['Pretendard:Medium',sans-serif] transition-all ${selected ? "text-white" : hovered ? "text-[#8b80e8]" : "text-[#555]"}`}
+                              style={getScheduleButtonSurface(selected, hovered)}>
+                              {d.label}
+                            </button>
+                          );
+                        })}
                       </div>
                       {selectedDate && (
                         <>
                           <p className="font-['Pretendard:SemiBold',sans-serif] text-[11px] text-black mb-2">⏰ Select Visit Time</p>
                           <div className="flex flex-col gap-1">
-                            {TIME_SLOTS.map((t) => (
-                              <button key={t}
-                                onClick={() => handleScheduleConfirm(t)}
-                                className="w-full text-[#8b80e8] rounded-[8px] py-1.5 font-['Pretendard:Medium',sans-serif] text-[10px] transition-colors"
-                                style={chatChoiceSurface}>
-                                {t}
-                              </button>
-                            ))}
+                            {TIME_SLOTS.map((t) => {
+                              const hovered = hoveredScheduleTime === t;
+                              return (
+                                <button key={t}
+                                  onClick={() => handleScheduleConfirm(t)}
+                                  onMouseEnter={() => setHoveredScheduleTime(t)}
+                                  onMouseLeave={() => setHoveredScheduleTime(null)}
+                                  className="w-full rounded-[8px] py-1.5 font-['Pretendard:Medium',sans-serif] text-[10px] text-[#8b80e8] transition-all"
+                                  style={{
+                                    ...getScheduleButtonSurface(false, hovered),
+                                    background: hovered ? "linear-gradient(0deg, rgba(139,128,232,0.10), rgba(139,128,232,0.10)), rgba(255,255,255,0.96)" : "rgba(255,255,255,0.84)",
+                                    border: `1px solid ${hovered ? "rgba(139,128,232,0.86)" : "rgba(139,128,232,0.74)"}`,
+                                    boxShadow: hovered ? "0 3px 10px rgba(139,128,232,0.08)" : "none",
+                                  }}>
+                                  {t}
+                                </button>
+                              );
+                            })}
                           </div>
                         </>
                       )}
@@ -1154,7 +1271,7 @@ export function Chat() {
                 {/* Service Request Completed */}
                 {message.showServiceComplete && (
                   <div className="mt-2 pl-9">
-                    <div className="rounded-[15px] px-4 py-3 w-[220px] text-center" style={chatSoftCard}>
+                    <div className="rounded-[15px] px-4 py-3 w-[220px] text-center" style={{ ...chatSoftCard, border: "2px solid rgba(139,128,232,0.45)" }}>
                       <p className="text-[28px] mb-1">🎉</p>
                       <p className="font-['Pretendard:Bold',sans-serif] text-[12px] text-[#8b80e8]">Service Request Completed</p>
                       <p className="font-['Pretendard:Regular',sans-serif] text-[9px] text-[#888] mt-1">Confirmation call scheduled for the day before the visit</p>

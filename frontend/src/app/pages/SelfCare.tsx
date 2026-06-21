@@ -290,7 +290,7 @@ export function SelfCare() {
               </span>
               <img src={acImage} alt="Air Conditioner" className="w-[200px] h-[100px] object-contain" />
             </div>
-            <p className="font-['Pretendard:SemiBold',sans-serif] text-[16px] text-[#111] text-center mb-3">Living Room Air Conditioner</p>
+            <p className="font-['Pretendard:SemiBold',sans-serif] text-[15px] text-[#111] text-center mb-3">Living Room Air Conditioner</p>
             <div className="grid grid-cols-2 pt-4" style={{ borderTop: "1px solid rgba(200,200,200,0.3)" }}>
               <div className="flex flex-col items-center gap-[4px] border-r border-[rgba(200,200,200,0.28)] px-2">
                 <p className="font-['Pretendard:Regular',sans-serif] text-[12px] text-[#888]">Product Type</p>

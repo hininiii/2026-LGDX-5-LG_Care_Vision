@@ -21,21 +21,14 @@ export function Splash() {
         style={{ background: pageBackground }}
       >
         <div className="flex flex-col items-center gap-6">
-          <motion.div
+          <motion.img
+            src={careVisionLogo}
+            alt="Care Vision"
+            className="w-[210px] h-auto"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.55, ease: [0.34, 1.15, 0.64, 1] }}
-            className="rounded-[28px] px-8 py-7"
-            style={{
-              background: "rgba(255,255,255,0.48)",
-              backdropFilter: "blur(22px)",
-              WebkitBackdropFilter: "blur(22px)",
-              border: "1px solid rgba(255,255,255,0.84)",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.95)",
-            }}
-          >
-            <img src={careVisionLogo} alt="Care Vision" className="w-[210px] h-auto" />
-          </motion.div>
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
