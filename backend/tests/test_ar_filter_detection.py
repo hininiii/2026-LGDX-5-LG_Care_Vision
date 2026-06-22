@@ -162,7 +162,7 @@ def test_outlet_detection_rejects_low_confidence_and_wrong_position():
             "y": 155,
             "width": 230,
             "height": 18,
-            "confidence": 0.52,
+            "confidence": 0.48,
             "class_name": "outlet",
         },
         {
