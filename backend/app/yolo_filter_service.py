@@ -125,35 +125,17 @@ def _expand_aircon_part_box(
 
 
 def _default_model_path() -> Path:
-    ar_2class_model = (
-        Path(__file__).resolve().parents[2]
-        / "03_AI로직"
-        / "models"
-        / "ar_2class_detection"
-        / "best.pt"
-    )
+    ar_2class_model = _model_root() / "ar_2class_detection" / "best.pt"
     if ar_2class_model.exists():
         return ar_2class_model
-    ar_multiclass_model = (
-        Path(__file__).resolve().parents[2]
-        / "03_AI로직"
-        / "models"
-        / "ar_multiclass_detection"
-        / "best.pt"
-    )
+    ar_multiclass_model = _model_root() / "ar_multiclass_detection" / "best.pt"
     if ar_multiclass_model.exists():
         return ar_multiclass_model
-    return (
-        Path(__file__).resolve().parents[2]
-        / "03_AI로직"
-        / "models"
-        / "filter_detection"
-        / "best.pt"
-    )
+    return _model_root() / "filter_detection" / "best.pt"
 
 
 def _model_root() -> Path:
-    return Path(__file__).resolve().parents[2] / "03_AI로직" / "models"
+    return Path(__file__).resolve().parents[1] / "models"
 
 
 def _latest_existing_model(pattern: str) -> Path | None:
