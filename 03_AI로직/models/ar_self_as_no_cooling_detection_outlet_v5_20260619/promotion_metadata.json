@@ -1,0 +1,8 @@
+﻿{
+    "promoted_at":  "2026-06-19T10:19:14+09:00",
+    "source_candidate":  "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\07_개발단계\\06_AR 가전케어 AI\\03_AI로직\\models\\ar_self_as_candidate_no_cooling_outlet_v5_20260618",
+    "target_runtime_candidate":  "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\07_개발단계\\06_AR 가전케어 AI\\03_AI로직\\models\\ar_self_as_no_cooling_detection_outlet_v5_20260619",
+    "reason":  "candidate_v5 detected more actual camera samples than runtime_20260617; promoted by creating latest ar_self_as_no_cooling_detection_outlet_* folder",
+    "production_overwritten":  false,
+    "compare_report":  "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\07_개발단계\\06_AR 가전케어 AI\\02_데이터연동\\filter_detection_dataset\\48_self_as_runtime_compare_20260619\\runtime_vs_v5_actual_camera_compare.json"
+}

@@ -1,0 +1,26 @@
+﻿{
+  "deployed_at_local": "2026-06-16T17:04:22",
+  "deployed_by": "Codex YOLO12 2-class retraining",
+  "source_run_dir": "C:\\Users\\TAEHEE\\lgdx_ar_yolo_work\\runs\\ar_2class_yolo\\yolo12n_ar_2class_aircon_filter_hardneg_60e",
+  "source_best_pt": "C:\\Users\\TAEHEE\\lgdx_ar_yolo_work\\runs\\ar_2class_yolo\\yolo12n_ar_2class_aircon_filter_hardneg_60e\\weights\\best.pt",
+  "deploy_path": "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\07_개발단계\\06_AR 가전케어 AI\\03_AI로직\\models\\ar_2class_detection\\best.pt",
+  "dataset": "C:\\Users\\TAEHEE\\lgdx_ar_yolo_work\\datasets\\combined_ar_2class_aircon_filter_hardneg_yolov8_20260616",
+  "model": "YOLO12n",
+  "classes": ["aircon", "filter"],
+  "train_epochs_completed": 55,
+  "early_stop": true,
+  "early_stop_reason": "No mAP50-95 improvement for 12 epochs after epoch 43.",
+  "best_epoch": 43,
+  "best_precision": 0.94895,
+  "best_recall": 0.94109,
+  "best_map50": 0.93448,
+  "best_map50_95": 0.81174,
+  "final_validation": {
+    "all_precision": 0.949,
+    "all_recall": 0.941,
+    "all_map50": 0.934,
+    "all_map50_95": 0.812,
+    "aircon_map50_95": 0.882,
+    "filter_map50_95": 0.742
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "staged_at": "20260618_182602",
+  "source_run_dir": "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\ar_runs\\self_as_outlet_v5\\yolo12n_self_as_outlet_dedup_v5_20260618_174000",
+  "source_best_pt": "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\ar_runs\\self_as_outlet_v5\\yolo12n_self_as_outlet_dedup_v5_20260618_174000\\weights\\best.pt",
+  "target_best_pt": "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\07_개발단계\\06_AR 가전케어 AI\\03_AI로직\\models\\ar_self_as_candidate_no_cooling_outlet_v5_20260618\\best.pt",
+  "dataset": "C:\\Users\\TAEHEE\\Documents\\2026 LGDX\\프로젝트\\lgdx_DX\\ar_train_v5_20260618_173756",
+  "production_overwritten": false,
+  "next_step": "Run API smoke and compare with the currently selected runtime model before promoting this staged model."
+}
