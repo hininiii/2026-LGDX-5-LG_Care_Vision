@@ -19,7 +19,7 @@ import {
   type CameraState,
 } from "./arGuideDetection";
 
-const CHAT_STORAGE_KEY = "chat_messages_v20260618_transition_v2";
+const CHAT_STORAGE_KEY = "chat_messages_v20260622_english_v4";
 const TTS_STORAGE_KEY = "careshot_ar_tts_enabled";
 
 interface ARGuideStep {

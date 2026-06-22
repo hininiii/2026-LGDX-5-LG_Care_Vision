@@ -201,18 +201,6 @@ class LLMServiceMock:
 
     @staticmethod
     def translate(text: str, language_code: str) -> str:
-        if str(language_code).lower().startswith("ko"):
-            korean = {
-                "Please share one more detail before I guide you.": "안전한 안내를 위해 증상을 한 가지 더 알려주세요.",
-                "I checked the request, but safe official guide options are not ready yet.": "문의는 확인했지만, 안전하게 제공할 공식 가이드 옵션이 아직 준비되지 않았습니다.",
-                "This may be high risk. Stop using the appliance and connect to official A/S. AR self-guidance is blocked.": "위험 신호일 수 있습니다. 제품 사용을 중단하고 공식 A/S로 연결하세요. AR 자가 안내는 차단됩니다.",
-                "Only external safe-check steps are allowed. Do not open covers, wiring, PCB, compressor, or refrigerant parts.": "외부에서 확인 가능한 안전 점검만 허용됩니다. 커버, 배선, PCB, 컴프레서, 냉매 부품은 열거나 만지지 마세요.",
-                "Only user-accessible steps backed by official evidence are allowed.": "공식 근거가 있고 사용자가 접근 가능한 단계만 안내할 수 있습니다.",
-            }
-            if text in korean:
-                return korean[text]
-            if text.startswith("Official guide options are ready for "):
-                return "공식 가이드 옵션이 준비되었습니다. 안전 규칙과 공식 근거가 허용한 단계만 안내합니다."
         return text
 
     @staticmethod

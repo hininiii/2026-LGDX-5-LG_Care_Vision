@@ -344,7 +344,7 @@ def test_frontend_ai_chat_uses_backend_question_for_generic_low_info_symptom_mis
                         "risk_level": "low",
                         "decision_action": "ask_clarification",
                         "missing_slots": ["symptom_type"],
-                        "next_question": "어떤 문제가 있나요? 냉방/바람, 소음/진동, 냄새, 물샘, 전원 문제, 필터 관리 중 가까운 증상을 알려주세요.",
+                        "next_question": "What issue are you experiencing? Please choose the closest symptom: cooling or airflow, noise or vibration, odor, water leak, power issue, or filter care.",
                     },
                 },
                 "chatbot_engine": {
@@ -355,7 +355,7 @@ def test_frontend_ai_chat_uses_backend_question_for_generic_low_info_symptom_mis
                     "conversation_state": {
                         "session_id": "CHAT_TEST_GENERIC",
                         "missing_slots": ["symptom_type"],
-                        "next_question": "어떤 문제가 있나요? 냉방/바람, 소음/진동, 냄새, 물샘, 전원 문제, 필터 관리 중 가까운 증상을 알려주세요.",
+                        "next_question": "What issue are you experiencing? Please choose the closest symptom: cooling or airflow, noise or vibration, odor, water leak, power issue, or filter care.",
                     },
                     "guide_options": None,
                 },

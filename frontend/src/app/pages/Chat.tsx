@@ -20,9 +20,79 @@ import { getUserProfile } from "../api/user";
 import type { AiChatResponse, ChatContext, ChatGuideOptions, ChatManualGuide, FlowType, Message, ServiceInfo, ServiceStep } from "../types/chat";
 import type { ChatDeviceOption } from "../types/device";
 
-const LEGACY_CHAT_STORAGE_KEYS = ["chat_messages", "chat_messages_v20260612", "chat_messages_v20260618_transition"];
-const CHAT_STORAGE_KEY = "chat_messages_v20260618_transition_v2";
+const LEGACY_CHAT_STORAGE_KEYS = [
+  "chat_messages",
+  "chat_messages_v20260612",
+  "chat_messages_v20260618_transition",
+  "chat_messages_v20260618_transition_v2",
+  "chat_messages_v20260622_english_v3",
+];
+const CHAT_STORAGE_KEY = "chat_messages_v20260622_english_v4";
 const CHAT_ENDED_KEY = "chat_session_ended";
+
+const LEGACY_KOREAN_CHAT_COPY: Record<string, string> = {
+  "공식 근거에 맞는 필터 청소 안내를 준비했어요. 안전 규칙상 허용되는 단계만 보여드릴게요.":
+    "I prepared an official-evidence-based filter cleaning guide. Only steps allowed by the safety policy will be shown.",
+  "공식 근거에 맞는 냉방/바람 약함 자가점검 안내를 준비했어요. 안전 규칙상 허용되는 단계만 보여드릴게요.":
+    "I prepared an official-evidence-based weak cooling/airflow self-check guide. Only steps allowed by the safety policy will be shown.",
+  "연기, 스파크, 타는 냄새, 감전, 냉매/가스 냄새 같은 위험 신호가 있나요? 없다면 '아니요'라고 답해주세요.":
+    "Do you notice any danger signs such as smoke, sparks, burning smell, electric shock, or refrigerant/gas odor? If not, please answer 'No'.",
+  "위험 신호가 있나요? 없다면 '아니요'라고 답해주세요.":
+    "Do you notice any danger signs? If not, please answer 'No'.",
+  "위험 신호가 있어 AR 자가 안내는 차단했어요. 공식 A/S 또는 서비스센터 연결을 권장합니다.":
+    "A danger sign was detected, so AR self-guidance is blocked. We recommend official service or service center support.",
+  "위험 신호가 있어 AR 자가 안내를 차단하고 서비스센터 연결만 제공합니다.":
+    "A danger sign was detected, so AR self-guidance is blocked and only service center support is provided.",
+  "소음이나 진동이 어디에서 느껴지나요? 실내기 본체, 송풍구, 앞 커버, 배수부, 전원부 중 가까운 위치를 알려주세요.":
+    "Where do you notice the noise or vibration? Please choose the closest area, such as the indoor unit body, air outlet, front cover, drain area, or power area.",
+  "냉방이 잘 안 되는 상황을 조금 더 알려주세요. 바람은 나오는지, 바람이 약한지, 송풍구 쪽 문제인지 알려주세요.":
+    "Please tell me more about the weak cooling condition. Is air coming out, is the airflow weak, or does it seem related to the air outlet?",
+  "공식자료 확인 불가": "Official evidence unavailable",
+};
+
+const normalizeChatCopy = (content: string) => {
+  const exact = LEGACY_KOREAN_CHAT_COPY[content];
+  if (exact) return exact;
+  if (content.includes("공식 근거에 맞는 필터 청소 안내")) {
+    return "I prepared an official-evidence-based filter cleaning guide. Only steps allowed by the safety policy will be shown.";
+  }
+  if (content.includes("공식 근거에 맞는 냉방/바람 약함 자가점검 안내")) {
+    return "I prepared an official-evidence-based weak cooling/airflow self-check guide. Only steps allowed by the safety policy will be shown.";
+  }
+  if (content.includes("연기, 스파크, 타는 냄새") || content.includes("냉매/가스 냄새 같은 위험 신호")) {
+    return "Do you notice any danger signs such as smoke, sparks, burning smell, electric shock, or refrigerant/gas odor? If not, please answer 'No'.";
+  }
+  if (content.includes("소음이나 진동이 어디에서 느껴지나요")) {
+    return "Where do you notice the noise or vibration? Please choose the closest area, such as the indoor unit body, air outlet, front cover, drain area, or power area.";
+  }
+  if (content.includes("냉방이 잘 안 되는 상황")) {
+    return "Please tell me more about the weak cooling condition. Is air coming out, is the airflow weak, or does it seem related to the air outlet?";
+  }
+  if (content.includes("위험 신호가 있어 AR 자가 안내")) {
+    return "A danger sign was detected, so AR self-guidance is blocked. We recommend official service or service center support.";
+  }
+  return content;
+};
+
+const normalizeCardPolicyCopy = (cardPolicy: Message["cardPolicy"]) =>
+  cardPolicy
+    ? {
+        ...cardPolicy,
+        title: cardPolicy.title ? normalizeChatCopy(cardPolicy.title) : cardPolicy.title,
+        description: cardPolicy.description ? normalizeChatCopy(cardPolicy.description) : cardPolicy.description,
+      }
+    : cardPolicy;
+
+const normalizeMessageCopy = (message: Message): Message => ({
+  ...message,
+  content: message.type === "bot" ? normalizeChatCopy(message.content) : message.content,
+  cardPolicy: normalizeCardPolicyCopy(message.cardPolicy),
+});
+
+const hasNormalizedCopyDiff = (before: Message, after: Message) =>
+  before.content !== after.content ||
+  before.cardPolicy?.title !== after.cardPolicy?.title ||
+  before.cardPolicy?.description !== after.cardPolicy?.description;
 
 const now = () =>
   new Date().toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit" });
@@ -193,7 +263,10 @@ export function Chat() {
     }
     const saved = localStorage.getItem(CHAT_STORAGE_KEY);
     if (saved) {
-      try { return JSON.parse(saved); } catch { /* ignore */ }
+      try {
+        const parsed = JSON.parse(saved);
+        return Array.isArray(parsed) ? parsed.map(normalizeMessageCopy) : getInitialChatMessages();
+      } catch { /* ignore */ }
     }
     return getInitialChatMessages();
   };
@@ -321,12 +394,18 @@ export function Chat() {
 
   const scrollToBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   useEffect(() => {
+    const normalized = messages.map(normalizeMessageCopy);
+    if (normalized.some((message, index) => hasNormalizedCopyDiff(messages[index], message))) {
+      setMessages(normalized);
+    }
+  }, [messages]);
+  useEffect(() => {
     if (!problemFocusSpacer) {
       scrollToBottom();
     }
   }, [messages, problemFocusSpacer]);
   useEffect(() => {
-    localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages));
+    localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages.map(normalizeMessageCopy)));
   }, [messages]);
 
   // AR Guide 복귀 시 동기화
@@ -336,7 +415,8 @@ export function Chat() {
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
-          if (parsed.length > messages.length) setMessages(parsed);
+          const normalized = Array.isArray(parsed) ? parsed.map(normalizeMessageCopy) : [];
+          if (normalized.length > messages.length) setMessages(normalized);
         } catch { /* ignore */ }
       }
     };
@@ -360,7 +440,14 @@ export function Chat() {
     setTimeout(async () => {
       setMessages((prev) => [
         ...prev,
-        { id: (Date.now() + 1).toString(), type: "bot", content, time: now(), ...extra },
+        normalizeMessageCopy({
+          id: (Date.now() + 1).toString(),
+          type: "bot",
+          content: normalizeChatCopy(content),
+          time: now(),
+          ...extra,
+          cardPolicy: normalizeCardPolicyCopy(extra?.cardPolicy),
+        }),
       ]);
     }, 600);
   };
@@ -419,11 +506,11 @@ export function Chat() {
           message.id === analyzingId
             ? {
                 ...message,
-                content: response.message,
+                content: normalizeChatCopy(response.message),
                 status: statusFromAiResponse(response),
                 guideButtons: guideButtonsFromAiResponse(response),
                 guideOptions: response.needs_clarification ? undefined : response.guide_options ?? undefined,
-                cardPolicy: response.card_policy ?? undefined,
+                cardPolicy: normalizeCardPolicyCopy(response.card_policy ?? undefined),
               }
             : message,
         ),
@@ -719,6 +806,34 @@ export function Chat() {
 
   const getChoiceSurface = (selected: boolean) => selected ? chatChoiceSelectedSurface : chatChoiceSurface;
 
+  const serviceCenterChoiceSurface = {
+    background: "rgba(255,255,255,0.72)",
+    backdropFilter: "blur(18px)",
+    WebkitBackdropFilter: "blur(18px)",
+    border: "1px solid rgba(155,142,246,0.42)",
+    boxShadow: "0 4px 14px rgba(139,128,232,0.12), inset 0 1px 0 rgba(255,255,255,0.62)",
+    color: "#8b80e8",
+  } as const;
+
+  const serviceCenterChoiceHoverSurface = {
+    ...serviceCenterChoiceSurface,
+    background: "linear-gradient(0deg, rgba(139,128,232,0.08), rgba(139,128,232,0.08)), rgba(255,255,255,0.9)",
+    border: "1px solid rgba(139,128,232,0.62)",
+    boxShadow: "0 5px 16px rgba(139,128,232,0.16), inset 0 1px 0 rgba(255,255,255,0.7)",
+  } as const;
+
+  const serviceCenterChoiceSelectedSurface = {
+    ...chatAccentSurface,
+    border: "1px solid rgba(139,128,232,0.55)",
+    color: "#fff",
+  } as const;
+
+  const getServiceCenterChoiceSurface = (selected: boolean, hovered: boolean) => {
+    if (selected) return serviceCenterChoiceSelectedSurface;
+    if (hovered) return serviceCenterChoiceHoverSurface;
+    return serviceCenterChoiceSurface;
+  };
+
   const scheduleButtonSurface = {
     background: "rgba(255,255,255,0.58)",
     backdropFilter: "blur(14px)",
@@ -820,7 +935,7 @@ export function Chat() {
               {[
                 { icon: <Wrench size={15} />, label: "Troubleshoot Product Issue", color: "#5db88a" },
                 { icon: <Lightbulb size={15} />, label: "Appliance Care Guide", color: "#5ba8d8" },
-                { icon: <ClipboardList size={15} />, label: "Connect to Service Center", color: "#d87ab0" },
+                { icon: <ClipboardList size={15} />, label: "Connect to Service Center", color: "#8b80e8" },
                 { icon: <CircleHelp size={15} />, label: "FAQ", color: "#9b8ef6" },
               ].map((item, i) => (
                 <motion.button key={item.label} onClick={() => i < 3 && handleInitialSelect(item.label)} whileTap={{ scale: 0.96 }} className="flex items-center gap-2 px-4 py-3 rounded-[14px] text-left" style={chatChoiceSurface}>
@@ -1032,18 +1147,26 @@ export function Chat() {
                         AR Guide
                       </button>
                     )}
-                    {message.guideButtons.includes("service") && (
-                      <button
-                        onClick={() => {
-                          markMessageChoice(message.id, "Connect to Service Center");
-                          handleOptionClick("Connect to Service Center");
-                        }}
-                        className="flex-1 rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] text-[#444] transition-all"
-                        style={getChoiceSurface(selectedChoiceByMessageId[message.id] === "Connect to Service Center")}
-                      >
-                        Connect to Service Center
-                      </button>
-                    )}
+                    {message.guideButtons.includes("service") && (() => {
+                      const serviceChoice = "Connect to Service Center";
+                      const optionChoiceKey = `${message.id}:guide-service`;
+                      const selected = selectedChoiceByMessageId[message.id] === serviceChoice;
+                      const hovered = hoveredOptionChoice === optionChoiceKey;
+                      return (
+                        <button
+                          onClick={() => {
+                            markMessageChoice(message.id, serviceChoice);
+                            handleOptionClick(serviceChoice);
+                          }}
+                          onMouseEnter={() => setHoveredOptionChoice(optionChoiceKey)}
+                          onMouseLeave={() => setHoveredOptionChoice(null)}
+                          className="flex-1 rounded-[12px] py-[10px] px-[16px] font-['Pretendard:SemiBold',sans-serif] text-[13px] transition-all"
+                          style={getServiceCenterChoiceSurface(selected, hovered)}
+                        >
+                          Connect to Service Center
+                        </button>
+                      );
+                    })()}
                   </div>
                 )}
 

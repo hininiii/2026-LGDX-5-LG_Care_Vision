@@ -239,7 +239,7 @@ def test_generic_low_info_initial_question_asks_symptom_before_default_filter_gu
     assert first["analysis"]["decision_result"]["missing_slots"] == ["symptom_type"]
     assert first["analysis"]["procedure"].get("procedure_type") != "filter_cleaning"
     assert first["chatbot_engine"]["guide_options"] is None
-    assert "어떤 문제가 있나요" in first["chatbot_engine"]["ai_message"]["message_content"]
+    assert "What issue are you experiencing" in first["chatbot_engine"]["ai_message"]["message_content"]
 
 
 def test_generic_low_info_followup_can_resolve_to_cooling_self_as() -> None:
