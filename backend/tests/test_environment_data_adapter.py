@@ -52,6 +52,8 @@ class FakeEnvironmentRepository:
             "temperature_c": 34.0,
             "humidity_percent": 70.0,
             "aqi": 180,
+            "pm25": 61.0,
+            "pm10": 122.0,
             "water_hardness_level": "high",
             "care_triggers": ["filter_cleaning"],
             "source": "fallback_cache",
@@ -208,6 +210,8 @@ def test_environment_adapter_uses_fallback_cache_when_external_api_fails() -> No
     assert result["mode"] == "fallback_cache"
     assert result["observation"]["provider_id"] == "fallback_cache"
     assert result["observation"]["water_hardness_level"] == "high"
+    assert result["observation"]["pm25"] == 61.0
+    assert result["observation"]["pm10"] == 122.0
     assert provider.calls == 1
     assert repo.observations == []
     assert len(repo.fetch_logs) == 1

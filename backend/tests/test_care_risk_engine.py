@@ -97,6 +97,22 @@ def test_care_risk_score_engine_weights_poor_aqi_stronger_for_air_conditioner() 
     assert result["trigger_reason"][1] == "Current AQI is 223, which is high."
 
 
+def test_care_risk_score_engine_weights_extreme_aqi_for_air_conditioner() -> None:
+    result = CareRiskScoreEngine().evaluate(
+        device={"product_type": "air_conditioner"},
+        usage_log={"usage_period_days": 7, "recent_used_hours": 42},
+        smart_diagnosis={"severity": "none"},
+        environment={"humidity_percent": 38, "aqi": 576},
+        rules=[],
+        procedure_type="filter_cleaning",
+    )
+
+    assert result["care_risk_score"] == 80.0
+    assert result["factor_scores"][1]["factor"] == "aqi"
+    assert result["factor_scores"][1]["score_delta"] == 45
+    assert result["trigger_reason"][1] == "Current AQI is 576, which is high."
+
+
 def test_preventive_recommendation_engine_builds_manual_and_ar_options() -> None:
     score_result = {
         "procedure_type": "filter_cleaning",

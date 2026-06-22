@@ -119,8 +119,10 @@ class CareRiskScoreEngine:
                 delta = 20
             elif aqi < 300:
                 delta = 30
-            else:
+            elif aqi < 500:
                 delta = 35
+            else:
+                delta = 45
             score += delta
             factors.append(
                 {
