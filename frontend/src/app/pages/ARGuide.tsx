@@ -150,6 +150,12 @@ const guideStepsByProcedure: Record<string, ARGuideStep[]> = {
   no_cooling_self_check: noCoolingSelfCheckSteps,
 };
 
+const isCompleteRouteGuideSteps = (procedureType: string, guideSteps?: ARGuideStep[]) => {
+  if (!guideSteps?.length) return false;
+  const minimumStepCount = guideStepsByProcedure[procedureType]?.length ?? 2;
+  return guideSteps.length >= minimumStepCount;
+};
+
 const guideStepTargetsByProcedure: Record<
   string,
   Array<{ targetHint?: string; targetClasses?: string[]; contextClasses?: string[] }>
@@ -261,7 +267,8 @@ export function ARGuide() {
   const returnState = routeState.returnState ?? (from === "/self-care" ? { tab: "ar" } : undefined);
   const procedureType = routeState.procedureType ?? queryProcedureType ?? "filter_cleaning";
   const [remoteGuideSteps, setRemoteGuideSteps] = useState<ARGuideStep[]>([]);
-  const steps = routeState.guideSteps?.length
+  const hasCompleteRouteGuideSteps = isCompleteRouteGuideSteps(procedureType, routeState.guideSteps);
+  const steps = hasCompleteRouteGuideSteps
     ? routeState.guideSteps
     : remoteGuideSteps.length
       ? remoteGuideSteps
@@ -290,7 +297,7 @@ export function ARGuide() {
   }, [current, steps.length]);
 
   useEffect(() => {
-    if (routeState.guideSteps?.length) return;
+    if (hasCompleteRouteGuideSteps) return;
     let cancelled = false;
     const serviceFlowType = procedureType === "no_cooling_self_check" ? "self_as" : "self_care";
     const params = new URLSearchParams({
@@ -315,7 +322,7 @@ export function ARGuide() {
     return () => {
       cancelled = true;
     };
-  }, [procedureType, routeState.guideSteps?.length]);
+  }, [procedureType, hasCompleteRouteGuideSteps]);
 
   const stopStepSpeech = useCallback(() => {
     if (ttsSupported) window.speechSynthesis.cancel();
