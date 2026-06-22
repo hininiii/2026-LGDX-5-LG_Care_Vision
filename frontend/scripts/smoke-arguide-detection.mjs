@@ -62,7 +62,7 @@ const staticContracts = [
   ["image_data_url payload", "image_data_url: imageDataUrl"],
   ["step confidence helper", "getConfidenceThresholdForStep"],
   ["aircon default threshold", "AIRCON_DETECTION_CONFIDENCE_THRESHOLD = 0.35"],
-  ["outlet strict threshold", "OUTLET_DETECTION_CONFIDENCE_THRESHOLD = 0.55"],
+  ["outlet strict threshold", "OUTLET_DETECTION_CONFIDENCE_THRESHOLD = 0.50"],
   ["filter default threshold", 'targetClasses.includes("filter")) return DEFAULT_DETECTION_CONFIDENCE_THRESHOLD'],
   ["confidence threshold", "confidence_threshold: detectionConfidenceThreshold"],
   ["step target classes", "target_classes: detectionTargetClasses"],
