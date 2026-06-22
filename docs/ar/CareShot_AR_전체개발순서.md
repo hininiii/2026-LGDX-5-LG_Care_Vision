@@ -899,9 +899,9 @@ intent/risk 평가셋: 0건, 현 단계 미수행
 15. PostgreSQL + pgvector 최종 DB 전환 - 수행됨 / seed, HNSW index, RAG top-k, SQLite 비교 검증 완료
 15.2 PostgreSQL 운영 안정화 및 Alembic migration 관리 전환 - named volume 적용 완료 / Alembic baseline 후속 관리 필요
 15.3 PostgreSQL FK migration 적용 - 수행됨 / FK 후보 103개 중 101개 적용, reference image asset 미연결 2개 보류
-16. EnvironmentDataAdapter 구현 - 수행됨 / cache hit, external refresh, fallback, fetch log, Care Risk 전달 검증
+16. EnvironmentDataAdapter 구현 - 수행됨 / cache hit, external refresh, fallback, fetch log, Care Risk 전달 검증, fallback PM 유지 보정 완료
 16.2 EnvironmentDataAdapter 운영 보완 실행 - 수행됨 / provider adapter, API key manager, hard water source, fallback live 검증
-17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / usage log + 환경 데이터 기반 self care 추천 조건 계산 검증, AQI 가중치 보정 완료
+17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / usage log + 환경 데이터 기반 self care 추천 조건 계산 검증, AQI 500 이상 extreme 가중치 보정 완료
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 수행됨 / self_care, self_as, expert_as 용어 통일
 17.1-A GuideOptionSet 및 Guide 완료 API 재정리 - 수행됨 / options API, 완료 이력 저장 API 검증
 17.2 Product Code Registry 및 제품 등록 흐름 설계/DB 반영 - 수행됨 / 검증 완료
@@ -1111,6 +1111,8 @@ python -m pytest tests -q
    - 검증 결과: `/care/risk/evaluate` Guide 옵션 반환, `/guides/options` 옵션 세트 조회, `/guides/{guide_id}/complete` 완료 이력 저장 검증 완료
    - 2026-06-15 보정: 에어컨/공기청정기 AQI 가중치를 공식 AQI health category 기반 CRS 내부 가중치로 조정했다. AQI 100~149는 +10, 150~199는 +20, 200~299는 +30, 300 이상은 +35를 부여한다.
    - 2026-06-15 검증: AQI 223/일평균 6시간/습도 40% 에어컨 케이스가 `20 + 15 + 30 = 65`, `risk_band=medium`으로 산출됨을 확인했다. live 환경 API smoke에서는 AQI 227 기준 score 65, risk_level medium, factor_scores `[daily_runtime_hours +15, aqi +30]` 확인.
+   - 2026-06-22 보정: `fallback_observation()`이 `environment_contexts` fallback의 PM2.5/PM10 값을 유지하도록 수정했고, AQI 500 이상 extreme 구간은 Care Risk AQI factor를 +45로 보정했다.
+   - 2026-06-22 검증: fallback cache PM 유지 테스트, AQI 576 extreme Care Risk 테스트, AQI 223 기존 구간 회귀 테스트가 통과했다.
 
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 문서/DB 설계 반영 및 API endpoint 재정리 완료
    - 서비스 명칭을 `self_care`, `self_as`, `expert_as`로 통일했다.
@@ -2326,9 +2328,9 @@ online manual 36건, help library 773건 기준이었다.
 14. SQLAlchemy 또는 SQLModel repository 계층 작성 - 수행됨 / SQLAlchemy repository 계층 및 SQLite/PostgreSQL registry 검증 완료
 15. PostgreSQL + pgvector 최종 DB 전환 - 수행됨 / 2026-06-05 현재 상태 재검증 완료
 15.2 PostgreSQL 운영 안정화 및 Alembic migration 관리 전환 - named volume 적용 완료 / Alembic baseline은 18단계 시작 전 수행
-16. EnvironmentDataAdapter 구현 - 수행됨 / cache hit, 외부 API refresh, fallback cache, fetch log, Care Risk 전달 검증 완료
+16. EnvironmentDataAdapter 구현 - 수행됨 / cache hit, 외부 API refresh, fallback cache, fetch log, Care Risk 전달 검증 완료, fallback PM 유지 보정 완료
 16.2 EnvironmentDataAdapter 운영 보완 실행 - 수행됨 / provider adapter, API key manager, 실제 OpenWeather/WAQI key 연결 검증 완료
-17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / Care Risk 계산 및 Guide 옵션 반환 검증 완료, AQI 가중치 보정 완료
+17. CareRiskScoreEngine 및 Guide 옵션 API 구현 - 수행됨 / Care Risk 계산 및 Guide 옵션 반환 검증 완료, AQI 500 이상 extreme 가중치 보정 완료
 17.1 서비스 명칭/제공 방식/이력 저장 정책 변경 반영 - 문서/DB 설계 반영 및 API endpoint 재정리 완료
 17.1-A GuideOptionSet 및 Guide 완료 API 재정리 - 수행됨 / 검증 완료
 17.2 Product Code Registry 및 제품 등록 흐름 설계/DB 반영 - 수행됨 / 검증 완료

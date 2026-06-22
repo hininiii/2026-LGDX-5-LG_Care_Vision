@@ -475,8 +475,8 @@ class EnvironmentDataAdapter:
             "temperature_c": fallback.get("temperature_c"),
             "humidity_percent": fallback.get("humidity_percent"),
             "aqi": fallback.get("aqi"),
-            "pm25": None,
-            "pm10": None,
+            "pm25": fallback.get("pm25"),
+            "pm10": fallback.get("pm10"),
             "water_hardness_level": fallback.get("water_hardness_level"),
             "payload": {
                 "source": "environment_contexts_fallback",
